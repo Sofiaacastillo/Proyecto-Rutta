@@ -1,0 +1,1602 @@
+/* ================================================================
+   1. VARIABLES DE IDENTIDAD VISUAL
+   Las variables permiten reutilizar colores, fuentes y medidas.
+   ================================================================ */
+:root {
+    /* Azul profundo: color principal tomado de la nueva guía de identidad. */
+    --azul-profundo: #004261;
+
+    /* Azul medio: color secundario para detalles, enlaces e íconos. */
+    --azul-medio: #28a8e0;
+
+    /* Gris muy claro: base suave para fondos y superficies. */
+    --gris-muy-claro: #e1ebef;
+
+    /* Carbón: tono principal para textos con alto contraste. */
+    --carbon: #2b2b2b;
+
+    /* Naranja sol: acento para botones, estados activos y detalles. */
+    --naranja-sol: #f2a43a;
+
+    /* Blanco azulado para tarjetas y áreas que necesitan mayor claridad. */
+    --blanco-rutta: #f8fbfc;
+
+    /* Alias que conservan la compatibilidad con los selectores existentes. */
+    --verde-rutta: var(--azul-profundo);
+    --verde-profundo: var(--azul-profundo);
+    --azul-montana: var(--azul-medio);
+    --dorado-rutta: var(--naranja-sol);
+    --dorado-oscuro: #c8780d;
+    --crema-rutta: var(--gris-muy-claro);
+    --marfil: var(--blanco-rutta);
+    --tinta: var(--carbon);
+
+    /* Gris azulado para textos secundarios. */
+    --texto-suave: #52616a;
+
+    /* Borde translúcido basado en el azul profundo. */
+    --borde: rgba(0, 66, 97, 0.16);
+
+    /* Sombra consistente con un ligero matiz azul. */
+    --sombra: 0 18px 45px rgba(0, 66, 97, 0.12);
+
+    /* Radio general inspirado en las tarjetas de referencia. */
+    --radio: 1.15rem;
+
+    /* Cormorant Garamond se reserva para títulos editoriales. */
+    --fuente-editorial: "Cormorant Garamond", Georgia, serif;
+
+    /* Montserrat se utiliza en navegación, botones y cuerpo. */
+    --fuente-funcional: "Montserrat", Arial, sans-serif;
+}
+
+/* ================================================================
+   2. AJUSTES GENERALES DEL DOCUMENTO
+   ================================================================ */
+html {
+    /* Desplaza suavemente la página al utilizar enlaces internos. */
+    scroll-behavior: smooth;
+
+    /* Compensa la altura de la barra fija al llegar a una sección. */
+    scroll-padding-top: 5.5rem;
+}
+
+body {
+    /* Elimina el margen predeterminado del navegador. */
+    margin: 0;
+
+    /* Aplica la tipografía funcional a los textos generales. */
+    font-family: var(--fuente-funcional);
+
+    /* Mantiene el cuerpo de texto suficientemente legible. */
+    font-size: 1rem;
+
+    /* Mejora la lectura en párrafos de varias líneas. */
+    line-height: 1.65;
+
+    /* Coloca el color de texto principal. */
+    color: var(--tinta);
+
+    /* Utiliza el crema del manual como base del sitio. */
+    background-color: var(--crema-rutta);
+
+    /* Evita desplazamientos horizontales accidentales. */
+    overflow-x: hidden;
+}
+
+/* Todos los botones heredan la tipografía funcional. */
+button,
+input {
+    font-family: inherit;
+}
+
+/* Da un estilo visible al foco para usuarios de teclado. */
+:focus-visible {
+    outline: 3px solid rgba(242, 164, 58, 0.75);
+    outline-offset: 3px;
+}
+
+/* Oculta el enlace de accesibilidad hasta que recibe el foco. */
+.salto-contenido {
+    position: fixed;
+    top: -5rem;
+    left: 1rem;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    color: white;
+    background: var(--verde-rutta);
+    border-radius: 0.5rem;
+    transition: top 0.2s ease;
+}
+
+/* Muestra el enlace cuando una persona navega con Tab. */
+.salto-contenido:focus {
+    top: 1rem;
+}
+
+/* Clase común para dar espacio vertical a las secciones. */
+.seccion {
+    padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+/* Estilo editorial aplicado a todos los encabezados principales. */
+h1,
+h2,
+h3 {
+    color: var(--verde-profundo);
+    font-family: var(--fuente-editorial);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+/* ================================================================
+   3. NAVEGACIÓN Y LOGOTIPO
+   ================================================================ */
+.barra-navegacion {
+    /* Fondo blanco azulado semitransparente tomado de la nueva paleta. */
+    background: rgba(248, 251, 252, 0.94);
+
+    /* Desenfoca ligeramente el contenido que pasa detrás. */
+    backdrop-filter: blur(14px);
+
+    /* Separa visualmente la barra del contenido. */
+    border-bottom: 1px solid rgba(0, 66, 97, 0.1);
+
+    /* Define la altura mínima de la navegación. */
+    min-height: 5rem;
+}
+
+/* Alinea el nuevo imagotipo horizontal dentro de la navegación. */
+.marca-rutta {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Controla el tamaño del archivo de logotipo sin deformarlo. */
+.marca-logo {
+    display: block;
+    width: clamp(8.6rem, 12vw, 10.8rem);
+    height: auto;
+    max-height: 3.5rem;
+    object-fit: contain;
+}
+
+/* Presenta el nombre Rutta con una personalidad editorial. */
+.marca-nombre {
+    color: var(--verde-rutta);
+    font-family: var(--fuente-editorial);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Ajusta los enlaces principales de Bootstrap. */
+.barra-navegacion .nav-link {
+    position: relative;
+    margin: 0 0.35rem;
+    padding: 0.8rem 0.55rem !important;
+    color: var(--tinta);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+/* Dibuja una línea dorada al pasar el cursor. */
+.barra-navegacion .nav-link::after {
+    position: absolute;
+    right: 0.55rem;
+    bottom: 0.45rem;
+    left: 0.55rem;
+    height: 2px;
+    content: "";
+    background: var(--dorado-rutta);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+/* Conserva la flecha original en el enlace desplegable. */
+.barra-navegacion .dropdown-toggle::after {
+    position: static;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.35rem;
+    vertical-align: 0.2em;
+    content: "";
+    background: transparent;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transform: none;
+}
+
+/* Activa el subrayado en hover y foco. */
+.barra-navegacion .nav-link:not(.dropdown-toggle):hover::after,
+.barra-navegacion .nav-link:not(.dropdown-toggle):focus::after {
+    transform: scaleX(1);
+}
+
+/* Personaliza el menú desplegable. */
+.barra-navegacion .dropdown-menu {
+    padding: 0.6rem;
+    background: var(--marfil);
+    border: 1px solid var(--borde);
+    border-radius: 0.9rem;
+    box-shadow: var(--sombra);
+}
+
+/* Suaviza cada opción desplegable. */
+.barra-navegacion .dropdown-item {
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.55rem;
+    color: var(--tinta);
+    font-size: 0.86rem;
+}
+
+/* Estado activo de las opciones del menú. */
+.barra-navegacion .dropdown-item:hover,
+.barra-navegacion .dropdown-item:focus {
+    color: white;
+    background: var(--verde-rutta);
+}
+
+/* Crea botones redondos para búsqueda, usuario y carrito. */
+.boton-icono {
+    position: relative;
+    display: inline-grid;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    color: var(--verde-profundo);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.16rem;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+/* Retroalimentación visual al interactuar con los íconos. */
+.boton-icono:hover {
+    color: white;
+    background: var(--verde-rutta);
+    transform: translateY(-2px);
+}
+
+/* Contador flotante del carrito. */
+.contador-carrito {
+    position: absolute;
+    top: 0.08rem;
+    right: 0.02rem;
+    display: grid;
+    min-width: 1.05rem;
+    height: 1.05rem;
+    padding: 0 0.22rem;
+    place-items: center;
+    color: white;
+    background: var(--verde-rutta);
+    border: 2px solid var(--marfil);
+    border-radius: 1rem;
+    font-size: 0.58rem;
+    font-weight: 700;
+}
+
+/* Mantiene visible el contador cuando el botón cambia de fondo. */
+.boton-icono:hover .contador-carrito {
+    color: var(--verde-profundo);
+    background: var(--dorado-rutta);
+}
+
+/* Quita el borde fuerte del toggler predeterminado. */
+.navbar-toggler {
+    border-color: rgba(0, 66, 97, 0.22);
+}
+
+/* ================================================================
+   4. PORTADA PRINCIPAL
+   ================================================================ */
+.hero-rutta {
+    position: relative;
+    display: flex;
+    min-height: min(49rem, calc(100vh - 5rem));
+    align-items: center;
+    overflow: hidden;
+    background-image: url("/img/hero-rutta.png");
+    background-position: center;
+    background-size: cover;
+}
+
+/* Crea el degradado que deja la imagen visible y mantiene el texto legible. */
+.hero-capa {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(225, 235, 239, 0.98) 0%, rgba(225, 235, 239, 0.88) 35%, rgba(225, 235, 239, 0.16) 67%),
+        linear-gradient(0deg, rgba(0, 66, 97, 0.18), transparent 55%);
+}
+
+/* Coloca el texto por encima de la capa de color. */
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+}
+
+/* Garantiza una altura suficiente dentro del hero. */
+.min-vh-75 {
+    min-height: min(49rem, calc(100vh - 5rem));
+}
+
+/* Etiqueta pequeña situada encima del título principal. */
+.hero-etiqueta,
+.sobrelinea {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.9rem;
+    color: var(--verde-rutta);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* Línea decorativa dorada de la etiqueta del hero. */
+.hero-etiqueta span {
+    width: 2.6rem;
+    height: 2px;
+    background: var(--dorado-rutta);
+}
+
+/* Título de gran tamaño inspirado en la composición de referencia. */
+.hero-rutta h1 {
+    max-width: 42rem;
+    margin-bottom: 1.2rem;
+    font-size: clamp(4rem, 7.5vw, 7.6rem);
+    line-height: 0.78;
+}
+
+/* Descripción bajo el título. */
+.hero-descripcion {
+    max-width: 34rem;
+    margin-bottom: 2rem;
+    color: var(--carbon);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+/* Estilo base compartido por los botones principales. */
+.boton-primario,
+.boton-secundario-claro,
+.boton-contorno-claro {
+    display: inline-flex;
+    min-height: 3.15rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+/* Botón verde principal. */
+.boton-primario {
+    color: white;
+    background: var(--verde-rutta);
+    border: 1px solid var(--verde-rutta);
+}
+
+/* Estado hover del botón primario. */
+.boton-primario:hover,
+.boton-primario:focus {
+    color: white;
+    background: var(--verde-profundo);
+    border-color: var(--verde-profundo);
+    transform: translateY(-2px);
+}
+
+/* Botón secundario sobre fondo claro. */
+.boton-secundario-claro {
+    color: var(--verde-profundo);
+    background: rgba(248, 251, 252, 0.66);
+    border: 1px solid rgba(0, 66, 97, 0.5);
+}
+
+/* Hover del botón secundario. */
+.boton-secundario-claro:hover,
+.boton-secundario-claro:focus {
+    color: white;
+    background: var(--verde-rutta);
+    transform: translateY(-2px);
+}
+
+/* Panel translúcido de beneficios. */
+.hero-beneficios {
+    margin-top: 6rem;
+    padding: 1rem;
+    background: rgba(248, 251, 252, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    backdrop-filter: blur(12px);
+}
+
+/* Organiza ícono y texto de cada beneficio. */
+.beneficio-item {
+    display: grid;
+    grid-template-columns: 2.8rem 1fr;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0.95rem;
+}
+
+/* Separa los beneficios excepto el último. */
+.beneficio-item:not(:last-child) {
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Presentación del ícono de beneficio. */
+.beneficio-icono {
+    display: grid;
+    width: 2.55rem;
+    height: 2.55rem;
+    place-items: center;
+    color: var(--verde-rutta);
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+/* Título corto dentro del beneficio. */
+.beneficio-item strong {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.79rem;
+}
+
+/* Explicación pequeña del beneficio. */
+.beneficio-item small {
+    display: block;
+    color: var(--texto-suave);
+    font-size: 0.68rem;
+    line-height: 1.45;
+}
+
+/* ================================================================
+   5. ENCABEZADOS Y CATEGORÍAS
+   ================================================================ */
+.encabezado-seccion {
+    max-width: 45rem;
+    margin-bottom: 2.2rem;
+}
+
+/* Reduce el espacio en encabezados compactos. */
+.encabezado-seccion.compacto {
+    margin-bottom: 1.7rem;
+}
+
+/* Tamaño coherente para títulos H2. */
+.encabezado-seccion h2,
+.sobre-seccion h2 {
+    margin-bottom: 0.7rem;
+    font-size: clamp(2.6rem, 5vw, 4.6rem);
+    line-height: 0.98;
+}
+
+/* Color secundario de párrafos de introducción. */
+.encabezado-seccion>p:last-child {
+    color: var(--texto-suave);
+}
+
+/* Fondo marfil para la zona de categorías. */
+.categorias {
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
+    background: var(--marfil);
+}
+
+/* Tarjeta completa convertida en botón accesible. */
+.categoria-card {
+    display: flex;
+    width: 100%;
+    min-height: 10.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    color: var(--tinta);
+    background: rgba(225, 235, 239, 0.66);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    transition: transform 0.25s ease, background 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Convierte cada ícono en el elemento protagonista de la tarjeta. */
+.categoria-card>i {
+    display: grid;
+    width: 4.15rem;
+    height: 4.15rem;
+    margin-bottom: 0.7rem;
+    place-items: center;
+    color: var(--verde-rutta);
+    background: rgba(40, 168, 224, 0.1);
+    border: 1px solid rgba(0, 66, 97, 0.12);
+    border-radius: 50%;
+    font-size: 2.15rem;
+    transition: color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+/* Nombre visible de la categoría. */
+.categoria-card strong {
+    margin-bottom: 0.35rem;
+    font-size: 0.92rem;
+}
+
+/* Enlace pequeño dentro de la categoría. */
+.categoria-card span {
+    color: var(--texto-suave);
+    font-size: 0.7rem;
+}
+
+/* Efecto de elevación al pasar el cursor. */
+.categoria-card:hover,
+.categoria-card:focus-visible {
+    background: white;
+    border-color: var(--borde);
+    box-shadow: 0 12px 30px rgba(0, 66, 97, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Resalta el ícono cuando la persona señala o enfoca una categoría. */
+.categoria-card:hover>i,
+.categoria-card:focus-visible>i {
+    color: white;
+    background: var(--verde-rutta);
+    transform: scale(1.06);
+}
+
+/* ================================================================
+   6. CATÁLOGO Y TARJETAS DE PRODUCTO
+   ================================================================ */
+.productos-seccion {
+    /* Crea líneas suaves similares a un mapa topográfico. */
+    background:
+        radial-gradient(circle at 8% 18%, transparent 0 4rem, rgba(0, 66, 97, 0.045) 4.05rem 4.12rem, transparent 4.17rem 7rem, rgba(0, 66, 97, 0.035) 7.05rem 7.12rem, transparent 7.17rem),
+        radial-gradient(circle at 94% 65%, transparent 0 5rem, rgba(0, 66, 97, 0.045) 5.05rem 5.12rem, transparent 5.17rem 8rem, rgba(0, 66, 97, 0.035) 8.05rem 8.12rem, transparent 8.17rem),
+        var(--crema-rutta);
+}
+
+/* Coloca encabezado y filtros en extremos opuestos. */
+.encabezado-productos {
+    display: flex;
+    gap: 2rem;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 2.2rem;
+}
+
+/* Elimina el margen extra cuando el encabezado está dentro del catálogo. */
+.encabezado-productos .encabezado-seccion {
+    margin-bottom: 0;
+}
+
+/* Organiza los filtros en una cápsula clara. */
+.filtros-productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: flex-end;
+    padding: 0.35rem;
+    background: rgba(248, 251, 252, 0.78);
+    border: 1px solid var(--borde);
+    border-radius: 2rem;
+}
+
+/* Apariencia individual de cada filtro. */
+.filtro {
+    padding: 0.65rem 0.95rem;
+    color: var(--texto-suave);
+    background: transparent;
+    border: 0;
+    border-radius: 2rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* Estado seleccionado y estado hover. */
+.filtro.activo,
+.filtro:hover {
+    color: white;
+    background: var(--verde-rutta);
+}
+
+/* Tarjeta general generada desde JavaScript. */
+.producto-card {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(248, 251, 252, 0.96);
+    border: 1px solid rgba(0, 66, 97, 0.13);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* Eleva la tarjeta para indicar que es interactiva. */
+.producto-card:hover {
+    box-shadow: 0 24px 55px rgba(0, 66, 97, 0.18);
+    transform: translateY(-7px);
+}
+
+/* Área visual del producto. */
+.producto-imagen {
+    position: relative;
+    /* La altura termina justo después del producto y antes del texto de la lámina. */
+    min-height: 18rem;
+    overflow: hidden;
+    background-color: #edf3f6;
+    background-image: url("/img/catalogo-productos-rutta.jpeg");
+    background-repeat: no-repeat;
+    /* El 320 % divide visualmente la lámina original en sus tres productos. */
+    background-size: 320% auto;
+}
+
+/* Muestra y centra el primer producto de la lámina: mochila. */
+.producto-imagen.mochilas {
+    background-position: 7% top;
+}
+
+/* Muestra y centra el segundo producto de la lámina: chamarra. */
+.producto-imagen.ropa {
+    background-position: center top;
+}
+
+/* El 91 % desplaza las botas hacia el centro para evitar que se corten a la izquierda. */
+.producto-imagen.calzado {
+    background-position: 91% top;
+}
+
+/* No agrega una capa encima: así mochila, chamarra y botas quedan completamente visibles. */
+.producto-imagen::after {
+    display: none;
+    content: "";
+}
+
+/* Etiqueta de categoría superpuesta. */
+.producto-etiqueta {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.42rem 0.7rem;
+    color: white;
+    background: var(--verde-rutta);
+    border-radius: 0.45rem;
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Botón de favorito en la esquina superior derecha. */
+.boton-favorito {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    display: grid;
+    width: 2.45rem;
+    height: 2.45rem;
+    place-items: center;
+    color: var(--verde-profundo);
+    background: rgba(248, 251, 252, 0.9);
+    border: 1px solid var(--borde);
+    border-radius: 50%;
+}
+
+/* Cambia el favorito a dorado cuando está activo. */
+.boton-favorito.activo {
+    color: white;
+    background: var(--dorado-rutta);
+}
+
+/* Contenido textual y técnico de la tarjeta. */
+.producto-cuerpo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+/* Título del producto. */
+.producto-cuerpo h3 {
+    margin-bottom: 0.25rem;
+    font-family: var(--fuente-funcional);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+}
+
+/* Descripción breve debajo del nombre. */
+.producto-resumen {
+    min-height: 3rem;
+    margin-bottom: 0.65rem;
+    color: var(--texto-suave);
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+/* Precio principal. */
+.producto-precio {
+    margin-bottom: 1rem;
+    color: var(--verde-rutta);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* Tabla “¿Es para ti?” inspirada en la cuarta imagen. */
+.producto-perfil {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 0.85rem;
+}
+
+/* Encabezado crema de la tabla de perfil. */
+.producto-perfil h4 {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0.65rem 0.8rem;
+    color: var(--verde-profundo);
+    background: rgba(225, 235, 239, 0.8);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+/* Cada dato se organiza en dos columnas. */
+.dato-perfil {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 0.9fr) 1.15fr;
+    gap: 0.6rem;
+    padding: 0.48rem 0.75rem;
+    font-size: 0.66rem;
+    line-height: 1.35;
+}
+
+/* Crea líneas divisorias internas. */
+.dato-perfil:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 66, 97, 0.1);
+}
+
+/* Destaca la etiqueta de cada dato. */
+.dato-perfil strong {
+    display: flex;
+    gap: 0.35rem;
+    color: var(--tinta);
+}
+
+/* Lista de características técnicas. */
+.producto-caracteristicas {
+    padding: 0;
+    margin: 0 0 1.2rem;
+    list-style: none;
+}
+
+/* Cada característica incluye un ícono. */
+.producto-caracteristicas li {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    color: #52616a;
+    border-bottom: 1px solid rgba(0, 66, 97, 0.1);
+    font-size: 0.7rem;
+}
+
+/* Colorea los íconos de características. */
+.producto-caracteristicas i {
+    color: var(--verde-rutta);
+    font-size: 0.92rem;
+}
+
+/* Empuja los botones al final para que las tarjetas queden alineadas. */
+.producto-acciones {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.6rem;
+    margin-top: auto;
+}
+
+/* Botón de producto con el color principal. */
+.boton-producto {
+    display: inline-flex;
+    min-height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    color: white;
+    background: var(--verde-rutta);
+    border: 0;
+    border-radius: 0.65rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+/* Estado hover del botón de producto. */
+.boton-producto:hover {
+    background: var(--verde-profundo);
+}
+
+/* Botón cuadrado para agregar directamente al carrito. */
+.boton-agregar {
+    display: grid;
+    width: 2.8rem;
+    height: 2.8rem;
+    place-items: center;
+    color: var(--verde-profundo);
+    background: var(--dorado-rutta);
+    border: 0;
+    border-radius: 0.65rem;
+    font-size: 1.05rem;
+}
+
+/* Mensaje centrado cuando no hay coincidencias. */
+.estado-vacio {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Ícono grande del estado vacío. */
+.estado-vacio>i {
+    color: var(--dorado-rutta);
+    font-size: 3rem;
+}
+
+/* Título del estado vacío. */
+.estado-vacio h3 {
+    margin: 0.8rem 0 0.2rem;
+    font-size: 2rem;
+}
+
+/* ================================================================
+   7. GUÍAS, RUTAS Y CONSEJOS
+   ================================================================ */
+.guias-seccion {
+    color: white;
+    background: var(--verde-profundo);
+}
+
+/* Variante clara de la sobrelínea. */
+.sobrelinea-clara {
+    color: #ffd08a;
+}
+
+/* Título y descripción de introducción. */
+.guias-intro h2 {
+    color: white;
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    line-height: 0.95;
+}
+
+.guias-intro p:not(.sobrelinea) {
+    margin: 1.2rem 0 1.8rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.9rem;
+}
+
+/* Botón contorneado para fondos oscuros. */
+.boton-contorno-claro {
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Estado hover del botón contorneado. */
+.boton-contorno-claro:hover {
+    color: var(--verde-profundo);
+    background: var(--crema-rutta);
+    transform: translateY(-2px);
+}
+
+/* Tarjeta de artículo con imagen de fondo. */
+.guia-card {
+    /* La variable recibe una fotografía diferente desde la clase de cada tarjeta. */
+    --imagen-guia: none;
+    position: relative;
+    display: flex;
+    min-height: 26rem;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1.25rem;
+    background-image:
+        linear-gradient(0deg, rgba(0, 33, 49, 0.96) 0%, rgba(0, 33, 49, 0.05) 70%),
+        var(--imagen-guia);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radio);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease;
+}
+
+/* Fotografía exclusiva de la tarjeta "Guía". Cambia únicamente esta URL para reemplazarla. */
+.guia-mochila {
+    --imagen-guia: url("/img/guia-mochila-rutta.png");
+}
+
+/* Fotografía exclusiva de la tarjeta "Ruta". Cambia únicamente esta URL para reemplazarla. */
+.guia-rutas {
+    --imagen-guia: url("/img/guia-rutas-rutta.png");
+}
+
+/* Fotografía exclusiva de la tarjeta "Consejo". Cambia únicamente esta URL para reemplazarla. */
+.guia-checklist {
+    --imagen-guia: url("/img/guia-checklist-rutta.png");
+}
+
+/* Eleva la guía en hover. */
+.guia-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Etiqueta pequeña superior. */
+.guia-etiqueta {
+    align-self: flex-start;
+    padding: 0.42rem 0.65rem;
+    color: white;
+    background: rgba(0, 66, 97, 0.88);
+    border-radius: 0.42rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* Título de cada guía. */
+.guia-card h3 {
+    color: white;
+    font-family: var(--fuente-funcional);
+    font-size: 1.18rem;
+    line-height: 1.25;
+}
+
+/* Enlace de lectura dentro de la guía. */
+.guia-card a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ================================================================
+   8. SECCIÓN EDITORIAL Y FOOTER
+   ================================================================ */
+.sobre-seccion {
+    position: relative;
+    overflow: hidden;
+    background: var(--marfil);
+}
+
+/* Mantiene el contenido por encima del isotipo decorativo. */
+.sobre-seccion .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Reutiliza el símbolo de montaña como marca de agua en el cierre. */
+.isotipo-decorativo {
+    position: absolute;
+    right: -3rem;
+    bottom: -5rem;
+    width: clamp(15rem, 28vw, 27rem);
+    height: auto;
+    opacity: 0.055;
+    pointer-events: none;
+    transform: rotate(-4deg);
+}
+
+/* Párrafo informativo de la marca. */
+.sobre-seccion .col-lg-5>p {
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+}
+
+/* Enlace editorial de regreso. */
+.enlace-editorial {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: center;
+    color: var(--verde-rutta);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Subraya el enlace al pasar el cursor. */
+.enlace-editorial:hover {
+    color: var(--verde-profundo);
+    text-decoration: underline;
+}
+
+/* Pie de página oscuro. */
+.pie-pagina {
+    padding: 2rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    background: var(--azul-profundo);
+    font-size: 0.75rem;
+}
+
+/* Distribuye la marca, el crédito y el aviso legal en el pie de página. */
+.pie-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Alinea el isotipo con el lema de Rutta. */
+.pie-marca {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+/* Coloca el isotipo sobre una superficie clara para conservar su contraste. */
+.pie-marca>img {
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: 0.35rem;
+    object-fit: contain;
+    background: var(--gris-muy-claro);
+    border-radius: 0.75rem;
+}
+
+/* Presenta de forma discreta el crédito visual de Trail Coders. */
+.credito-trail-coders {
+    display: inline-flex;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+    color: rgba(255, 255, 255, 0.82);
+    background: rgba(43, 43, 43, 0.28);
+    border: 1px solid rgba(40, 168, 224, 0.28);
+    border-radius: 0.75rem;
+}
+
+/* Limita el ícono de Trail Coders sin alterar sus proporciones. */
+.credito-trail-coders img {
+    width: 3rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+/* Resalta únicamente el nombre del equipo. */
+.credito-trail-coders strong {
+    color: white;
+}
+
+/* Muestra la marca en color claro dentro del footer. */
+.pie-pagina .marca-nombre {
+    color: white;
+    font-size: 1.75rem;
+}
+
+/* ================================================================
+   9. BÚSQUEDA, MODAL Y NOTIFICACIÓN
+   ================================================================ */
+.buscador-panel {
+    min-height: 17rem;
+    color: var(--tinta);
+    background: var(--marfil);
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Limita el ancho del grupo de búsqueda. */
+.buscador-panel .input-group {
+    max-width: 55rem;
+    margin: 0 auto;
+}
+
+/* Integra el ícono al campo. */
+.buscador-panel .input-group-text {
+    color: var(--verde-rutta);
+    background: white;
+    border-color: var(--borde);
+}
+
+/* Personaliza el input. */
+.buscador-panel .form-control {
+    border-color: var(--borde);
+    box-shadow: none;
+    font-size: 1rem;
+}
+
+/* Panel lateral que permite revisar todo lo añadido al carrito. */
+.carrito-panel {
+    width: min(31rem, 94vw) !important;
+    color: var(--tinta);
+    background: var(--marfil);
+    border-left: 1px solid var(--borde);
+}
+
+/* Separa el encabezado del contenido desplazable. */
+.carrito-encabezado {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Aplica la tipografía editorial al título del carrito. */
+.carrito-encabezado h2 {
+    color: var(--verde-profundo);
+    font-family: var(--fuente-editorial);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Da espacio a la lista de productos del panel. */
+.carrito-cuerpo {
+    padding: 1.25rem 1.5rem;
+}
+
+/* Centra el mensaje mostrado antes de agregar el primer producto. */
+.carrito-vacio {
+    display: grid;
+    min-height: 22rem;
+    place-items: center;
+    align-content: center;
+    gap: 0.7rem;
+    text-align: center;
+}
+
+/* Círculo decorativo que contiene el carrito vacío. */
+.carrito-vacio-icono {
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 0.35rem;
+    place-items: center;
+    color: var(--verde-rutta);
+    background: rgba(40, 168, 224, 0.1);
+    border-radius: 50%;
+    font-size: 1.65rem;
+}
+
+/* Título del estado vacío. */
+.carrito-vacio h3 {
+    margin: 0;
+    color: var(--verde-profundo);
+    font-family: var(--fuente-editorial);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Descripción corta del estado vacío. */
+.carrito-vacio p {
+    max-width: 20rem;
+    margin-bottom: 0.6rem;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+/* Organiza las filas del carrito una debajo de otra. */
+.lista-carrito {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Cada fila contiene una miniatura y la información de compra. */
+.carrito-item {
+    display: grid;
+    grid-template-columns: 6.4rem 1fr;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Miniatura que reutiliza la lámina de productos con un recorte más pequeño. */
+.carrito-miniatura {
+    min-height: 7.7rem;
+    background-color: var(--crema-rutta);
+    background-image: url("/img/catalogo-productos-rutta.jpeg");
+    background-repeat: no-repeat;
+    /* Un acercamiento mayor evita que aparezcan los textos de la lámina en miniatura. */
+    background-size: 480% auto;
+    border: 1px solid rgba(0, 66, 97, 0.12);
+    border-radius: 0.8rem;
+}
+
+/* Centra cada producto también dentro de su miniatura. */
+.carrito-miniatura.mochilas {
+    background-position: 12% top;
+}
+
+.carrito-miniatura.ropa {
+    background-position: center top;
+}
+
+.carrito-miniatura.calzado {
+    background-position: 86% top;
+}
+
+/* Permite que la información utilice correctamente el espacio restante. */
+.carrito-item-info {
+    min-width: 0;
+}
+
+/* Categoría pequeña colocada encima del nombre. */
+.carrito-item-categoria {
+    margin-bottom: 0.2rem;
+    color: var(--dorado-oscuro);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Nombre del producto añadido. */
+.carrito-item h3 {
+    margin-bottom: 0.35rem;
+    color: var(--verde-profundo);
+    font-family: var(--fuente-funcional);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Subtotal de la fila. */
+.carrito-item-precio {
+    margin-bottom: 0.75rem;
+    color: var(--verde-rutta);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Coloca el control de cantidad y eliminar en la misma línea. */
+.carrito-item-acciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+/* Agrupa los botones menos, cantidad y más. */
+.control-cantidad {
+    display: inline-grid;
+    grid-template-columns: 2rem 2.1rem 2rem;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 2rem;
+}
+
+/* Unifica el tamaño de los controles de cantidad. */
+.control-cantidad button,
+.control-cantidad span {
+    display: grid;
+    min-height: 2rem;
+    place-items: center;
+    color: var(--verde-profundo);
+    background: transparent;
+    border: 0;
+    font-size: 0.85rem;
+}
+
+/* Destaca los botones al pasar el cursor o utilizar el teclado. */
+.control-cantidad button:hover,
+.control-cantidad button:focus-visible {
+    color: white;
+    background: var(--verde-rutta);
+}
+
+/* Botón individual para eliminar una fila. */
+.boton-eliminar {
+    display: grid;
+    width: 2.1rem;
+    height: 2.1rem;
+    place-items: center;
+    color: #8a3f36;
+    background: transparent;
+    border: 1px solid rgba(138, 63, 54, 0.26);
+    border-radius: 50%;
+}
+
+/* Refuerza la acción de eliminar únicamente al señalarla. */
+.boton-eliminar:hover,
+.boton-eliminar:focus-visible {
+    color: white;
+    background: #8a3f36;
+}
+
+/* Zona inferior con el importe y las acciones del carrito. */
+.carrito-resumen {
+    padding: 1.25rem 1.5rem 1.5rem;
+    background: #edf3f6;
+    border-top: 1px solid var(--borde);
+}
+
+/* Alinea la etiqueta “Total” y el importe. */
+.carrito-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+/* Hace visible el importe final. */
+.carrito-total strong {
+    color: var(--verde-rutta);
+    font-size: 1.25rem;
+}
+
+/* Texto informativo colocado debajo del total. */
+.carrito-resumen>p {
+    margin-bottom: 1rem;
+    color: var(--texto-suave);
+    font-size: 0.7rem;
+}
+
+/* Acción secundaria que elimina todos los productos. */
+.boton-vaciar {
+    display: block;
+    margin: 0.85rem auto 0;
+    padding: 0.25rem;
+    color: var(--texto-suave);
+    background: transparent;
+    border: 0;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+/* Fondo del modal de producto. */
+.modal-producto {
+    background: var(--marfil);
+    border: 0;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+/* Grid utilizado dentro del detalle. */
+.detalle-grid {
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.8fr) 1.2fr;
+    gap: 1.5rem;
+}
+
+/* Reutiliza el recorte del catálogo dentro del modal. */
+.detalle-imagen {
+    min-height: 24rem;
+    background-color: var(--crema-rutta);
+    background-image: url("/img/catalogo-productos-rutta.jpeg");
+    background-repeat: no-repeat;
+    /* Mantiene el mismo encuadre centrado que se utiliza en las tarjetas. */
+    background-size: 320% auto;
+    border-radius: 0.9rem;
+}
+
+/* Posiciones correspondientes a las tres categorías. */
+.detalle-imagen.mochilas {
+    background-position: 7% top;
+}
+
+.detalle-imagen.ropa {
+    background-position: center top;
+}
+
+.detalle-imagen.calzado {
+    background-position: 91% top;
+}
+
+/* Precio destacado dentro del modal. */
+.detalle-precio {
+    margin: 0.75rem 0;
+    color: var(--verde-rutta);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Lista de especificaciones del modal. */
+.detalle-lista {
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Espaciado de cada especificación. */
+.detalle-lista li {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+/* Toast de confirmación del carrito. */
+.toast-rutta {
+    color: white;
+    background: var(--verde-rutta);
+    border: 0;
+    border-radius: 0.8rem;
+    box-shadow: var(--sombra);
+}
+
+/* Colorea el ícono del toast con el acento dorado. */
+.toast-rutta i {
+    color: #ffd08a;
+    font-size: 1.25rem;
+}
+
+/* ================================================================
+   10. DISEÑO RESPONSIVO
+   Ajusta la composición para tabletas y celulares.
+   ================================================================ */
+@media (max-width: 991.98px) {
+
+    /* Permite que el aviso legal ocupe una fila completa en tabletas. */
+    .pie-contenido {
+        grid-template-columns: 1fr auto;
+    }
+
+    /* Coloca el aviso legal debajo de los dos bloques principales. */
+    .pie-contenido>p {
+        grid-column: 1 / -1;
+    }
+
+    /* Presenta el menú móvil como una superficie separada. */
+    .navbar-collapse {
+        margin-top: 0.9rem;
+        padding: 1rem;
+        background: var(--marfil);
+        border: 1px solid var(--borde);
+        border-radius: 1rem;
+        box-shadow: var(--sombra);
+    }
+
+    /* Alinea los enlaces móviles a la izquierda. */
+    .barra-navegacion .nav-link {
+        margin: 0;
+        padding: 0.65rem 0 !important;
+    }
+
+    /* Conserva la imagen a la derecha y el texto legible a la izquierda. */
+    .hero-capa {
+        background: linear-gradient(90deg, rgba(225, 235, 239, 0.98) 0%, rgba(225, 235, 239, 0.86) 58%, rgba(225, 235, 239, 0.28) 100%);
+    }
+
+    /* Permite que encabezado y filtros se apilen. */
+    .encabezado-productos {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Alinea los filtros a la izquierda. */
+    .filtros-productos {
+        justify-content: flex-start;
+    }
+
+    /* Reduce el tamaño visual de los productos. */
+    .producto-imagen {
+        min-height: 18rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    /* Reduce la altura de la portada en celular. */
+    .hero-rutta,
+    .min-vh-75 {
+        min-height: 42rem;
+    }
+
+    /* Cambia el encuadre para mantener visible al excursionista. */
+    .hero-rutta {
+        background-position: 66% center;
+    }
+
+    /* Oscurece y compacta la capa para mejorar el contraste móvil. */
+    .hero-capa {
+        background: linear-gradient(90deg, rgba(225, 235, 239, 0.98) 0%, rgba(225, 235, 239, 0.91) 72%, rgba(225, 235, 239, 0.45) 100%);
+    }
+
+    /* Limita el ancho del texto para no cubrir toda la fotografía. */
+    .hero-contenido .col-lg-6 {
+        max-width: 88%;
+    }
+
+    /* Ajusta el título principal. */
+    .hero-rutta h1 {
+        font-size: clamp(3.8rem, 17vw, 5.7rem);
+    }
+
+    /* Las guías se muestran un poco más compactas. */
+    .guia-card {
+        min-height: 22rem;
+    }
+
+    /* El detalle de producto cambia a una sola columna. */
+    .detalle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce la imagen del modal. */
+    .detalle-imagen {
+        min-height: 19rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    /* Reduce el imagotipo para dejar espacio a los controles móviles. */
+    .marca-logo {
+        width: 7.4rem;
+    }
+
+    /* Apila los elementos del pie de página en pantallas estrechas. */
+    .pie-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    /* Devuelve el aviso legal a la única columna disponible. */
+    .pie-contenido>p {
+        grid-column: auto;
+    }
+
+    /* Mantiene el crédito compacto y alineado al inicio. */
+    .credito-trail-coders {
+        justify-self: start;
+    }
+
+    /* Apila los dos botones de la portada. */
+    .hero-botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Ambos botones ocupan el ancho disponible. */
+    .hero-botones .btn {
+        width: 100%;
+    }
+
+    /* Disminuye el espacio general de las secciones. */
+    .seccion {
+        padding: 4rem 0;
+    }
+
+    /* Hace que los filtros ocupen todo el ancho. */
+    .filtros-productos {
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    /* Distribuye los filtros en dos columnas. */
+    .filtro {
+        flex: 1 1 40%;
+    }
+
+    /* Ajusta la tabla de perfil a una sola columna en pantallas pequeñas. */
+    .dato-perfil {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+}
+
+/* Respeta la preferencia del sistema para reducir animaciones. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
