@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Cabeza y hombros con el acento naranja de la identidad. -->
+  <circle cx="16" cy="9" r="5.5" stroke="#1d5278" stroke-width="2.2"/>
+  <path d="M5 28v-3a11 8 0 0 1 22 0v3Z" stroke="#1d5278" stroke-width="2.2" stroke-linejoin="round"/>
+  <circle cx="16" cy="23.5" r="2" fill="#f2a43a"/>
+</svg>

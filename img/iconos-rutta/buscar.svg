@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Lupa: trazo azul y mango naranja, ambos vectoriales. -->
+  <circle cx="13.5" cy="13.5" r="9" stroke="#1d5278" stroke-width="2.4"/>
+  <path d="m20 20 8 8" stroke="#f2a43a" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#004261" stroke-width="3" stroke-linejoin="round">
+  <!-- Asa, tirantes y compartimento principal de la mochila. -->
+  <path d="M24 10V7a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v3M17 25l-5 6v25M47 25l5 6v25"/>
+  <rect x="16" y="10" width="32" height="50" rx="8" fill="#fff"/>
+  <!-- Solapa y broches frontales. -->
+  <path d="M16 21q16 10 32 0M25 21v10M39 21v10" stroke-linecap="round"/>
+  <rect x="22" y="23" width="6" height="9" rx="1.5" fill="#fff"/>
+  <rect x="36" y="23" width="6" height="9" rx="1.5" fill="#fff"/>
+  <!-- Bolsillo con cierre naranja, siguiendo el icono adjunto. -->
+  <rect x="21" y="37" width="22" height="18" rx="4"/>
+  <path d="M25 42h14" stroke-linecap="round"/>
+  <path d="M26 42v6" stroke="#f2a43a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M12 39H8v15h8M52 39h4v15h-8"/>
+</svg>

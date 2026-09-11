@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Variante del carrito para controles deshabilitados. -->
+  <path d="M3 5h4l4.1 16H25l4-12H8" stroke="#1d5278" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="13" cy="27" r="2.5" fill="#b9cbd5"/>
+  <circle cx="24" cy="27" r="2.5" fill="#b9cbd5"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Brújula compacta para navegación y datos del producto. -->
+  <path d="M16 2v3" stroke="#1d5278" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="16" cy="18" r="12" stroke="#1d5278" stroke-width="2.4"/>
+  <path d="m22 11-3.5 10-9.5 5 4-11Z" fill="#1d5278"/>
+  <path d="m22 11-3.5 10-5-6Z" fill="#f2a43a"/>
+  <circle cx="16" cy="18" r="2.5" fill="#fff"/>
+</svg>
