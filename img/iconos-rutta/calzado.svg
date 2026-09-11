@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-linejoin="round">
+  <!-- Bota de senderismo: silueta completa con espacio alrededor. -->
+  <path d="m13 12 17-3 5 19 9 10 11 3c5 1 6 6 5 11H7L5 43l5-9Z" fill="#004261" stroke="#004261" stroke-width="2"/>
+  <!-- Costuras claras para separar caña, talón y punta. -->
+  <path d="m12 21 17-4M10 33l13 5 6 11M35 28l-9 4 9 10 11 3 9-4M8 49h50" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- Cordones de color naranja. -->
+  <path d="m26 22 8-3m-6 9 8-3m-3 9 8-4m-2 9 7-4" fill="none" stroke="#f2a43a" stroke-width="3.6" stroke-linecap="round"/>
+  <!-- Suela con tacos simplificados para conservar legibilidad. -->
+  <path d="M6 51h54v5h-5v4h-6v-4h-7v4h-6v-4h-8v4h-6v-4h-7v4H9v-4H6Z" fill="#004261"/>
+</svg>

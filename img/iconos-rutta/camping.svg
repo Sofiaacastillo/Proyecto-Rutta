@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-linejoin="round">
+  <!-- Tienda triangular con entrada naranja. -->
+  <path d="m28 9 8 11m0-11-8 11M7 56 32 16l25 40Z" fill="#004261" stroke="#004261" stroke-width="5" stroke-linecap="round"/>
+  <path d="m32 27-17 29h34Z" fill="#f2a43a" stroke="#fff" stroke-width="3"/>
+  <path d="M32 29v27" stroke="#fff" stroke-width="2.8"/>
+  <path d="m3 51 5 9m53-9-5 9" stroke="#004261" stroke-width="3.4" stroke-linecap="round"/>
+</svg>

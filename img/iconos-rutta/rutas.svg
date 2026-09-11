@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#1d5278" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Montañas y camino que termina en un punto de destino. -->
+  <path d="m7 28 10-15 9 12 5-7 8 10M13 53h12c11 0 13-7 5-12s-4-8 6-8h8c9 0 10-8 10-13"/>
+  <path d="M54 3a8 8 0 0 0-8 8c0 5 8 13 8 13s8-8 8-13a8 8 0 0 0-8-8Z" fill="#fff" stroke-width="3"/>
+  <circle cx="54" cy="11" r="3" fill="#f2a43a" stroke="none"/>
+  <circle cx="9" cy="53" r="6" fill="#f2a43a"/>
+  <!-- Árbol que refuerza la idea de un recorrido al aire libre. -->
+  <path d="M50 59V42m-6 6 6-7 6 7m-12 5 6-6 6 6"/>
+</svg>

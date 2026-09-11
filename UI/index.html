@@ -1,14 +1,9 @@
 <!doctype html>
-<!-- Declara que el documento utiliza la versión moderna de HTML5. -->
 <html lang="es">
-  <!-- Indica que todo el contenido de la página está escrito en español. -->
   <head>
-    <!-- Permite utilizar correctamente acentos, eñes y caracteres especiales. -->
     <meta charset="UTF-8" />
-
     <!-- Hace que la página se adapte al ancho de celulares, tabletas y computadoras. -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <!-- Resume el contenido para buscadores como Google. -->
     <meta
       name="description"
@@ -18,8 +13,8 @@
     <!-- Texto que aparece en la pestaña del navegador. -->
     <title>Rutta | Equípate para avanzar</title>
 
-    <!-- Utiliza el isotipo de montaña y sol como ícono de la pestaña. -->
-    <link rel="icon" type="image/png" href="/img/isotipo-rutta.png" />
+   <!--? NUEVA IDENTIDAD: usa la brújula adjunta como ícono de la pestaña. -->
+    <link rel="icon" type="image/svg+xml" href="/img/iconos-rutta/brujula.svg" />
 
     <!-- Preconecta con Google Fonts para acelerar la carga de las tipografías. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +44,7 @@
     <link rel="stylesheet" href="/UI/Styles/styles.css" />
   </head>
 
-  <body>
+  <body class="rutta-identidad">
     <!-- Enlace accesible que permite saltar directamente al contenido principal. -->
     <a class="salto-contenido" href="#contenido-principal">Saltar al contenido</a>
 
@@ -60,8 +55,8 @@
       <div class="container">
         <!-- El logotipo lleva al inicio de la misma página. -->
         <a class="navbar-brand marca-rutta" href="#inicio" aria-label="Rutta, volver al inicio">
-          <!-- Imagotipo horizontal extraído de la nueva guía de identidad visual. -->
-          <img class="marca-logo" src="/img/logo-rutta-horizontal.png" alt="Rutta" />
+          <!--? NUEVA IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
+          <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
 
         <!-- Contenedor de acciones visible en dispositivos móviles. -->
@@ -70,6 +65,12 @@
           <button class="boton-icono" type="button" data-accion="buscar" aria-label="Buscar productos">
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
+
+          <!--? INICIO CONEXIÓN LOGIN: acceso también disponible en celular. -->
+          <a class="boton-icono" href="./Login/login.html" aria-label="Iniciar sesión">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <!--? FIN CONEXIÓN LOGIN. -->
 
           <!-- Botón del carrito con contador dinámico. -->
           <button class="boton-icono boton-carrito" type="button" data-accion="carrito" aria-label="Abrir carrito">
@@ -128,9 +129,11 @@
             <button class="boton-icono" type="button" data-accion="buscar" aria-label="Buscar productos">
               <i class="bi bi-search" aria-hidden="true"></i>
             </button>
-            <button class="boton-icono" type="button" aria-label="Perfil del usuario">
+            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
+            <a class="boton-icono" href="./Login/login.html" aria-label="Iniciar sesión">
               <i class="bi bi-person" aria-hidden="true"></i>
-            </button>
+            </a>
+            <!--? FIN CONEXIÓN LOGIN. -->
             <button class="boton-icono boton-carrito" type="button" data-accion="carrito" aria-label="Abrir carrito">
               <i class="bi bi-cart3" aria-hidden="true"></i>
               <span class="contador-carrito" data-contador-carrito>0</span>
@@ -226,7 +229,7 @@
             </div>
             <div class="col">
               <button class="categoria-card" type="button" data-filtro="calzado">
-                <!-- Caminante: sustituye el ícono inexistente de bota y comunica senderismo. -->
+                <!--? El bloque nuevo de CSS muestra la bota adjunta en esta categoría. -->
                 <i class="bi bi-person-walking" aria-hidden="true"></i>
                 <strong>Calzado</strong>
                 <span>Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
@@ -234,7 +237,7 @@
             </div>
             <div class="col">
               <button class="categoria-card" type="button" data-filtro="ropa">
-                <!-- Silueta de prenda: identifica la categoría de ropa. -->
+                <!--? El CSS muestra la chamarra adjunta sin cambiar el filtro existente. -->
                 <i class="bi bi-person-standing-dress" aria-hidden="true"></i>
                 <strong>Ropa</strong>
                 <span>Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
@@ -242,7 +245,7 @@
             </div>
             <div class="col">
               <button class="categoria-card" type="button" data-filtro="todos">
-                <!-- Triángulo: funciona como representación sencilla de una tienda de campaña. -->
+                <!--? El CSS sustituye el triángulo por la tienda de campaña adjunta. -->
                 <i class="bi bi-triangle-fill" aria-hidden="true"></i>
                 <strong>Camping</strong>
                 <span>Próximamente <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
@@ -363,8 +366,8 @@
       <div class="container pie-contenido">
         <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
         <div class="pie-marca">
-          <img src="/img/isotipo-rutta.png" alt="" aria-hidden="true" />
-          <div><strong class="marca-nombre">Rutta</strong><span> · Equípate. Explora. Avanza.</span></div>
+          <!-- ?El logotipo nuevo reemplaza la marca anterior sin cambiar el footer. -->
+          <a class="marca-logo-actual marca-logo-pie" href="#inicio" aria-label="Rutta, volver al inicio"></a>
         </div>
 
         <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
