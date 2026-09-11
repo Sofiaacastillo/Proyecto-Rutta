@@ -19,6 +19,9 @@ const productos = [
     // Ícono de Bootstrap Icons asociado con la categoría.
     iconoCategoria: "bi-backpack4",
 
+    // Ruta de la imagen que se mostrará en la tarjeta y en el modal.
+    imagen: "/img/productos/mochila-trek-45l.svg",
+
     // Nombre comercial del producto.
     nombre: "Mochila Trek 45L",
 
@@ -57,6 +60,7 @@ const productos = [
     categoria: "ropa",
     categoriaNombre: "Ropa",
     iconoCategoria: "bi-person-standing-dress",
+    imagen: "/img/productos/chamarra-trail-shell.svg",
     nombre: "Chamarra Trail Shell",
     precio: 1499,
     resumen: "Capa ligera e impermeable que te protege del viento y la lluvia sin limitar tu movimiento.",
@@ -78,6 +82,7 @@ const productos = [
     categoria: "calzado",
     categoriaNombre: "Calzado",
     iconoCategoria: "bi-boot",
+    imagen: "/img/productos/botas-sendero-pro.svg",
     nombre: "Botas Sendero Pro",
     precio: 2199,
     resumen: "Botas de senderismo resistentes y cómodas para terrenos exigentes y largas caminatas.",
@@ -221,7 +226,10 @@ function crearTarjetaProducto(producto) {
   return `
     <div class="col-md-6 col-xl-4">
       <article class="producto-card">
-        <div class="producto-imagen ${producto.categoria}" role="img" aria-label="${producto.nombre}">
+        <div class="producto-imagen">
+          <!-- La imagen sale del objeto del producto, por eso cada tarjeta puede usar una diferente. -->
+          <img src="${producto.imagen}" alt="${producto.nombre}" />
+
           <span class="producto-etiqueta">
             <i class="bi ${producto.iconoCategoria}" aria-hidden="true"></i>
             ${producto.recomendado ? "Recomendado" : producto.categoriaNombre}
@@ -368,7 +376,10 @@ function abrirProducto(id) {
   // Construye el contenido detallado con imagen, precio y características.
   modalProductoContenido.innerHTML = `
     <div class="detalle-grid">
-      <div class="detalle-imagen ${producto.categoria}" role="img" aria-label="${producto.nombre}"></div>
+      <div class="detalle-imagen">
+        <!--El modal reutiliza exactamente la imagen del producto seleccionado. -->
+        <img src="${producto.imagen}" alt="${producto.nombre}" />
+      </div>
 
       <div>
         <p>${producto.resumen}</p>
@@ -422,7 +433,10 @@ function crearFilaCarrito(elemento) {
   // Devuelve la fotografía, información, selector de cantidad y botón para eliminar.
   return `
     <article class="carrito-item">
-      <div class="carrito-miniatura ${producto.categoria}" role="img" aria-label="${producto.nombre}"></div>
+      <div class="carrito-miniatura">
+        <!--? La miniatura usa la misma imagen independiente del producto. -->
+        <img src="${producto.imagen}" alt="${producto.nombre}" />
+      </div>
 
       <div class="carrito-item-info">
         <p class="carrito-item-categoria">${producto.categoriaNombre}</p>
