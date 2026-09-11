@@ -1,12 +1,12 @@
-#navbar-AU{
-    background-color: #1C4F78;
+#navbar-AU {
+  background-color: #1C4F78;
 }
 
-#trail-coders{
-    background-color: #F2A43A;
-    color: #ffffff;
-    padding: 5px;
-    border-radius: 5px;
+#trail-coders {
+  background-color: #F2A43A;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 #meet-team {
@@ -47,8 +47,8 @@
   filter: drop-shadow(10px 10px 20px #000000);
 }
 
-#quienes-somos{
-    background-color: #CBDDED;
+#quienes-somos {
+  background-color: #CBDDED;
 
 }
 
@@ -60,55 +60,59 @@
   color: #ffffff;
 }
 
-.three-cards{
+.three-cards {
   background-color: #F2A43A;
   transition: all 0.2s ease;
-  box-shadow: 
+  box-shadow:
     inset 5px 5px 5px #ee9b26,
     inset -5px -5px 5px #efaf56
 }
 
-.three-cards:hover{
+.three-cards:hover {
   background-color: #F2A43A;
-   box-shadow: 
+  box-shadow:
     5px 5px 5px #accbe6,
     -5px -5px 5px #e3ecf4;
-    transform: translateY(-5px) scale(1.02);
+  transform: translateY(-5px) scale(1.02);
 }
 
-.three-cards h5{
+.three-cards h5 {
   color: #ffffff;
 }
 
-.three-cards p{
+.three-cards p {
   color: #ffffff;
 }
 
-.icono{
+.icono {
   filter: drop-shadow(0px 1px 2px #000000);
 }
 
-.our-team span{
-color: #017DE8;
+.our-team span {
+  color: #017DE8;
 }
 
-.team-pic{
-  border-radius: 50px;
+.team-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
-.idea{
-  background-color:#1C4F78;
+.idea {
+  background-color: #1C4F78;
 }
 
-.boton{
+.boton {
   background-color: #F2A43A;
   transition: all 0.2s ease;
 }
 
-.boton:hover{
+.boton:hover {
   background-color: #F2A43A;
-  box-shadow: 
+  box-shadow:
     5px 5px 5px #0b4675,
     -5px -5px 5px #355e7f;
-    transform: translateY(-1px) scale(1.01);
+  transform: translateY(-1px) scale(1.01);
 }
