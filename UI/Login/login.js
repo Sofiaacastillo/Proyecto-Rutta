@@ -59,7 +59,5 @@
       contador.textContent = cantidad;
     });
   } catch {
-    // Si el navegador bloquea el almacenamiento, el formulario sigue funcionando.
-    // No se crea almacenamiento alternativo ni se registran datos sensibles.
   }
 })();
