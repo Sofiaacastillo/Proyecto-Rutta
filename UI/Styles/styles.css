@@ -1605,7 +1605,7 @@ h3 {
    INICIO RUTTA LOGIN E IDENTIDAD 
    ================================================================ */
 
-/* 11. LOGOTIPO NUEVO — se conserva el archivo original completo. */
+/* 11. LOGOTIPO NUEVO */
 .rutta-identidad .marca-logo-actual {
     display: block; /* Permite dar dimensiones al span o al enlace de marca. */
     flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
@@ -1622,10 +1622,7 @@ h3 {
     width: 10rem; /* Mantiene la marca legible dentro del footer existente. */
 }
 
-/* 12. ICONOS SVG — versiones vectoriales basadas en la identidad adjunta.
-   Los trazos mantienen bordes suaves al aumentar o reducir su tamaño.
-   Se reutilizan las clases bi del HTML y de las tarjetas creadas por JS.
-   Flechas, checks, cerrar y eliminar conservan su símbolo funcional. */
+/* 12. ICONOS SVG */
 .rutta-identidad .bi-search { --rutta-icono: url("../../img/iconos-rutta/buscar.svg"); }
 .rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("../../img/iconos-rutta/usuario.svg"); }
 .rutta-identidad :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito.svg"); }
@@ -1644,277 +1641,282 @@ h3 {
 .rutta-identidad .categoria-card[data-filtro="calzado"] > i { --rutta-icono: url("../../img/iconos-rutta/calzado.svg"); }
 .rutta-identidad .categoria-card > .bi-compass { --rutta-icono: url("../../img/iconos-rutta/accesorios.svg"); }
 
-/* Cambia la representación del icono, sin tocar eventos ni data-atributos. */
+/* Cambia la representación del icono */
 .rutta-identidad .bi:is(.bi-search, .bi-person, .bi-person-check, .bi-cart3, .bi-cart-plus, .bi-heart, .bi-heart-fill, .bi-backpack4, .bi-boot, .bi-person-standing-dress, .bi-triangle-fill, .bi-compass, .bi-signpost-split, .bi-person-walking, .bi-chat-dots, .bi-sliders)::before {
-    content: ""; /* Oculta solo el glifo antiguo, no el elemento interactivo. */
-    display: inline-block; /* Permite colocar la imagen junto al texto. */
-    width: 1.45em; /* Escala según el tamaño de letra del icono. */
-    height: 1.45em; /* Conserva una caja cuadrada sin deformación. */
-    vertical-align: -0.3em; /* Alinea la imagen con el texto vecino. */
+    content: ""; 
+    display: inline-block; 
+    width: 1.45em; 
+    height: 1.45em; 
+    vertical-align: -0.3em; 
     /**background-color: white; /* Da contraste al azul también sobre botones oscuros. */
-    background-image: var(--rutta-icono); /* Usa el archivo del mapa anterior. */
-    background-size: contain; /* Muestra el icono completo, sin ampliarlo ni recortarlo. */
-    background-position: center; /* Centra cada imagen individualmente. */
-    background-repeat: no-repeat; /* No crea patrones con el icono. */
-    border-radius: 0.2em; /* Suaviza los bordes de la pequeña placa blanca. */
-    image-rendering: auto; /* Deja que el navegador suavice los bordes del SVG. */
+    background-image: var(--rutta-icono); 
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.2em; 
+    image-rendering: auto; 
 }
-
+/* Ajusta el tamaño de los iconos dentro de los botones. */
 .rutta-identidad .boton-icono .bi::before {
-    width: 1.75rem; /* Da a los controles una medida clara y uniforme. */
-    height: 1.75rem; /* Conserva la proporción cuadrada de los SVG. */
-    background-color: transparent; /* Integra el icono directamente en la navegación. */
+    width: 1.75rem; 
+    height: 1.75rem; 
+    background-color: transparent; 
 }
 .rutta-identidad .boton-icono {
-    text-decoration: none; /* El enlace al login no se muestra subrayado. */
+    text-decoration: none; 
 }
 .rutta-identidad .boton-icono:hover {
     background: #e1ebef; /* Mantiene visibles los nuevos iconos azules. */
 }
-.rutta-identidad .categoria-card > i,
+/* Ajusta el tamaño de los iconos dentro de las tarjetas de categoría. */
+/* i es el contenedor del icono, no el icono en sí. */
+.rutta-identidad .categoria-card > i, 
 .rutta-identidad .categoria-card:hover > i,
 .rutta-identidad .categoria-card:focus-visible > i {
-    background: transparent; /* Quita el círculo del sistema de iconos anterior. */
-    border: 0; /* La ilustración ya tiene su propia silueta. */
-    border-radius: 0; /* No recorta botas ni mochilas en forma circular. */
+    background: transparent; 
+    border: 0; 
+    border-radius: 0;
 }
 .rutta-identidad .categoria-card > i::before {
-    width: 100%; /* Ocupa la caja reservada para cada categoría. */
-    height: 100%; /* Mantiene todos los iconos a la misma altura. */
-    background-color: transparent; /* Quita el cuadro blanco que rodeaba los JPG. */
-    background-size: contain; /* Conserva la silueta completa de cada categoría. */
+    width: 100%; 
+    height: 100%; 
+    background-color: transparent; 
+    background-size: contain; 
 }
+/* Refuerza el estado activo de los botones de favoritos sin cambiar su lógica. */
 .rutta-identidad .boton-favorito[aria-pressed="true"] {
-    outline: 2px solid var(--naranja-sol); /* Refuerza el estado activo sin cambiar su lógica. */
+    outline: 2px solid var(--naranja-sol); 
 }
+/* Cambia el icono del botón de menú para que sea un SVG vectorial. */
 .rutta-identidad .navbar-toggler-icon {
-    background-image: url("../../img/iconos-rutta/menu.svg"); /* Menú vectorial. */
-    background-size: contain; /* Conserva completas las tres líneas del menú. */
-    background-position: center; /* Centra el icono dentro del botón. */
-    border-radius: 0.2rem; /* Suaviza su fondo blanco. */
+    background-image: url("../../img/iconos-rutta/menu.svg"); 
+    background-size: contain; 
+    background-position: center; 
+    border-radius: 0.2rem; 
 }
 
 /* 13. LOGIN — ninguna regla de esta parte redefine la portada o el catálogo. */
 .rutta-login-pagina {
-    --login-fondo: url("../../img/hero-rutta.png"); /* CAMBIA AQUÍ LA FOTO DEL LOGIN. */
-    --login-reflejo: -1; /* Refleja la foto existente para situar al caminante a la izquierda. Usa 1 si cambias la foto. */
-    min-height: 100vh; /* Completa al menos una pantalla. */
-    display: flex; /* Organiza cabecera, contenido y pie en vertical. */
-    flex-direction: column; /* Evita colocar las secciones lado a lado. */
-    background: white; /* Reproduce el margen blanco de la referencia. */
+    --login-fondo: url("../../img/hero-rutta.png"); /* CAMBIA LA FOTO DEL LOGIN. */
+    --login-reflejo: -1; 
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    background: white; 
 }
 .rutta-login-pagina .barra-navegacion {
-    background: white; /* El login utiliza una cabecera blanca, sin cambiar la portada. */
-    border-bottom: 0; /* Mantiene limpia la separación con la fotografía. */
-    padding-block: 1rem; /* Da aire al logo y a las acciones. */
+    background: white; 
+    border-bottom: 0; 
+    padding-block: 1rem; 
 }
 .rutta-login-contenedor {
-    width: min(1320px, calc(100% - 4rem)); /* Márgenes laterales como el modelo. */
-    margin: 1rem auto 0; /* Centra la escena debajo de la navegación. */
-    flex: 1; /* Permite que el contenido empuje el pie hacia abajo. */
+    width: min(1320px, calc(100% - 4rem)); 
+    margin: 1rem auto 0; 
+    flex: 1; 
 }
 .rutta-login-escena {
-    position: relative; /* Contiene la foto y la capa superpuesta. */
-    isolation: isolate; /* Mantiene las capas dentro de esta sección. */
-    overflow: hidden; /* Recorta solamente el fondo en las esquinas. */
-    display: flex; /* Coloca la tarjeta dentro de la escena. */
-    align-items: center; /* Centra verticalmente el formulario. */
-    justify-content: flex-end; /* Sitúa el panel azul a la derecha. */
-    min-height: 35rem; /* Evita comprimir los campos. */
-    padding: clamp(1.25rem, 4vw, 4rem); /* Mantiene el panel lejos del borde. */
-    border-radius: 0.9rem; /* Redondea la fotografía como en la referencia. */
+    position: relative; 
+    isolation: isolate; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-end; 
+    min-height: 35rem; 
+    padding: clamp(1.25rem, 4vw, 4rem); 
+    border-radius: 0.9rem; 
 }
 .rutta-login-escena::before {
-    content: ""; /* Crea una capa exclusivamente decorativa. */
-    position: absolute; /* Cubre la escena sin alterar su tamaño. */
-    inset: 0; /* Extiende la fotografía hasta los cuatro bordes. */
-    z-index: -2; /* Sitúa la foto detrás del formulario. */
-    background-image: var(--login-fondo); /* Reutiliza una foto incluida en el proyecto. */
-    background-position: center; /* Centra el encuadre de la montaña. */
-    background-size: cover; /* Llena el espacio conservando la proporción. */
-    transform: scaleX(var(--login-reflejo)); /* Refleja SOLO la foto, nunca textos o logos. */
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    z-index: -2; 
+    background-image: var(--login-fondo); 
+    background-position: center; 
+    background-size: cover; 
+    transform: scaleX(var(--login-reflejo)); 
 }
 .rutta-login-escena::after {
-    content: ""; /* Añade una sombra ligera para separar las capas. */
-    position: absolute; /* Superpone el velo sobre la foto. */
-    inset: 0; /* Cubre toda la escena. */
-    z-index: -1; /* Mantiene el velo detrás del formulario. */
-    background: linear-gradient(90deg, transparent 25%, rgba(0, 32, 55, 0.22)); /* Oscurece suavemente el lado derecho. */
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    z-index: -1; 
+    background: linear-gradient(90deg, transparent 25%, rgba(0, 32, 55, 0.22)); 
 }
 .rutta-login-panel {
-    width: min(100%, 26rem); /* Panel compacto y adaptable al espacio disponible. */
-    padding: clamp(1.5rem, 3vw, 3rem); /* Deja aire alrededor de los campos. */
-    color: white; /* Asegura contraste sobre el panel azul. */
-    background: rgba(16, 64, 96, 0.88); /* Azul translúcido inspirado en la imagen. */
-    border: 1px solid rgba(255, 255, 255, 0.18); /* Delimita el panel sin borde fuerte. */
-    border-radius: 1rem; /* Esquinas redondeadas de la tarjeta de acceso. */
-    box-shadow: 0 16px 45px rgba(0, 27, 45, 0.18); /* Separa el panel de la foto. */
+    width: min(100%, 26rem); 
+    padding: clamp(1.5rem, 3vw, 3rem); 
+    color: white; 
+    background: rgba(16, 64, 96, 0.88); 
+    border: 1px solid rgba(255, 255, 255, 0.18); 
+    border-radius: 1rem; 
+    box-shadow: 0 16px 45px rgba(0, 27, 45, 0.18); 
 }
 .rutta-login-avatar {
-    display: grid; /* Centra el icono de usuario. */
-    place-items: center; /* Centra en ambos ejes. */
-    width: 3.5rem; /* Tamaño del círculo blanco superior. */
-    height: 3.5rem; /* Mantiene la figura circular. */
-    margin: 0 auto 0.65rem; /* Separa el icono del título. */
-    background: white; /* Respeta el icono de la maqueta. */
-    border-radius: 50%; /* Crea su fondo circular. */
-    font-size: 1.65rem; /* Ajusta la ilustración dentro del círculo. */
+    display: grid; 
+    place-items: center; 
+    width: 3.5rem; 
+    height: 3.5rem; 
+    margin: 0 auto 0.65rem; 
+    background: white; 
+    border-radius: 50%; 
+    font-size: 1.65rem; 
 }
 .rutta-login-panel h1 {
-    margin: 0 0 2rem; /* Separa el encabezado de la línea de registro. */
-    color: white; /* Evita heredar el azul de los títulos generales. */
-    font: 700 clamp(1.65rem, 2.5vw, 2rem) / 1.2 var(--fuente-funcional); /* Título sans serif de la referencia. */
-    letter-spacing: 0; /* No usa el espaciado editorial de la portada. */
-    text-align: center; /* Centra el encabezado sobre los campos. */
+    margin: 0 0 2rem; 
+    color: white; 
+    font: 700 clamp(1.65rem, 2.5vw, 2rem) / 1.2 var(--fuente-funcional); 
+    letter-spacing: 0; 
+    text-align: center; 
 }
 .rutta-login-registro {
-    margin-bottom: 1.25rem; /* Separa el texto del primer campo. */
-    color: #ffd28d; /* Acento cálido legible sobre azul. */
-    font-size: 0.875rem; /* Mantiene el texto secundario legible. */
-    text-align: center; /* Centra la invitación de registro. */
+    margin-bottom: 1.25rem; 
+    color: #ffd28d; 
+    font-size: 0.875rem; 
+    text-align: center; 
 }
 .rutta-login-enlace {
-    padding: 0; /* Hace que el botón se lea como un enlace. */
-    border: 0; /* Retira el borde nativo del botón. */
-    background: none; /* Permite ver el panel detrás. */
-    color: #b9edff; /* Azul claro con contraste sobre el panel. */
-    font-size: 0.875rem; /* Evita textos diminutos. */
-    font-weight: 600; /* Distingue las acciones del texto. */
-    text-decoration: underline; /* No depende solo del color para identificarse. */
-    text-underline-offset: 0.2em; /* Aleja la línea de las letras. */
+    padding: 0; 
+    border: 0; 
+    background: none; 
+    color: #b9edff; 
+    font-size: 0.875rem; 
+    font-weight: 600; 
+    text-decoration: underline; 
+    text-underline-offset: 0.2em; 
 }
 .rutta-login-enlace:hover {
-    color: white; /* Confirma visualmente la interacción. */
+    color: white; 
 }
 .rutta-login-campo {
-    margin-bottom: 1.1rem; /* Separa correo y contraseña. */
+    margin-bottom: 1.1rem; 
 }
 .rutta-login-campo label {
-    display: block; /* Mantiene la etiqueta encima del campo. */
-    color: #f3f8fc; /* Contraste suficiente incluso sobre zonas claras de la foto. */
-    font-size: 0.875rem; /* Etiqueta legible. */
-    font-weight: 500; /* Diferencia etiqueta y valor. */
+    display: block; 
+    color: #f3f8fc; 
+    font-size: 0.875rem; 
+    font-weight: 500; 
 }
 .rutta-login-campo input {
-    display: block; /* Cada entrada ocupa su propia línea. */
-    width: 100%; /* Completa el ancho del formulario. */
-    min-height: 2.5rem; /* Facilita el uso con los dedos. */
-    padding: 0.3rem 0.2rem; /* Deja aire alrededor del texto. */
-    color: white; /* Mantiene visible lo escrito. */
-    caret-color: #ffd28d; /* Cursor de escritura con el acento de marca. */
-    background: transparent; /* Solo queda la línea inferior, como en la imagen. */
-    border: 0; /* Quita el rectángulo del control nativo. */
-    border-bottom: 2px solid #b9cfdc; /* Dibuja la línea del input. */
-    border-radius: 0; /* Conserva recta la línea inferior. */
-    font-size: 1rem; /* Evita zoom automático por texto pequeño en móviles. */
+    display: block; 
+    width: 100%; 
+    min-height: 2.5rem; 
+    padding: 0.3rem 0.2rem; 
+    color: white; 
+    caret-color: #ffd28d; 
+    background: transparent; 
+    border: 0; 
+    border-bottom: 2px solid #b9cfdc; 
+    border-radius: 0; 
+    font-size: 1rem; 
 }
 .rutta-login-campo input:focus {
-    border-bottom-color: #ffc465; /* Indica qué campo se está editando. */
+    border-bottom-color: #ffc465; 
 }
 .rutta-login-recuperar {
-    display: block; /* Coloca la recuperación debajo de la contraseña. */
-    margin: 0 0 1.7rem auto; /* Alinea el enlace a la derecha. */
-    color: white; /* Evita el texto negro poco legible del boceto. */
+    display: block; 
+    margin: 0 0 1.7rem auto; 
+    color: white; /
 }
 .rutta-login-enviar {
-    display: block; /* Centra el botón principal como bloque. */
-    min-height: 2.85rem; /* Área de pulsación cómoda. */
-    margin-inline: auto; /* Centra horizontalmente el botón. */
-    padding: 0.65rem 1.8rem; /* Ajusta el tamaño al texto. */
-    border: 0; /* Retira el borde nativo. */
-    border-radius: 0.45rem; /* Mantiene esquinas suaves. */
-    color: #17364a; /* Texto oscuro sobre naranja para mejorar el contraste. */
-    background: var(--naranja-sol); /* Acento naranja del logo adjunto. */
-    font-size: 1rem; /* Botón legible. */
-    font-weight: 700; /* Destaca la acción principal. */
+    display: block; 
+    min-height: 2.85rem; 
+    margin-inline: auto; 
+    padding: 0.65rem 1.8rem; 
+    border: 0; 
+    border-radius: 0.45rem; 
+    color: #17364a; 
+    background: var(--naranja-sol); 
+    font-size: 1rem; 
+    font-weight: 700; 
 }
 .rutta-login-enviar:hover {
-    background: #ffc465; /* Aclara el botón al señalarlo. */
+    background: #ffc465; 
 }
 .rutta-login-enviar:disabled {
-    opacity: 0.6; /* Explica visualmente que aún no se puede enviar. */
-    cursor: not-allowed; /* Refuerza el estado deshabilitado. */
+    opacity: 0.6; 
+    cursor: not-allowed; 
 }
 .rutta-login-ayuda {
-    margin: 1rem 0 0; /* Separa el aviso del botón. */
-    color: #e1edf5; /* Mantiene legible la ayuda cuando JavaScript está desactivado. */
-    font-size: 0.8125rem; /* Aviso secundario, no etiqueta de campo. */
-    line-height: 1.5; /* Facilita leer el aviso en varias líneas. */
-    text-align: center; /* Alinea el aviso con el botón. */
+    margin: 1rem 0 0; 
+    color: #e1edf5; 
+    font-size: 0.8125rem;
+    line-height: 1.5; 
+    text-align: center;
 }
 .rutta-login-pie {
-    width: min(1320px, calc(100% - 4rem)); /* Alinea el pie con la fotografía. */
-    margin: 0 auto; /* Centra el bloque de ayuda. */
-    padding: 1.5rem 0; /* Separa las opciones de la imagen. */
+    width: min(1320px, calc(100% - 4rem)); 
+    margin: 0 auto; 
+    padding: 1.5rem 0; 
 }
 .rutta-login-pie nav {
-    display: flex; /* Distribuye los enlaces legal y de ayuda. */
-    flex-wrap: wrap; /* Permite varias filas en pantallas pequeñas. */
-    justify-content: space-between; /* Aprovecha el ancho sin márgenes artificiales. */
-    gap: 0.5rem 1rem; /* Mantiene separación al envolver enlaces. */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 0.5rem 1rem; 
 }
+/* Mantiene la apariencia de los enlaces y botones informativos en el pie. */
 .rutta-login-pie :is(a, button) {
-    padding: 0.4rem 0; /* Amplía el área táctil. */
-    color: var(--carbon); /* Usa el color de texto del proyecto. */
-    background: none; /* Evita bloques de color en el pie. */
-    border: 0; /* Retira el borde de los botones informativos. */
-    font-size: 0.875rem; /* Mantiene legibles las opciones. */
-    text-decoration: none; /* Apariencia sencilla como en la maqueta. */
+    padding: 0.4rem 0; 
+    color: var(--carbon); 
+    background: none; 
+    border: 0; 
+    font-size: 0.875rem; 
+    text-decoration: none; 
 }
 .rutta-login-pie :is(a, button):hover {
-    text-decoration: underline; /* Hace visible la interacción. */
+    text-decoration: underline; 
 }
 .rutta-login-dialogo {
-    width: min(32rem, calc(100% - 2rem)); /* Respeta los márgenes del dispositivo. */
-    max-height: calc(100dvh - 2rem); /* Permite leer con pantallas pequeñas. */
-    padding: 1.5rem; /* Separa el contenido del borde. */
-    border: 1px solid var(--borde); /* Borde acorde al sitio. */
-    border-radius: 1rem; /* Esquinas consistentes con el panel. */
-    color: var(--carbon); /* Mantiene el texto de ayuda oscuro. */
-    background: white; /* Contrasta con la sombra exterior. */
+    width: min(32rem, calc(100% - 2rem)); 
+    max-height: calc(100dvh - 2rem);
+    padding: 1.5rem; 
+    border: 1px solid var(--borde); 
+    border-radius: 1rem; 
+    color: var(--carbon); 
+    background: white; 
 }
 .rutta-login-dialogo::backdrop {
-    background: rgba(0, 32, 55, 0.6); /* Centra la atención en el aviso abierto. */
+    background: rgba(0, 32, 55, 0.6); 
 }
 .rutta-login-dialogo h2 {
-    font: 700 1.5rem / 1.3 var(--fuente-funcional); /* Encabezado legible y sin herencias editoriales. */
+    font: 700 1.5rem / 1.3 var(--fuente-funcional); 
 }
 
 /* 14. AJUSTES RESPONSIVOS DEL LOGIN Y DE LA NUEVA MARCA. */
 @media (max-width: 991.98px) {
     .rutta-login-contenedor,
     .rutta-login-pie {
-        width: calc(100% - 2rem); /* Reduce márgenes en tabletas. */
+        width: calc(100% - 2rem);
     }
     .rutta-login-escena {
-        padding: 1.5rem; /* Deja espacio a la fotografía alrededor del panel. */
+        padding: 1.5rem; 
     }
 }
 @media (max-width: 575.98px) {
     .rutta-identidad .barra-navegacion .marca-logo-actual {
-        width: 6.6rem; /* Deja espacio para búsqueda, cuenta, carrito y menú. */
+        width: 6.6rem; 
     }
     .rutta-identidad .acciones-movil .boton-icono {
-        width: 2.2rem; /* Conserva todas las acciones sin desbordar a 320 px. */
+        width: 2.2rem; 
     }
     .rutta-identidad .navbar-toggler {
-        padding-inline: 0.4rem; /* Compacta solo los lados del botón de menú. */
+        padding-inline: 0.4rem; 
     }
     .rutta-login-escena {
-        min-height: 39rem; /* Mantiene visible parte de la foto sobre la tarjeta. */
-        align-items: flex-end; /* Baja la tarjeta para descubrir el paisaje. */
-        justify-content: center; /* Centra el panel en celular. */
-        padding: 4.5rem 0.85rem 1rem; /* Evita que toque el borde de la escena. */
+        min-height: 39rem; 
+        align-items: flex-end; 
+        justify-content: center; 
+        padding: 4.5rem 0.85rem 1rem; 
     }
     .rutta-login-panel {
-        width: 100%; /* Aprovecha el espacio sin producir scroll horizontal. */
-        padding: 1.5rem 1.1rem; /* Mantiene cómodos los campos en móvil. */
+        width: 100%; 
+        padding: 1.5rem 1.1rem; 
     }
     .rutta-login-panel h1 {
-        margin-bottom: 1.5rem; /* Compacta el encabezado en móvil. */
+        margin-bottom: 1.5rem; 
     }
     .rutta-login-pie nav {
-        justify-content: center; /* Centra las opciones al pasar a varias filas. */
+        justify-content: center; 
     }
 }
 /* FIN RUTTA LOGIN E IDENTIDAD. */
