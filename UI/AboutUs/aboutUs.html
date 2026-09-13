@@ -101,23 +101,33 @@
         <!--todo ----------------- CARDS DE VALORES -->
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card h-100 border-0 three-cards">
+            <div class="card h-100 border-0 holographic-card">
+              <img
+                src="/img/iconos-rutta/Icono-rutta-brújula.png"
+                alt="Icono decorativo"
+                class="icono-fondo"
+              />
               <div class="card-body text-center p-4">
-
                 <h5 class="fw-bold">Tecnología</h5>
 
                 <p>
-                  Utilizamos nuestras habilidades de desarrollo para transformar
-                  ideas en soluciones digitales.
+                  <b>
+                    Utilizamos nuestras habilidades de desarrollo para
+                    transformar ideas en soluciones digitales.</b
+                  >
                 </p>
               </div>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="card h-100 border-0 three-cards">
+            <div class="card h-100 border-0 holographic-card">
+              <img
+                src="/img/iconos-rutta/Icono-rutta-aventura.png"
+                alt="Icono decorativo"
+                class="icono-fondo"
+              />
               <div class="card-body text-center p-4">
-
                 <h5 class="fw-bold">Aventura</h5>
 
                 <p>
@@ -129,9 +139,13 @@
           </div>
 
           <div class="col-md-4">
-            <div class="card h-100 border-0 three-cards">
+            <div class="card h-100 border-0 holographic-card">
+              <img
+                src="/img/iconos-rutta/icono-rutta-corazón.png"
+                alt="Icono decorativo"
+                class="icono-fondo"
+              />
               <div class="card-body text-center p-4">
-
                 <h5 class="fw-bold">Trabajo en equipo</h5>
 
                 <p>
@@ -146,199 +160,221 @@
     </section>
 
     <!-- EQUIPO -->
-    <section class="py-5">
+    <section class="py-5 team">
       <div class="container py-4">
         <div class="text-center mb-5 our-team">
           <span class="fw-bold"> NUESTRO EQUIPO </span>
 
           <h2 class="display-6 fw-bold mt-2">Los Trail Coders</h2>
 
-          <p class="text-muted">10 integrantes, una misma ruta.</p>
+          <p class="our-team">10 integrantes, una misma ruta.</p>
         </div>
 
-        <div class="row g-4">
-          <!-- INTEGRANTE 1 -->
-<div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-  <div class="card h-100 border-0 shadow-sm text-center team-card">
-    <div class="card-body p-4">
-
-      <img
-        src="/img/equipo/21.png"
-        alt="Sofía Arevalo"
-        class="team-pic mb-4"
-      />
-
-      <h5 class="fw-bold mb-2">Sofía Arevalo</h5>
-
-      <p class="text-muted mb-0">Diseñador UX/UI</p>
-
+<div id="teamCarousel" class="carousel slide py-5" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    
+    <!-- SLIDE 1: Sofía Arevalo -->
+    <div class="carousel-item active">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/21.png"
+                alt="Sofía Arevalo"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Sofía Arevalo</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- SLIDE 2: Fernanda Cabrera -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/16.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Fernanda Cabrera</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Anahi Matamoros -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/14.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Anahi Matamoros</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Ximena López -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/30.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Ximena López</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Fernando Ruperto -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/17.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Fernando Ruperto</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: Alexander Urvina -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/20.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Alexander Urvina</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: Ivan Bolaños -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/19.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Ivan Bolaños</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: Christian Pinal -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/13.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Christian Pinal</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: Alejandro Alanis -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/18.png"
+                alt="Foto de perfil"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Alejandro Alanis</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: Aslan López -->
+    <div class="carousel-item">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 py-4">
+          <div class="card border-0 shadow-sm text-center back-team-card p-2">
+            <div class="card-body team-card py-5">
+              <img
+                src="/img/equipo/15.png"
+                alt="Foto de perfil de Aslan López"
+                class="team-pic mb-4"
+              />
+              <h5 class="fw-bold fs-3 text-dark">Aslan López</h5>
+              <p class="text-muted mb-0 fs-5">Desarrollador</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Controles de navegación -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon " aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
 </div>
-
-          <!-- INTEGRANTE 2 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/equipo/16.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Fernanda Cabrera</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 3 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/equipo/14.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-               
-
-                <h5 class="fw-bold">Anahi Matamoros</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 4 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/guia-mochila-rutta.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Ximena López</h5>
-
-                <p class="text-muted mb-0">Diseñador UX/UI</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 5 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/equipo/17.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Fernando Ruperto</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 6 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-               
-                  <img
-                    src="/img/equipo/20.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Alexander Urvina</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 7 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/equipo/19.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Ivan Bolaños</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 8 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/equipo/13.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Christian Pinal</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 9 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-               
-                  <img
-                    src="/img/equipo/18.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-
-                <h5 class="fw-bold">Alejandro Alanis</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- INTEGRANTE 10 -->
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 border-0 shadow-sm text-center team-card">
-              <div class="card-body p-4">
-                
-                  <img
-                    src="/img/equipo/15.png"
-                    alt="Foto de perfil"
-                    class="team-pic mb-4"
-                  />
-                </div>
-
-                <h5 class="fw-bold">Aslan López</h5>
-
-                <p class="text-muted mb-0">Desarrollador</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -367,18 +403,32 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-4 border-top">
-      <div class="container text-center">
-        <p class="mb-1 fw-bold">Trail Coders</p>
 
-        <p class="text-muted mb-0">
-          Desarrollando experiencias, explorando caminos.
-        </p>
+        <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer class="pie-pagina">
+      <div class="container pie-contenido">
+        <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
+        <div class="pie-marca rutta-identidad">
+          <!-- ?El logotipo nuevo reemplaza la marca anterior sin cambiar el footer. -->
+          <a class="marca-logo-actual marca-logo-pie" href="#inicio" aria-label="Rutta, volver al inicio"></a>
+        </div>
+
+        <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
+        <div class="credito-trail-coders">
+          <img src="/img/trailcoders-logoblanco.png" alt="" aria-hidden="true" />
+          <span>Desarrollado por <strong>Trail Coders</strong></span>
+        </div>
+
+        <!-- El año se completa automáticamente con JavaScript. -->
+        <p class="mb-0">© <span id="anioActual"></span> Rutta. </p>
       </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Conecta el documento con nuestra lógica personalizada. -->
+   <script>
+        document.getElementById('anioActual').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
