@@ -1,0 +1,121 @@
+<!doctype html>
+<!-- Página de preguntas frecuentes y contacto de Rutta. -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Resuelve tus dudas sobre Rutta y comparte tus preguntas." />
+    <title>Ayuda y preguntas frecuentes | Rutta</title>
+    <link rel="icon" type="image/svg+xml" href="../../img/iconos-rutta/brujula.svg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../Styles/styles.css" />
+  </head>
+  <body class="rutta-identidad rutta-ayuda-pagina">
+    <a class="salto-contenido" href="#ayuda-contenido">Saltar al contenido</a>
+    <!-- ==================== NAVEGACIÓN AYUDA ==================== -->
+    <nav class="navbar navbar-expand-lg barra-navegacion" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand marca-rutta" href="../index.html" aria-label="Rutta, volver al inicio">
+          <span class="marca-logo-actual" aria-hidden="true"></span>
+        </a>
+        <!-- Acciones de móvil: se mantienen fuera del menú colapsable. -->
+        <div class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none">
+          <a class="boton-icono" href="../Login/login.html" aria-label="Iniciar sesión"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/usuario.svg" alt="" width="32" height="32" /></a>
+          <a class="boton-icono boton-carrito" href="../index.html#carrito" aria-label="Abrir carrito"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/carrito.svg" alt="" width="32" height="32" /></a>
+        </div>
+        <!-- Bootstrap abre y cierra el menú al pulsar este botón. -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuAyuda" aria-controls="menuAyuda" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuAyuda">
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="../index.html#productos">Equipamiento</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#guias">Guías</a></li>
+            <li class="nav-item"><a class="nav-link" href="./ayuda.html" aria-current="page">Ayuda</a></li>
+            <li class="nav-item"><a class="nav-link" href="../AboutUs/aboutUs.html">Sobre Rutta</a></li>
+          </ul>
+          <div class="acciones-escritorio d-none d-lg-flex align-items-center gap-1">
+            <a class="boton-icono" href="../Login/login.html" aria-label="Iniciar sesión"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/usuario.svg" alt="" width="32" height="32" /></a>
+            <a class="boton-icono boton-carrito" href="../index.html#carrito" aria-label="Abrir carrito"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/carrito.svg" alt="" width="32" height="32" /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- ==================== CONTENIDO FAQ ==================== -->
+    <!-- La cuadrícula de Bootstrap distribuye las preguntas y el formulario. -->
+    <main class="container py-4 py-lg-5" id="ayuda-contenido">
+      <h1 class="rutta-ayuda-titulo mb-4 mb-lg-5">FAQ</h1>
+      <div class="row g-4 g-xl-5 align-items-start">
+        <div class="col-12 col-lg-8">
+          <!-- Cada accordion tiene su propio id para que los grupos sean independientes. -->
+          <section class="mb-4 mb-lg-5" aria-labelledby="faq-titulo-rutta">
+            <h2 class="rutta-ayuda-subtitulo mb-3" id="faq-titulo-rutta">Sobre Rutta</h2>
+            <div class="accordion" id="faq-sobre-rutta"></div>
+          </section>
+          <section class="mb-4 mb-lg-5" aria-labelledby="faq-titulo-compras">
+            <h2 class="rutta-ayuda-subtitulo mb-3" id="faq-titulo-compras">Compras</h2>
+            <div class="accordion" id="faq-compras"></div>
+          </section>
+
+          <!-- Políticas de privacidad -->
+          <section class="border-top pt-4" aria-labelledby="faq-titulo-privacidad">
+            <h2 class="rutta-ayuda-subtitulo mb-3" id="faq-titulo-privacidad">Políticas de privacidad</h2>
+          </section>
+        </div>
+
+        <!-- ==================== FORMULARIO DE AYUDA ==================== -->
+        <section class="col-12 col-lg-4 rutta-ayuda-contacto" aria-labelledby="faq-contacto-titulo">
+          <h2 class="h5 mb-4" id="faq-contacto-titulo">¿Tienes más dudas?</h2>
+          <form id="formularioAyuda">
+            <!-- El script habilita los campos al terminar de preparar el envío. -->
+            <fieldset id="faq-campos">
+              <legend class="visually-hidden">Datos de contacto y consulta</legend>
+              <div class="row g-3">
+                <div class="col-6">
+                  <label class="form-label small" for="faq-nombre">Nombre</label>
+                  <input class="form-control" id="faq-nombre" name="nombre" type="text" placeholder="Nombre" autocomplete="given-name" maxlength="80" required />
+                </div>
+                <div class="col-6">
+                  <label class="form-label small" for="faq-apellido">Apellido</label>
+                  <input class="form-control" id="faq-apellido" name="apellido" type="text" placeholder="Apellido" autocomplete="family-name" maxlength="80" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label small" for="faq-correo">Correo electrónico</label>
+                  <input class="form-control" id="faq-correo" name="correo" type="email" placeholder="Correo electrónico" autocomplete="email" maxlength="254" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label small" for="faq-asunto">Asunto</label>
+                  <input class="form-control" id="faq-asunto" name="asunto" type="text" placeholder="Asunto" maxlength="160" required />
+                </div>
+                <div class="col-12">
+                  <label class="form-label small" for="faq-mensaje">Mensaje</label>
+                  <textarea class="form-control" id="faq-mensaje" name="mensaje" placeholder="Descríbenos tu situación…" rows="5" maxlength="3000" required></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" id="faq-consentimiento" name="consentimiento" type="checkbox" required />
+                    <label class="form-check-label small" for="faq-consentimiento">Acepto que me contacten por los medios proporcionados y el almacenamiento descrito en <a href="#faq-titulo-privacidad">Privacidad</a>.</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn rutta-ayuda-enviar px-4" type="submit">Enviar</button>
+                </div>
+              </div>
+            </fieldset>
+            <!-- Anuncia tanto la confirmación como los errores de almacenamiento. -->
+            <p class="small mt-3 mb-0 rutta-ayuda-estado" id="faq-estado" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </main>
+    <!-- Imagen decorativa: alt vacío para no interrumpir la lectura del contenido. -->
+    <div class="rutta-ayuda-decoracion" aria-hidden="true">
+      <img src="../../img/ayuda-senderista.png" alt="" width="1536" height="1024" />
+    </div>
+    <!-- ==================== FIN CONTENIDO FAQ ==================== -->
+
+    <!-- Bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./ayuda.js"></script>
+  </body>
+</html>

@@ -1575,7 +1575,7 @@ h3 {
     flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
     width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
     aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
-    background-image: url("../../img/marca/logo-rutta.svg"); /* Tu nuevo logo. */
+    background-image: url("../../img/marca/logo-rutta.png"); /* Tu nuevo logo. */
     background-repeat: no-repeat; /* Evita repetir la marca. */
     background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
     background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
@@ -1779,7 +1779,7 @@ h3 {
 .rutta-login-recuperar {
     display: block; 
     margin: 0 0 1.7rem auto; 
-    color: white; /
+    color: white;
 }
 .rutta-login-enviar {
     display: block; 
@@ -1884,3 +1884,134 @@ h3 {
     }
 }
 /* FIN RUTTA LOGIN E IDENTIDAD. */
+
+/* ================================================================
+   INICIO RUTTA AYUDA / FAQ 
+   ================================================================ */
+/* 1. TIPOGRAFÍA DEL SISTEMA*/
+.rutta-ayuda-pagina {
+    --fuente-funcional: var(--bs-font-sans-serif, system-ui, sans-serif);
+    --fuente-editorial: var(--fuente-funcional);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
+    color: #202020;
+    font-family: var(--fuente-funcional);
+}
+.rutta-ayuda-pagina :is(h1, h2, h3) { font-family: inherit; }
+
+/* 2. CONSERVA LOS LOGOS DEL PROYECTO Y EL FONDO BLANCO DE LA REFERENCIA. */
+.rutta-ayuda-pagina .barra-navegacion { 
+    min-height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background: #fff; 
+    border-bottom: 0; }
+.rutta-ayuda-pagina .barra-navegacion .marca-logo-actual {
+    width: clamp(9rem, 22vw, 14rem);
+    width: 160px;
+    height: auto;
+    aspect-ratio: 2.65;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.rutta-ayuda-pagina .nav-link { 
+    text-transform: uppercase; 
+    font-weight: 500; }
+.rutta-ayuda-pagina .nav-link[aria-current="page"] { 
+    color: #1d5278; }
+.rutta-ayuda-icono { 
+    width: 2rem; 
+    height: 2rem; 
+    object-fit: contain; }
+.rutta-ayuda-titulo { 
+    color: #1d5278; 
+    font-size: 
+    clamp(2.5rem, 5vw, 3.25rem); 
+    font-weight: 700; }
+.rutta-ayuda-subtitulo {
+    color: #1d5278;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+}
+
+/* 3. ACORDEONES: Bootstrap abre y cierra; aquí solo ajustamos la apariencia. */
+.rutta-ayuda-pagina .accordion {
+    --bs-accordion-border-color: #d7d7d7;
+    --bs-accordion-border-radius: 0.5rem;
+    --bs-accordion-active-bg: #f3f8fb;
+    --bs-accordion-active-color: #1d5278;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgb(29 82 120 / 20%);
+}
+.rutta-ayuda-pagina .accordion-item {
+    border: 1px solid var(--bs-accordion-border-color);
+    border-radius: var(--bs-accordion-border-radius);
+    overflow: hidden;
+}
+.rutta-ayuda-pagina .accordion-button { 
+    font-size: 1rem; 
+    font-weight: 600; 
+    line-height: 1.5; 
+}
+.rutta-ayuda-pagina .accordion-body { 
+    font-size: 0.95rem; 
+    line-height: 1.7; 
+}
+/* Sustituye la flecha visual por los símbolos de la referencia. */
+.rutta-ayuda-pagina .accordion-button::after {
+    content: "+";
+    width: 1rem;
+    height: auto;
+    background-image: none;
+    transform: none;
+    font: 400 1.5rem / 1 system-ui, sans-serif;
+}
+.rutta-ayuda-pagina .accordion-button:not(.collapsed)::after { content: "−"; }
+
+/* 4. COLORES DEL FORMULARIO; el tamaño y la distribución vienen de Bootstrap. */
+.rutta-ayuda-contacto h2 { 
+    color: #0873cc; 
+    font-weight: 600; 
+}
+.rutta-ayuda-contacto .form-control { 
+    border-color: #278eff; }
+.rutta-ayuda-contacto textarea { 
+    resize: vertical; 
+}
+.rutta-ayuda-enviar {
+    --bs-btn-bg: var(--naranja-sol);
+    --bs-btn-border-color: var(--naranja-sol);
+    --bs-btn-color: #202020;
+    --bs-btn-hover-bg: #ffb84e;
+    --bs-btn-hover-border-color: #ffb84e;
+    --bs-btn-hover-color: #202020;
+    --bs-btn-active-bg: #efa02e;
+    --bs-btn-active-color: #202020;
+    font-weight: 600;
+}
+.rutta-ayuda-estado { 
+    color: #1d5278; 
+}
+.rutta-ayuda-estado:empty { 
+    display: none; 
+}
+.rutta-ayuda-pagina :is(button, a, input, textarea):focus-visible {
+    outline: 3px solid #1d5278;
+    outline-offset: 2px;
+}
+
+/* 5. IMAGEN DECORATIVA*/
+.rutta-ayuda-decoracion { 
+    margin-top: auto; 
+    pointer-events: none; 
+}
+.rutta-ayuda-decoracion img { 
+    display: block; 
+    width: 13rem; 
+    max-width: 45vw; 
+    height: auto; }
+
+    
