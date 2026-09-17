@@ -1,7 +1,289 @@
+/*todo ================ COPIA DE CÓDIGO DE NAVBAR GENERAL================*/
+.barra-navegacion {
+    /* Fondo blanco azulado semitransparente tomado de la nueva paleta. */
+    background: rgba(248, 251, 252, 0.94);
+
+    /* Desenfoca ligeramente el contenido que pasa detrás. */
+    backdrop-filter: blur(14px);
+
+    /* Separa visualmente la barra del contenido. */
+    border-bottom: 1px solid rgba(0, 66, 97, 0.1);
+
+    /* Define la altura mínima de la navegación. */
+    min-height: 5rem;
+}
+
+/* Alinea el nuevo imagotipo horizontal dentro de la navegación. */
+.marca-rutta {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Controla el tamaño del archivo de logotipo sin deformarlo. */
+.marca-logo {
+    display: block;
+    width: clamp(8.6rem, 12vw, 10.8rem);
+    height: auto;
+    max-height: 3.5rem;
+    object-fit: contain;
+}
+
+/* Presenta el nombre Rutta con una personalidad editorial. */
+.marca-nombre {
+    color: var(--verde-rutta);
+    font-family: var(--fuente-editorial);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Ajusta los enlaces principales de Bootstrap. */
+.barra-navegacion .nav-link {
+    position: relative;
+    margin: 0 0.35rem;
+    padding: 0.8rem 0.55rem !important;
+    color: var(--tinta);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+/* Dibuja una línea dorada al pasar el cursor. */
+.barra-navegacion .nav-link::after {
+    position: absolute;
+    right: 0.55rem;
+    bottom: 0.45rem;
+    left: 0.55rem;
+    height: 2px;
+    content: "";
+    background: var(--dorado-rutta);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+/* Conserva la flecha original en el enlace desplegable. */
+.barra-navegacion .dropdown-toggle::after {
+    position: static;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.35rem;
+    vertical-align: 0.2em;
+    content: "";
+    background: transparent;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transform: none;
+}
+
+/* Activa el subrayado en hover y foco. */
+.barra-navegacion .nav-link:not(.dropdown-toggle):hover::after,
+.barra-navegacion .nav-link:not(.dropdown-toggle):focus::after {
+    transform: scaleX(1);
+}
+
+/* Personaliza el menú desplegable. */
+.barra-navegacion .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 12rem;
+    padding: 0.6rem;
+    background: var(--marfil, #fff) !important;
+    border: 1px solid var(--borde, rgba(0,0,0,0.1)) !important;
+    border-radius: 0.9rem !important;
+    box-shadow: var(--sombra, 0 0.5rem 1rem rgba(0,0,0,0.15)) !important;
+}
+
+.barra-navegacion .dropdown-menu.show {
+    display: block !important;
+}
+
+/* Suaviza cada opción desplegable. */
+.barra-navegacion .dropdown-item {
+    display: block;
+    width: 100%;
+    clear: both;
+    text-align: inherit;
+    padding: 0.65rem 0.85rem !important;
+    border-radius: 0.55rem !important;
+    color: var(--tinta, #333) !important;
+    font-size: 0.86rem;
+    background: transparent !important;
+    border: none;
+}
+
+/* Estado activo de las opciones del menú. */
+.barra-navegacion .dropdown-item:hover,
+.barra-navegacion .dropdown-item:focus {
+    color: white !important;
+    background: #1C4F78 !important;
+}
+
+/* Crea botones redondos para búsqueda, usuario y carrito. */
+.boton-icono {
+    position: relative;
+    display: inline-grid;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    color: var(--verde-profundo);
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.16rem;
+    color: white;
+    background-color: #ffffff;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Retroalimentación visual al interactuar con los íconos. */
+.boton-icono:hover {
+  color: #e48a0b;
+    background-color: #CBDDED;
+    transform: translateY(-2px);
+}
+
+/* Contador flotante del carrito. */
+.contador-carrito {
+    position: absolute;
+    top: 0.08rem;
+    right: 0.02rem;
+    display: grid;
+    min-width: 1.05rem;
+    height: 1.05rem;
+    padding: 0 0.22rem;
+    place-items: center;
+    color: white;
+    background: var(--verde-rutta);
+    border: 2px solid var(--marfil);
+    border-radius: 1rem;
+    font-size: 0.58rem;
+    font-weight: 700;
+}
+
+/* Mantiene visible el contador cuando el botón cambia de fondo. */
+.boton-icono:hover .contador-carrito {
+    color: var(--verde-profundo);
+    background: var(--dorado-rutta);
+}
+
+/* Quita el borde fuerte del toggler predeterminado. */
+.navbar-toggler {
+    border-color: rgba(0, 66, 97, 0.22);
+}
+
+/* ================================================================
+   INICIO RUTTA LOGIN E IDENTIDAD (Reglas de la Navbar)
+   ================================================================ */
+
+/* 11. LOGOTIPO NUEVO */
+.rutta-identidad .marca-logo-actual {
+    display: block; /* Permite dar dimensiones al span o al enlace de marca. */
+    flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
+    width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
+    aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
+    background-image: url("../../img/ruttablanco-logotipo.png"); /* Tu nuevo logo. */
+    background-repeat: no-repeat; /* Evita repetir la marca. */
+    background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
+    background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
+    border-radius: 0.2rem; /* Suaviza la superficie del logotipo. */
+}
+
+/* 12. ICONOS SVG DE LA BARRA DE NAVEGACIÓN */
+.rutta-identidad .bi-search { --rutta-icono: url("../../img/iconos-rutta/buscar.svg"); }
+.rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("../../img/iconos-rutta/usuario.svg"); }
+.rutta-identidad :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito.svg"); }
+.rutta-identidad :disabled :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito-alternativo.svg"); }
+
+/* Cambia la representación del icono */
+.rutta-identidad .bi:is(.bi-search, .bi-person, .bi-person-check, .bi-cart3, .bi-cart-plus)::before {
+    content: ""; 
+    display: inline-block; 
+    width: 1.45em; 
+    height: 1.45em; 
+    vertical-align: -0.3em; 
+    background-image: var(--rutta-icono); 
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.2em; 
+    image-rendering: auto; 
+}
+
+/* Ajusta el tamaño de los iconos dentro de los botones. */
+.rutta-identidad .boton-icono .bi::before {
+    width: 1.75rem; 
+    height: 1.75rem; 
+    background-color: transparent; 
+}
+
+/* Cambia el icono del botón de menú hamburguesa para que sea un SVG vectorial. */
+.rutta-identidad .navbar-toggler-icon {
+    background-image: url("../../img/iconos-rutta/menu.svg"); 
+    background-size: contain; 
+    background-position: center; 
+    border-radius: 0.2rem; 
+}
+
+/* 14. AJUSTES RESPONSIVOS DE LA NAVBAR Y NUEVA MARCA */
+@media (max-width: 991.98px) {
+    /* Presenta el menú móvil como una superficie separada. */
+    .navbar-collapse {
+        margin-top: 0.9rem;
+        padding: 1rem;
+        background: var(--marfil);
+        border: 1px solid var(--borde);
+        border-radius: 1rem;
+        box-shadow: var(--sombra);
+    }
+
+    /* Alinea los enlaces móviles a la izquierda. */
+    .barra-navegacion .nav-link {
+        margin: 0;
+        padding: 0.65rem 0 !important;
+    }
+    
+}
+
+.barra-navegacion .nav-link:hover {
+    color: var(--dorado-rutta, #F2A43A) !important;
+}
+
+@media (max-width: 575.98px) {
+    /* Reduce el imagotipo para dejar espacio a los controles móviles. */
+    .marca-logo {
+        width: 7.4rem;
+    }
+
+    .rutta-identidad .barra-navegacion .marca-logo-actual {
+        width: 6.6rem; 
+    }
+    .rutta-identidad .acciones-movil .boton-icono {
+        width: 2.2rem; 
+    }
+    .rutta-identidad .navbar-toggler {
+        padding-inline: 0.4rem; 
+    }
+}
+
+
+/*todo ================ CÓDIGO DE NAVBAR GENERAL================*/
+
 #navbar-AU {
   background-color: #1C4F78;
+  color: #ffffff;
 }
-/*todo ------- HERO ------*/
+
+
+
+/*!========================================================*/
+/** ============= 9. CÓDIGO SOBRE NOSOTROS =================*/
+/*? =======================================================*/
+
+/*todo ====== HERO/ ENCABEZADO ================*/
+
 #trail-coders {
   background-color: #F2A43A;
   color: #ffffff;
@@ -15,6 +297,10 @@
   transition: color 0.6s ease;
 }
 
+#meet-team:hover {
+  color: #ffffff;
+}
+
 #meet-team::before {
   content: "";
   position: absolute;
@@ -22,20 +308,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/rutta-paisaje.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url('/img/rutta-paisaje.jpg');
   background-size: cover;
   background-position: center;
-  opacity: 0;
+  opacity: .0;
   transition: opacity 0.6s ease;
   z-index: -1;
 }
 
 #meet-team:hover::before {
   opacity: 1;
-}
-
-#meet-team:hover {
-  color: #ffffff;
 }
 
 .logo-hero {
@@ -82,15 +364,9 @@
   
   background: #f3bb6d;
   overflow: hidden;
-  border-radius: 5x;
+  border-radius: 5px;
   transition: all 0.5s ease;  
-
-
-
-
 }
-
-
 
 .holographic-card:hover {
   transform: scale(1.07);
@@ -128,7 +404,7 @@
 
 /* TODO ---- FIN CARD DE VALORES*/
 
-
+/* ---- SECTION DE CARRUSEL DE INTEGRANTES*/
 .our-team span {
   color: #F2A43A;
 }
@@ -151,7 +427,7 @@ inset 0px -0px 0px #000000;
 
 
 
-/*VARIANTE 1 DE HOVER EN CARD*/
+/*todo ----------  VARIANTE 1 DE HOVER EN CARD DE INTEGRANTE ----- */
 .back-team-card{
   background-color: #017DE8;
 border-radius: 55px;
@@ -185,9 +461,10 @@ transform: rotate(1deg) scale(1.10);
 
 /*-----*/
 
+/** ---------   FOTOGRAFIA DE INTEGRANTES -----*/
 .team-pic {
-  width: 180px;
-  height: 180px;
+  width: 75;
+  height: 270px;
   object-fit: contain;
   display: block;
   margin: 0 auto;
@@ -222,11 +499,7 @@ transform: rotate(1deg) scale(1.10);
   transform: translateY(-1px) scale(1.01);
 }
 
-/*todo ================ COPIA DE CÓDIGO DE FOOTER ORIGINAL================*/
-
-/* ================================================================
-   ESTILOS PRINCIPALES DEL FOOTER
-   ================================================================ */
+/*todo ================ COPIA DE CÓDIGO DE FOOTER GENERAL================*/
 
 /* Pie de página oscuro. */
 .pie-pagina {
@@ -295,17 +568,7 @@ transform: rotate(1deg) scale(1.10);
 /* ================================================================
    LOGOTIPO ACTUALIZADO (Aplica al enlace del footer)
    ================================================================ */
-.rutta-identidad .marca-logo-actual {
-    display: block; 
-    flex-shrink: 0; 
-    width: clamp(8rem, 12vw, 10.8rem); 
-    aspect-ratio: 2.65; 
-    background-image: url("../../img/marca/logo-rutta.svg"); 
-    background-repeat: no-repeat; 
-    background-size: 133.333% auto; 
-    background-position: center 52%; 
-    border-radius: 0.2rem; 
-}
+
 
 .rutta-identidad .marca-logo-pie {
     width: 10rem; /* Mantiene la marca legible dentro del footer existente. */
@@ -348,3 +611,4 @@ transform: rotate(1deg) scale(1.10);
     --azul-profundo: #08304a; /* Color de fondo oscuro del footer */
     --gris-muy-claro: #f8f9fa;
 }
+/*todo ================ FIN COPIA DE CÓDIGO DE FOOTER GENERAL================*/
