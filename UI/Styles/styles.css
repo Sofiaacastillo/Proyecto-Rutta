@@ -636,37 +636,18 @@ h3 {
 /* Área visual del producto. */
 .producto-imagen {
     position: relative;
-    /* La altura termina justo después del producto y antes del texto de la lámina. */
     min-height: 18rem;
     overflow: hidden;
     background-color: #edf3f6;
-    background-image: url("/img/catalogo-productos-rutta.jpeg");
-    background-repeat: no-repeat;
-    /* El 320 % divide visualmente la lámina original en sus tres productos. */
-    background-size: 320% auto;
 }
-
-/* Muestra y centra el primer producto de la lámina: mochila. */
-.producto-imagen.mochilas {
-    background-position: 7% top;
+/* Ajusta la imagen de los productos para que llene el área sin deformarse. */
+.producto-imagen img {
+    display: block;
+    width: 100%;
+    height: 18rem; 
+    object-fit: cover; 
+    object-position: center;
 }
-
-/* Muestra y centra el segundo producto de la lámina: chamarra. */
-.producto-imagen.ropa {
-    background-position: center top;
-}
-
-/* El 91 % desplaza las botas hacia el centro para evitar que se corten a la izquierda. */
-.producto-imagen.calzado {
-    background-position: 91% top;
-}
-
-/* No agrega una capa encima: así mochila, chamarra y botas quedan completamente visibles. */
-.producto-imagen::after {
-    display: none;
-    content: "";
-}
-
 /* Etiqueta de categoría superpuesta. */
 .producto-etiqueta {
     position: absolute;
@@ -1090,7 +1071,6 @@ h3 {
     color: white;
     font-size: 1.75rem;
 }
-
 /* ================================================================
    9. BÚSQUEDA, MODAL Y NOTIFICACIÓN
    ================================================================ */
@@ -1203,31 +1183,23 @@ h3 {
     border-bottom: 1px solid var(--borde);
 }
 
-/* Miniatura que reutiliza la lámina de productos con un recorte más pequeño. */
+/* Miniatura independiente del producto dentro del carrito.*/
 .carrito-miniatura {
     min-height: 7.7rem;
-    background-color: var(--crema-rutta);
-    background-image: url("/img/catalogo-productos-rutta.jpeg");
-    background-repeat: no-repeat;
-    /* Un acercamiento mayor evita que aparezcan los textos de la lámina en miniatura. */
-    background-size: 480% auto;
+    overflow: hidden;
+    background: var(--crema-rutta);
     border: 1px solid rgba(0, 66, 97, 0.12);
     border-radius: 0.8rem;
 }
-
-/* Centra cada producto también dentro de su miniatura. */
-.carrito-miniatura.mochilas {
-    background-position: 12% top;
+/* Mantiene la fotografía completa y sin deformaciones. */
+.carrito-miniatura img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 7.7rem;
+    object-fit: cover;
+    object-position: center;
 }
-
-.carrito-miniatura.ropa {
-    background-position: center top;
-}
-
-.carrito-miniatura.calzado {
-    background-position: 86% top;
-}
-
 /* Permite que la información utilice correctamente el espacio restante. */
 .carrito-item-info {
     min-width: 0;
@@ -1371,30 +1343,22 @@ h3 {
     gap: 1.5rem;
 }
 
-/* Reutiliza el recorte del catálogo dentro del modal. */
+/* Imagen independiente del producto dentro del modal. */
 .detalle-imagen {
     min-height: 24rem;
-    background-color: var(--crema-rutta);
-    background-image: url("/img/catalogo-productos-rutta.jpeg");
-    background-repeat: no-repeat;
-    /* Mantiene el mismo encuadre centrado que se utiliza en las tarjetas. */
-    background-size: 320% auto;
+    overflow: hidden;
+    background: var(--crema-rutta);
     border-radius: 0.9rem;
 }
-
-/* Posiciones correspondientes a las tres categorías. */
-.detalle-imagen.mochilas {
-    background-position: 7% top;
+/* El detalle usa la misma imagen que la tarjeta seleccionada. */
+.detalle-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 24rem;
+    object-fit: cover;
+    object-position: center;
 }
-
-.detalle-imagen.ropa {
-    background-position: center top;
-}
-
-.detalle-imagen.calzado {
-    background-position: 91% top;
-}
-
 /* Precio destacado dentro del modal. */
 .detalle-precio {
     margin: 0.75rem 0;
@@ -1611,7 +1575,7 @@ h3 {
     flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
     width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
     aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
-    background-image: url("../../img/marca/logo-rutta.svg"); /* Tu nuevo logo. */
+    background-image: url("../../img/marca/logo-rutta.png"); /* Tu nuevo logo. */
     background-repeat: no-repeat; /* Evita repetir la marca. */
     background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
     background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
@@ -1627,7 +1591,7 @@ h3 {
 .rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("../../img/iconos-rutta/usuario.svg"); }
 .rutta-identidad :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito.svg"); }
 .rutta-identidad :disabled :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito-alternativo.svg"); }
-.rutta-identidad .bi-heart { --rutta-icono: url("../../img/iconos-rutta/favoritos.svg"); }
+.rutta-identidad .bi-heart { --rutta-icono: url("../../img/iconos-rutta/favoritos.jpg"); }
 .rutta-identidad .bi-heart-fill { --rutta-icono: url("../../img/iconos-rutta/favoritos-activo.svg"); }
 .rutta-identidad .bi-backpack4 { --rutta-icono: url("../../img/iconos-rutta/mochilas.svg"); }
 .rutta-identidad .bi-boot { --rutta-icono: url("../../img/iconos-rutta/calzado.svg"); }
@@ -1815,7 +1779,7 @@ h3 {
 .rutta-login-recuperar {
     display: block; 
     margin: 0 0 1.7rem auto; 
-    color: white; /
+    color: white;
 }
 .rutta-login-enviar {
     display: block; 
@@ -1920,3 +1884,134 @@ h3 {
     }
 }
 /* FIN RUTTA LOGIN E IDENTIDAD. */
+
+/* ================================================================
+   INICIO RUTTA AYUDA / FAQ 
+   ================================================================ */
+/* 1. TIPOGRAFÍA DEL SISTEMA*/
+.rutta-ayuda-pagina {
+    --fuente-funcional: var(--bs-font-sans-serif, system-ui, sans-serif);
+    --fuente-editorial: var(--fuente-funcional);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
+    color: #202020;
+    font-family: var(--fuente-funcional);
+}
+.rutta-ayuda-pagina :is(h1, h2, h3) { font-family: inherit; }
+
+/* 2. CONSERVA LOS LOGOS DEL PROYECTO Y EL FONDO BLANCO DE LA REFERENCIA. */
+.rutta-ayuda-pagina .barra-navegacion { 
+    min-height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background: #fff; 
+    border-bottom: 0; }
+.rutta-ayuda-pagina .barra-navegacion .marca-logo-actual {
+    width: clamp(9rem, 22vw, 14rem);
+    width: 160px;
+    height: auto;
+    aspect-ratio: 2.65;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.rutta-ayuda-pagina .nav-link { 
+    text-transform: uppercase; 
+    font-weight: 500; }
+.rutta-ayuda-pagina .nav-link[aria-current="page"] { 
+    color: #1d5278; }
+.rutta-ayuda-icono { 
+    width: 2rem; 
+    height: 2rem; 
+    object-fit: contain; }
+.rutta-ayuda-titulo { 
+    color: #1d5278; 
+    font-size: 
+    clamp(2.5rem, 5vw, 3.25rem); 
+    font-weight: 700; }
+.rutta-ayuda-subtitulo {
+    color: #1d5278;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+}
+
+/* 3. ACORDEONES: Bootstrap abre y cierra; aquí solo ajustamos la apariencia. */
+.rutta-ayuda-pagina .accordion {
+    --bs-accordion-border-color: #d7d7d7;
+    --bs-accordion-border-radius: 0.5rem;
+    --bs-accordion-active-bg: #f3f8fb;
+    --bs-accordion-active-color: #1d5278;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgb(29 82 120 / 20%);
+}
+.rutta-ayuda-pagina .accordion-item {
+    border: 1px solid var(--bs-accordion-border-color);
+    border-radius: var(--bs-accordion-border-radius);
+    overflow: hidden;
+}
+.rutta-ayuda-pagina .accordion-button { 
+    font-size: 1rem; 
+    font-weight: 600; 
+    line-height: 1.5; 
+}
+.rutta-ayuda-pagina .accordion-body { 
+    font-size: 0.95rem; 
+    line-height: 1.7; 
+}
+/* Sustituye la flecha visual por los símbolos de la referencia. */
+.rutta-ayuda-pagina .accordion-button::after {
+    content: "+";
+    width: 1rem;
+    height: auto;
+    background-image: none;
+    transform: none;
+    font: 400 1.5rem / 1 system-ui, sans-serif;
+}
+.rutta-ayuda-pagina .accordion-button:not(.collapsed)::after { content: "−"; }
+
+/* 4. COLORES DEL FORMULARIO; el tamaño y la distribución vienen de Bootstrap. */
+.rutta-ayuda-contacto h2 { 
+    color: #0873cc; 
+    font-weight: 600; 
+}
+.rutta-ayuda-contacto .form-control { 
+    border-color: #278eff; }
+.rutta-ayuda-contacto textarea { 
+    resize: vertical; 
+}
+.rutta-ayuda-enviar {
+    --bs-btn-bg: var(--naranja-sol);
+    --bs-btn-border-color: var(--naranja-sol);
+    --bs-btn-color: #202020;
+    --bs-btn-hover-bg: #ffb84e;
+    --bs-btn-hover-border-color: #ffb84e;
+    --bs-btn-hover-color: #202020;
+    --bs-btn-active-bg: #efa02e;
+    --bs-btn-active-color: #202020;
+    font-weight: 600;
+}
+.rutta-ayuda-estado { 
+    color: #1d5278; 
+}
+.rutta-ayuda-estado:empty { 
+    display: none; 
+}
+.rutta-ayuda-pagina :is(button, a, input, textarea):focus-visible {
+    outline: 3px solid #1d5278;
+    outline-offset: 2px;
+}
+
+/* 5. IMAGEN DECORATIVA*/
+.rutta-ayuda-decoracion { 
+    margin-top: auto; 
+    pointer-events: none; 
+}
+.rutta-ayuda-decoracion img { 
+    display: block; 
+    width: 13rem; 
+    max-width: 45vw; 
+    height: auto; }
+
+    
