@@ -17,38 +17,115 @@
   </head>
 
   <body>
-    <!--todo --------- NAVBAR -->
-    <nav id="navbar-AU" class="navbar navbar-expand-lg navbar-dark">
+    <!--! ============================================-->
+    <!--* =========== 5. DEMO NAVBAR =================-->
+    <!--* =========== 8. CODIGO NAVBAR ==============-->
+    <!--?=============================================-->
+    
+    <!--todo =============== CÓDIGO DE NAVBAR GENERAL===============-->
+        <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
+    <nav class="navbar navbar-expand-lg rutta-identidad barra-navegacion sticky-top" aria-label="Navegación principal" id="navbar-AU">
+      <!-- Container limita el ancho y centra los elementos de navegación. -->
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img src="/img/ruttablanco-isotipo.png" alt="Rutta" width="100" />
+        <!-- El logotipo lleva al inicio de la misma página. -->
+        <a class="navbar-brand marca-rutta" href="/UI/index.html" aria-label="Rutta, volver al inicio">
+          <!--? NUEVA IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
+          <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
 
+        <!-- Contenedor de acciones visible en dispositivos móviles. -->
+        <div class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none">
+          <!-- Botón que abre la búsqueda de productos. -->
+          <button class="boton-icono boton-aboutUs" type="button" data-accion="buscar" aria-label="Buscar productos">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+
+          <!--? INICIO CONEXIÓN LOGIN: acceso también disponible en celular. -->
+          <a class="boton-icono boton-aboutUs" href="./Login/login.html" aria-label="Iniciar sesión">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <!--? FIN CONEXIÓN LOGIN. -->
+
+          <!-- Botón del carrito con contador dinámico. -->
+          <button class="boton-icono boton-carrito boton-aboutUs" type="button" data-accion="carrito" aria-label="Abrir carrito">
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
+        </div>
+
+        <!-- Botón hamburguesa que despliega el menú en pantallas pequeñas. -->
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html"> Inicio </a>
+        <!-- Menú colapsable controlado por Bootstrap. -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <!-- Lista central de enlaces principales. -->
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <!-- Menú desplegable para las categorías de equipamiento. -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#productos"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" type="button" data-filtro="todos">Ver todo</button></li>
+                <li><button class="dropdown-item" type="button" data-filtro="mochilas">Mochilas</button></li>
+                <li><button class="dropdown-item" type="button" data-filtro="ropa">Ropa</button></li>
+                <li><button class="dropdown-item" type="button" data-filtro="calzado">Calzado</button></li>
+              </ul>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" href="/UI/AboutUs/aboutUs.html">
-                Sobre Nosotros
-              </a>
-            </li>
+            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+             <li class="nav-item"><a class="nav-link" href="./aboutUs.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#guias">Guías</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre-rutta">Sobre Rutta</a></li>
           </ul>
+
+          <!-- Acciones de escritorio ubicadas al lado derecho. -->
+          <div class="acciones-escritorio d-none d-lg-flex align-items-center gap-1">
+            <button class="boton-icono" type="button" data-accion="buscar" aria-label="Buscar productos">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
+            <a class="boton-icono" href="./Login/login.html" aria-label="Iniciar sesión">
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <!--? FIN CONEXIÓN LOGIN. -->
+            <button class="boton-icono boton-carrito" type="button" data-accion="carrito" aria-label="Abrir carrito">
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
 
+    <!--todo ======== FIN DE CÓDIGO DE NAVBAR GENERAL =====>
+
+
+
+     <!--!===========================================-->
+     <!--* ========= 6. DEMO SOBRE NOSOTROS ==========-->
+    <!--? ===========================================-->
+  
     <!--todo ---------------- HERO -->
     <header class="py-5" id="meet-team">
       <div class="container py-5">
@@ -158,8 +235,11 @@
         </div>
       </div>
     </section>
-
-    <!-- EQUIPO -->
+    <!--!=================================================-->
+    <!--* ======= 7. DEMO SOBRE NOSOTROS (PARTE 2) ========-->
+     <!--* ======== 9. CÓDIGO SOBRE NOSOTROS ==============-->
+    <!--? =================================================-->
+    <!--todo ------- EQUIPO ----------->
     <section class="py-5 team">
       <div class="container py-4">
         <div class="text-center mb-5 our-team">
@@ -427,6 +507,8 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Conecta el documento con nuestra lógica personalizada. -->
+     
+    <script src="/UI/AboutUs/aboutUs.js"></script>
    <script>
         document.getElementById('anioActual').textContent = new Date().getFullYear();
     </script>
