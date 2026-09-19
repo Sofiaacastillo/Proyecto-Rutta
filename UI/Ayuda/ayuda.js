@@ -103,4 +103,16 @@ formEl.addEventListener("submit", (event) => {
   mensajeEl.textContent = "Tu consulta quedó guardada.";
 });
 
+//5. INTERACTIVIDD DE WIDGET RUTILIO
+document.addEventListener('DOMContentLoaded', function () {
+  const burbuja = document.querySelector('.burbuja-saludo');
+  const botonCerrar = document.querySelector('button[aria-label="Cerrar mensaje de saludo"]');
 
+  setTimeout(function () {
+    burbuja.classList.add('visible');
+  }, 1000);
+
+  botonCerrar.addEventListener('click', function () {
+    burbuja.classList.remove('visible');
+  });
+});

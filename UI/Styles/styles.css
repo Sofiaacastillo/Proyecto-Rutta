@@ -2014,4 +2014,66 @@ h3 {
     max-width: 45vw; 
     height: auto; }
 
-    
+    /*Personalización de widget personaje Rutilio pagina de Ayuda*/
+.rutilio{
+    width: 250px;
+}
+/*Posición del contenedor widget*/
+.widget{
+    position: fixed; /*Ancla elemento a la ventana del navegador*/
+    bottom: 20px; 
+    right: 18px; 
+    z-index: 999;
+    z-index: 999; /*Controla el orden de apilamiento en el eje z (hacia adelante/atras, el número asignado garantiza que el widget quede adelante*/
+}
+
+.burbuja-saludo{
+    position: absolute; /*Posiciona el elemento a su contenedor más cercano a posición*/
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 8px; 
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);   
+    opacity: 0;                    /* invisible por defecto */
+    transition: opacity 0.5s ease; /* anima el cambio de opacidad en 0.5 segundos */
+}
+
+.burbuja-saludo.visible {
+  opacity: 1;
+}
+
+.burbuja-saludo p {
+  margin: 0;
+}
+
+.cierre-boton{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    color: #999;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer; /*Hace que el cursor se convierta en una manita al pasar sobre él tache*/
+}
+
+.cierre-boton:hover {
+  color: #3a3a3e;
+}
+
+/*Widget responsivo*/
+@media (max-width: 480px) {
+  .rutilio {
+    width: 150px;
+  }
+  .burbuja-saludo {
+    max-width: 160px;
+    font-size: 10px;
+  }
+}
+
