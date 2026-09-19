@@ -13,8 +13,12 @@
     <!-- Texto que aparece en la pestaña del navegador. -->
     <title>Rutta | Equípate para avanzar</title>
 
-   <!-- Usa la brújula adjunta como ícono de la pestaña. -->
-    <link rel="icon" type="image/svg+xml" href="/img/iconos-rutta/brujula.svg" />
+    <!-- Usa la brújula adjunta como ícono de la pestaña. -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/img/iconos-rutta/brujula.svg"
+    />
 
     <!-- Preconecta con Google Fonts para acelerar la carga de las tipografías. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,34 +50,59 @@
 
   <body class="rutta-identidad">
     <!-- Enlace accesible que permite saltar directamente al contenido principal. -->
-    <a class="salto-contenido" href="#contenido-principal">Saltar al contenido</a>
+    <a class="salto-contenido" href="#contenido-principal"
+      >Saltar al contenido</a
+    >
 
     <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
     <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
-    <nav class="navbar navbar-expand-lg barra-navegacion sticky-top" aria-label="Navegación principal">
+    <nav
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+    >
       <!-- Container limita el ancho y centra los elementos de navegación. -->
       <div class="container">
         <!-- El logotipo lleva al inicio de la misma página. -->
-        <a class="navbar-brand marca-rutta" href="#inicio" aria-label="Rutta, volver al inicio">
+        <a
+          class="navbar-brand marca-rutta"
+          href="#inicio"
+          aria-label="Rutta, volver al inicio"
+        >
           <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
           <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
 
         <!-- Contenedor de acciones visible en dispositivos móviles. -->
-        <div class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none">
+        <div
+          class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
+        >
           <!-- Botón que abre la búsqueda de productos. -->
-          <button class="boton-icono" type="button" data-accion="buscar" aria-label="Buscar productos">
+          <button
+            class="boton-icono"
+            type="button"
+            data-accion="buscar"
+            aria-label="Buscar productos"
+          >
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
 
           <!-- INICIO CONEXIÓN LOGIN--->
-          <a class="boton-icono" href="./Login/login.html" aria-label="Iniciar sesión">
+          <a
+            class="boton-icono"
+            href="./Login/login.html"
+            aria-label="Iniciar sesión"
+          >
             <i class="bi bi-person" aria-hidden="true"></i>
           </a>
           <!-- FIN CONEXIÓN LOGIN. -->
 
           <!-- Botón del carrito con contador dinámico. -->
-          <button class="boton-icono boton-carrito" type="button" data-accion="carrito" aria-label="Abrir carrito">
+          <button
+            class="boton-icono boton-carrito"
+            type="button"
+            data-accion="carrito"
+            aria-label="Abrir carrito"
+          >
             <i class="bi bi-cart3" aria-hidden="true"></i>
             <span class="contador-carrito" data-contador-carrito>0</span>
           </button>
@@ -109,34 +138,96 @@
               </a>
               <!-- Opciones que filtran el catálogo mediante JavaScript. -->
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-filtro="todos">Ver todo</button></li>
-                <li><button class="dropdown-item" type="button" data-filtro="mochilas">Mochilas</button></li>
-                <li><button class="dropdown-item" type="button" data-filtro="ropa">Ropa</button></li>
-                <li><button class="dropdown-item" type="button" data-filtro="calzado">Calzado</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="todos"
+                  >
+                    Ver todo
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="mochilas"
+                  >
+                    Mochilas
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="ropa"
+                  >
+                    Ropa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="calzado"
+                  >
+                    Calzado
+                  </button>
+                </li>
               </ul>
             </li>
 
             <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
-            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-             <li class="nav-item"><a class="nav-link" href="./AboutUs/aboutUs.html">Sobre Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link" href="#guias">Guías</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./AboutUs/aboutUs.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#guias">Guías</a>
+            </li>
             <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
-            <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#sobre-rutta">Sobre Rutta</a></li>
-            <li class="nav-item"><a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#consejos">Consejos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a>
+            </li>
           </ul>
 
           <!-- Acciones de escritorio ubicadas al lado derecho. -->
-          <div class="acciones-escritorio d-none d-lg-flex align-items-center gap-1">
-            <button class="boton-icono" type="button" data-accion="buscar" aria-label="Buscar productos">
+          <div
+            class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
+          >
+            <button
+              class="boton-icono"
+              type="button"
+              data-accion="buscar"
+              aria-label="Buscar productos"
+            >
               <i class="bi bi-search" aria-hidden="true"></i>
             </button>
             <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
-            <a class="boton-icono" href="./Login/login.html" aria-label="Iniciar sesión">
+            <a
+              class="boton-icono"
+              href="./Login/login.html"
+              aria-label="Iniciar sesión"
+            >
               <i class="bi bi-person" aria-hidden="true"></i>
             </a>
             <!--? FIN CONEXIÓN LOGIN. -->
-            <button class="boton-icono boton-carrito" type="button" data-accion="carrito" aria-label="Abrir carrito">
+            <button
+              class="boton-icono boton-carrito"
+              type="button"
+              data-accion="carrito"
+              aria-label="Abrir carrito"
+            >
               <i class="bi bi-cart3" aria-hidden="true"></i>
               <span class="contador-carrito" data-contador-carrito>0</span>
             </button>
@@ -159,21 +250,25 @@
             <!-- Columna izquierda con mensaje y botones. -->
             <div class="col-lg-6 col-xl-5">
               <!-- Etiqueta superior de marca. -->
-              <p class="hero-etiqueta"><span></span> Equipamiento para explorar</p>
+              <p class="hero-etiqueta">
+                <span></span> Equipamiento para explorar
+              </p>
 
               <!-- Título editorial principal solicitado en la referencia. -->
               <h1>Equípate<br />para avanzar</h1>
 
               <!-- Descripción breve que acompaña al título. -->
               <p class="hero-descripcion">
-                Todo lo que necesitas para tus aventuras al aire libre, seleccionado para cada ruta y nivel.
+                Todo lo que necesitas para tus aventuras al aire libre,
+                seleccionado para cada ruta y nivel.
               </p>
 
               <!-- Grupo de llamadas a la acción. -->
               <div class="d-flex flex-wrap gap-3 hero-botones">
                 <!-- Botón primario que desplaza al catálogo. -->
                 <a class="btn boton-primario" href="#productos">
-                  Explorar equipamiento <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                  Explorar equipamiento
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
                 </a>
 
                 <!-- Botón secundario que desplaza a las guías. -->
@@ -188,20 +283,37 @@
               <aside class="hero-beneficios" aria-label="Beneficios de Rutta">
                 <!-- Beneficio 1. -->
                 <div class="beneficio-item">
-                  <span class="beneficio-icono"><i class="bi bi-shield-check"></i></span>
-                  <div><strong>Selección experta</strong><small>Productos probados en condiciones reales.</small></div>
+                  <span class="beneficio-icono"
+                    ><i class="bi bi-shield-check"></i
+                  ></span>
+                  <div>
+                    <strong>Selección experta</strong
+                    ><small>Productos probados en condiciones reales.</small>
+                  </div>
                 </div>
 
                 <!-- Beneficio 2. -->
                 <div class="beneficio-item">
-                  <span class="beneficio-icono"><i class="bi bi-signpost-split"></i></span>
-                  <div><strong>Para cada nivel</strong><small>Desde principiante hasta avanzado.</small></div>
+                  <span class="beneficio-icono"
+                    ><i class="bi bi-signpost-split"></i
+                  ></span>
+                  <div>
+                    <strong>Para cada nivel</strong
+                    ><small>Desde principiante hasta avanzado.</small>
+                  </div>
                 </div>
 
                 <!-- Beneficio 3. -->
                 <div class="beneficio-item">
-                  <span class="beneficio-icono"><i class="bi bi-compass"></i></span>
-                  <div><strong>Aventuras seguras</strong><small>Consejos y guías para explorar con confianza.</small></div>
+                  <span class="beneficio-icono"
+                    ><i class="bi bi-compass"></i
+                  ></span>
+                  <div>
+                    <strong>Aventuras seguras</strong
+                    ><small
+                      >Consejos y guías para explorar con confianza.</small
+                    >
+                  </div>
                 </div>
               </aside>
             </div>
@@ -222,19 +334,31 @@
           <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
             <!-- Cada botón filtra el catálogo sin recargar la página. -->
             <div class="col">
-              <button class="categoria-card" type="button" data-filtro="mochilas">
+              <button
+                class="categoria-card"
+                type="button"
+                data-filtro="mochilas"
+              >
                 <!-- Mochila: representa el equipo que se lleva durante una ruta. -->
                 <i class="bi bi-backpack4" aria-hidden="true"></i>
                 <strong>Mochilas</strong>
-                <span>Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                <span
+                  >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></span>
               </button>
             </div>
             <div class="col">
-              <button class="categoria-card" type="button" data-filtro="calzado">
+              <button
+                class="categoria-card"
+                type="button"
+                data-filtro="calzado"
+              >
                 <!-- Muestra la bota adjunta en esta categoría. -->
                 <i class="bi bi-person-walking" aria-hidden="true"></i>
                 <strong>Calzado</strong>
-                <span>Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                <span
+                  >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></span>
               </button>
             </div>
             <div class="col">
@@ -242,7 +366,9 @@
                 <!-- Muestra la chamarra adjunta sin cambiar el filtro existente. -->
                 <i class="bi bi-person-standing-dress" aria-hidden="true"></i>
                 <strong>Ropa</strong>
-                <span>Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                <span
+                  >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></span>
               </button>
             </div>
             <div class="col">
@@ -250,7 +376,10 @@
                 <!-- El CSS sustituye el triángulo por la tienda de campaña adjunta. -->
                 <i class="bi bi-triangle-fill" aria-hidden="true"></i>
                 <strong>Camping</strong>
-                <span>Próximamente <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                <span
+                  >Próximamente
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></span>
               </button>
             </div>
             <div class="col">
@@ -258,7 +387,10 @@
                 <!-- Brújula: representa los accesorios de orientación y exploración. -->
                 <i class="bi bi-compass" aria-hidden="true"></i>
                 <strong>Accesorios</strong>
-                <span>Próximamente <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                <span
+                  >Próximamente
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></span>
               </button>
             </div>
           </div>
@@ -266,22 +398,41 @@
       </section>
 
       <!-- ==================== PRODUCTOS ==================== -->
-      <section class="seccion productos-seccion" id="productos" aria-labelledby="titulo-productos">
+      <section
+        class="seccion productos-seccion"
+        id="productos"
+        aria-labelledby="titulo-productos"
+      >
         <div class="container">
           <!-- Encabezado acompañado de filtros del catálogo. -->
           <div class="encabezado-productos">
             <div class="encabezado-seccion">
               <p class="sobrelinea">Equipamiento seleccionado</p>
               <h2 id="titulo-productos">Productos para tu próxima ruta</h2>
-              <p>Compara el nivel recomendado, el terreno y las características de cada producto.</p>
+              <p>
+                Compara el nivel recomendado, el terreno y las características
+                de cada producto.
+              </p>
             </div>
 
             <!-- Botones de filtro controlados desde JavaScript. -->
-            <div class="filtros-productos" role="group" aria-label="Filtrar productos">
-              <button class="filtro activo" type="button" data-filtro="todos">Todos</button>
-              <button class="filtro" type="button" data-filtro="mochilas">Mochilas</button>
-              <button class="filtro" type="button" data-filtro="ropa">Ropa</button>
-              <button class="filtro" type="button" data-filtro="calzado">Calzado</button>
+            <div
+              class="filtros-productos"
+              role="group"
+              aria-label="Filtrar productos"
+            >
+              <button class="filtro activo" type="button" data-filtro="todos">
+                Todos
+              </button>
+              <button class="filtro" type="button" data-filtro="mochilas">
+                Mochilas
+              </button>
+              <button class="filtro" type="button" data-filtro="ropa">
+                Ropa
+              </button>
+              <button class="filtro" type="button" data-filtro="calzado">
+                Calzado
+              </button>
             </div>
           </div>
 
@@ -298,16 +449,26 @@
       </section>
 
       <!-- ==================== GUÍAS Y CONSEJOS ==================== -->
-      <section class="seccion guias-seccion" id="guias" aria-labelledby="titulo-guias">
+      <section
+        class="seccion guias-seccion"
+        id="guias"
+        aria-labelledby="titulo-guias"
+      >
         <div class="container">
           <div class="row g-4 align-items-stretch">
             <!-- Introducción de la sección oscura. -->
             <div class="col-lg-3">
               <div class="guias-intro">
-                <p class="sobrelinea sobrelinea-clara">Aprende antes de salir</p>
+                <p class="sobrelinea sobrelinea-clara">
+                  Aprende antes de salir
+                </p>
                 <h2 id="titulo-guias">Guías y consejos para tu próxima ruta</h2>
-                <p>Explora recomendaciones prácticas para preparar tu aventura.</p>
-                <a class="btn boton-contorno-claro" href="#consejos">Ver guías</a>
+                <p>
+                  Explora recomendaciones prácticas para preparar tu aventura.
+                </p>
+                <a class="btn boton-contorno-claro" href="#consejos"
+                  >Ver guías</a
+                >
               </div>
             </div>
 
@@ -315,7 +476,12 @@
             <div class="col-md-4 col-lg-3">
               <article class="guia-card guia-mochila">
                 <span class="guia-etiqueta">Guía</span>
-                <div><h3>Cómo elegir tu primera mochila de senderismo</h3><a href="#productos">Leer más <i class="bi bi-arrow-right"></i></a></div>
+                <div>
+                  <h3>Cómo elegir tu primera mochila de senderismo</h3>
+                  <a href="#productos"
+                    >Leer más <i class="bi bi-arrow-right"></i
+                  ></a>
+                </div>
               </article>
             </div>
 
@@ -323,7 +489,12 @@
             <div class="col-md-4 col-lg-3" id="rutas">
               <article class="guia-card guia-rutas">
                 <span class="guia-etiqueta">Ruta</span>
-                <div><h3>Consejos para caminar con seguridad</h3><a href="#sobre-rutta">Leer más <i class="bi bi-arrow-right"></i></a></div>
+                <div>
+                  <h3>Consejos para caminar con seguridad</h3>
+                  <a href="#sobre-rutta"
+                    >Leer más <i class="bi bi-arrow-right"></i
+                  ></a>
+                </div>
               </article>
             </div>
 
@@ -331,7 +502,12 @@
             <div class="col-md-4 col-lg-3" id="consejos">
               <article class="guia-card guia-checklist">
                 <span class="guia-etiqueta">Consejo</span>
-                <div><h3>Checklist esencial antes de acampar</h3><a href="#productos">Leer más <i class="bi bi-arrow-right"></i></a></div>
+                <div>
+                  <h3>Checklist esencial antes de acampar</h3>
+                  <a href="#productos"
+                    >Leer más <i class="bi bi-arrow-right"></i
+                  ></a>
+                </div>
               </article>
             </div>
           </div>
@@ -339,24 +515,39 @@
       </section>
 
       <!-- ==================== SOBRE LA MARCA ==================== -->
-      <section class="seccion sobre-seccion" id="sobre-rutta" aria-labelledby="titulo-sobre-rutta">
+      <section
+        class="seccion sobre-seccion"
+        id="sobre-rutta"
+        aria-labelledby="titulo-sobre-rutta"
+      >
         <!-- Isotipo decorativo; se oculta a lectores de pantalla porque no agrega información. -->
-        <img class="isotipo-decorativo" src="/img/isotipo-rutta.png" alt="" aria-hidden="true" />
+        <img
+          class="isotipo-decorativo"
+          src="/img/isotipo-rutta.png"
+          alt=""
+          aria-hidden="true"
+        />
 
         <div class="container">
           <div class="row align-items-center g-5">
             <!-- Mensaje editorial de cierre. -->
             <div class="col-lg-7">
               <p class="sobrelinea">Sobre Rutta</p>
-              <h2 id="titulo-sobre-rutta">La ruta no siempre es clara, pero siempre te transforma.</h2>
+              <h2 id="titulo-sobre-rutta">
+                La ruta no siempre es clara, pero siempre te transforma.
+              </h2>
             </div>
 
             <!-- Texto funcional que explica la propuesta de la marca. -->
             <div class="col-lg-5">
               <p>
-                Rutta reúne equipamiento confiable y orientación sencilla para que cada persona pueda explorar de acuerdo con su experiencia, destino y objetivos.
+                Rutta reúne equipamiento confiable y orientación sencilla para
+                que cada persona pueda explorar de acuerdo con su experiencia,
+                destino y objetivos.
               </p>
-              <a class="enlace-editorial" href="#inicio">Volver al inicio <i class="bi bi-arrow-up"></i></a>
+              <a class="enlace-editorial" href="#inicio"
+                >Volver al inicio <i class="bi bi-arrow-up"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -368,7 +559,11 @@
       <div class="container pie-contenido">
         <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
         <div class="pie-marca">
-          <img class="logo-footer-rutta" src="/img/marca/logo-rutta-footer.png" alt="Rutta" />
+          <img
+            class="logo-footer-rutta"
+            src="/img/marca/logo-rutta-footer.png"
+            alt="Rutta"
+          />
           <p>Equipamiento y guías para explorar con seguridad.</p>
         </div>
 
@@ -379,27 +574,48 @@
         </div>
 
         <!-- El año se completa automáticamente con JavaScript. -->
-        <p class="mb-0">© <span id="anioActual"></span> Rutta. </p>
+        <p class="mb-0">© <span id="anioActual"></span> Rutta.</p>
       </div>
     </footer>
 
     <!-- ==================== PANEL DE BÚSQUEDA ==================== -->
     <!-- Offcanvas de Bootstrap que aparece desde la parte superior. -->
-    <div class="offcanvas offcanvas-top buscador-panel" tabindex="-1" id="buscadorPanel" aria-labelledby="tituloBuscador">
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
       <div class="offcanvas-header container">
         <div>
           <p class="sobrelinea mb-1">Catálogo Rutta</p>
-          <h2 class="offcanvas-title" id="tituloBuscador">¿Qué necesitas para tu ruta?</h2>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar búsqueda"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
       </div>
       <div class="offcanvas-body container">
         <!-- El texto escrito se utiliza para filtrar nombres y descripciones. -->
-        <label class="visually-hidden" for="campoBusqueda">Buscar productos</label>
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
         <div class="input-group input-group-lg">
           <span class="input-group-text"><i class="bi bi-search"></i></span>
-          <input id="campoBusqueda" class="form-control" type="search" placeholder="Ejemplo: mochila, lluvia o senderismo" />
-          <button class="btn boton-primario" id="botonBuscar" type="button">Buscar</button>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
         </div>
       </div>
     </div>
@@ -430,10 +646,16 @@
       <div class="offcanvas-body carrito-cuerpo">
         <!-- Estado mostrado cuando todavía no se ha elegido ningún producto. -->
         <div class="carrito-vacio" id="carritoVacio">
-          <span class="carrito-vacio-icono"><i class="bi bi-cart3" aria-hidden="true"></i></span>
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
           <h3>Tu carrito está vacío</h3>
           <p>Agrega alguno de nuestros productos para verlo aquí.</p>
-          <button class="btn boton-secundario-claro" type="button" data-bs-dismiss="offcanvas">
+          <button
+            class="btn boton-secundario-claro"
+            type="button"
+            data-bs-dismiss="offcanvas"
+          >
             Explorar productos
           </button>
         </div>
@@ -449,7 +671,11 @@
           <strong id="carritoTotal">MXN $0</strong>
         </div>
         <p>Impuestos incluidos. Envío calculado al finalizar.</p>
-        <button class="btn boton-primario w-100" id="botonFinalizarCompra" type="button">
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
           Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
         </button>
         <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
@@ -460,12 +686,28 @@
 
     <!-- ==================== MODAL DE PRODUCTO ==================== -->
     <!-- Bootstrap muestra esta ventana al presionar “Ver producto”. -->
-    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoTitulo" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="modalProducto"
+      tabindex="-1"
+      aria-labelledby="modalProductoTitulo"
+      aria-hidden="true"
+    >
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content modal-producto">
           <div class="modal-header border-0">
-            <div><p class="sobrelinea mb-1" id="modalProductoCategoria">Producto</p><h2 class="modal-title" id="modalProductoTitulo">Detalle</h2></div>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div>
+              <p class="sobrelinea mb-1" id="modalProductoCategoria">
+                Producto
+              </p>
+              <h2 class="modal-title" id="modalProductoTitulo">Detalle</h2>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
           <div class="modal-body pt-0">
             <!-- JavaScript reemplaza este contenido con la información seleccionada. -->
@@ -478,7 +720,13 @@
     <!-- ==================== NOTIFICACIÓN DEL CARRITO ==================== -->
     <!-- Toast accesible que confirma cuando se añade un producto. -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-      <div class="toast toast-rutta" id="toastCarrito" role="status" aria-live="polite" aria-atomic="true">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <div class="toast-body d-flex align-items-center gap-3">
           <i class="bi bi-check-circle-fill"></i>
           <span id="mensajeToast">Producto agregado al carrito.</span>
