@@ -13,7 +13,7 @@
     <!-- Texto que aparece en la pestaña del navegador. -->
     <title>Rutta | Equípate para avanzar</title>
 
-    <!--? NUEVA IDENTIDAD: usa la brújula adjunta como ícono de la pestaña. -->
+    <!-- Usa la brújula adjunta como ícono de la pestaña. -->
     <link
       rel="icon"
       type="image/svg+xml"
@@ -54,7 +54,7 @@
       >Saltar al contenido</a
     >
 
-    <!--todo ==================== BARRA DE NAVEGACIÓN ==================== -->
+    <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
     <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
     <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
@@ -68,7 +68,7 @@
           href="#inicio"
           aria-label="Rutta, volver al inicio"
         >
-          <!--? NUEVA IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
+          <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
           <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
 
@@ -86,7 +86,7 @@
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
 
-          <!--? INICIO CONEXIÓN LOGIN: acceso también disponible en celular. -->
+          <!-- INICIO CONEXIÓN LOGIN--->
           <a
             class="boton-icono"
             href="./Login/login.html"
@@ -179,6 +179,9 @@
 
             <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
             <li class="nav-item">
+              <a class="nav-link" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="./AboutUs/aboutUs.html"
                 >Sobre Nosotros</a
               >
@@ -186,17 +189,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#guias">Guías</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#rutas">Rutas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a>
-            </li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
             <li class="nav-item">
               <a class="nav-link" href="#consejos">Consejos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a>
             </li>
           </ul>
 
@@ -234,7 +235,6 @@
         </div>
       </div>
     </nav>
-    <!--todo ==================== FIN BARRA DE NAVEGACIÓN ==================== -->
 
     <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
     <main id="contenido-principal">
@@ -348,7 +348,11 @@
               </button>
             </div>
             <div class="col">
-              <button class="categoria-card" type="button" data-filtro="calzado">
+              <button
+                class="categoria-card"
+                type="button"
+                data-filtro="calzado"
+              >
                 <!-- Muestra la bota adjunta en esta categoría. -->
                 <i class="bi bi-person-walking" aria-hidden="true"></i>
                 <strong>Calzado</strong>
@@ -555,7 +559,11 @@
       <div class="container pie-contenido">
         <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
         <div class="pie-marca">
-          <img class="logo-footer-rutta" src="/img/marca/logo-rutta-footer.png" alt="Rutta" />
+          <img
+            class="logo-footer-rutta"
+            src="/img/marca/logo-rutta-footer.png"
+            alt="Rutta"
+          />
           <p>Equipamiento y guías para explorar con seguridad.</p>
         </div>
 
