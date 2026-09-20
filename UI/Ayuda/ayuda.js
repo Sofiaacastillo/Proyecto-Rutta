@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const rutilio = document.querySelector(`.rutilio`);
 
 
-  
+
   // setTimeout: ejecuta la función después de 1000ms (1 segundo)
   setTimeout(function () {
     burbuja.classList.add('visible');  // Agrega la clase "visible" → la burbuja aparece
@@ -137,7 +137,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // Al hacer clic en la X del menú: lo oculta y reaparece el saludo
   botonCerrarMenu.addEventListener('click', function () {
     menuOpciones.classList.remove('mostrar'); // Oculta el menú
-    burbuja.classList.add('visible');         // Reaparece la burbuja
+    rutilio.classList.add('mini');            // Rutilio se achica
+    // (quita la línea: burbuja.classList.add('visible'))
+  });
+
+//Evento de click en Rutilio abrir y cerrar Menu
+rutilio.addEventListener('click', function () {
+    burbuja.classList.remove('visible');
+    menuOpciones.classList.add('mostrar');
+    rutilio.classList.remove('mini');
   });
 
   // querySelectorAll: devuelve UNA LISTA con todos los botones .opcion-menu

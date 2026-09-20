@@ -2032,12 +2032,14 @@ h3 {
 .rutilio{
     width: 250px;
     transition: opacity 1s ease; /*Anima el cambio de opacidad en 1 segundo*/
+    cursor: pointer; /*Hace que el cursor se convierta en una manita al pasar sobre él tache*/
 }
 
 .rutilio.mini {
   width: 70px;
   border-radius: 50%;
   object-fit: cover; /* recorta la imagen para llenar el círculo */
+  cursor: pointer; /*Hace que el cursor se convierta en una manita al pasar sobre él tache*/
 }
 /*Posición del contenedor widget*/
 .widget{
