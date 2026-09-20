@@ -12,35 +12,102 @@
   </head>
   <body class="rutta-identidad rutta-ayuda-pagina">
     <a class="salto-contenido" href="#ayuda-contenido">Saltar al contenido</a>
-    <!-- ==================== NAVEGACIÓN AYUDA ==================== -->
-    <nav class="navbar navbar-expand-lg barra-navegacion" aria-label="Navegación principal">
+<!--todo =============== CÓDIGO DE NAVBAR GENERAL===============-->
+        <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
+    <nav class="navbar navbar-expand-lg rutta-identidad barra-navegacion sticky-top" aria-label="Navegación principal" id="navbar-AU">
+      <!-- Container limita el ancho y centra los elementos de navegación. -->
       <div class="container">
-        <a class="navbar-brand marca-rutta" href="../index.html" aria-label="Rutta, volver al inicio">
+        <!-- El logotipo lleva al inicio de la misma página. -->
+        <a class="navbar-brand marca-rutta" href="/UI/index.html" aria-label="Rutta, volver al inicio">
+          <!--? NUEVA IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
           <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
-        <!-- Acciones de móvil: se mantienen fuera del menú colapsable. -->
+
+        <!-- Contenedor de acciones visible en dispositivos móviles. -->
         <div class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none">
-          <a class="boton-icono" href="../Login/login.html" aria-label="Iniciar sesión"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/usuario.svg" alt="" width="32" height="32" /></a>
-          <a class="boton-icono boton-carrito" href="../index.html#carrito" aria-label="Abrir carrito"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/carrito.svg" alt="" width="32" height="32" /></a>
+          <!-- Botón que abre la búsqueda de productos. -->
+          <button class="boton-icono boton-aboutUs" type="button" data-accion="buscar" aria-label="Buscar productos">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+
+          <!--? INICIO CONEXIÓN LOGIN: acceso también disponible en celular. -->
+          <a class="boton-icono boton-aboutUs" href="./Login/login.html" aria-label="Iniciar sesión">
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <!--? FIN CONEXIÓN LOGIN. -->
+
+          <!-- Botón del carrito con contador dinámico. -->
+          <button class="boton-icono boton-carrito boton-aboutUs" type="button" data-accion="carrito" aria-label="Abrir carrito">
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
         </div>
-        <!-- Bootstrap abre y cierra el menú al pulsar este botón. -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuAyuda" aria-controls="menuAyuda" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+
+        <!-- Botón hamburguesa que despliega el menú en pantallas pequeñas. -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="menuAyuda">
+
+        <!-- Menú colapsable controlado por Bootstrap. -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <!-- Lista central de enlaces principales. -->
           <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="../index.html#productos">Equipamiento</a></li>
-            <li class="nav-item"><a class="nav-link" href="../index.html#guias">Guías</a></li>
-            <li class="nav-item"><a class="nav-link" href="./ayuda.html" aria-current="page">Ayuda</a></li>
-            <li class="nav-item"><a class="nav-link" href="../AboutUs/aboutUs.html">Sobre Rutta</a></li>
+            <!-- Menú desplegable para las categorías de equipamiento. -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#productos"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
+              <ul class="dropdown-menu">
+                <li><button class="dropdown-item" type="button" data-filtro="todos">Ver todo</button></li>
+                <li><button class="dropdown-item" type="button" data-filtro="mochilas">Mochilas</button></li>
+                <li><button class="dropdown-item" type="button" data-filtro="ropa">Ropa</button></li>
+                <li><button class="dropdown-item" type="button" data-filtro="calzado">Calzado</button></li>
+              </ul>
+            </li>
+
+            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+             <li class="nav-item"><a class="nav-link" href="./aboutUs.html">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#guias">Guías</a></li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
+            <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre-rutta">Sobre Rutta</a></li>
           </ul>
+
+          <!-- Acciones de escritorio ubicadas al lado derecho. -->
           <div class="acciones-escritorio d-none d-lg-flex align-items-center gap-1">
-            <a class="boton-icono" href="../Login/login.html" aria-label="Iniciar sesión"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/usuario.svg" alt="" width="32" height="32" /></a>
-            <a class="boton-icono boton-carrito" href="../index.html#carrito" aria-label="Abrir carrito"><img class="rutta-ayuda-icono" src="../../img/iconos-rutta/carrito.svg" alt="" width="32" height="32" /></a>
+            <button class="boton-icono" type="button" data-accion="buscar" aria-label="Buscar productos">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
+            <a class="boton-icono" href="./Login/login.html" aria-label="Iniciar sesión">
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <!--? FIN CONEXIÓN LOGIN. -->
+            <button class="boton-icono boton-carrito" type="button" data-accion="carrito" aria-label="Abrir carrito">
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
           </div>
         </div>
       </div>
     </nav>
+    <!--todo ======== FIN DE CÓDIGO DE NAVBAR GENERAL =====>
     <!-- ==================== CONTENIDO FAQ ==================== -->
     <!-- La cuadrícula de Bootstrap distribuye las preguntas y el formulario. -->
     <main class="container py-4 py-lg-5" id="ayuda-contenido">
