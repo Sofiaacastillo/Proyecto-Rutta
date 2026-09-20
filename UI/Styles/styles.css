@@ -1586,6 +1586,19 @@ h3 {
     width: 10rem; /* Mantiene la marca legible dentro del footer existente. */
 }
 
+.logo-footer{
+    display: block; /* Permite dar dimensiones al span o al enlace de marca. */
+    flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
+    width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
+    aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
+    background-image: url("/img/marca/Logotipo_Rutta.png"); /* Tu nuevo logo. */
+    background-repeat: no-repeat; /* Evita repetir la marca. */
+    background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
+    background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
+    border-radius: 0.2rem; /* Suaviza la superficie del logotipo. */
+    width: 10rem; /* Mantiene la marca legible dentro del footer existente. */
+}
+
 /* 12. ICONOS SVG */
 .rutta-identidad .bi-search { --rutta-icono: url("../../img/iconos-rutta/buscar.svg"); }
 .rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("../../img/iconos-rutta/usuario.svg"); }
@@ -2014,4 +2027,139 @@ h3 {
     max-width: 45vw; 
     height: auto; }
 
-    
+/*Personalización de widget personaje Rutilio pagina de Ayuda*/
+/*Responsive tamaño pantallas escritorio*/
+.rutilio{
+    width: 250px;
+    transition: opacity 1s ease; /*Anima el cambio de opacidad en 1 segundo*/
+    cursor: pointer; /*Hace que el cursor se convierta en una manita al pasar sobre él tache*/
+}
+
+.rutilio.mini {
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover; /* recorta la imagen para llenar el círculo */
+  cursor: pointer; /*Hace que el cursor se convierta en una manita al pasar sobre él tache*/
+}
+/*Posición del contenedor widget*/
+.widget{
+    position: fixed; /*Ancla elemento a la ventana del navegador*/
+    bottom: 20px; 
+    right: 18px; 
+    z-index: 999; /*Controla el orden de apilamiento en el eje z (hacia adelante/atras, el número asignado garantiza que el widget quede adelante*/
+}
+/*Burbuja de saludo*/
+.burbuja-saludo{
+    position: absolute; /*Posiciona el elemento a su contenedor más cercano a posición*/
+    bottom: 100%; /*Aparece arriba del widget (100% de su altura hacia arriba) */
+    right: 0;
+    margin-bottom: 8px;   /*Separación de 8px entre la burbuja y Rutilio*/
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);    /*Sombra suave para que "flote"*/
+    opacity: 0;                    /* invisible por defecto */
+    transition: opacity 0.5s ease; /*Anima el cambio de opacidad en 0.5 segundos*/
+}
+/*Cuando la burbuja tiene la clase "visible" (la agrega JavaScript)*/
+.burbuja-saludo.visible {
+  opacity: 1;
+}
+
+.burbuja-saludo p {
+  margin: 0;
+}
+/*Boton x de cierre saludo y menu de opciones*/
+.cierre-boton, .cierre-boton-dos{
+    position: absolute; /*Posiciona el elemento a su contenedor más cercano a posición*/
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent; /*Sin fondo, solo se ve la X*/
+    color: #999;
+    font-size: 16px;
+    line-height: 1; /*Evita que la X se desplace verticalmente*/
+    cursor: pointer; /*Hace que el cursor se convierta en una manita al pasar sobre él tache*/
+}
+
+.cierre-boton:hover,
+.cierre-boton-dos:hover {
+  color: #3a3a3e;
+}
+
+/*Menu de opciones de widget*/
+/*Personalización de botón ver opciones*/
+.ver-opciones { 
+  border: none;
+  background-color: #1c4f78;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+}
+
+.menu-opciones {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px; /*Separación de Rutilio*/
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  display: none;          /* oculto por defecto */
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 8px;
+  width: 220px;
+  
+}
+/*Cuando el menú tiene la clase "mostrar" (la agrega JavaScript)*/
+.menu-opciones.mostrar {
+  display: flex;          /* se muestra al agregar esta clase */
+}
+/*Cada botón del menú*/
+.opcion-menu {
+  border: none;
+  background-color: #f5f5f5;   /* fondo gris claro para que se vean como botones */
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.opcion-menu:hover {
+  background-color: #e0e0e0;   /* se oscurece al pasar el cursor */
+}
+
+
+/*Widget responsivo en pantaññas más pequeñas*/
+@media (max-width: 480px) {
+  .rutilio {
+    width: 150px;
+  }
+  .burbuja-saludo {
+    max-width: 160px;
+    font-size: 10px;
+  }
+}
+/*Menu opciones responsivo*/
+@media (max-width: 480px) {
+  .menu-opciones {
+    width: 180px;          /*más angosto en celular*/
+    right: 0;
+  }
+  .opcion-menu {
+    font-size: 12px;       /*texto más pequeño*/
+    padding: 8px 10px;
+  }
+}
+
+

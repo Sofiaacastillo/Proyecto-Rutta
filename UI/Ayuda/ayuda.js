@@ -103,4 +103,59 @@ formEl.addEventListener("submit", (event) => {
   mensajeEl.textContent = "Tu consulta quedó guardada.";
 });
 
+//5. INTERACTIVIDAD DE WIDGET RUTILIO
+//DOMContentLoaded espera que el documento HTML termine de cargar para ejecutar
+document.addEventListener('DOMContentLoaded', function () {
+  // Busca los elementos del widget y los guarda en variables
+  const burbuja = document.querySelector('.burbuja-saludo');       // Burbuja de saludo
+  const botonCerrar = document.querySelector('.cierre-boton');     // Botón X de la burbuja
+  const verOpciones = document.querySelector('.ver-opciones');     // Botón "Ver opciones"
+  const menuOpciones = document.querySelector('.menu-opciones');   // Panel de opciones
+  const botonCerrarMenu = document.querySelector('.cierre-boton-dos'); // Botón X del menú
+  const rutilio = document.querySelector(`.rutilio`);
 
+
+
+  // setTimeout: ejecuta la función después de 1000ms (1 segundo)
+  setTimeout(function () {
+    burbuja.classList.add('visible');  // Agrega la clase "visible" → la burbuja aparece
+  }, 1000);
+
+  // Al hacer clic en la X de la burbuja, la oculta
+  botonCerrar.addEventListener('click', function () {
+    burbuja.classList.remove('visible');
+    rutilio.classList.add(`mini`);
+  });
+
+  // Al hacer clic en "Ver opciones": oculta la burbuja y muestra el menú
+  verOpciones.addEventListener('click', function () {
+    burbuja.classList.remove('visible');   // Oculta la burbuja
+    menuOpciones.classList.add('mostrar'); // Muestra el menú
+    rutilio.classList.remove(`mini`);
+  });
+
+  // Al hacer clic en la X del menú: lo oculta y reaparece el saludo
+  botonCerrarMenu.addEventListener('click', function () {
+    menuOpciones.classList.remove('mostrar'); // Oculta el menú
+    rutilio.classList.add('mini');            // Rutilio se achica
+    // (quita la línea: burbuja.classList.add('visible'))
+  });
+
+//Evento de click en Rutilio abrir y cerrar Menu
+rutilio.addEventListener('click', function () {
+    burbuja.classList.remove('visible');
+    menuOpciones.classList.add('mostrar');
+    rutilio.classList.remove('mini');
+  });
+
+  // querySelectorAll: devuelve UNA LISTA con todos los botones .opcion-menu
+  const botonesMenu = document.querySelectorAll('.opcion-menu');
+
+  // forEach: recorre la lista y ejecuta la función por cada botón
+  botonesMenu.forEach(function (boton) {
+    boton.addEventListener('click', function () {
+      const destino = boton.getAttribute('data-destino'); // Lee el atributo data-destino
+      window.location.href = destino;                     // Redirige a esa página
+    });
+  });
+});
