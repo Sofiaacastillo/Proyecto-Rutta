@@ -66,6 +66,7 @@
         <!-- ==================== FORMULARIO DE AYUDA ==================== -->
         <section class="col-12 col-lg-4 rutta-ayuda-contacto" aria-labelledby="faq-contacto-titulo">
           <h2 class="h5 mb-4" id="faq-contacto-titulo">¿Tienes más dudas?</h2>
+          <p class="h5 mb-4" id="faq-contacto-titulo"> Contáctanos directamente</p>
           <form id="formularioAyuda">
             <!-- El script habilita los campos al terminar de preparar el envío. -->
             <fieldset id="faq-campos">
@@ -113,12 +114,13 @@
       <img src="../../img/ayuda-senderista.png" alt="" width="1536" height="1024" />
     </div>
           <!-- ==================== PIE DE PÁGINA ==================== -->
+    <!-- ==================== PIE DE PÁGINA ==================== -->
     <footer class="pie-pagina">
       <div class="container pie-contenido">
         <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
         <div class="pie-marca rutta-identidad">
           <!-- ?El logotipo nuevo reemplaza la marca anterior sin cambiar el footer. -->
-          <a class="marca-logo-actual marca-logo-pie" href="#inicio" aria-label="Rutta, volver al inicio"></a>
+          <a class="logo-footer" href="#inicio" aria-label="Rutta, volver al inicio"></a>
         </div>
 
         <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
@@ -131,14 +133,20 @@
         <p class="mb-0">© <span id="anioActual"></span> Rutta. </p>
       </div>
     </footer>
-
     <!--INICIO DE WIDGET AYUDA PERSONAJE RUTILIO-->
     <div class="widget">
       <div class="burbuja-saludo">
         <p><strong>¡Hola! Soy Rutilio</p>
         <p>Es un gusto conocerte</p>
+        <button class="ver-opciones">¿En qué te ayudo?</button>  <!--Boton de menu de opciones-->
         <button aria-label="Cerrar mensaje de saludo" class="cierre-boton">X</button> <!--Boton de cierre burbuja-->
       </div>
+      <div class="menu-opciones">
+      <button aria-label="Cerrar menú de opciones" class="cierre-boton-dos">X</button>
+      <button class="opcion-menu" data-destino="/UI/Login/login.html">Iniciar sesión o registrarme</button>
+      <button class="opcion-menu" data-destino="/UI/guias.html">Ver mi carrito</button>
+      <button class="opcion-menu" data-destino="/UI/productos.html">Explorar productos</button>
+  </div>
           <img src="/img/Rutilio/Rutilio-persona-inicial.png" class="rutilio" alt="Rutilio personaje de Rutta">
     </div> <!--Cierre de widget-->
     <!-- ==================== FIN CONTENIDO FAQ ==================== -->
