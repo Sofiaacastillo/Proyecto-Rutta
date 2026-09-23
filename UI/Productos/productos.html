@@ -1,0 +1,48 @@
+<!-- ==================== PRODUCTOS ==================== -->
+<section
+  class="seccion productos-seccion"
+  id="productos"
+  aria-labelledby="titulo-productos"
+>
+  <div class="container">
+    <!-- Encabezado acompañado de filtros del catálogo. -->
+    <div class="encabezado-productos">
+      <div class="encabezado-seccion">
+        <p class="sobrelinea">Equipamiento seleccionado</p>
+        <h2 id="titulo-productos">Productos para tu próxima ruta</h2>
+        <p>
+          Compara el nivel recomendado, el terreno y las características de cada
+          producto.
+        </p>
+      </div>
+
+      <!-- Botones de filtro controlados desde JavaScript. -->
+      <div
+        class="filtros-productos"
+        role="group"
+        aria-label="Filtrar productos"
+      >
+        <button class="filtro activo" type="button" data-filtro="todos">
+          Todos
+        </button>
+        <button class="filtro" type="button" data-filtro="mochilas">
+          Mochilas
+        </button>
+        <button class="filtro" type="button" data-filtro="ropa">Ropa</button>
+        <button class="filtro" type="button" data-filtro="calzado">
+          Calzado
+        </button>
+      </div>
+    </div>
+
+    <!-- JavaScript inserta aquí las tres tarjetas definidas en el arreglo productos. -->
+    <div class="row g-4" id="listaProductos" aria-live="polite"></div>
+
+    <!-- Mensaje oculto que aparece cuando una búsqueda no encuentra resultados. -->
+    <div class="estado-vacio d-none" id="estadoVacio">
+      <i class="bi bi-search"></i>
+      <h3>No encontramos ese producto</h3>
+      <p>Prueba con mochila, chamarra o botas.</p>
+    </div>
+  </div>
+</section>
