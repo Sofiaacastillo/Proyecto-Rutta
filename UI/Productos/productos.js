@@ -68,7 +68,126 @@ const productos = [
         ],
         recomendado: false,
     },
-]
+    // Cuarto objeto: representa Tenis Pegasus Trail ACG
+    {
+        id: 4,
+        categoria: "calzado",
+        categoriaNombre: "Calzado",
+        iconoCategoria: "bi-boot",
+        imagen: "/",
+        nombre: "Tenis Pegasus Trail ACG de Nike",
+        precio: 3099,
+        resumen: "Tenis de trail running para hombre.",
+        nivel: "Básico",
+        actividad: "Senderismo ligero/trail running",
+        terreno: "Senderos medianamente planos",
+        ideal: "Comodidad y durabilidad",
+        tallas: [22, 23, 24, 25, 26, 27],
+        colores: ["negro", "verde"],
+        caracteristicas: [
+            "Agarre y comodidad en cualquier terreno.",
+            "Hechos para arrasar en cualquier superficie.",
+        ],
+        recomendado: true,
+    },
+    // Quinto objeto: representa Playera Kalenji
+    {
+        id: 5,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Playera Kalenji de Decathlon",
+        precio: 149,
+        resumen: "Playera de running para hombre.",
+        nivel: "Principiante",
+        actividad: "Senderismo todos los niveles/trail running",
+        terreno: "Cualquier tipo de sendero/clima templado-caluroso",
+        ideal: "Transpirabilidad y comodidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro", "blanco"],
+        caracteristicas: [
+            "Tejido fabricado con poliéster.",
+            "Absorbe y evacua el sudor para reducir la sensación de humedad.",
+        ],
+        recomendado: false,
+    },
+    // Sexto objeto: representa Chaleco de Trail Running
+    {
+        id: 6,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Chaleco de Trail Running de Adidas",
+        precio: 1699,
+        resumen: "Chaleco Terrex Multi Climacool 5L diseñado para un rendimiento máximo con ajuste ergonómico.",
+        nivel: "Intermedio",
+        actividad: "Senderismo de montaña/trail running",
+        terreno: "Senderos planos a rocosos",
+        ideal: "Transpirabilidad, comodidad y almacenamiento",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro"],
+        caracteristicas: [
+            "Chaleco de trail transpirable con ajuste personalizable.",
+            "Organización interna para un fácil acceso.",
+        ],
+        recomendado: true,
+    },
+    // Séptimo objeto: representa Chamarra Impermeable Venture 2
+    {
+        id: 7,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Chamarra Impermeable Venture 2 de The North Face",
+        precio: 2999,
+        resumen: "Prenda ligera de 2.5 capas, transpirable, ideal para lluvia y viento fuertes.",
+        nivel: "Intermedio",
+        actividad: "Senderismo de montaña/trail running",
+        terreno: "Todo tipo de sendero/clima frío-lluvioso",
+        ideal: "Transpirabilidad, comodidad y almacenamiento",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro"],
+        caracteristicas: [
+            "Prenda ligera de 2.5 capas, también transpirable.",
+            "Diseñada para mantener tu ruta intacta bajo tormentas y vientos fuertes.",
+        ],
+        recomendado: true,
+    },
+    // Octavo objeto: representa Outherpath Utility
+    {
+        id: 8,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Outherpath Utility de Salomon",
+        precio: 2999,
+        resumen: "Prenda utilitaria Outerpath de Salomon, pensada para el confort y la libertad de movimiento.",
+        nivel: "Básico",
+        actividad: "Senderismo ligero",
+        terreno: "Senderos planos a rocosos",
+        ideal: "Transpirabilidad, comodidad y durabilidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro", "verde"],
+        caracteristicas: [
+            "Diseñada para el confort, la comodidad y la libertad.",
+            "La gama Outerpath se adapta a tus aventuras.",
+        ],
+        recomendado: true,
+    },
+
+
+
+
+
+
+    
+
+    
+]//Cierre de lista objetos - Array de objetos
 
 
 
