@@ -39,7 +39,192 @@
     <!-- Conecta el documento HTML con nuestros estilos personalizados. -->
     <link rel="stylesheet" href="/UI/Styles/styles.css" />
   </head>
-  <body>
+  <body class="rutta-identidad">
+
+<!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
+    <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
+    <nav
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+    >
+      <!-- Container limita el ancho y centra los elementos de navegación. -->
+      <div class="container">
+        <!-- El logotipo lleva al inicio de la misma página. -->
+        <a
+          class="navbar-brand marca-rutta"
+          href="/UI/index.html"
+          aria-label="Rutta, volver al inicio"
+        >
+          <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
+          <span class="marca-logo-actual" aria-hidden="true"></span>
+        </a>
+
+        <!-- Contenedor de acciones visible en dispositivos móviles. -->
+        <div
+          class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
+        >
+          <!-- Botón que abre la búsqueda de productos. -->
+          <button
+            class="boton-icono"
+            type="button"
+            data-accion="buscar"
+            aria-label="Buscar productos"
+          >
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+
+          <!-- INICIO CONEXIÓN LOGIN--->
+          <a
+            class="boton-icono"
+            href="/UI/Login/login.html"
+            aria-label="Iniciar sesión"
+          >
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <!-- FIN CONEXIÓN LOGIN. -->
+
+          <!-- Botón del carrito con contador dinámico. -->
+          <button
+            class="boton-icono boton-carrito"
+            type="button"
+            data-accion="carrito"
+            aria-label="Abrir carrito"
+          >
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
+        </div>
+
+        <!-- Botón que despliega el menú en pantallas pequeñas. -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable controlado por Bootstrap. -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <!-- Lista central de enlaces principales. -->
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <!-- Menú desplegable para las categorías de equipamiento. -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#productos"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/UI/Productos/productos.html">
+                    <button
+                      class="dropdown-item"
+                      type="button"
+                      data-filtro="todos"
+                    >
+                      Ver todo
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="mochilas"
+                  >
+                    Mochilas
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="ropa"
+                  >
+                    Ropa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="calzado"
+                  >
+                    Calzado
+                  </button>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#guias">Guías</a>
+            </li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#consejos">Consejos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+            </li>
+          </ul>
+
+          <!-- Acciones de escritorio ubicadas al lado derecho. -->
+          <div
+            class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
+          >
+            <button
+              class="boton-icono"
+              type="button"
+              data-accion="buscar"
+              aria-label="Buscar productos"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
+            <a
+              class="boton-icono"
+              href="/UI/Login/login.html"
+              aria-label="Iniciar sesión"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <!--? FIN CONEXIÓN LOGIN. -->
+            <button
+              class="boton-icono boton-carrito"
+              type="button"
+              data-accion="carrito"
+              aria-label="Abrir carrito"
+            >
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <!-- ==================== CATEGORÍAS ==================== -->
     <section class="seccion categorias" aria-labelledby="titulo-categorias">
       <div class="container">
@@ -158,6 +343,162 @@
         </div>
       </div>
     </section>
+
+    <!-- ==================== PANEL DE BÚSQUEDA ==================== -->
+    <!-- Offcanvas de Bootstrap que aparece desde la parte superior. -->
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
+      <div class="offcanvas-header container">
+        <div>
+          <p class="sobrelinea mb-1">Catálogo Rutta</p>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
+      </div>
+      <div class="offcanvas-body container">
+        <!-- El texto escrito se utiliza para filtrar nombres y descripciones. -->
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
+        <div class="input-group input-group-lg">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PANEL DEL CARRITO ==================== -->
+    <!-- Offcanvas de Bootstrap que entra desde la derecha al presionar el carrito. -->
+    <div
+      class="offcanvas offcanvas-end carrito-panel"
+      tabindex="-1"
+      id="carritoPanel"
+      aria-labelledby="tituloCarrito"
+    >
+      <!-- Encabezado fijo con título y botón para cerrar el panel. -->
+      <div class="offcanvas-header carrito-encabezado">
+        <div>
+          <p class="sobrelinea mb-1">Tu selección</p>
+          <h2 class="offcanvas-title" id="tituloCarrito">Carrito de compra</h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar carrito"
+        ></button>
+      </div>
+
+      <!-- El cuerpo cambia desde JavaScript conforme se agregan o eliminan productos. -->
+      <div class="offcanvas-body carrito-cuerpo">
+        <!-- Estado mostrado cuando todavía no se ha elegido ningún producto. -->
+        <div class="carrito-vacio" id="carritoVacio">
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega alguno de nuestros productos para verlo aquí.</p>
+          <button
+            class="btn boton-secundario-claro"
+            type="button"
+            data-bs-dismiss="offcanvas"
+          >
+            Explorar productos
+          </button>
+        </div>
+
+        <!-- Aquí se insertan las filas de productos seleccionados. -->
+        <div class="lista-carrito" id="listaCarrito" aria-live="polite"></div>
+      </div>
+
+      <!-- Resumen inferior; permanece oculto mientras el carrito está vacío. -->
+      <div class="carrito-resumen d-none" id="carritoResumen">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carritoTotal">MXN $0</strong>
+        </div>
+        <p>Impuestos incluidos. Envío calculado al finalizar.</p>
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
+          Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== MODAL DE PRODUCTO ==================== -->
+    <!-- Bootstrap muestra esta ventana al presionar “Ver producto”. -->
+    <div
+      class="modal fade"
+      id="modalProducto"
+      tabindex="-1"
+      aria-labelledby="modalProductoTitulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content modal-producto">
+          <div class="modal-header border-0">
+            <div>
+              <p class="sobrelinea mb-1" id="modalProductoCategoria">
+                Producto
+              </p>
+              <h2 class="modal-title" id="modalProductoTitulo">Detalle</h2>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body pt-0">
+            <!-- JavaScript reemplaza este contenido con la información seleccionada. -->
+            <div id="modalProductoContenido"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== NOTIFICACIÓN DEL CARRITO ==================== -->
+    <!-- Toast accesible que confirma cuando se añade un producto. -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-body d-flex align-items-center gap-3">
+          <i class="bi bi-check-circle-fill"></i>
+          <span id="mensajeToast">Producto agregado al carrito.</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Carga el JavaScript de Bootstrap, necesario para navbar, modal, toast y offcanvas. -->
     <script
