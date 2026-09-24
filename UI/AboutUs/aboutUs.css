@@ -1,26 +1,125 @@
 /*todo ================ COPIA DE CÓDIGO DE NAVBAR GENERAL================*/
+
+/* Todos los elementos - box-sizing: padding y borde incluidos en el ancho */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Documento HTML - overflow-x oculto (evita scroll horizontal) */
+html {
+    overflow-x: hidden;
+}
+
+/* Imágenes y SVG (general) - ancho máximo 100%, alto automático */
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Variables de marca (paleta oficial de la guía de diseño) - colores reutilizables en el contenido de "Sobre Nosotros" */
+:root {
+  --rutta-principal: #1C4F78;
+  --rutta-secundario-azul: #017DE8;
+  --rutta-secundario-naranja: #F2A43A;
+  --rutta-apoyo: #CBDDED;
+  --rutta-base: #FFFFFF;
+}
+
+/* Título "Conoce a nuestro equipo" (H1) - tipografía editorial, peso bold, tamaño responsivo (guía: 48–56px en escritorio). El !important vence a las clases de Bootstrap (.display-3) ya puestas en el HTML */
+#meet-team h1 {
+  font-family: var(--fuente-editorial), "Arial Black", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 52px !important;
+  line-height: 1.08;
+}
+
+/* Títulos "¿Quiénes somos?", "Los Trail Coders", "Una ruta comienza..." (H2) - tipografía editorial, peso semibold, tamaño responsivo (guía: 36–42px en escritorio) */
+#quienes-somos h2,
+.our-team h2,
+.idea h2 {
+  font-family: var(--fuente-editorial), "Arial Black", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 40px !important;
+  line-height: 1.15;
+}
+
+/* Subtítulos de tarjeta: valores y nombres de integrantes (H3) - tipografía editorial, peso medium, tamaño responsivo (guía: 24–30px en escritorio) */
+.holographic-card h5,
+.team-card h5 {
+  font-family: var(--fuente-editorial), "Arial Black", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 28px !important;
+}
+
+/* Nombre del integrante - color principal (más fiel a la guía que el gris oscuro de Bootstrap, y con buen contraste sobre la tarjeta clara) */
+.team-card h5 {
+  color: var(--rutta-principal) !important;
+}
+
+/* Párrafos (Body) - tipografía funcional, peso regular, tamaño responsivo (guía: 16–18px) */
+#meet-team p:not(.lead),
+#quienes-somos p,
+.holographic-card p,
+.team-card p {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+}
+
+/* Texto destacado: intro del hero, intro de "Rutta" y etiquetas cortas - tipografía funcional, peso semibold, tamaño responsivo (guía: 18–22px) */
+#meet-team .lead,
+.idea .lead,
+#trail-coders,
+#quienes-somos span,
+.our-team span {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+}
+
+/* Texto del botón "Explorar Rutta" (Buttons) - tipografía funcional, peso semibold */
+.boton {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* Tamaños de tipografía en tablet (guía: 768–991px) */
+@media (max-width: 991.98px) {
+  #meet-team h1 { font-size: 44px !important; }
+  #quienes-somos h2, .our-team h2, .idea h2 { font-size: 34px !important; }
+  .holographic-card h5, .team-card h5 { font-size: 24px !important; }
+  #meet-team p:not(.lead), #quienes-somos p, .holographic-card p, .team-card p { font-size: 17px !important; }
+  #meet-team .lead, .idea .lead, #trail-coders, #quienes-somos span, .our-team span { font-size: 19px !important; }
+}
+
+/* Tamaños de tipografía en móvil (guía: menos de 768px) */
+@media (max-width: 767.98px) {
+  #meet-team h1 { font-size: 36px !important; }
+  #quienes-somos h2, .our-team h2, .idea h2 { font-size: 30px !important; }
+  .holographic-card h5, .team-card h5 { font-size: 22px !important; }
+  #meet-team p:not(.lead), #quienes-somos p, .holographic-card p, .team-card p { font-size: 16px !important; }
+  #meet-team .lead, .idea .lead, #trail-coders, #quienes-somos span, .our-team span { font-size: 17px !important; }
+}
+
+/* Navbar - fondo semitransparente, desenfoque de fondo, borde inferior, alto mínimo */
 .barra-navegacion {
-    /* Fondo blanco azulado semitransparente tomado de la nueva paleta. */
     background: rgba(248, 251, 252, 0.94);
-
-    /* Desenfoca ligeramente el contenido que pasa detrás. */
     backdrop-filter: blur(14px);
-
-    /* Separa visualmente la barra del contenido. */
     border-bottom: 1px solid rgba(0, 66, 97, 0.1);
-
-    /* Define la altura mínima de la navegación. */
     min-height: 5rem;
 }
 
-/* Alinea el nuevo imagotipo horizontal dentro de la navegación. */
+/* Enlace del logo (navbar) - display flex, alineación vertical, quita subrayado */
 .marca-rutta {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
 }
 
-/* Controla el tamaño del archivo de logotipo sin deformarlo. */
+/* Logo navbar clásico (img) - ancho responsive, alto, alto máximo, ajuste de imagen */
 .marca-logo {
     display: block;
     width: clamp(8.6rem, 12vw, 10.8rem);
@@ -29,7 +128,7 @@
     object-fit: contain;
 }
 
-/* Presenta el nombre Rutta con una personalidad editorial. */
+/* Nombre "Rutta" (navbar y footer) - color, tipografía, tamaño de letra, grosor, interlineado */
 .marca-nombre {
     color: var(--verde-rutta);
     font-family: var(--fuente-editorial);
@@ -38,7 +137,7 @@
     line-height: 1;
 }
 
-/* Ajusta los enlaces principales de Bootstrap. */
+/* Enlaces navbar - posición, margen, padding, color, tamaño y grosor de letra */
 .barra-navegacion .nav-link {
     position: relative;
     margin: 0 0.35rem;
@@ -48,7 +147,7 @@
     font-weight: 600;
 }
 
-/* Dibuja una línea dorada al pasar el cursor. */
+/* Línea inferior de enlaces navbar - posición, color, grosor, escala inicial en 0, transición */
 .barra-navegacion .nav-link::after {
     position: absolute;
     right: 0.55rem;
@@ -62,7 +161,7 @@
     transition: transform 0.2s ease;
 }
 
-/* Conserva la flecha original en el enlace desplegable. */
+/* Flecha del menú desplegable - dibuja un triángulo con bordes, sin imagen ni transformación */
 .barra-navegacion .dropdown-toggle::after {
     position: static;
     display: inline-block;
@@ -78,13 +177,13 @@
     transform: none;
 }
 
-/* Activa el subrayado en hover y foco. */
+/* Línea inferior de enlaces navbar en hover/foco - escala a 1 (se muestra la línea) */
 .barra-navegacion .nav-link:not(.dropdown-toggle):hover::after,
 .barra-navegacion .nav-link:not(.dropdown-toggle):focus::after {
     transform: scaleX(1);
 }
 
-/* Personaliza el menú desplegable. */
+/* Menú desplegable "Equipamiento" - posición, ancho mínimo, padding, fondo, borde, bordes redondeados, sombra */
 .barra-navegacion .dropdown-menu {
     position: absolute !important;
     top: 100% !important;
@@ -97,11 +196,12 @@
     box-shadow: var(--sombra, 0 0.5rem 1rem rgba(0,0,0,0.15)) !important;
 }
 
+/* Menú desplegable abierto - fuerza display block */
 .barra-navegacion .dropdown-menu.show {
     display: block !important;
 }
 
-/* Suaviza cada opción desplegable. */
+/* Opciones del menú desplegable - ancho completo, padding, bordes redondeados, color, tamaño de letra, fondo transparente */
 .barra-navegacion .dropdown-item {
     display: block;
     width: 100%;
@@ -115,14 +215,14 @@
     border: none;
 }
 
-/* Estado activo de las opciones del menú. */
+/* Opciones del menú desplegable en hover/foco - color de texto blanco, fondo azul */
 .barra-navegacion .dropdown-item:hover,
 .barra-navegacion .dropdown-item:focus {
     color: white !important;
     background: #1C4F78 !important;
 }
 
-/* Crea botones redondos para búsqueda, usuario y carrito. */
+/* Botones circulares (buscar, usuario, carrito) - tamaño, forma circular, color de ícono, fondo, transición */
 .boton-icono {
     position: relative;
     display: inline-grid;
@@ -138,14 +238,14 @@
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Retroalimentación visual al interactuar con los íconos. */
+/* Botones circulares en hover - cambia color y fondo, se eleva levemente */
 .boton-icono:hover {
   color: #e48a0b;
     background-color: #CBDDED;
     transform: translateY(-2px);
 }
 
-/* Contador flotante del carrito. */
+/* Contador del carrito - posición, tamaño, color, fondo, borde, forma circular, tamaño y grosor de letra */
 .contador-carrito {
     position: absolute;
     top: 0.08rem;
@@ -163,13 +263,13 @@
     font-weight: 700;
 }
 
-/* Mantiene visible el contador cuando el botón cambia de fondo. */
+/* Contador del carrito cuando el botón está en hover - invierte color y fondo */
 .boton-icono:hover .contador-carrito {
     color: var(--verde-profundo);
     background: var(--dorado-rutta);
 }
 
-/* Quita el borde fuerte del toggler predeterminado. */
+/* Botón hamburguesa - color del borde */
 .navbar-toggler {
     border-color: rgba(0, 66, 97, 0.22);
 }
@@ -178,26 +278,26 @@
    INICIO RUTTA LOGIN E IDENTIDAD (Reglas de la Navbar)
    ================================================================ */
 
-/* 11. LOGOTIPO NUEVO */
+/* Logo nuevo navbar/footer (fondo) - tamaño responsive, proporción, imagen de fondo, recorte, posición, bordes redondeados */
 .rutta-identidad .marca-logo-actual {
-    display: block; /* Permite dar dimensiones al span o al enlace de marca. */
-    flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
-    width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
-    aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
-    background-image: url("../../img/ruttablanco-logotipo.png"); /* Tu nuevo logo. */
-    background-repeat: no-repeat; /* Evita repetir la marca. */
-    background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
-    background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
-    border-radius: 0.2rem; /* Suaviza la superficie del logotipo. */
+    display: block;
+    flex-shrink: 0;
+    width: clamp(8rem, 12vw, 10.8rem);
+    aspect-ratio: 2.65;
+    background-image: url("../../img/ruttablanco-logotipo.png");
+    background-repeat: no-repeat;
+    background-size: 133.333% auto;
+    background-position: center 52%;
+    border-radius: 0.2rem;
 }
 
-/* 12. ICONOS SVG DE LA BARRA DE NAVEGACIÓN */
+/* Variables de iconos SVG (buscar, usuario, carrito, carrito alternativo) - define qué imagen SVG usa cada ícono */
 .rutta-identidad .bi-search { --rutta-icono: url("../../img/iconos-rutta/buscar.svg"); }
 .rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("../../img/iconos-rutta/usuario.svg"); }
 .rutta-identidad :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito.svg"); }
 .rutta-identidad :disabled :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito-alternativo.svg"); }
 
-/* Cambia la representación del icono */
+/* Iconos SVG navbar (aplicación) - tamaño, imagen de fondo, alineación vertical, bordes */
 .rutta-identidad .bi:is(.bi-search, .bi-person, .bi-person-check, .bi-cart3, .bi-cart-plus)::before {
     content: ""; 
     display: inline-block; 
@@ -212,14 +312,14 @@
     image-rendering: auto; 
 }
 
-/* Ajusta el tamaño de los iconos dentro de los botones. */
+/* Iconos dentro de botones circulares - tamaño más grande, fondo transparente */
 .rutta-identidad .boton-icono .bi::before {
     width: 1.75rem; 
     height: 1.75rem; 
     background-color: transparent; 
 }
 
-/* Cambia el icono del botón de menú hamburguesa para que sea un SVG vectorial. */
+/* Ícono del botón hamburguesa - imagen SVG propia, tamaño, posición, bordes */
 .rutta-identidad .navbar-toggler-icon {
     background-image: url("../../img/iconos-rutta/menu.svg"); 
     background-size: contain; 
@@ -227,9 +327,8 @@
     border-radius: 0.2rem; 
 }
 
-/* 14. AJUSTES RESPONSIVOS DE LA NAVBAR Y NUEVA MARCA */
+/* Menú colapsado navbar (<992px) - margen, padding, fondo, borde, bordes redondeados, sombra */
 @media (max-width: 991.98px) {
-    /* Presenta el menú móvil como una superficie separada. */
     .navbar-collapse {
         margin-top: 0.9rem;
         padding: 1rem;
@@ -239,7 +338,7 @@
         box-shadow: var(--sombra);
     }
 
-    /* Alinea los enlaces móviles a la izquierda. */
+    /* Enlaces navbar (<992px) - quita margen lateral, ajusta padding */
     .barra-navegacion .nav-link {
         margin: 0;
         padding: 0.65rem 0 !important;
@@ -247,60 +346,64 @@
     
 }
 
+/* Enlaces navbar en hover (todas las pantallas) - color dorado de texto */
 .barra-navegacion .nav-link:hover {
     color: var(--dorado-rutta, #F2A43A) !important;
 }
 
+/* Logo navbar clásico (<576px) - reduce ancho */
 @media (max-width: 575.98px) {
-    /* Reduce el imagotipo para dejar espacio a los controles móviles. */
     .marca-logo {
         width: 7.4rem;
     }
 
+    /* Logo nuevo navbar (<576px) - reduce ancho */
     .rutta-identidad .barra-navegacion .marca-logo-actual {
         width: 6.6rem; 
     }
+    /* Botones circulares móviles (<576px) - reduce ancho */
     .rutta-identidad .acciones-movil .boton-icono {
         width: 2.2rem; 
     }
+    /* Botón hamburguesa (<576px) - reduce padding horizontal */
     .rutta-identidad .navbar-toggler {
         padding-inline: 0.4rem; 
     }
 }
 
 
-/*todo ================ CÓDIGO DE NAVBAR GENERAL================*/
+/*todo ================ NAVBAR GENERAL================*/
 
+/* Navbar de "Sobre Nosotros" - color de fondo y de texto */
 #navbar-AU {
   background-color: #1C4F78;
   color: #ffffff;
 }
 
 
+/*todo ------ HERO/ ENCABEZADO ------*/
 
-/*!========================================================*/
-/** ============= 9. CÓDIGO SOBRE NOSOTROS =================*/
-/*? =======================================================*/
-
-/*todo ====== HERO/ ENCABEZADO ================*/
-
+/* Etiqueta "TRAIL CODERS" del encabezado - fondo naranja y texto base (blanco) de marca, padding, bordes redondeados */
 #trail-coders {
-  background-color: #F2A43A;
-  color: #ffffff;
+  background-color: var(--rutta-secundario-naranja);
+  color: var(--rutta-base);
   padding: 5px;
   border-radius: 5px;
 }
 
+/* Sección encabezado (hero) - posición relativa, orden de apilado, transición de color */
 #meet-team {
   position: relative;
   z-index: 1;
   transition: color 0.6s ease;
 }
 
+/* Sección encabezado en hover - color de texto blanco */
 #meet-team:hover {
   color: #ffffff;
 }
 
+/* Fondo de foto del encabezado (oculto) - tamaño completo, imagen con degradado, opacidad inicial 0, transición, detrás del contenido */
 #meet-team::before {
   content: "";
   position: absolute;
@@ -316,81 +419,104 @@
   z-index: -1;
 }
 
+/* Fondo de foto del encabezado en hover - opacidad a 1 (se hace visible) */
 #meet-team:hover::before {
   opacity: 1;
 }
 
+/* Logo del encabezado - transición del filtro (para el cambio en hover) */
 .logo-hero {
   transition: filter 0.4s ease;
   
 }
 
+/* Logo del encabezado en hover - cambia de imagen, agrega sombra proyectada */
 #meet-team:hover .logo-hero {
   content: url('/img/trailcoders-logoblanco.png');
   filter: drop-shadow(10px 10px 20px #000000);
 }
+
 /*todo ------- ¿QUIÉNES SOMOS? ------*/ 
+
+/* Sección "¿Quiénes somos?" - fondo base (blanco), sombra interior con el naranja exacto de marca (antes un tono suelto #e48a0b), transición */
 #quienes-somos {
-  background-color: #F2A43A;
+  background-color: #CBDDED;
   box-shadow:
   
-  inset 0px 5px 5px #ffbc5e,
-  inset 0px -5px 5px #e48a0b;
+  inset 0px 5px 5px #7797b1,
+  inset 0px -5px 5px #e7eff6;
 
   transition: all 0.4s ease;
 }
 
+/* Sección "¿Quiénes somos?" en hover - cambia a fondo de apoyo, intensifica la sombra (naranja de marca, antes tonos sueltos #ffbc5e/#e48a0b), se agranda levemente */
 #quienes-somos:hover {
-  background-color: #fba020;
+  background-color: var(--rutta-apoyo);
   
   box-shadow:
   
-  inset 0px 1px 50px #ffbc5e,
-  inset 0px -5px 5px #e48a0b;
+  inset 0px 1px 50px #f0f4f8,
+  inset 0px -5px 5px #4d6980;
   transform: translateY(-1px) scale(1.01);
 }
 
+/* Texto "SOBRE NOSOTROS" - color secundario naranja (misma etiqueta de acento que "TRAIL CODERS" y "NUESTRO EQUIPO"; antes era negro) */
 #quienes-somos span {
-  color: #ffffff;
+  color: var(--rutta-secundario-naranja);
+  font-family: "Montserrat", sans-serif !important;
 }
 
+/* Título "¿Quiénes somos?" - color principal (la guía reserva el naranja para etiquetas y llamadas a la acción, no para títulos; antes usaba #F2A43A) */
 #quienes-somos h2 {
-  color: #ffffff;
+  color: #1C4F78;
+   font-family: "Montserrat", sans-serif !important;
 }
 
 /* todo: ---- CARDS DE VALORES ----*/
 
+/* Tarjetas de valores (Tecnología, Aventura, Equipo) - fondo (color secundario naranja de la guía, antes un tono personalizado #f3bb6d), recorta contenido sobrante, bordes, transición */
 .holographic-card {
   
-  background: #f3bb6d;
+  background: var(--rutta-secundario-naranja);
   overflow: hidden;
   border-radius: 5px;
-  transition: all 0.5s ease;  
+  transition: all 0.5s ease; 
+  background-color: #ffffff; 
 }
 
+/* Tarjetas de valores en hover - se agrandan, agrega resplandor alrededor (con el mismo naranja de marca, antes un tono suelto #ffc677) */
 .holographic-card:hover {
   transform: scale(1.07);
-  box-shadow: 0px 0px 50px #ffc677;
+  box-shadow: 0px 0px 50px #ffffff;
 
 }
 
 
-
+/* Título de tarjeta de valor - color base (blanco), sombra de texto */
 .holographic-card h5 {
-  color: #ffffff;
-  text-shadow: 1px 0px 10px #00000050;
+  color: #1C4F78;
+  font-family: "Montserrat", sans-serif !important;
+  text-shadow: 1px 0px 10px #ffffff;
 }
 
+/* Párrafo de tarjeta de valor - color base (blanco), sombra de texto */
 .holographic-card p {
-  color: #ffffff;
-  text-shadow: 1px 0px 10px #00000050;
+  color: #1C4F78;
+  text-shadow:
+  0px 5px 10px #ffffff,
+  0px -5px 10px #ffffff;
+
+  font-family: "Montserrat", sans-serif !important;
 }
 
+/* Contenido de tarjeta de valor - se ubica por encima del ícono de fondo */
 .holographic-card .card-body {
   position: relative;
   z-index: 2; 
+  font-family: "Montserrat", sans-serif !important;
 }
 
+/* Ícono decorativo de tarjeta de valor - posición, tamaño, opacidad, transición */
 .icono-fondo {
   position: absolute;
   bottom: -25px;       
@@ -405,103 +531,132 @@
 /* TODO ---- FIN CARD DE VALORES*/
 
 /* ---- SECTION DE CARRUSEL DE INTEGRANTES*/
+
+/* Texto "NUESTRO EQUIPO" - color secundario naranja (etiqueta de acento, igual que "TRAIL CODERS") */
 .our-team span {
-  color: #F2A43A;
+  color: var(--rutta-secundario-naranja);
 }
+
+/* Sección del carrusel de integrantes - fondo (color principal), sombra interior */
 .team{
-background-color: #1C4F78;
+background-color: var(--rutta-principal);
 box-shadow: 
 inset 0px 10px 100px #000000,
 inset 0px -0px 0px #000000;
+transition: all 0.5s ease;
 }
 
+/* Sección del carrusel en hover - cambia el fondo al azul secundario (la guía asigna ese color justo al caso "Estados hover"; antes era un azul suelto #08477b) */
 .team:hover{
-  background-color: #08477b;
+  background-color: #09406d;
   transition: all 0.5s ease;
 }
 
-
+/* Bloque "Nuestro equipo" - color base (blanco) */
 .our-team{
-  color: #ffffff;
+  color: var(--rutta-base);
 }
-
 
 
 /*todo ----------  VARIANTE 1 DE HOVER EN CARD DE INTEGRANTE ----- */
+
+/* Fondo de tarjeta de integrante - color secundario azul, bordes muy redondeados, transición */
 .back-team-card{
-  background-color: #017DE8;
-border-radius: 55px;
+  background-color: #ffffff;
+border-radius: 25px;
 transition: all 0.4s ease;   
 }
 
+/* Fondo de tarjeta de integrante en hover - cambia a naranja (coincide con el "Estado activo" de la guía), gira y agranda */
 .back-team-card:hover{
-  background-color: #F2A43A;
-transform: rotate(1deg) scale(1.10);
+  background-color: var(--rutta-secundario-naranja);
+transform: scale(1.10);
 }
 
+/* Tarjeta de integrante (foto y nombre) - fondo color de apoyo (el mismo que la guía asigna a "Tarjetas"), bordes redondeados, margen, transición */
 .team-card{
-  background-color: #CBDDED;
-  border-radius: 45px;
+  background-color: var(--rutta-apoyo);
+ border-radius: 25px;
   margin: 15px;
   transition: all 0.9s ease;
+  font-family: "Montserrat", sans-serif !important;
 }
 
+/* Tarjeta de integrante en hover - gira y agranda levemente */
 .team-card:hover{
-  transform: rotate(1deg) scale(1.05);
+  transform: scale(1.05);
 }
 
+/* Foto dentro de la tarjeta - escala inicial, transición */
 .team-card img {
-  transform: rotate(0deg) scale(1.10);
+  transform: scale(1.10);
   transition: all 1.1s ease;
+  
 }
 
+/* Foto dentro de la tarjeta en hover - gira y agranda más que la tarjeta */
 .team-card:hover img {
-  transform: rotate(-5deg) scale(1.15);
+  transform: scale(1.15);
 }
 
 /*-----*/
 
 /** ---------   FOTOGRAFIA DE INTEGRANTES -----*/
+
+/* Foto de perfil del integrante - ancho responsive con máximo (antes tenía un valor inválido y rompía el diseño), alto, ajuste de imagen, centrado, bordes redondeados */
 .team-pic {
-  width: 75;
+  width: 100%;
+  max-width: 220px;
   height: 270px;
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  border-radius: 30px;
 }
 
+/* Botón "anterior" del carrusel - posición hacia la izquierda */
 #teamCarousel .carousel-control-prev {
   left: -50px;
 }
+
+/* Botón "siguiente" del carrusel - posición hacia la derecha */
 #teamCarousel .carousel-control-next {
   right: -50px;
 }
-@media (max-width: 992px) {
+
+/* Botones del carrusel (<1200px) - vuelven al borde (evita que se corten o generen scroll horizontal) */
+@media (max-width: 1199.98px) {
   #teamCarousel .carousel-control-prev { left: 0; }
   #teamCarousel .carousel-control-next { right: 0; }
 }
 
+/* Sección final "Una ruta comienza con una idea" - color de fondo principal */
 .idea {
-  background-color: #1C4F78;
+  background-color: var(--rutta-principal);
 }
 
+/* Botón "Explorar Rutta" (Botón primario / CTA) - fondo naranja de marca, texto base (blanco), bordes redondeados, relleno cómodo, transición.
+   Antes no fijaba el color del texto (Bootstrap lo dejaba oscuro sobre el fondo naranja) ni el padding/radio del botón. */
 .boton {
-  background-color: #F2A43A;
+  background-color: var(--rutta-secundario-naranja);
+  color: var(--rutta-base);
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 8px;
   transition: all 0.2s ease;
 }
 
+/* Botón "Explorar Rutta" en hover (Estado hover) - se aclara levemente, agrega una sombra suave y se eleva.
+   Antes usaba dos sombras de colores (#0b4675 / #355e7f) que no pertenecen a la paleta de la guía. */
 .boton:hover {
-  background-color: #F2A43A;
-  box-shadow:
-    5px 5px 5px #0b4675,
-    -5px -5px 5px #355e7f;
-  transform: translateY(-1px) scale(1.01);
+  filter: brightness(1.08);
+  color: var(--rutta-base);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
 }
 
 /*todo ================ COPIA DE CÓDIGO DE FOOTER GENERAL================*/
 
-/* Pie de página oscuro. */
+/* Pie de página - padding, color de texto, fondo, tamaño de letra */
 .pie-pagina {
     padding: 2rem 0;
     color: rgba(255, 255, 255, 0.7);
@@ -509,7 +664,7 @@ transform: rotate(1deg) scale(1.10);
     font-size: 0.75rem;
 }
 
-/* Distribuye la marca, el crédito y el aviso legal en el pie de página. */
+/* Contenido del footer - distribución en columnas (grid), espacio entre elementos, alineación */
 .pie-contenido {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto auto;
@@ -517,14 +672,14 @@ transform: rotate(1deg) scale(1.10);
     align-items: center;
 }
 
-/* Alinea el isotipo con el lema de Rutta. */
+/* Marca en el footer - alineación en fila, espacio entre logo y texto */
 .pie-marca {
     display: flex;
     gap: 0.75rem;
     align-items: center;
 }
 
-/* Coloca el isotipo sobre una superficie clara para conservar su contraste. */
+/* Isotipo en el footer - tamaño, padding, fondo claro, bordes redondeados */
 .pie-marca>img {
     width: 2.8rem;
     height: 2.8rem;
@@ -534,7 +689,7 @@ transform: rotate(1deg) scale(1.10);
     border-radius: 0.75rem;
 }
 
-/* Presenta de forma discreta el crédito visual de Trail Coders. */
+/* Crédito "Desarrollado por Trail Coders" - alineación, padding, color, fondo, borde, bordes redondeados */
 .credito-trail-coders {
     display: inline-flex;
     gap: 0.65rem;
@@ -546,19 +701,19 @@ transform: rotate(1deg) scale(1.10);
     border-radius: 0.75rem;
 }
 
-/* Limita el ícono de Trail Coders sin alterar sus proporciones. */
+/* Ícono del crédito Trail Coders - tamaño, ajuste de imagen */
 .credito-trail-coders img {
     width: 3rem;
     height: 2rem;
     object-fit: contain;
 }
 
-/* Resalta únicamente el nombre del equipo. */
+/* Nombre "Trail Coders" en el crédito - color blanco */
 .credito-trail-coders strong {
     color: white;
 }
 
-/* Muestra la marca en color claro dentro del footer. */
+/* Nombre "Rutta" en el footer - color blanco, tamaño de letra */
 .pie-pagina .marca-nombre {
     color: white;
     font-size: 1.75rem;
@@ -569,46 +724,47 @@ transform: rotate(1deg) scale(1.10);
    LOGOTIPO ACTUALIZADO (Aplica al enlace del footer)
    ================================================================ */
 
-
+/* Logo nuevo en el footer - ancho */
 .rutta-identidad .marca-logo-pie {
-    width: 10rem; /* Mantiene la marca legible dentro del footer existente. */
+    width: 10rem;
 }
 
 
 /* ================================================================
    ADAPTACIONES RESPONSIVAS DEL FOOTER
    ================================================================ */
+/* Contenido del footer (<992px) - cambia a dos columnas */
 @media (max-width: 991.98px) {
-    /* Permite que el aviso legal ocupe una fila completa en tabletas. */
     .pie-contenido {
         grid-template-columns: 1fr auto;
     }
 
-    /* Coloca el aviso legal debajo de los dos bloques principales. */
+    /* Aviso legal del footer (<992px) - ocupa toda la fila */
     .pie-contenido>p {
         grid-column: 1 / -1;
     }
 }
 
+/* Contenido del footer (<576px) - una sola columna */
 @media (max-width: 575.98px) {
-    /* Apila los elementos del pie de página en pantallas estrechas. */
     .pie-contenido {
         grid-template-columns: 1fr;
     }
 
-    /* Devuelve el aviso legal a la única columna disponible. */
+    /* Aviso legal del footer (<576px) - vuelve a columna automática */
     .pie-contenido>p {
         grid-column: auto;
     }
 
-    /* Mantiene el crédito compacto y alineado al inicio. */
+    /* Crédito Trail Coders (<576px) - alineado al inicio */
     .credito-trail-coders {
         justify-self: start;
     }
 }
 
+/* Variables globales de color - define azul profundo y gris muy claro reutilizados en el footer */
 :root {
-    --azul-profundo: #08304a; /* Color de fondo oscuro del footer */
+    --azul-profundo: #08304a;
     --gris-muy-claro: #f8f9fa;
 }
 /*todo ================ FIN COPIA DE CÓDIGO DE FOOTER GENERAL================*/

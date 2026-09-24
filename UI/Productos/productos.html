@@ -1,48 +1,172 @@
-<!-- ==================== PRODUCTOS ==================== -->
-<section
-  class="seccion productos-seccion"
-  id="productos"
-  aria-labelledby="titulo-productos"
->
-  <div class="container">
-    <!-- Encabezado acompañado de filtros del catálogo. -->
-    <div class="encabezado-productos">
-      <div class="encabezado-seccion">
-        <p class="sobrelinea">Equipamiento seleccionado</p>
-        <h2 id="titulo-productos">Productos para tu próxima ruta</h2>
-        <p>
-          Compara el nivel recomendado, el terreno y las características de cada
-          producto.
-        </p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Usa la brújula adjunta como ícono de la pestaña. -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/img/iconos-rutta/brujula.svg"
+    />
+
+    <!-- Preconecta con Google Fonts para acelerar la carga de las tipografías. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Carga Cormorant Garamond para títulos y Montserrat para textos funcionales. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Carga Bootstrap 5.3.8 para utilizar su cuadrícula y componentes responsivos. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Carga los íconos utilizados en navegación, categorías y fichas de producto. -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Conecta el documento HTML con nuestros estilos personalizados. -->
+    <link rel="stylesheet" href="/UI/Styles/styles.css" />
+  </head>
+  <body>
+    <!-- ==================== CATEGORÍAS ==================== -->
+    <section class="seccion categorias" aria-labelledby="titulo-categorias">
+      <div class="container">
+        <!-- Encabezado sencillo de la sección. -->
+        <div class="encabezado-seccion compacto">
+          <p class="sobrelinea">Categorías</p>
+          <h2 id="titulo-categorias">Encuentra lo que necesitas</h2>
+        </div>
+
+        <!-- Grid de Bootstrap con cinco accesos de categoría. -->
+        <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
+          <!-- Cada botón filtra el catálogo sin recargar la página. -->
+          <div class="col">
+            <button class="categoria-card" type="button" data-filtro="mochilas">
+              <!-- Mochila: representa el equipo que se lleva durante una ruta. -->
+              <i class="bi bi-backpack4" aria-hidden="true"></i>
+              <strong>Mochilas</strong>
+              <span
+                >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></span>
+            </button>
+          </div>
+          <div class="col">
+            <button class="categoria-card" type="button" data-filtro="calzado">
+              <!-- Muestra la bota adjunta en esta categoría. -->
+              <i class="bi bi-person-walking" aria-hidden="true"></i>
+              <strong>Calzado</strong>
+              <span
+                >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></span>
+            </button>
+          </div>
+          <div class="col">
+            <button class="categoria-card" type="button" data-filtro="ropa">
+              <!-- Muestra la chamarra adjunta sin cambiar el filtro existente. -->
+              <i class="bi bi-person-standing-dress" aria-hidden="true"></i>
+              <strong>Ropa</strong>
+              <span
+                >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></span>
+            </button>
+          </div>
+          <div class="col">
+            <button class="categoria-card" type="button" data-filtro="todos">
+              <!-- El CSS sustituye el triángulo por la tienda de campaña adjunta. -->
+              <i class="bi bi-triangle-fill" aria-hidden="true"></i>
+              <strong>Camping</strong>
+              <span
+                >Próximamente
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></span>
+            </button>
+          </div>
+          <div class="col">
+            <button class="categoria-card" type="button" data-filtro="todos">
+              <!-- Brújula: representa los accesorios de orientación y exploración. -->
+              <i class="bi bi-compass" aria-hidden="true"></i>
+              <strong>Accesorios</strong>
+              <span
+                >Próximamente
+                <i class="bi bi-arrow-right" aria-hidden="true"></i
+              ></span>
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Botones de filtro controlados desde JavaScript. -->
-      <div
-        class="filtros-productos"
-        role="group"
-        aria-label="Filtrar productos"
-      >
-        <button class="filtro activo" type="button" data-filtro="todos">
-          Todos
-        </button>
-        <button class="filtro" type="button" data-filtro="mochilas">
-          Mochilas
-        </button>
-        <button class="filtro" type="button" data-filtro="ropa">Ropa</button>
-        <button class="filtro" type="button" data-filtro="calzado">
-          Calzado
-        </button>
+    <!-- ==================== PRODUCTOS ==================== -->
+    <section
+      class="seccion productos-seccion"
+      id="productos"
+      aria-labelledby="titulo-productos"
+    >
+      <div class="container">
+        <!-- Encabezado acompañado de filtros del catálogo. -->
+        <div class="encabezado-productos">
+          <div class="encabezado-seccion">
+            <p class="sobrelinea">Equipamiento seleccionado</p>
+            <h2 id="titulo-productos">Productos para tu próxima ruta</h2>
+            <p>
+              Compara el nivel recomendado, el terreno y las características de
+              cada producto.
+            </p>
+          </div>
+
+          <!-- Botones de filtro controlados desde JavaScript. -->
+          <div
+            class="filtros-productos"
+            role="group"
+            aria-label="Filtrar productos"
+          >
+            <button class="filtro activo" type="button" data-filtro="todos">
+              Todos
+            </button>
+            <button class="filtro" type="button" data-filtro="mochilas">
+              Mochilas
+            </button>
+            <button class="filtro" type="button" data-filtro="ropa">
+              Ropa
+            </button>
+            <button class="filtro" type="button" data-filtro="calzado">
+              Calzado
+            </button>
+          </div>
+        </div>
+
+        <!-- JavaScript inserta aquí las tres tarjetas definidas en el arreglo productos. -->
+        <div class="row g-4" id="listaProductos" aria-live="polite"></div>
+
+        <!-- Mensaje oculto que aparece cuando una búsqueda no encuentra resultados. -->
+        <div class="estado-vacio d-none" id="estadoVacio">
+          <i class="bi bi-search"></i>
+          <h3>No encontramos ese producto</h3>
+          <p>Prueba con mochila, chamarra o botas.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- JavaScript inserta aquí las tres tarjetas definidas en el arreglo productos. -->
-    <div class="row g-4" id="listaProductos" aria-live="polite"></div>
+    <!-- Carga el JavaScript de Bootstrap, necesario para navbar, modal, toast y offcanvas. -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
 
-    <!-- Mensaje oculto que aparece cuando una búsqueda no encuentra resultados. -->
-    <div class="estado-vacio d-none" id="estadoVacio">
-      <i class="bi bi-search"></i>
-      <h3>No encontramos ese producto</h3>
-      <p>Prueba con mochila, chamarra o botas.</p>
-    </div>
-  </div>
-</section>
+    <!-- Conecta el documento con nuestra lógica personalizada. -->
+    <script src="/UI/script.js"></script>
+  </body>
+</html>
