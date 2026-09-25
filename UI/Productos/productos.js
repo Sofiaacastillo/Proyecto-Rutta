@@ -9,10 +9,10 @@ const productos = [
         categoria: "mochilas",
         categoriaNombre: "Mochilas",
         iconoCategoria: "bi-backpack4",
-        imagen: "/",
+        imagen: "/img/productos/mochila-trek-45l.svg",
         nombre: "Mochila Trek 45L",
         precio: 1799,
-        resumen: "...",
+        resumen: "Mochila técnica y cómoda con gran capacidad de organización para tus aventuras.",
         nivel: "Básico",
         actividad: "Senderismo de 1 a 3 días",
         terreno: "Clima templado / senderos",
@@ -60,6 +60,7 @@ const productos = [
         actividad: "Rutas rocosas o largas",
         terreno: "Terreno mixto / rocoso",
         ideal: "Agarre y estabilidad",
+        colores: ["azul marino"],
         tallas: [22, 23, 24, 25, 26, 27],
         caracteristicas: [
             "Suela Vibram® con excelente agarre",
@@ -569,6 +570,36 @@ function crearCaracteristicas(caracteristicas) {
  * @param {object} producto - Información que se colocará en la tarjeta.
  * @returns {string} Columna Bootstrap con la tarjeta en formato HTML.
  */
+//Función para datos características/datos variables de los productos
+function crearDatosVariables(producto) {
+    let datos = "";
+    if (producto.tallas) {
+        datos += `
+            <div class="dato-perfil">
+                <strong>Tallas</strong>
+                <span>${producto.tallas.join(", ")}</span>
+            </div>
+        `;
+    }
+    if (producto.capacidad) {
+        datos += `
+            <div class="dato-perfil">
+                <strong>Capacidad</strong>
+                <span>${producto.capacidad}</span>
+            </div>
+        `;
+    }
+    if (producto.colores) {
+        datos += `
+            <div class="dato-perfil">
+                <strong>Colores</strong>
+                <span>${producto.colores.join(", ")}</span>
+            </div>
+        `;
+    }
+    return datos;
+}
+
 function crearTarjetaProducto(producto) {
   // La plantilla permite combinar HTML con valores de JavaScript usando ${ }.
   return `
@@ -621,6 +652,8 @@ function crearTarjetaProducto(producto) {
               <strong><i class="bi bi-stars"></i> Lo mejor para</strong>
               <span>${producto.ideal}</span>
             </div>
+
+            ${crearDatosVariables(producto)}    
           </div>
 
           <ul class="producto-caracteristicas">
@@ -708,6 +741,66 @@ function aplicarFiltro(categoria) {
  * Completa y muestra el modal del producto seleccionado.
  * @param {number} id - Identificador del producto que se quiere consultar.
  */
+function crearOpcionesProducto(producto) {
+  let opciones = "";
+  // Si el producto tiene tallas, crea un select de tallas.
+  if (producto.tallas) {
+    opciones += `
+      <div class="mb-3">
+        <label for="tallaProducto" class="form-label">
+          <strong>Selecciona una talla</strong>
+        </label>
+        <select id="tallaProducto" class="form-select">
+          <option value="">Selecciona una opción</option>
+          ${producto.tallas
+            .map(
+              (talla) => `
+                <option value="${talla}">
+                  ${talla}
+                </option>
+              `
+            )
+            .join("")}
+        </select>
+      </div>
+    `;
+  }
+  // Si el producto tiene colores, crea un select de colores.
+  if (producto.colores) {
+    opciones += `
+      <div class="mb-3">
+        <label for="colorProducto" class="form-label">
+          <strong>Selecciona un color</strong>
+        </label>
+        <select id="colorProducto" class="form-select">
+          <option value="">Selecciona una opción</option>
+
+          ${producto.colores
+            .map(
+              (color) => `
+                <option value="${color}">
+                  ${color}
+                </option>
+              `
+            )
+            .join("")}
+
+        </select>
+      </div>
+    `;
+  }
+  // Capacidad actual: solamente informativa.
+  if (producto.capacidad) {
+    opciones += `
+      <p>
+        <strong>Capacidad:</strong>
+        ${producto.capacidad}
+      </p>
+    `;
+  }
+  return opciones;
+}
+//Función para cuando se apertura el producto una vez seleccionado
 function abrirProducto(id) {
   // Obtiene el objeto relacionado con el botón presionado.
   const producto = obtenerProducto(id);
@@ -735,7 +828,7 @@ function abrirProducto(id) {
         <p><strong>Nivel:</strong> ${producto.nivel}</p>
         <p><strong>Actividad:</strong> ${producto.actividad}</p>
         <p><strong>Clima o terreno:</strong> ${producto.terreno}</p>
-
+        ${crearOpcionesProducto(producto)}
         <ul class="detalle-lista">
           ${crearCaracteristicas(producto.caracteristicas)}
         </ul>
