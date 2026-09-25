@@ -360,6 +360,94 @@ const productos = [
         recomendado: false,
     },
 
+      // Diecisieteavo objeto: representa Playera Dri-FIT ACG Wildsee
+    {
+        id: 17,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Playera Dri-FIT ACG Wildsee de Nike",
+        precio: 769,
+        resumen: "Playera deportiva de secado rápido para senderismo.",
+        nivel: "Básico",
+        actividad: "Trail running/senderismo",
+        terreno: "Senderos mixtos/clima seco-caluroso",
+        ideal: "Comodidad y transpirabilidad",
+        tallas: ["XS", "S", "M", "L", "XL"],
+        colores: ["blanco", "carmesí"],
+        caracteristicas: [
+            "Secado rápido, ayuda a mantener la comodidad durante el recorrido.",
+        ],
+        recomendado: false,
+    },
+    // Dieciochoavo objeto: representa Silver Ridge 2.0 Short Sleeve Shirt
+    {
+        id: 18,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Silver Ridge 2.0 Short Sleeve Shirt de Columbia",
+        precio: 1195,
+        resumen: "Camisa de manga corta con protección solar y control de humedad.",
+        nivel: "Básico",
+        actividad: "Senderismo",
+        terreno: "Senderos mixtos a ligeramente rocosos",
+        ideal: "Protección y comodidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro", "beige", "blanco"],
+        caracteristicas: [
+            "Protección solar integrada.",
+            "Ventilación estratégica para climas cálidos.",
+        ],
+        recomendado: false,
+    },
+    // Diecinueveavo objeto: representa Chamarra Impermeable Antora Rain
+    {
+        id: 19,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Chamarra Impermeable Antora Rain de The North Face",
+        precio: 3190,
+        resumen: "Chamarra impermeable para protegerte de la lluvia en el sendero.",
+        nivel: "Intermedio",
+        actividad: "Senderismo, camping",
+        terreno: "Senderos mixtos/clima frío-lluvioso",
+        ideal: "Protección y comodidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["azul", "café", "negro"],
+        caracteristicas: [
+            "Diseñada para proteger contra la lluvia durante actividades de senderismo.",
+        ],
+        recomendado: false,
+    },
+    // Veinteavo objeto: representa Pantalón para Senderismo Basin
+    {
+        id: 20,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Pantalón para Senderismo Basin de The North Face",
+        precio: 2490,
+        resumen: "Pantalón diseñado específicamente para senderismo, con libertad de movimiento.",
+        nivel: "Intermedio",
+        actividad: "Senderismo, caminata ligera",
+        terreno: "Senderos mixtos",
+        ideal: "Caminatas largas y terrenos variables",
+        tallas: [30, 32, 34, 36, 38],
+        colores: ["negro", "beige", "verde"],
+        caracteristicas: [
+            "Libertad de movimiento durante los recorridos.",
+            "Protección adecuada para terrenos variables.",
+        ],
+        recomendado: false,
+    },
+
+
 
 
 
