@@ -446,22 +446,7 @@ const productos = [
         ],
         recomendado: false,
     },
-
-
-
-
-
-
-
-    
-
-    
 ]//Cierre de lista objetos - Array de objetos
-
-
-
-
-
 // ================================================================
 // 2. REFERENCIAS A ELEMENTOS DEL DOCUMENTO
 // querySelector permite encontrar elementos usando selectores de CSS.
