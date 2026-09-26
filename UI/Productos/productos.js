@@ -9,10 +9,10 @@ const productos = [
         categoria: "mochilas",
         categoriaNombre: "Mochilas",
         iconoCategoria: "bi-backpack4",
-        imagen: "/",
+        imagen: "/img/productos/mochila-trek-45l.svg",
         nombre: "Mochila Trek 45L",
         precio: 1799,
-        resumen: "...",
+        resumen: "Mochila técnica y cómoda con gran capacidad de organización para tus aventuras.",
         nivel: "Básico",
         actividad: "Senderismo de 1 a 3 días",
         terreno: "Clima templado / senderos",
@@ -60,6 +60,7 @@ const productos = [
         actividad: "Rutas rocosas o largas",
         terreno: "Terreno mixto / rocoso",
         ideal: "Agarre y estabilidad",
+        colores: ["azul marino"],
         tallas: [22, 23, 24, 25, 26, 27],
         caracteristicas: [
             "Suela Vibram® con excelente agarre",
@@ -68,12 +69,385 @@ const productos = [
         ],
         recomendado: false,
     },
-]
+    // Cuarto objeto: representa Tenis Pegasus Trail ACG
+    {
+        id: 4,
+        categoria: "calzado",
+        categoriaNombre: "Calzado",
+        iconoCategoria: "bi-boot",
+        imagen: "/",
+        nombre: "Tenis Pegasus Trail ACG de Nike",
+        precio: 3099,
+        resumen: "Tenis de trail running para hombre.",
+        nivel: "Básico",
+        actividad: "Senderismo ligero/trail running",
+        terreno: "Senderos medianamente planos",
+        ideal: "Comodidad y durabilidad",
+        tallas: [22, 23, 24, 25, 26, 27],
+        colores: ["negro", "verde"],
+        caracteristicas: [
+            "Agarre y comodidad en cualquier terreno.",
+            "Hechos para arrasar en cualquier superficie.",
+        ],
+        recomendado: true,
+    },
+    // Quinto objeto: representa Playera Kalenji
+    {
+        id: 5,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Playera Kalenji de Decathlon",
+        precio: 149,
+        resumen: "Playera de running para hombre.",
+        nivel: "Principiante",
+        actividad: "Senderismo todos los niveles/trail running",
+        terreno: "Cualquier tipo de sendero/clima templado-caluroso",
+        ideal: "Transpirabilidad y comodidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro", "blanco"],
+        caracteristicas: [
+            "Tejido fabricado con poliéster.",
+            "Absorbe y evacua el sudor para reducir la sensación de humedad.",
+        ],
+        recomendado: false,
+    },
+    // Sexto objeto: representa Chaleco de Trail Running
+    {
+        id: 6,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Chaleco de Trail Running de Adidas",
+        precio: 1699,
+        resumen: "Chaleco Terrex Multi Climacool 5L diseñado para un rendimiento máximo con ajuste ergonómico.",
+        nivel: "Intermedio",
+        actividad: "Senderismo de montaña/trail running",
+        terreno: "Senderos planos a rocosos",
+        ideal: "Transpirabilidad, comodidad y almacenamiento",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro"],
+        caracteristicas: [
+            "Chaleco de trail transpirable con ajuste personalizable.",
+            "Organización interna para un fácil acceso.",
+        ],
+        recomendado: true,
+    },
+    // Séptimo objeto: representa Chamarra Impermeable Venture 2
+    {
+        id: 7,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Chamarra Impermeable Venture 2 de The North Face",
+        precio: 2999,
+        resumen: "Prenda ligera de 2.5 capas, transpirable, ideal para lluvia y viento fuertes.",
+        nivel: "Intermedio",
+        actividad: "Senderismo de montaña/trail running",
+        terreno: "Todo tipo de sendero/clima frío-lluvioso",
+        ideal: "Transpirabilidad, comodidad y almacenamiento",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro"],
+        caracteristicas: [
+            "Prenda ligera de 2.5 capas, también transpirable.",
+            "Diseñada para mantener tu ruta intacta bajo tormentas y vientos fuertes.",
+        ],
+        recomendado: true,
+    },
+    // Octavo objeto: representa Outherpath Utility
+    {
+        id: 8,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Outherpath Utility de Salomon",
+        precio: 2999,
+        resumen: "Prenda utilitaria Outerpath de Salomon, pensada para el confort y la libertad de movimiento.",
+        nivel: "Básico",
+        actividad: "Senderismo ligero",
+        terreno: "Senderos planos a rocosos",
+        ideal: "Transpirabilidad, comodidad y durabilidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro", "verde"],
+        caracteristicas: [
+            "Diseñada para el confort, la comodidad y la libertad.",
+            "La gama Outerpath se adapta a tus aventuras.",
+        ],
+        recomendado: true,
+    },
+// Noveno objeto: representa Quest Element Gore-Tex
+    {
+        id: 9,
+        categoria: "calzado",
+        categoriaNombre: "Calzado",
+        iconoCategoria: "bi-boot",
+        imagen: "/",
+        nombre: "Quest Element Gore-Tex de Salomon",
+        precio: 4299,
+        resumen: "Botas para senderismo con tecnología Gore-Tex de la marca Salomon.",
+        nivel: "Avanzado",
+        actividad: "Senderismo de montaña en lugares agrestes y caminos desconocidos.",
+        terreno: "Todo tipo de terreno, desde plano hasta rocoso. Clima frío-lluvioso.",
+        ideal: "Transpirabilidad, agarre e impermeabilidad",
+        tallas: [22, 23, 24, 25, 26, 26.5],
+        colores: ["azul", "negro"],
+        caracteristicas: [
+            "Suela Contagrip con tacos profundos para pisada firme en terrenos mojados.",
+            "Caña alta para mayor estabilidad en los tobillos.",
+            "Membrana Gore-Tex que mantiene los pies secos.",
+        ],
+        recomendado: true,
+    },
+    // Décimo objeto: representa Tenis de Senderismo Terrex Anylander Rain.RDY
+    {
+        id: 10,
+        categoria: "calzado",
+        categoriaNombre: "Calzado",
+        iconoCategoria: "bi-boot",
+        imagen: "/",
+        nombre: "Tenis de Senderismo Terrex Anylander Rain.RDY de Adidas",
+        precio: 2599,
+        resumen: "Tenis de senderismo versátiles e impermeables, hechos parcialmente con materiales reciclados.",
+        nivel: "Principiante-Intermedio",
+        actividad: "Senderismo de montaña y trail. Ideal para excursiones de un día, caminatas ligeras y rutas de intensidad moderada en superficies secas, húmedas o irregulares.",
+        terreno: "Senderos de terracería, rocas sueltas y caminos mixtos no extremadamente técnicos ni de alta montaña.",
+        ideal: "Transpirabilidad, comodidad e impermeabilidad",
+        tallas: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+        colores: ["negro", "café"],
+        caracteristicas: [
+            "Corte medio con soporte en el tobillo y mediasuela acolchada de confort duradero.",
+            "Tecnología Rain.RDY con lengüeta reforzada para pies secos en condiciones húmedas.",
+        ],
+        recomendado: true,
+    },
+    // Onceavo objeto: representa Mochila de Senderismo Arpenaz 100
+    {
+        id: 11,
+        categoria: "mochilas",
+        categoriaNombre: "Mochilas",
+        iconoCategoria: "bi-backpack4",
+        imagen: "/",
+        nombre: "Mochila de Senderismo Arpenaz 100 de Decathlon",
+        precio: 399,
+        resumen: "Mochila fácil y cómoda que te permite llevar lo esencial.",
+        nivel: "Principiante",
+        actividad: "Senderismo y excursiones cortas. Ideal para caminatas en la naturaleza y en la ciudad.",
+        terreno: "Senderos naturales y entornos urbanos",
+        ideal: "Almacenamiento",
+        capacidad: "20 L",
+        colores: ["verde", "amarillo", "rojo", "beige"],
+        caracteristicas: [
+            "Multi-compartimentos, incluido uno para laptop.",
+            "Tirantes y espalda acolchada.",
+            "Materiales resistentes a la abrasión.",
+        ],
+        recomendado: true,
+    },
+    // Duodécimo objeto: representa Mochila Borealis Trail
+    {
+        id: 12,
+        categoria: "mochilas",
+        categoriaNombre: "Mochilas",
+        iconoCategoria: "bi-backpack4",
+        imagen: "/",
+        nombre: "Mochila Borealis Trail de The North Face",
+        precio: 2990,
+        resumen: "Mochila compacta con espacio para tus aventuras diarias o de montaña.",
+        nivel: "Intermedio",
+        actividad: "Senderismo y trail. Ideal para senderos accidentados o excursiones cortas, sin cargar de más.",
+        terreno: "Senderos accidentados / uso urbano",
+        ideal: "Almacenamiento",
+        capacidad: "26 L",
+        colores: ["gris", "negro", "azul", "vino", "verde"],
+        caracteristicas: [
+            "Sistema de suspensión FlexVent™ con correas de hombro articuladas.",
+            "Panel trasero redondeado y costuras cómodas.",
+            "Compartimento principal con funda para laptop o bolsa de hidratación.",
+        ],
+        recomendado: true,
+    },
+    // Treceavo objeto: representa Mochila ACG DAYMAX
+    {
+        id: 13,
+        categoria: "mochilas",
+        categoriaNombre: "Mochilas",
+        iconoCategoria: "bi-backpack4",
+        imagen: "/",
+        nombre: "Mochila ACG DAYMAX de Nike",
+        precio: 2949,
+        resumen: "Mochila de 25 L, hecha con materiales reciclados y con excelente durabilidad.",
+        nivel: "Intermedio",
+        actividad: "Senderismo en la naturaleza y caminatas cortas. Ideal para actividades cotidianas y excursiones ocasionales.",
+        terreno: "Senderos naturales / uso cotidiano",
+        ideal: "Almacenamiento",
+        capacidad: "25 L",
+        colores: ["gris", "negro", "verde"],
+        caracteristicas: [
+            "Bolsillos delanteros y laterales de fácil acceso.",
+            "Red lateral ajustable y correa delantera para equipo extra.",
+        ],
+        recomendado: true,
+    },
+    // Catorceavo objeto: representa Bastón de senderismo MT100
+    {
+        id: 14,
+        categoria: "equipo",
+        categoriaNombre: "Equipo",
+        iconoCategoria: "bi-tools",
+        imagen: "/",
+        nombre: "Bastón de Senderismo MT100 de Forclaz (Decathlon)",
+        precio: 349,
+        resumen: "Bastón ergonómico que brinda apoyo y estabilidad en caminatas por montaña.",
+        nivel: "Principiante",
+        actividad: "Senderismo de montaña",
+        terreno: "Caminatas regulares por montaña",
+        ideal: "Apoyo y estabilidad",
+        tallas: ["Ajustable: 105 cm - 130 cm"],
+        colores: ["gris"],
+        caracteristicas: [
+            "Empuñadura de espuma cómoda para travesías prolongadas.",
+            "Sistema de ajuste push-pin sencillo y seguro.",
+        ],
+        recomendado: false,
+    },
+    // Quinceavo objeto: representa Mochila Talon 22 Extended Fit
+    {
+        id: 15,
+        categoria: "mochilas",
+        categoriaNombre: "Mochilas",
+        iconoCategoria: "bi-backpack4",
+        imagen: "/",
+        nombre: "Mochila Talon 22 Extended Fit de Osprey",
+        precio: 3299,
+        resumen: "Mochila técnica de alto rendimiento con ajuste extendido para torso y caderas.",
+        nivel: "Avanzado",
+        actividad: "Senderismo de montaña",
+        terreno: "Todo tipo de sendero",
+        ideal: "Comodidad y organización avanzada",
+        capacidad: "22 L (Extended Fit)",
+        colores: ["negro", "gris"],
+        caracteristicas: [
+            "Panel trasero transpirable AirScape.",
+            "Sujeción para bastones en marcha (Stow-on-the-Go).",
+            "Compartimento para depósito de hidratación.",
+        ],
+        recomendado: true,
+    },
+    // Dieciseisavo objeto: representa Casa de Campaña MH100
+    {
+        id: 16,
+        categoria: "equipo",
+        categoriaNombre: "Equipo",
+        iconoCategoria: "bi-tools",
+        imagen: "/",
+        nombre: "Casa de Campaña 2 Personas MH100 de Quechua",
+        precio: 899,
+        resumen: "Casa de campaña domo autosostenible, ideal para iniciarse en el camping.",
+        nivel: "Principiante",
+        actividad: "Camping y senderismo con pernocta",
+        terreno: "Terrenos planos de camping",
+        ideal: "Facilidad de montaje y protección básica",
+        tallas: ["2 personas (130 x 210 cm)"],
+        colores: ["gris", "azul"],
+        caracteristicas: [
+            "Diseño domo autosostenible, fácil de montar y trasladar.",
+            "Tecnología que reduce el calor interior bajo el sol.",
+            "Protección contra lluvias moderadas.",
+        ],
+        recomendado: false,
+    },
 
-
-
-
-
+      // Diecisieteavo objeto: representa Playera Dri-FIT ACG Wildsee
+    {
+        id: 17,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Playera Dri-FIT ACG Wildsee de Nike",
+        precio: 769,
+        resumen: "Playera deportiva de secado rápido para senderismo.",
+        nivel: "Básico",
+        actividad: "Trail running/senderismo",
+        terreno: "Senderos mixtos/clima seco-caluroso",
+        ideal: "Comodidad y transpirabilidad",
+        tallas: ["XS", "S", "M", "L", "XL"],
+        colores: ["blanco", "carmesí"],
+        caracteristicas: [
+            "Secado rápido, ayuda a mantener la comodidad durante el recorrido.",
+        ],
+        recomendado: false,
+    },
+    // Dieciochoavo objeto: representa Silver Ridge 2.0 Short Sleeve Shirt
+    {
+        id: 18,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Silver Ridge 2.0 Short Sleeve Shirt de Columbia",
+        precio: 1195,
+        resumen: "Camisa de manga corta con protección solar y control de humedad.",
+        nivel: "Básico",
+        actividad: "Senderismo",
+        terreno: "Senderos mixtos a ligeramente rocosos",
+        ideal: "Protección y comodidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["negro", "beige", "blanco"],
+        caracteristicas: [
+            "Protección solar integrada.",
+            "Ventilación estratégica para climas cálidos.",
+        ],
+        recomendado: false,
+    },
+    // Diecinueveavo objeto: representa Chamarra Impermeable Antora Rain
+    {
+        id: 19,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Chamarra Impermeable Antora Rain de The North Face",
+        precio: 3190,
+        resumen: "Chamarra impermeable para protegerte de la lluvia en el sendero.",
+        nivel: "Intermedio",
+        actividad: "Senderismo, camping",
+        terreno: "Senderos mixtos/clima frío-lluvioso",
+        ideal: "Protección y comodidad",
+        tallas: ["S", "M", "L", "XL"],
+        colores: ["azul", "café", "negro"],
+        caracteristicas: [
+            "Diseñada para proteger contra la lluvia durante actividades de senderismo.",
+        ],
+        recomendado: false,
+    },
+    // Veinteavo objeto: representa Pantalón para Senderismo Basin
+    {
+        id: 20,
+        categoria: "ropa",
+        categoriaNombre: "Ropa",
+        iconoCategoria: "bi-person-standing-dress",
+        imagen: "/",
+        nombre: "Pantalón para Senderismo Basin de The North Face",
+        precio: 2490,
+        resumen: "Pantalón diseñado específicamente para senderismo, con libertad de movimiento.",
+        nivel: "Intermedio",
+        actividad: "Senderismo, caminata ligera",
+        terreno: "Senderos mixtos",
+        ideal: "Caminatas largas y terrenos variables",
+        tallas: [30, 32, 34, 36, 38],
+        colores: ["negro", "beige", "verde"],
+        caracteristicas: [
+            "Libertad de movimiento durante los recorridos.",
+            "Protección adecuada para terrenos variables.",
+        ],
+        recomendado: false,
+    },
+]//Cierre de lista objetos - Array de objetos
 // ================================================================
 // 2. REFERENCIAS A ELEMENTOS DEL DOCUMENTO
 // querySelector permite encontrar elementos usando selectores de CSS.
@@ -196,6 +570,36 @@ function crearCaracteristicas(caracteristicas) {
  * @param {object} producto - Información que se colocará en la tarjeta.
  * @returns {string} Columna Bootstrap con la tarjeta en formato HTML.
  */
+//Función para datos características/datos variables de los productos
+function crearDatosVariables(producto) {
+    let datos = "";
+    if (producto.tallas) {
+        datos += `
+            <div class="dato-perfil">
+                <strong>Tallas</strong>
+                <span>${producto.tallas.join(", ")}</span>
+            </div>
+        `;
+    }
+    if (producto.capacidad) {
+        datos += `
+            <div class="dato-perfil">
+                <strong>Capacidad</strong>
+                <span>${producto.capacidad}</span>
+            </div>
+        `;
+    }
+    if (producto.colores) {
+        datos += `
+            <div class="dato-perfil">
+                <strong>Colores</strong>
+                <span>${producto.colores.join(", ")}</span>
+            </div>
+        `;
+    }
+    return datos;
+}
+
 function crearTarjetaProducto(producto) {
   // La plantilla permite combinar HTML con valores de JavaScript usando ${ }.
   return `
@@ -248,6 +652,8 @@ function crearTarjetaProducto(producto) {
               <strong><i class="bi bi-stars"></i> Lo mejor para</strong>
               <span>${producto.ideal}</span>
             </div>
+
+            ${crearDatosVariables(producto)}    
           </div>
 
           <ul class="producto-caracteristicas">
@@ -335,6 +741,66 @@ function aplicarFiltro(categoria) {
  * Completa y muestra el modal del producto seleccionado.
  * @param {number} id - Identificador del producto que se quiere consultar.
  */
+function crearOpcionesProducto(producto) {
+  let opciones = "";
+  // Si el producto tiene tallas, crea un select de tallas.
+  if (producto.tallas) {
+    opciones += `
+      <div class="mb-3">
+        <label for="tallaProducto" class="form-label">
+          <strong>Selecciona una talla</strong>
+        </label>
+        <select id="tallaProducto" class="form-select">
+          <option value="">Selecciona una opción</option>
+          ${producto.tallas
+            .map(
+              (talla) => `
+                <option value="${talla}">
+                  ${talla}
+                </option>
+              `
+            )
+            .join("")}
+        </select>
+      </div>
+    `;
+  }
+  // Si el producto tiene colores, crea un select de colores.
+  if (producto.colores) {
+    opciones += `
+      <div class="mb-3">
+        <label for="colorProducto" class="form-label">
+          <strong>Selecciona un color</strong>
+        </label>
+        <select id="colorProducto" class="form-select">
+          <option value="">Selecciona una opción</option>
+
+          ${producto.colores
+            .map(
+              (color) => `
+                <option value="${color}">
+                  ${color}
+                </option>
+              `
+            )
+            .join("")}
+
+        </select>
+      </div>
+    `;
+  }
+  // Capacidad actual: solamente informativa.
+  if (producto.capacidad) {
+    opciones += `
+      <p>
+        <strong>Capacidad:</strong>
+        ${producto.capacidad}
+      </p>
+    `;
+  }
+  return opciones;
+}
+//Función para cuando se apertura el producto una vez seleccionado
 function abrirProducto(id) {
   // Obtiene el objeto relacionado con el botón presionado.
   const producto = obtenerProducto(id);
@@ -362,7 +828,7 @@ function abrirProducto(id) {
         <p><strong>Nivel:</strong> ${producto.nivel}</p>
         <p><strong>Actividad:</strong> ${producto.actividad}</p>
         <p><strong>Clima o terreno:</strong> ${producto.terreno}</p>
-
+        ${crearOpcionesProducto(producto)}
         <ul class="detalle-lista">
           ${crearCaracteristicas(producto.caracteristicas)}
         </ul>
