@@ -363,7 +363,7 @@ const productos = [
         categoria: "ropa",
         categoriaNombre: "Ropa",
         iconoCategoria: "bi-person-standing-dress",
-        imagen: "/img/productos/nike-wildse-blanco.jpg",
+        imagen: "/img/productos/nike-wildsee-blanco.jpg",
         nombre: "Playera Dri-FIT ACG Wildsee de Nike",
         precio: 769,
         resumen: "Playera deportiva de secado rápido para senderismo.",
