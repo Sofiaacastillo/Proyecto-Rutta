@@ -25,7 +25,6 @@
 
   // Información breve para las ventanas de ayuda, sin repetir estructuras HTML.
   const avisos = {
-    registro: ["Bienvenido a Rutta", "Tu próxima aventura comienza aquí. Explora mochilas, ropa y calzado, y encuentra el equipo que va contigo."],
     recuperar: ["Vuelve a tu ruta", "Puedes continuar desde el formulario de acceso con el nombre que prefieras. Tu selección de productos te espera en el carrito."],
     condiciones: ["Condiciones de Uso", "Explora el catálogo, revisa las características de cada producto y compara las opciones para tu próxima salida. Utiliza el contenido de Rutta de forma responsable."],
     privacidad: ["Política de Privacidad", "Lo que escribes en este acceso no se envía ni se guarda. Tu selección del carrito se conserva temporalmente en esta pestaña del navegador."],
@@ -35,13 +34,88 @@
     configuracion: ["Tu navegación, tus preferencias", "Para revisar las cookies, abre Configuración en tu navegador y busca Privacidad o Datos del sitio. Al borrar los datos de Rutta también puede eliminarse tu selección del carrito."],
   };
 
-  // Reutiliza un solo diálogo para que las opciones no sean enlaces vacíos.
+  // Reutiliza un solo diálogo para que las opciones no sean enlaces vacíos o maneja el registro en pantalla.
   document.querySelectorAll("[data-login-aviso]").forEach((boton) => {
     boton.addEventListener("click", () => {
-      const aviso = avisos[boton.dataset.loginAviso]; // Busca el texto de esa opción.
-      tituloDialogo.textContent = aviso[0]; // Inserta texto, no HTML del usuario.
-      textoDialogo.textContent = aviso[1];
-      dialogo.showModal(); // El navegador gestiona el foco y el cierre con Escape.
+      const tipoAviso = boton.dataset.loginAviso;
+
+      // NUEVA LÓGICA: Si es "registro", transformamos el formulario en lugar de abrir el modal
+      if (tipoAviso === "registro") {
+        const panelLogin = document.querySelector('.rutta-login-panel');
+        const tituloLogin = document.getElementById('login-titulo');
+        const parrafoRegistro = document.querySelector('.rutta-login-registro');
+
+        // Cambiar título y ocultar el enlace de registro
+        tituloLogin.textContent = 'Crear cuenta';
+        parrafoRegistro.style.display = 'none';
+
+        // Crear el nuevo formulario de Registro dinámicamente con estilos de Rutta
+        const nuevoFormulario = document.createElement('form');
+        nuevoFormulario.id = 'registroForm';
+        nuevoFormulario.className = 'rutta-login-formulario';
+        nuevoFormulario.autocomplete = 'off';
+
+        // Campo: Nombre
+        const divNombre = document.createElement('div');
+        divNombre.className = 'rutta-login-campo';
+        divNombre.innerHTML = `
+          <label for="reg-nombre">Nombre de usuario</label>
+          <input id="reg-nombre" name="nombre" type="text" required />
+        `;
+
+        // Campo: Email
+        const divEmail = document.createElement('div');
+        divEmail.className = 'rutta-login-campo';
+        divEmail.innerHTML = `
+          <label for="reg-correo">Correo electrónico</label>
+          <input id="reg-correo" name="email" type="email" required />
+        `;
+
+        // Campo: Contraseña
+        const divPassword = document.createElement('div');
+        divPassword.className = 'rutta-login-campo';
+        divPassword.innerHTML = `
+          <label for="reg-contrasena">Contraseña</label>
+          <input id="reg-contrasena" name="password" type="password" required />
+        `;
+
+        // Botón de Envío
+        const botonSubmit = document.createElement('button');
+        botonSubmit.className = 'rutta-login-enviar';
+        botonSubmit.type = 'submit';
+        botonSubmit.textContent = 'Registrarse';
+
+        // Unir todo dentro del nuevo formulario
+        nuevoFormulario.appendChild(divNombre);
+        nuevoFormulario.appendChild(divEmail);
+        nuevoFormulario.appendChild(divPassword);
+        nuevoFormulario.appendChild(botonSubmit);
+
+        // Reemplazar el viejo formulario por el nuevo
+        formulario.replaceWith(nuevoFormulario);
+
+        // Controlar el envío del nuevo formulario de registro
+        nuevoFormulario.addEventListener('submit', (eventoSubmit) => {
+          eventoSubmit.preventDefault();
+          const datos = new FormData(nuevoFormulario);
+          
+          console.log('--- Datos de Registro ---');
+          console.log('Nombre:', datos.get('nombre'));
+          console.log('Email:', datos.get('email'));
+          console.log('Contraseña:', datos.get('password'));
+          
+          nuevoFormulario.reset();
+          // Redirige a la tienda tras "registrarse" igual que hacía tu login
+          window.location.assign("../index.html"); 
+        });
+
+      } else {
+        // Mantiene el comportamiento original de abrir el modal para el resto de botones (Privacidad, Ayuda, etc.)
+        const aviso = avisos[tipoAviso]; 
+        tituloDialogo.textContent = aviso[0]; 
+        textoDialogo.textContent = aviso[1];
+        dialogo.showModal(); 
+      }
     });
   });
 
