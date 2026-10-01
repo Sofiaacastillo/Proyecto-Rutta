@@ -28,6 +28,17 @@ formProduct.addEventListener("submit", (e) => {
   const product = Object.fromEntries([...new FormData(formProduct)]);
   console.log(product);
 
+  //TODO Validamos que todos los campos del formulario estén completos
+  if(product.nombre === "" || product.precio === "" || product.categoria === "" || product.imagen === "" || product.talla === "" || product.color === "" || product.nivel === "" || product.actividad === "" || product.terreno === "" || product.ideal === "" || product.caracteristicas === ""){
+    alert("Por favor, complete todos los campos del formulario.");
+    return;
+  }
+  else if(product.nombre !== isNaN(product.nombre)){
+    alert("El nombre del producto no puede ser un número.");
+    return;
+  }
+  
+
   lista.insertAdjacentHTML(
     "beforeend",
     `
