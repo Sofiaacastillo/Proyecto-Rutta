@@ -2161,5 +2161,100 @@ h3 {
     padding: 8px 10px;
   }
 }
+/* AJUSTES DE TAMAÑO DEL LOGIN Y REGISTRO. */
+
+/* Amplía el fondo para aprovechar el ancho de la página. */
+.rutta-login-contenedor {
+  width: min(1440px, calc(100% - 3rem));
+  margin: 0.75rem auto 0;
+}
+
+/* Conserva la imagen de fondo y permite crecer según el contenido. */
+.rutta-login-escena {
+  min-height: clamp(34rem, 75vh, 48rem);
+  padding: clamp(1.25rem, 3vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* Cubre todo el fondo sin deformar la fotografía. */
+.rutta-login-escena::before {
+  background-size: cover;
+  background-position: center;
+}
+/* Reduce el espacio interior del panel azul. */
+.rutta-login-panel {
+  width: min(100%, 25rem);
+  padding: 1.5rem;
+}
+
+/* Hace más compactos el icono y el título. */
+.rutta-login-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.rutta-login-panel h1 {
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  margin-bottom: 1rem;
+}
+
+/* Reduce la separación entre campos sin dificultar su lectura. */
+.rutta-login-campo {
+  margin-bottom: 0.65rem;
+}
+
+.rutta-login-campo label {
+  font-size: 0.875rem;
+}
+
+.rutta-login-campo input {
+  min-height: 2.25rem;
+  padding: 0.3rem 0.2rem;
+  font-size: 1rem;
+}
+
+.rutta-login-campo small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.rutta-login-campo input::placeholder {
+  color: #c5d6e0;
+  opacity: 1;
+}
+
+/* Mantiene los mensajes y el botón dentro del panel. */
+#registro-alerta {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.rutta-login-enviar {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.5rem;
+}
+
+/* Ajusta el fondo y el formulario para celulares. */
+@media (max-width: 575.98px) {
+  .rutta-login-contenedor {
+    width: calc(100% - 1rem);
+  }
+
+  .rutta-login-escena {
+    min-height: auto;
+    padding: 2rem 0.75rem;
+    justify-content: center;
+  }
+
+  .rutta-login-panel {
+    width: 100%;
+    padding: 1.25rem 1rem;
+  }
+}
 
 
