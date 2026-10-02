@@ -138,6 +138,13 @@
 
         const alerta = document.getElementById("registro-alerta");
 
+        // Identifica el botón y controla si el registro ya terminó.
+        const botonRegistro = nuevoFormulario.querySelector(
+          'button[type="submit"]'
+        );
+
+        let registroCompletado = false;
+
         //* 2. MOSTRAR MENSAJES.
         // Usa "danger" para errores y "success" para una validación correcta.
         function mostrarAlerta(mensaje, tipo) {
@@ -195,6 +202,13 @@
         nuevoFormulario.addEventListener("submit", (eventoSubmit) => {
           eventoSubmit.preventDefault();
 
+          // Si el registro terminó, vuelve al formulario de inicio de sesión.
+          // Al pulsar "Iniciar sesión", abre nuevamente la página de login.
+          if (registroCompletado) {
+            window.location.assign("./login.html");
+            return;
+          }
+
           const datos = new FormData(nuevoFormulario);
 
           // Construye el objeto con los cuatro campos solicitados.
@@ -222,17 +236,24 @@
           // Convierte el objeto validado en texto con formato JSON.
           const usuarioJSON = JSON.stringify(usuario);
 
-  
+
           console.log(usuario);
 
-
-
+          //Confirma el registro y resetea el formulario 
           mostrarAlerta(
             "Los datos de registro se validaron correctamente.",
             "success"
           );
 
           nuevoFormulario.reset();
+          // Deshabilita los campos para evitar cambios después del registro.
+          nuevoFormulario.querySelectorAll("input").forEach((campo) => {
+            campo.disabled = true;
+          });
+
+          // Cambia la acción del siguiente envío.
+          registroCompletado = true;
+          botonRegistro.textContent = "Iniciar sesión";
         });
 
       } else {
