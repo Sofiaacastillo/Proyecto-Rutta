@@ -284,7 +284,7 @@ svg {
     flex-shrink: 0;
     width: clamp(8rem, 12vw, 10.8rem);
     aspect-ratio: 2.65;
-    background-image: url("../../img/ruttablanco-logotipo.png");
+    background-image: url("../../img/marca/logo-rutta.png");
     background-repeat: no-repeat;
     background-size: 133.333% auto;
     background-position: center 52%;
@@ -321,7 +321,7 @@ svg {
 
 /* Ícono del botón hamburguesa - imagen SVG propia, tamaño, posición, bordes */
 .rutta-identidad .navbar-toggler-icon {
-    background-image: url("../../img/iconos-rutta/menu.svg"); 
+    background-image: url("../../img/marca/logo-rutta.png"); 
     background-size: contain; 
     background-position: center; 
     border-radius: 0.2rem; 
@@ -376,8 +376,8 @@ svg {
 
 /* Navbar de "Sobre Nosotros" - color de fondo y de texto */
 #navbar-AU {
-  background-color: #1C4F78;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #1C4F78;
 }
 
 
@@ -396,6 +396,7 @@ svg {
   position: relative;
   z-index: 1;
   transition: color 0.6s ease;
+  color: #1C4F78;
 }
 
 /* Sección encabezado en hover - color de texto blanco */
@@ -440,36 +441,31 @@ svg {
 
 /* Sección "¿Quiénes somos?" - fondo base (blanco), sombra interior con el naranja exacto de marca (antes un tono suelto #e48a0b), transición */
 #quienes-somos {
-  background-color: #CBDDED;
-  box-shadow:
-  
-  inset 0px 5px 5px #7797b1,
-  inset 0px -5px 5px #e7eff6;
-
+  background-color: #ffffff;
   transition: all 0.4s ease;
+  padding-top: 50px;
+  padding-bottom: 150px;
+  
 }
 
 /* Sección "¿Quiénes somos?" en hover - cambia a fondo de apoyo, intensifica la sombra (naranja de marca, antes tonos sueltos #ffbc5e/#e48a0b), se agranda levemente */
 #quienes-somos:hover {
-  background-color: var(--rutta-apoyo);
-  
-  box-shadow:
-  
-  inset 0px 1px 50px #f0f4f8,
-  inset 0px -5px 5px #4d6980;
-  transform: translateY(-1px) scale(1.01);
+ 
+  padding-top: 0px;
+  padding-bottom: 50px;
 }
 
 /* Texto "SOBRE NOSOTROS" - color secundario naranja (misma etiqueta de acento que "TRAIL CODERS" y "NUESTRO EQUIPO"; antes era negro) */
 #quienes-somos span {
   color: var(--rutta-secundario-naranja);
   font-family: "Montserrat", sans-serif !important;
+  font-size: 18px!important;
 }
 
 /* Título "¿Quiénes somos?" - color principal (la guía reserva el naranja para etiquetas y llamadas a la acción, no para títulos; antes usaba #F2A43A) */
 #quienes-somos h2 {
   color: #1C4F78;
-   font-family: "Montserrat", sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 /* todo: ---- CARDS DE VALORES ----*/
@@ -479,29 +475,37 @@ svg {
   
   background: var(--rutta-secundario-naranja);
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: all 0.5s ease; 
-  background-color: #ffffff; 
+  background-color: #F2F8F9; 
+  box-shadow:
+  0px 0px 0px #ffffff,
+  0px 0px 0px #ffffff;
+  display: flex;
+    flex-direction: column;
+    align-items: center !important;
 }
 
 /* Tarjetas de valores en hover - se agrandan, agrega resplandor alrededor (con el mismo naranja de marca, antes un tono suelto #ffc677) */
 .holographic-card:hover {
   transform: scale(1.07);
-  box-shadow: 0px 0px 50px #ffffff;
-
+  background-color: #ffffff;
+  box-shadow:
+    0px 5px 10px #858585,
+    0px 0px 0px #ffffff;
 }
 
 
 /* Título de tarjeta de valor - color base (blanco), sombra de texto */
 .holographic-card h5 {
   color: #1C4F78;
-  font-family: "Montserrat", sans-serif !important;
+font-family: "Montserrat", sans-serif !important;
   text-shadow: 1px 0px 10px #ffffff;
 }
 
 /* Párrafo de tarjeta de valor - color base (blanco), sombra de texto */
 .holographic-card p {
-  color: #1C4F78;
+  color: #000000;
   text-shadow:
   0px 5px 10px #ffffff,
   0px -5px 10px #ffffff;
@@ -511,21 +515,15 @@ svg {
 
 /* Contenido de tarjeta de valor - se ubica por encima del ícono de fondo */
 .holographic-card .card-body {
-  position: relative;
-  z-index: 2; 
   font-family: "Montserrat", sans-serif !important;
+  
+
+
 }
 
 /* Ícono decorativo de tarjeta de valor - posición, tamaño, opacidad, transición */
 .icono-fondo {
-  position: absolute;
-  bottom: -25px;       
-          
-  width: 50%;       
-  transition: all 0.3s ease-out;
-  opacity: 30%;
- 
-  
+width: 100px;
 }
 
 /* TODO ---- FIN CARD DE VALORES*/
@@ -535,26 +533,25 @@ svg {
 /* Texto "NUESTRO EQUIPO" - color secundario naranja (etiqueta de acento, igual que "TRAIL CODERS") */
 .our-team span {
   color: var(--rutta-secundario-naranja);
+  font-size: 18px!important;
 }
 
 /* Sección del carrusel de integrantes - fondo (color principal), sombra interior */
 .team{
-background-color: var(--rutta-principal);
-box-shadow: 
-inset 0px 10px 100px #000000,
-inset 0px -0px 0px #000000;
+background-color: #ffffff;
+
 transition: all 0.5s ease;
 }
 
 /* Sección del carrusel en hover - cambia el fondo al azul secundario (la guía asigna ese color justo al caso "Estados hover"; antes era un azul suelto #08477b) */
 .team:hover{
-  background-color: #09406d;
+  background-color: #ffffff;
   transition: all 0.5s ease;
 }
 
 /* Bloque "Nuestro equipo" - color base (blanco) */
 .our-team{
-  color: var(--rutta-base);
+  color: #1C4F78;
 }
 
 
@@ -562,9 +559,10 @@ transition: all 0.5s ease;
 
 /* Fondo de tarjeta de integrante - color secundario azul, bordes muy redondeados, transición */
 .back-team-card{
-  background-color: #ffffff;
-border-radius: 25px;
-transition: all 0.4s ease;   
+  background-color: #1C4F78;
+border-radius: 20px;
+transition: all 0.4s ease;
+box-shadow: 0px 1px 15px #000000!important;
 }
 
 /* Fondo de tarjeta de integrante en hover - cambia a naranja (coincide con el "Estado activo" de la guía), gira y agranda */
@@ -576,10 +574,11 @@ transform: scale(1.10);
 /* Tarjeta de integrante (foto y nombre) - fondo color de apoyo (el mismo que la guía asigna a "Tarjetas"), bordes redondeados, margen, transición */
 .team-card{
   background-color: var(--rutta-apoyo);
- border-radius: 25px;
+ border-radius: 10px;
   margin: 15px;
   transition: all 0.9s ease;
   font-family: "Montserrat", sans-serif !important;
+  box-shadow: 0px 1px 15px;
 }
 
 /* Tarjeta de integrante en hover - gira y agranda levemente */
