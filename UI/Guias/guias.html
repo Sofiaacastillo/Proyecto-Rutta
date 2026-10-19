@@ -13,6 +13,195 @@
     <link rel="stylesheet" href="/UI/Styles/styles.css" />
 </head>
 <body>
+    <!-- Enlace accesible que permite saltar directamente al contenido principal. -->
+    <a class="salto-contenido" href="#contenido-principal"
+      >Saltar al contenido</a
+    >
+
+    <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
+    <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
+    <nav
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+    >
+      <!-- Container limita el ancho y centra los elementos de navegación. -->
+      <div class="container">
+        <!-- El logotipo lleva al inicio de la misma página. -->
+        <a
+          class="navbar-brand marca-rutta"
+          href="#inicio"
+          aria-label="Rutta, volver al inicio"
+        >
+          <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
+          <span class="marca-logo-actual" aria-hidden="true"></span>
+        </a>
+
+        <!-- Contenedor de acciones visible en dispositivos móviles. -->
+        <div
+          class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
+        >
+          <!-- Botón que abre la búsqueda de productos. -->
+          <button
+            class="boton-icono"
+            type="button"
+            data-accion="buscar"
+            aria-label="Buscar productos"
+          >
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+
+          <!-- INICIO CONEXIÓN LOGIN--->
+          <a
+            class="boton-icono"
+            href="./Login/login.html"
+            aria-label="Iniciar sesión"
+          >
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <!-- FIN CONEXIÓN LOGIN. -->
+
+          <!-- Botón del carrito con contador dinámico. -->
+          <button
+            class="boton-icono boton-carrito"
+            type="button"
+            data-accion="carrito"
+            aria-label="Abrir carrito"
+          >
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
+        </div>
+
+        <!-- Botón que despliega el menú en pantallas pequeñas. -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable controlado por Bootstrap. -->
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <!-- Lista central de enlaces principales. -->
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <!-- Menú desplegable para las categorías de equipamiento. -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#productos"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/UI/Productos/productos.html">
+                    <button
+                      class="dropdown-item"
+                      type="button"
+                      data-filtro="todos"
+                    >
+                      Ver todo
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="mochilas"
+                  >
+                    Mochilas
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="ropa"
+                  >
+                    Ropa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="calzado"
+                  >
+                    Calzado
+                  </button>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./AboutUs/aboutUs.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Guías</a>
+            </li>
+            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#consejos">Consejos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a>
+            </li>
+          </ul>
+
+          <!-- Acciones de escritorio ubicadas al lado derecho. -->
+          <div
+            class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
+          >
+            <button
+              class="boton-icono"
+              type="button"
+              data-accion="buscar"
+              aria-label="Buscar productos"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
+            <a
+              class="boton-icono"
+              href="./Login/login.html"
+              aria-label="Iniciar sesión"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <!--? FIN CONEXIÓN LOGIN. -->
+            <button
+              class="boton-icono boton-carrito"
+              type="button"
+              data-accion="carrito"
+              aria-label="Abrir carrito"
+            >
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <main>
 <!-- Sección 1: Guías y consejos -->
 <section id="guias" class="guias">
@@ -432,5 +621,24 @@
     </main>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer class="pie-pagina">
+      <div class="container pie-contenido">
+        <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
+        <div class="pie-marca rutta-identidad">
+          <!-- ?El logotipo nuevo reemplaza la marca anterior sin cambiar el footer. -->
+          <a class="logo-footer" href="#inicio" aria-label="Rutta, volver al inicio"></a>
+        </div>
+
+        <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
+        <div class="credito-trail-coders">
+          <img src="/img/trailcoders-logoblanco.png" alt="" aria-hidden="true" />
+          <span>Desarrollado por <strong>Trail Coders</strong></span>
+        </div>
+
+        <!-- El año se completa automáticamente con JavaScript. -->
+        <p class="mb-0">© <span id="anioActual"></span> Rutta. </p>
+      </div>
+    </footer>
 </body>
 </html>
