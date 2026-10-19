@@ -2276,3 +2276,978 @@ h3 {
     font-size: 0.68rem;
     white-space: nowrap;
 }
+
+/**Pagina guias y consejos aplicaciones*/
+
+:root {
+    --rutta-azul: #1C4F78;
+    --rutta-azul-brillante: #017DE8;
+    --rutta-naranja: #F2A43A;
+    --rutta-azul-claro: #CBDDED;
+    --rutta-blanco: #FFFFFF;
+
+    --rutta-texto: #173F60;
+    --rutta-texto-secundario: #536C82;
+    --rutta-fondo: #F7FAFC;
+    --rutta-borde: #DCE7EF;
+
+    --rutta-radio: 16px;
+}
+
+.aplicaciones {
+    width: 100%;
+    overflow: hidden;
+
+    background-color: var(--rutta-fondo);
+    color: var(--rutta-texto);
+
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.aplicaciones *,
+.aplicaciones *::before,
+.aplicaciones *::after {
+    box-sizing: border-box;
+}
+
+.aplicaciones-contenedor {
+    width: min(100% - 48px, 1370px);
+    margin-inline: auto;
+}
+
+
+/** Inicio seccion aplicaciones*/
+
+.aplicaciones-hero {
+    display: flex;
+    align-items: center;
+
+    min-height: 340px;
+
+    background-color: #073E63;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 42, 70, 0.25) 0%,
+            rgba(0, 42, 70, 0.10) 42%,
+            transparent 70%
+        ),
+        url('/img/guias/background-aplicaciones.svg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.aplicaciones-hero-interior {
+    padding-block: 60px;
+}
+
+.aplicaciones-hero-content {
+    max-width: 550px;
+    color: var(--rutta-blanco);
+}
+
+.aplicaciones-etiqueta {
+    display: block;
+
+    color: #D98A20;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.aplicaciones-hero .aplicaciones-etiqueta {
+    color: var(--rutta-naranja);
+}
+
+.aplicaciones-hero h1 {
+    margin: 14px 0 15px;
+
+    color: var(--rutta-blanco);
+
+    font-size: clamp(2.2rem, 3.5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+}
+
+.aplicaciones-hero p {
+    max-width: 500px;
+    margin: 0;
+
+    color: #F0F5F9;
+
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+
+/** Secciones */
+
+.aplicaciones-rutas {
+    padding-block: 48px 22px;
+}
+
+.aplicaciones-orientacion {
+    padding-block: 22px 75px;
+}
+
+.aplicaciones-encabezado {
+    margin-bottom: 25px;
+}
+
+.aplicaciones-encabezado h2 {
+    margin: 10px 0;
+
+    color: var(--rutta-azul);
+
+    font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.aplicaciones-encabezado > p {
+    max-width: 850px;
+    margin: 0;
+
+    color: var(--rutta-texto-secundario);
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.aplicaciones-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/** card aplicaciones*/
+
+.aplicacion-card {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+
+    min-width: 0;
+    min-height: 295px;
+
+    padding: 24px 20px;
+
+    overflow: hidden;
+
+    background-color: var(--rutta-blanco);
+
+    border: 1px solid var(--rutta-borde);
+    border-radius: var(--rutta-radio);
+
+    box-shadow: 0 3px 12px rgba(28, 79, 120, 0.05);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.aplicacion-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #AFC9DD;
+
+    box-shadow: 0 9px 24px rgba(28, 79, 120, 0.10);
+}
+
+.aplicacion-card--wikiloc {
+    background-color: #FFFFFF;
+}
+
+.aplicacion-card--alltrails {
+    background-color: #F0F6FB;
+}
+
+.aplicacion-card--gaia {
+    background-color: #FFFFFF;
+}
+
+.aplicacion-card--brujula {
+    background-color: #F0F6FB;
+}
+
+
+/** INFORMACIÓN DE LAS APLICACIONES*/
+
+.aplicacion-info {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 65%;
+    min-width: 0;
+}
+
+.aplicacion-cabecera {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+.aplicacion-icono {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+
+    object-fit: contain;
+
+    background-color: var(--rutta-blanco);
+
+    border: 1px solid #E3EBF1;
+    border-radius: 12px;
+}
+
+.aplicacion-cabecera h3 {
+    margin: 3px 0 5px;
+
+    color: var(--rutta-azul);
+
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.aplicacion-subtitulo {
+    margin: 0 0 5px;
+
+    color: var(--rutta-texto-secundario);
+
+    font-size: 0.76rem;
+    line-height: 1.4;
+}
+
+.aplicacion-plataformas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    margin-top: 3px;
+
+    color: var(--rutta-azul);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.aplicacion-descripcion {
+    margin: 0 0 18px;
+
+    color: var(--rutta-texto-secundario);
+
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+.aplicacion-nota {
+    margin: 0 0 12px;
+
+    color: var(--rutta-texto-secundario);
+
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+
+/** Enlaces cards*/
+
+.aplicacion-enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    align-self: flex-start;
+    margin-top: auto;
+
+    color: var(--rutta-azul);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+.aplicacion-enlace:hover {
+    color: var(--rutta-azul-brillante);
+    gap: 11px;
+}
+
+.aplicacion-enlace:focus-visible {
+    outline: 2px solid var(--rutta-azul-brillante);
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+.aplicacion-mockup {
+    position: absolute;
+    z-index: 1;
+
+    right: 7px;
+    bottom: 12px;
+
+    width: 34%;
+    max-width: 175px;
+    height: 84%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    filter: drop-shadow(
+        0 6px 9px rgba(15, 48, 77, 0.12)
+    );
+
+    transition: transform 0.3s ease;
+}
+
+.aplicacion-card:hover .aplicacion-mockup {
+    transform: translateY(-4px);
+}
+
+
+/** Brujula*/
+
+.orientacion-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2.05fr)
+        minmax(270px, 0.9fr);
+
+    gap: 22px;
+    align-items: stretch;
+}
+
+.orientacion-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.aplicaciones-seguridad {
+    position: relative;
+
+    min-height: 295px;
+    padding: 25px 23px 115px;
+
+    overflow: hidden;
+
+    background-color: #EAF3F9;
+
+    border: 1px solid #C8DDEA;
+    border-left: 4px solid var(--rutta-naranja);
+    border-radius: var(--rutta-radio);
+
+    box-shadow: 0 3px 12px rgba(28, 79, 120, 0.04);
+}
+
+.seguridad-content {
+    position: relative;
+    z-index: 2;
+}
+
+.seguridad-content h3 {
+    margin: 0 0 14px;
+
+    color: var(--rutta-azul);
+
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.seguridad-content p {
+    margin: 0 0 11px;
+
+    color: var(--rutta-texto-secundario);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.seguridad-imagen {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 105px;
+
+    object-fit: contain;
+    object-position: bottom;
+}
+/** Responsive*/
+@media (max-width: 1150px) {
+
+    .aplicaciones-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .orientacion-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .aplicaciones-seguridad {
+        min-height: 190px;
+        padding-right: 35%;
+        padding-bottom: 25px;
+    }
+
+    .seguridad-imagen {
+        left: auto;
+        right: 0;
+
+        width: 32%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .aplicaciones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .orientacion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .aplicacion-card {
+        min-height: 285px;
+    }
+
+    .aplicacion-info {
+        width: 67%;
+    }
+
+    .aplicacion-mockup {
+        right: 18px;
+        width: 28%;
+        max-width: 190px;
+        height: 88%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .aplicaciones-contenedor {
+        width: calc(100% - 32px);
+    }
+
+    /** Hero */
+    .aplicaciones-hero {
+        min-height: 390px;
+
+        background-position: 62% center;
+
+        background-image:
+            linear-gradient(
+                90deg,
+                rgba(0, 42, 70, 0.94),
+                rgba(0, 42, 70, 0.60)
+            ),
+            url('/img/guias/background-aplicaciones.svg');
+    }
+
+    .aplicaciones-hero-interior {
+        padding-block: 50px;
+    }
+
+    .aplicaciones-hero-content {
+        max-width: 350px;
+    }
+
+    .aplicaciones-hero h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .aplicaciones-hero p {
+        font-size: 0.9rem;
+    }
+
+    /** Secciones */
+    .aplicaciones-rutas {
+        padding-top: 35px;
+    }
+
+    .aplicaciones-orientacion {
+        padding-bottom: 45px;
+    }
+
+    .aplicaciones-encabezado h2 {
+        font-size: 1.75rem;
+    }
+
+    /** Cards de aplicaciones */
+
+    .aplicacion-card {
+        min-height: 290px;
+        padding: 20px 17px;
+    }
+
+    .aplicacion-info {
+        width: 66%;
+    }
+
+    .aplicacion-icono {
+        width: 53px;
+        height: 53px;
+        flex-basis: 53px;
+    }
+
+    .aplicacion-mockup {
+        right: 5px;
+        bottom: 10px;
+        width: 34%;
+        height: 80%;
+    }
+    /** Seguridad */
+    .aplicaciones-seguridad {
+        min-height: 260px;
+        padding: 23px 20px 110px;
+    }
+
+    .seguridad-imagen {
+        left: 0;
+        right: auto;
+        width: 100%;
+        height: 100px;
+    }
+}
+
+@media (max-width: 390px) {
+    .aplicacion-card {
+        min-height: 310px;
+        padding: 17px 13px;
+    }
+    .aplicacion-info {
+        width: 69%;
+    }
+    .aplicacion-cabecera {
+        gap: 8px;
+    }
+    .aplicacion-icono {
+        width: 45px;
+        height: 45px;
+        flex-basis: 45px;
+    }
+    .aplicacion-cabecera h3 {
+        font-size: 0.95rem;
+    }
+    .aplicacion-descripcion {
+        font-size: 0.76rem;
+    }
+    .aplicacion-mockup {
+        right: 0;
+        bottom: 12px;
+
+        width: 32%;
+        height: 76%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aplicacion-card,
+    .aplicacion-mockup,
+    .aplicacion-enlace {
+        transition: none;
+    }
+    .aplicacion-card:hover,
+    .aplicacion-card:hover .aplicacion-mockup {
+        transform: none;
+    }
+}
+
+
+/* Sección de guías y consejos */
+
+.guias {
+    width: 100%;
+    padding: 75px 0 85px;
+
+    background-color: #003E5C;
+    background-image: url('/img/guias/background-guias.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.guias *,
+.guias *::before,
+.guias *::after {
+    box-sizing: border-box;
+}
+
+
+/* Contenedor principal */
+
+.guias-contenedor {
+    width: min(100% - 48px, 1500px);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: minmax(270px, 0.9fr) minmax(0, 2.8fr);
+    gap: 35px;
+    align-items: center;
+}
+
+
+/* Introducción de guías */
+
+.guias-introduccion {
+    width: 100%;
+    max-width: 350px;
+}
+
+.guias-etiqueta {
+    display: block;
+    margin-bottom: 20px;
+
+    color: #F2A43A;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.guias-introduccion h1 {
+    margin: 0 0 25px;
+
+    color: #FFFFFF;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+}
+
+.guias-introduccion p {
+    max-width: 340px;
+    margin: 0;
+
+    color: #D6E8F3;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+
+/* Contenedor de las tarjetas */
+
+.guias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* Tarjetas de Bootstrap */
+
+.guias .card.guia-card {
+    position: relative;
+    isolation: isolate;
+
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    height: 440px;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background-color: #123F5D;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 24px rgba(0, 20, 38, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.guias .card.guia-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 14px 30px rgba(0, 20, 38, 0.22);
+}
+
+
+/* Imágenes de las tarjetas */
+
+.guias .card.guia-card .card-img.guia-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: none;
+    border-radius: 0;
+
+    transition: transform 0.4s ease;
+}
+
+.guias .card.guia-card:hover .guia-imagen {
+    transform: scale(1.04);
+}
+
+
+/* Capa de contenido sobre la imagen */
+
+.guias .card.guia-card .card-img-overlay.guia-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 22px;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 30, 49, 0.12) 0%,
+        rgba(0, 30, 49, 0.22) 38%,
+        rgba(0, 30, 49, 0.92) 100%
+    );
+}
+
+
+/* Etiquetas de categoría */
+
+.guias .guia-overlay .badge.guia-categoria {
+    position: static;
+
+    display: inline-block;
+    align-self: flex-start;
+
+    width: auto;
+    margin: 0;
+    padding: 10px 14px;
+
+    background-color: #1C4F78;
+
+    border: none;
+    border-radius: 8px;
+
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+
+/* Contenido inferior de las tarjetas */
+
+.guias .guia-overlay .card-body.guia-contenido {
+    position: static;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: auto 0 0;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+}
+
+
+/* Títulos de las tarjetas */
+
+.guias .guia-contenido .card-title {
+    width: 100%;
+    margin: 0 0 16px;
+
+    color: #FFFFFF;
+
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.15rem, 1.5vw, 1.55rem);
+    font-weight: 700;
+    line-height: 1.3;
+
+    overflow-wrap: break-word;
+}
+
+
+/* Enlace Leer más */
+
+.guias .guia-contenido .card-link.guia-enlace {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin: 0;
+    padding: 0 0 3px;
+
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.guias .guia-contenido .card-link.guia-enlace:hover {
+    color: #F2A43A;
+    border-bottom-color: #F2A43A;
+}
+
+.guias .guia-contenido .card-link.guia-enlace:focus-visible {
+    outline: 2px solid #F2A43A;
+    outline-offset: 5px;
+}
+
+
+/** Separación entre guías y aplicaciones */
+.guias + .aplicaciones {
+    margin-top: 55px;
+}
+
+/** Responsive*/
+@media (max-width: 1200px) {
+
+    .guias-contenedor {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .guias-introduccion {
+        max-width: 750px;
+    }
+
+    .guias-introduccion h1 {
+        max-width: 650px;
+    }
+
+    .guias-introduccion p {
+        max-width: 650px;
+    }
+
+    .guias .card.guia-card {
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .guias {
+        padding: 55px 0 65px;
+    }
+
+    .guias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .guias .card.guia-card {
+        height: 390px;
+    }
+
+    .guias + .aplicaciones {
+        margin-top: 40px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .guias {
+        padding: 45px 0 55px;
+    }
+    .guias-contenedor {
+        width: calc(100% - 32px);
+        gap: 30px;
+    }
+    .guias-introduccion h1 {
+        font-size: 2.35rem;
+    }
+    .guias-introduccion p {
+        font-size: 0.95rem;
+    }
+    .guias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .guias .card.guia-card {
+        height: 400px;
+    }
+    .guias .guia-contenido .card-title {
+        font-size: 1.4rem;
+    }
+    .guias + .aplicaciones {
+        margin-top: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .guias .card.guia-card,
+    .guias .guia-imagen,
+    .guias .guia-enlace {
+        transition: none;
+    }
+
+    .guias .card.guia-card:hover,
+    .guias .card.guia-card:hover .guia-imagen {
+        transform: none;
+    }
+}
