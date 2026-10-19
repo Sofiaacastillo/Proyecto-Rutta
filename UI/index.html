@@ -46,7 +46,11 @@
 
     <!-- Conecta el documento HTML con nuestros estilos personalizados. -->
     <link rel="stylesheet" href="/UI/Styles/styles.css" />
+    <!-- Conecta al ChatBot-->
+    <link rel="stylesheet" href="/UI/chatbot/chatbot.css" />
   </head>
+ 
+
 
   <body class="rutta-identidad">
     <!-- Enlace accesible que permite saltar directamente al contenido principal. -->
@@ -518,43 +522,7 @@
       </section>
 
       <!-- ==================== SOBRE LA MARCA ==================== -->
-      <section
-        class="seccion sobre-seccion"
-        id="sobre-rutta"
-        aria-labelledby="titulo-sobre-rutta"
-      >
-        <!-- Isotipo decorativo; se oculta a lectores de pantalla porque no agrega información. -->
-        <img
-          class="isotipo-decorativo"
-          src="/img/isotipo-rutta.png"
-          alt=""
-          aria-hidden="true"
-        />
-
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <!-- Mensaje editorial de cierre. -->
-            <div class="col-lg-7">
-              <p class="sobrelinea">Sobre Rutta</p>
-              <h2 id="titulo-sobre-rutta">
-                La ruta no siempre es clara, pero siempre te transforma.
-              </h2>
-            </div>
-
-            <!-- Texto funcional que explica la propuesta de la marca. -->
-            <div class="col-lg-5">
-              <p>
-                Rutta reúne equipamiento confiable y orientación sencilla para
-                que cada persona pueda explorar de acuerdo con su experiencia,
-                destino y objetivos.
-              </p>
-              <a class="enlace-editorial" href="#inicio"
-                >Volver al inicio <i class="bi bi-arrow-up"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </main>
 
     <!-- ==================== PIE DE PÁGINA ==================== -->
@@ -746,5 +714,7 @@
 
     <!-- Conecta el documento con nuestra lógica personalizada. -->
     <script src="/UI/script.js"></script>
+    <!--JS PARA CHATBOT-->
+    <script src="/UI/chatbot/chatbot.js"></script>
   </body>
 </html>
