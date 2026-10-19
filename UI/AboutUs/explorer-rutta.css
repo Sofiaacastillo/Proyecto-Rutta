@@ -1,0 +1,147 @@
+/* ================================================================
+   1. VARIABLES DE MARCA RUTTA
+   ================================================================ */
+:root {
+  --azul-profundo: #004261;
+  --azul-medio: #28a8e0;
+  --gris-muy-claro: #e1ebef;
+  --carbon: #2b2b2b;
+  --naranja-sol: #f2a43a;
+  --blanco-rutta: #f8fbfc;
+
+  --texto-suave: #52616a;
+  --borde: rgba(0, 66, 97, 0.16);
+  --sombra: 0 18px 45px rgba(0, 66, 97, 0.12);
+  --radio: 1.15rem;
+
+  --fuente-editorial: "Cormorant Garamond", Georgia, serif;
+  --fuente-funcional: "Montserrat", Arial, sans-serif;
+}
+
+/* ================================================================
+   2. REGLAS BASE
+   ================================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-funcional);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--carbon);
+  background-color: var(--gris-muy-claro);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Subtítulos de acento (Etiquetas naranjas) */
+.sobrelinea {
+  font-family: var(--fuente-funcional) !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--naranja-sol);
+  margin-bottom: 0.5rem;
+}
+
+/* Títulos principales */
+.titulo-seccion {
+  font-family: var(--fuente-editorial), Georgia, serif !important;
+  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  color: var(--azul-profundo) !important;
+}
+
+/* ================================================================
+   3. SECCIÓN HISTORIA Y SOBRE RUTTA
+   ================================================================ */
+.sobre-seccion {
+  position: relative;
+  padding: 5rem 0;
+  background-color: var(--blanco-rutta);
+  overflow: hidden;
+}
+
+.sobre-seccion .isotipo-decorativo {
+  position: absolute;
+  top: 50%;
+  left: -2%;
+  transform: translateY(-50%);
+  width: 300px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================================================================
+   4. SECCIÓN TARGET / PÚBLICO OBJETIVO (TARJETAS)
+   ================================================================ */
+.target-seccion {
+  padding: 5rem 0;
+  background-color: var(--gris-muy-claro);
+}
+
+.tarjeta-target {
+  background: var(--blanco-rutta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 2rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-target:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta-target .icono-target {
+  font-size: 2.5rem;
+  color: var(--naranja-sol);
+  margin-bottom: 1rem;
+}
+
+.tarjeta-target h3 {
+  font-family: var(--fuente-funcional);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--azul-profundo);
+  margin-bottom: 0.75rem;
+}
+
+.tarjeta-target p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ================================================================
+   5. BOTÓN PRINCIPAL
+   ================================================================ */
+.boton {
+  font-family: var(--fuente-funcional) !important;
+  font-weight: 600 !important;
+  background-color: var(--naranja-sol);
+  color: #ffffff !important;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: var(--radio);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.boton:hover {
+  filter: brightness(1.08);
+  box-shadow: var(--sombra);
+  transform: translateY(-2px);
+}

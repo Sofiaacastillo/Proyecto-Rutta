@@ -3251,3 +3251,176 @@ h3 {
         transform: none;
     }
 }
+
+/* ==================== CARDS DE NIVELES ==================== */
+
+.niveles-senderismo {
+    --nivel-acento: #f7a21b;          /* naranja del logo */
+    --nivel-fondo: 0, 35, 50;         /* azul petróleo en RGB para los degradados */
+    --nivel-texto: #fff;
+    --nivel-texto-suave: rgba(255, 255, 255, 0.86);
+}
+
+/* ---------- Tarjeta ---------- */
+.niveles-senderismo .card {
+    position: relative;
+    height: 100%;
+    min-height: 28rem;                /* altura mínima en vez de aspect-ratio: el texto ya no se corta */
+    overflow: hidden;
+    border: none;
+    border-radius: 1rem;
+    background: rgb(var(--nivel-fondo));
+    box-shadow: 0 6px 20px rgba(var(--nivel-fondo), 0.18);
+}
+
+/* ---------- Imagen de fondo ---------- */
+.niveles-senderismo .card-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.6s ease;
+}
+
+.niveles-senderismo .card:hover .card-img,
+.niveles-senderismo .card:focus-within .card-img {
+    transform: scale(1.05);
+}
+
+/* ---------- Contenido sobre la imagen ---------- */
+.niveles-senderismo .card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;        /* el texto siempre arranca desde abajo */
+    gap: 0.75rem;
+    padding: 1.5rem;
+    color: var(--nivel-texto);
+    border-radius: inherit;
+    /* degradado más fuerte donde está el texto */
+    background: linear-gradient(
+        to top,
+        rgba(var(--nivel-fondo), 0.96) 0%,
+        rgba(var(--nivel-fondo), 0.88) 45%,
+        rgba(var(--nivel-fondo), 0.35) 75%,
+        rgba(var(--nivel-fondo), 0.10) 100%
+    );
+}
+
+/* ---------- Encabezado: nivel + dificultad ---------- */
+.niveles-senderismo .nivel-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.niveles-senderismo .nivel-numero {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--nivel-texto-suave);
+}
+
+.niveles-senderismo .nivel-dificultad {
+    display: flex;
+    gap: 0.3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.niveles-senderismo .nivel-dificultad li {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--nivel-acento);
+}
+
+.niveles-senderismo .nivel-dificultad li.activo {
+    background: var(--nivel-acento);
+}
+
+/* ---------- Título y descripción ---------- */
+.niveles-senderismo .card-title {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--nivel-texto);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.niveles-senderismo .nivel-descripcion {
+    margin: 0;
+    max-width: 38ch;                  /* líneas cortas = más fácil de leer */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--nivel-texto-suave);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Equipo recomendado ---------- */
+.niveles-senderismo .nivel-equipo {
+    margin-top: 0.25rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.niveles-senderismo .nivel-equipo-titulo {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--nivel-acento);
+}
+
+.niveles-senderismo .nivel-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.niveles-senderismo .nivel-chips li {
+    padding: 0.2rem 0.65rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--nivel-texto);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    backdrop-filter: blur(2px);
+}
+
+.niveles-senderismo .nivel-nota {
+    margin: 0.6rem 0 0;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--nivel-texto-suave);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 575.98px) {
+    .niveles-senderismo .card {
+        min-height: 26rem;
+    }
+
+    .niveles-senderismo .card-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ---------- Respeta preferencia de menos movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .niveles-senderismo .card-img {
+        transition: none;
+    }
+
+    .niveles-senderismo .card:hover .card-img,
+    .niveles-senderismo .card:focus-within .card-img {
+        transform: none;
+    }
+}
