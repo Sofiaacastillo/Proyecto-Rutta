@@ -3423,3 +3423,11 @@ h3 {
         transform: none;
     }
 }
+
+.seccion-niveles {
+    background-image: url("/img/cards-niveles/tarjeta\ niveles.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 20px;
+}
