@@ -1,0 +1,66 @@
+:root {
+  --rutilio-primary: #0B4A6F;
+  --rutilio-accent: #F5A524;
+}
+
+#rutilio-launcher {
+  position: fixed; right: 24px; bottom: 24px; z-index: 9999;
+  width: 110px; height: 110px;
+  padding: 0; border: 0 !important;
+  border-radius: 50% !important;     /* círculo */
+  overflow: hidden;                  /* recorta lo que sobre del SVG */
+  background: transparent !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+  cursor: pointer; transition: transform .2s;
+}
+#rutilio-launcher:hover { transform: scale(1.08); }
+#rutilio-launcher img {
+  width: 100%; height: 100%;
+  object-fit: cover;                 /* llena el círculo sin deformar */
+  display: block;
+  border-radius: 50%;
+}
+
+#rutilio-window {
+  position: fixed; right: 24px; bottom: 120px; z-index: 9999;
+  width: 360px; max-width: calc(100vw - 32px); height: 500px; max-height: 70vh;
+  display: none; flex-direction: column; overflow: hidden;
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25); font-family: inherit;
+}
+#rutilio-window.open { display: flex; }
+
+.rutilio-header {
+  display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+  background: var(--rutilio-primary); color: #fff; font-weight: 600;
+  border-bottom: 3px solid var(--rutilio-accent);
+}
+.rutilio-header img { width: 36px; height: 36px; }
+.rutilio-header button {
+  margin-left: auto; background: none; border: 0; color: #fff;
+  font-size: 20px; cursor: pointer;
+}
+
+.rutilio-messages {
+  flex: 1; overflow-y: auto; padding: 14px; background: #f5f6fa;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.rutilio-msg {
+  max-width: 80%; padding: 9px 13px; border-radius: 14px;
+  font-size: 14px; line-height: 1.4; white-space: pre-wrap; word-wrap: break-word;
+}
+.rutilio-msg.bot  { background: #fff; align-self: flex-start; border-bottom-left-radius: 4px; }
+.rutilio-msg.user { background: var(--rutilio-primary); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+.rutilio-msg.typing { opacity: .6; font-style: italic; }
+
+.rutilio-form { display: flex; gap: 8px; padding: 10px; border-top: 1px solid #e5e5e5; }
+.rutilio-form input {
+  flex: 1; padding: 10px 12px; border: 1px solid #ddd; border-radius: 20px;
+  outline: none; font-size: 14px;
+}
+.rutilio-form input:focus { border-color: var(--rutilio-accent); }
+.rutilio-form button {
+  padding: 0 16px; border: 0; border-radius: 20px;
+  background: var(--rutilio-primary); color: #fff; cursor: pointer;
+}
+.rutilio-form button:disabled { opacity: .5; cursor: default; }
