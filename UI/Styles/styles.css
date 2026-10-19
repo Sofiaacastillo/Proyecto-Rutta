@@ -854,7 +854,8 @@ h3 {
    ================================================================ */
 .guias-seccion {
     color: white;
-    background: var(--verde-profundo);
+    background-image: url(/img/guias/background-home-guias2.svg);
+    background-size: cover;
 }
 
 /* Variante clara de la sobrelínea. */
@@ -913,17 +914,17 @@ h3 {
 
 /* Fotografía exclusiva de la tarjeta "Guía". Cambia únicamente esta URL para reemplazarla. */
 .guia-mochila {
-    --imagen-guia: url("/img/guia-mochila-rutta.png");
+    --imagen-guia: url("/img/guias/mochila_guias.jpg");
 }
 
 /* Fotografía exclusiva de la tarjeta "Ruta". Cambia únicamente esta URL para reemplazarla. */
 .guia-rutas {
-    --imagen-guia: url("/img/guia-rutas-rutta.png");
+    --imagen-guia: url("/img/guias/seguridad_guias.jpg");
 }
 
 /* Fotografía exclusiva de la tarjeta "Consejo". Cambia únicamente esta URL para reemplazarla. */
 .guia-checklist {
-    --imagen-guia: url("/img/guia-checklist-rutta.png");
+    --imagen-guia: url("/img/guias/checklist_guias.jpg");
 }
 
 /* Eleva la guía en hover. */
@@ -2956,7 +2957,6 @@ h3 {
 
 
 /* Contenedor de las tarjetas */
-
 .guias-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3004,7 +3004,6 @@ h3 {
 
 
 /* Imágenes de las tarjetas */
-
 .guias .card.guia-card .card-img.guia-imagen {
     position: absolute;
     top: 0;
