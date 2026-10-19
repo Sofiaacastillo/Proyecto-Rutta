@@ -2257,4 +2257,22 @@ h3 {
   }
 }
 
+/* Ajustes de organización para los filtros de productos */
+.encabezado-productos .encabezado-seccion {
+    flex: 1;
+    min-width: 0;
+}
 
+.filtros-productos {
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    gap: 0.15rem;
+    padding: 0.3rem;
+}
+
+/* Reduce un poco el espacio interior de cada botón */
+.filtros-productos .filtro {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.68rem;
+    white-space: nowrap;
+}
