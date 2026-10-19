@@ -2,7 +2,8 @@
   // Ruta de la carpeta donde vive este script (para encontrar css e img)
   const BASE = new URL('.', document.currentScript.src).href;
 
-  // Mientras pruebas en n8n usa /webhook-test/...; en producción /webhook/...
+  // Mientras pruebas en n8n usa /webhook-test/...; 
+  //en producción /webhook/...
   const WEBHOOK_URL = 'https://mexamerik.app.n8n.cloud/webhook/rutilio-chat';
 
   // Cargar estilos (si ya dejaste el <link> en el index, se puede borrar uno de los dos)
