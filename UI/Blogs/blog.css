@@ -1,0 +1,827 @@
+/*todo ================================================================
+   BLOG RUTTA - Plantilla reutilizable
+   Sigue la guía de diseño de Rutta (misma paleta, tipografías y
+   componentes que aboutUs.css). Para otra entrada solo se edita el HTML.
+   ================================================================ */
+
+/*todo ================ BASE ================*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    /* compensa la navbar fija al usar el índice */
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Paleta oficial de la guía de diseño */
+:root {
+    --rutta-principal: #1c4f78;
+    --rutta-secundario-azul: #017de8;
+    --rutta-secundario-naranja: #f2a43a;
+    --rutta-apoyo: #cbdded;
+    --rutta-base: #ffffff;
+
+    --azul-profundo: #08304a;
+    --gris-muy-claro: #f8f9fa;
+    --fondo-suave: #f2f8f9;
+
+    --carbon: #2b2b2b;
+    --tinta: var(--carbon);
+    --texto-suave: #52616a;
+    --borde: rgba(0, 66, 97, 0.16);
+    --sombra: 0 18px 45px rgba(0, 66, 97, 0.12);
+    --verde-rutta: #004261;
+    --verde-profundo: #004261;
+    --dorado-rutta: #f2a43a;
+    --marfil: #f8fbfc;
+
+    --fuente-editorial: "Cormorant Garamond", Georgia, serif;
+    --fuente-funcional: "Montserrat", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--fuente-funcional);
+    color: #fff;
+    background: var(--azul-profundo);
+}
+
+/* Foto de fondo de las secciones oscuras: cambia SOLO esta URL para usar otra imagen */
+:root {
+    --blog-fondo: url("/img/ImagenesBlog/portada.jpg");
+}
+
+/*todo ================ NAVBAR GENERAL (copia de aboutUs.css) ================*/
+.barra-navegacion {
+    background: rgba(248, 251, 252, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 66, 97, 0.1);
+    min-height: 5rem;
+}
+
+#navbar-AU {
+    background-color: #ffffff;
+    color: var(--rutta-principal);
+}
+
+.marca-rutta {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.barra-navegacion .nav-link {
+    position: relative;
+    margin: 0 0.35rem;
+    padding: 0.8rem 0.55rem !important;
+    color: var(--tinta);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.barra-navegacion .nav-link::after {
+    position: absolute;
+    right: 0.55rem;
+    bottom: 0.45rem;
+    left: 0.55rem;
+    height: 2px;
+    content: "";
+    background: var(--dorado-rutta);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.barra-navegacion .nav-link:not(.dropdown-toggle):hover::after,
+.barra-navegacion .nav-link:not(.dropdown-toggle):focus::after,
+.barra-navegacion .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.barra-navegacion .nav-link:hover,
+.barra-navegacion .nav-link.active {
+    color: var(--dorado-rutta) !important;
+}
+
+.barra-navegacion .dropdown-toggle::after {
+    position: static;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.35rem;
+    vertical-align: 0.2em;
+    content: "";
+    background: transparent;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    transform: none;
+}
+
+.barra-navegacion .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 12rem;
+    padding: 0.6rem;
+    background: var(--marfil) !important;
+    border: 1px solid var(--borde) !important;
+    border-radius: 0.9rem !important;
+    box-shadow: var(--sombra) !important;
+}
+
+.barra-navegacion .dropdown-menu.show {
+    display: block !important;
+}
+
+.barra-navegacion .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.85rem !important;
+    border: none;
+    border-radius: 0.55rem !important;
+    color: var(--tinta) !important;
+    font-size: 0.86rem;
+    text-align: inherit;
+    background: transparent !important;
+}
+
+.barra-navegacion .dropdown-item:hover,
+.barra-navegacion .dropdown-item:focus {
+    color: #fff !important;
+    background: var(--rutta-principal) !important;
+}
+
+.boton-icono {
+    position: relative;
+    display: inline-grid;
+    width: 2.65rem;
+    height: 2.65rem;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    font-size: 1.16rem;
+    color: #fff;
+    background-color: #ffffff;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-icono:hover {
+    color: #e48a0b;
+    background-color: var(--rutta-apoyo);
+    transform: translateY(-2px);
+}
+
+.contador-carrito {
+    position: absolute;
+    top: 0.08rem;
+    right: 0.02rem;
+    display: grid;
+    min-width: 1.05rem;
+    height: 1.05rem;
+    padding: 0 0.22rem;
+    place-items: center;
+    color: #fff;
+    background: var(--verde-rutta);
+    border: 2px solid var(--marfil);
+    border-radius: 1rem;
+    font-size: 0.58rem;
+    font-weight: 700;
+}
+
+.boton-icono:hover .contador-carrito {
+    color: var(--verde-profundo);
+    background: var(--dorado-rutta);
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 66, 97, 0.22);
+}
+
+/* Logo e iconos de la nueva identidad */
+.rutta-identidad .marca-logo-actual {
+    display: block;
+    flex-shrink: 0;
+    width: clamp(8rem, 12vw, 10.8rem);
+    aspect-ratio: 2.65;
+    background-image: url("../../img/marca/logo-rutta.png");
+    background-repeat: no-repeat;
+    background-size: 133.333% auto;
+    background-position: center 52%;
+    border-radius: 0.2rem;
+}
+
+.rutta-identidad .bi-search {
+    --rutta-icono: url("../../img/iconos-rutta/buscar.svg");
+}
+
+.rutta-identidad :is(.bi-person, .bi-person-check) {
+    --rutta-icono: url("../../img/iconos-rutta/usuario.svg");
+}
+
+.rutta-identidad :is(.bi-cart3, .bi-cart-plus) {
+    --rutta-icono: url("../../img/iconos-rutta/carrito.svg");
+}
+
+.rutta-identidad .bi:is(.bi-search, .bi-person, .bi-person-check, .bi-cart3, .bi-cart-plus)::before {
+    content: "";
+    display: inline-block;
+    width: 1.45em;
+    height: 1.45em;
+    vertical-align: -0.3em;
+    background-image: var(--rutta-icono);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0.2em;
+}
+
+.rutta-identidad .boton-icono .bi::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: transparent;
+}
+
+.rutta-identidad .navbar-toggler-icon {
+    background-image: url("../../img/marca/logo-rutta.png");
+    background-size: contain;
+    background-position: center;
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        margin-top: 0.9rem;
+        padding: 1rem;
+        background: var(--marfil);
+        border: 1px solid var(--borde);
+        border-radius: 1rem;
+        box-shadow: var(--sombra);
+    }
+
+    .barra-navegacion .nav-link {
+        margin: 0;
+        padding: 0.65rem 0 !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .rutta-identidad .barra-navegacion .marca-logo-actual {
+        width: 6.6rem;
+    }
+
+    .rutta-identidad .acciones-movil .boton-icono {
+        width: 2.2rem;
+    }
+
+    .rutta-identidad .navbar-toggler {
+        padding-inline: 0.4rem;
+    }
+}
+
+/*todo ================================================================
+   SISTEMA DE BLOQUES: reglas comunes a todos los módulos
+   ================================================================ */
+
+/* Cada módulo es una <section class="bloque ..."> */
+.bloque {
+    position: relative;
+    padding: 5rem 0;
+    color: #fff;
+}
+
+/* Fondos intercambiables (cambia la clase en el HTML) */
+.fondo-a {
+    background: #08304a;
+}
+
+.fondo-b {
+    background: #0b3a58;
+}
+
+.fondo-principal {
+    background: var(--rutta-principal);
+}
+
+.fondo-foto {
+    background-image:
+        linear-gradient(180deg, rgba(0, 33, 49, 0.6) 0%, rgba(0, 33, 49, 0.4) 55%, rgba(0, 33, 49, 0.75) 100%),
+        var(--blog-fondo);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Columna de lectura centrada y angosta */
+.bloque-angosto {
+    max-width: 780px;
+    margin-inline: auto;
+}
+
+/* Sobrelínea naranja con letras espaciadas */
+.sobrelinea {
+    margin-bottom: 1.1rem;
+    color: var(--rutta-secundario-naranja);
+    font-family: var(--fuente-funcional);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+/* Títulos en serif blanco */
+.bloque h1,
+.bloque h2 {
+    margin-bottom: 1.25rem;
+    color: #fff;
+    font-family: var(--fuente-editorial), Georgia, serif;
+    font-weight: 700;
+    line-height: 1.08;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.3);
+}
+
+.bloque h1 {
+    font-size: clamp(2.6rem, 4.6vw, 4rem);
+}
+
+.bloque h2 {
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+}
+
+.bloque h3 {
+    color: #fff;
+    font-family: var(--fuente-editorial), Georgia, serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+/* Párrafos */
+.bloque p {
+    color: rgba(255, 255, 255, 0.88);
+    font-family: var(--fuente-funcional);
+    font-size: 18px;
+    line-height: 1.85;
+}
+
+.bloque p strong {
+    color: var(--rutta-secundario-naranja);
+}
+
+.bloque a {
+    color: #ffd08a;
+}
+
+/* Imagen con bordes redondeados y pie de foto (se usa en varios módulos) */
+.bloque-imagen img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 1.15rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.bloque-imagen:hover img {
+    transform: scale(1.02);
+}
+
+.bloque-imagen figcaption {
+    margin-top: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Botones */
+.boton {
+    padding: 0.75rem 1.75rem;
+    color: var(--rutta-base);
+    background-color: var(--rutta-secundario-naranja);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--fuente-funcional);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.boton:hover {
+    color: var(--rutta-base);
+    filter: brightness(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+.boton-contorno {
+    padding: 0.7rem 1.5rem;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.boton-contorno:hover {
+    color: var(--rutta-principal);
+    background: var(--rutta-apoyo);
+    transform: translateY(-2px);
+}
+
+/*todo ============ MÓDULO 1: PORTADA ============*/
+.bloque-portada {
+    padding: 6rem 0;
+}
+
+.bloque-resumen {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.05rem;
+}
+
+.blog-meta li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.blog-meta i {
+    color: var(--rutta-secundario-naranja);
+}
+
+/*todo ============ MÓDULO 2: INTRODUCCIÓN ============*/
+.bloque-intro {
+    padding: 3.5rem 0;
+}
+
+.bloque-intro p {
+    margin: 0;
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/*todo ============ MÓDULOS 3 y 4: TEXTO + IMAGEN LATERAL ============*/
+/* La versión invertida se logra con la clase flex-lg-row-reverse de Bootstrap en el HTML */
+.bloque-texto-imagen p:last-child {
+    margin-bottom: 0;
+}
+
+/*todo ============ MÓDULO 5: CITA DESTACADA ============*/
+.bloque-cita {
+    padding: 6rem 0;
+}
+
+.bloque-cita blockquote {
+    margin: 0;
+}
+
+.bloque-cita .bi-quote {
+    display: block;
+    color: var(--rutta-secundario-naranja);
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.bloque-cita p {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-family: var(--fuente-editorial), Georgia, serif;
+    font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+}
+
+.bloque-cita cite {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/*todo ============ MÓDULO 6: SUBTÍTULO + PÁRRAFO + GALERÍA ============*/
+.bloque-galeria .bloque-imagen img {
+    aspect-ratio: 1 / 1;
+}
+
+/*todo ============ MÓDULO 7: LISTA EN TARJETAS ============*/
+.bloque-tarjeta {
+    height: 100%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 1.15rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.bloque-tarjeta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-6px);
+}
+
+.bloque-numero {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.7rem;
+    color: #fff;
+    background: rgba(28, 79, 120, 0.92);
+    border-radius: 0.42rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.bloque-tarjeta p {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/*todo ============ MÓDULO 8: CONSEJO ============*/
+.bloque-consejo {
+    padding: 3.5rem 0;
+}
+
+.bloque-aviso {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.75rem 2rem;
+    background: rgba(203, 221, 237, 0.14);
+    border: 1px solid rgba(203, 221, 237, 0.3);
+    border-radius: 1.15rem;
+}
+
+.bloque-aviso>i {
+    color: var(--rutta-secundario-naranja);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.bloque-aviso h3 {
+    margin-bottom: 0.4rem;
+    font-family: var(--fuente-funcional);
+    font-size: 1.1rem;
+}
+
+.bloque-aviso p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*todo ============ MÓDULO 9: CONCLUSIÓN ============*/
+.blog-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+}
+
+.etiqueta {
+    padding: 0.45rem 0.9rem;
+    color: #fff !important;
+    background: rgba(0, 33, 49, 0.55);
+    border-radius: 0.42rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.etiqueta:hover {
+    background: var(--rutta-secundario-naranja);
+    transform: translateY(-2px);
+}
+
+.bloque-autor {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 3.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 1rem;
+}
+
+.bloque-autor-foto {
+    flex-shrink: 0;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    object-position: top;
+    background: var(--rutta-apoyo);
+    border-radius: 50%;
+}
+
+.bloque-autor h3 {
+    margin-bottom: 0.3rem;
+}
+
+.bloque-autor p:last-child {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/*todo ============ MÓDULO 10: MÁS DEL BLOG (tarjetas con foto) ============*/
+.blog-card {
+    /* La foto llega desde el HTML con style="--imagen-blog: url(...)" */
+    --imagen-blog: none;
+    position: relative;
+    display: flex;
+    height: 100%;
+    min-height: 26rem;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1.5rem;
+    background-image:
+        linear-gradient(0deg, rgba(0, 33, 49, 0.96) 0%, rgba(0, 33, 49, 0.05) 70%),
+        var(--imagen-blog);
+    background-color: var(--rutta-principal);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 1.15rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+}
+
+.blog-etiqueta {
+    align-self: flex-start;
+    padding: 0.5rem 0.8rem;
+    color: #fff;
+    background: rgba(28, 79, 120, 0.92);
+    border-radius: 0.42rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.bloque .blog-card h3 {
+    margin-bottom: 0.9rem;
+    font-size: 1.7rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bloque .blog-card a {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.bloque .blog-card a:hover {
+    color: var(--rutta-secundario-naranja);
+}
+
+/* Hace clicable toda la tarjeta */
+.blog-card a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+/*todo ================ RESPONSIVO ================*/
+@media (max-width: 991.98px) {
+    .bloque {
+        padding: 3.5rem 0;
+    }
+
+    .bloque-portada {
+        padding: 4rem 0;
+    }
+
+    .bloque-cita {
+        padding: 4rem 0;
+    }
+
+    .bloque p {
+        font-size: 17px;
+    }
+
+    .bloque-intro p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .bloque p {
+        font-size: 16px;
+    }
+
+    .bloque h3 {
+        font-size: 1.45rem;
+    }
+
+    .bloque-aviso {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .bloque-autor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .blog-card {
+        min-height: 22rem;
+    }
+}
+
+/*todo ================ FOOTER GENERAL (copia de aboutUs.css) ================*/
+.pie-pagina {
+    padding: 2rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    background: var(--azul-profundo);
+    font-size: 0.75rem;
+}
+
+.pie-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.pie-marca {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.credito-trail-coders {
+    display: inline-flex;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+    color: rgba(255, 255, 255, 0.82);
+    background: rgba(43, 43, 43, 0.28);
+    border: 1px solid rgba(40, 168, 224, 0.28);
+    border-radius: 0.75rem;
+}
+
+.credito-trail-coders img {
+    width: 3rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.credito-trail-coders strong {
+    color: #fff;
+}
+
+.rutta-identidad .marca-logo-pie {
+    width: 10rem;
+}
+
+@media (max-width: 991.98px) {
+    .pie-contenido {
+        grid-template-columns: 1fr auto;
+    }
+
+    .pie-contenido>p {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pie-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .pie-contenido>p {
+        grid-column: auto;
+    }
+
+    .credito-trail-coders {
+        justify-self: start;
+    }
+}
