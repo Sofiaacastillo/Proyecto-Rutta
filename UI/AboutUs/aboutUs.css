@@ -28,9 +28,45 @@ svg {
   --rutta-base: #FFFFFF;
 }
 
+
+/* Tipografía principal de Rutta */
+@font-face {
+  font-family: "Cy Grotesk";
+  src: url("/fonts/CyGroteskV3Wide-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cy Grotesk";
+  src: url("/fonts/CyGroteskV3Wide-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cy Grotesk";
+  src: url("/fonts/CyGroteskV3Wide-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Textos generales */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Títulos editoriales */
+h1, h2, h5 {
+  font-family: "Cy Grotesk", "Montserrat", sans-serif ;
+}
+
+
 /* Título "Conoce a nuestro equipo" (H1) - tipografía editorial, peso bold, tamaño responsivo (guía: 48–56px en escritorio). El !important vence a las clases de Bootstrap (.display-3) ya puestas en el HTML */
 #meet-team h1 {
-  font-family: var(--fuente-editorial), "Arial Black", sans-serif !important;
   font-weight: 700 !important;
   font-size: 52px !important;
   line-height: 1.08;
@@ -40,7 +76,6 @@ svg {
 #quienes-somos h2,
 .our-team h2,
 .idea h2 {
-  font-family: var(--fuente-editorial), "Arial Black", sans-serif !important;
   font-weight: 600 !important;
   font-size: 40px !important;
   line-height: 1.15;
@@ -49,7 +84,7 @@ svg {
 /* Subtítulos de tarjeta: valores y nombres de integrantes (H3) - tipografía editorial, peso medium, tamaño responsivo (guía: 24–30px en escritorio) */
 .holographic-card h5,
 .team-card h5 {
-  font-family: var(--fuente-editorial), "Arial Black", sans-serif !important;
+
   font-weight: 500 !important;
   font-size: 28px !important;
 }
