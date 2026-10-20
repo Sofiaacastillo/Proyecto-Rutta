@@ -3,20 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--todo EDITAR: descripción corta del artículo (SEO) -->
     <meta
       name="description"
-      content="Consejos para caminar con seguridad: planeación, equipo esencial y clima. Guía práctica de Rutta."
+      content="Cómo elegir tu primera mochila de trail: guía práctica de Rutta."
     />
-    <!--todo EDITAR: título de la pestaña -->
-    <title>Consejos para caminar con seguridad | Blog Rutta</title>
+    <title>Cómo elegir tu primera mochila de trail | Blog Rutta</title>
     <link
       rel="icon"
       type="image/svg+xml"
-      href="../../img/iconos-rutta/brujula.svg"
+      href="/img/iconos-rutta/brujula.svg"
     />
 
-    <!-- Fuentes de Rutta -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,16 +21,18 @@
       rel="stylesheet"
     />
 
-    <!-- Bootstrap -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
+    <link rel="stylesheet" href="/UI/Styles/styles.css" />
     <link rel="stylesheet" href="blog.css" />
   </head>
 
@@ -44,9 +43,8 @@
   >
     <!--todo =============== CÓDIGO DE NAVBAR GENERAL (idéntico a aboutUs.html) ===============-->
     <nav
-      class="navbar navbar-expand-lg rutta-identidad barra-navegacion sticky-top"
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
       aria-label="Navegación principal"
-      id="navbar-AU"
     >
       <div class="container">
         <a
@@ -61,7 +59,7 @@
           class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
         >
           <button
-            class="boton-icono boton-aboutUs"
+            class="boton-icono"
             type="button"
             data-accion="buscar"
             aria-label="Buscar productos"
@@ -69,14 +67,14 @@
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
           <a
-            class="boton-icono boton-aboutUs"
+            class="boton-icono"
             href="/UI/Login/login.html"
             aria-label="Iniciar sesión"
           >
             <i class="bi bi-person" aria-hidden="true"></i>
           </a>
           <button
-            class="boton-icono boton-carrito boton-aboutUs"
+            class="boton-icono boton-carrito"
             type="button"
             data-accion="carrito"
             aria-label="Abrir carrito"
@@ -103,7 +101,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#productos"
+                href="/UI/Productos/productos.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -112,45 +110,35 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <button
-                    class="dropdown-item"
-                    type="button"
-                    data-filtro="todos"
+                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                    >Ver todo</a
                   >
-                    Ver todo
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="mochilas"
+                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    >Mochilas</a
                   >
-                    Mochilas
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="ropa"
+                    href="/UI/Productos/productos.html?filtro=ropa"
+                    >Ropa</a
                   >
-                    Ropa
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="calzado"
+                    href="/UI/Productos/productos.html?filtro=calzado"
+                    >Calzado</a
                   >
-                    Calzado
-                  </button>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/index.html#inicio">Inicio</a>
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
@@ -158,15 +146,11 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/index.html#guias">Guías</a>
+              <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
             </li>
-            <!-- Enlace activo del blog -->
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                href="/UI/Blogs/blog01.html"
-                aria-current="page"
-                >Blog</a
+              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+                >Sobre Rutta</a
               >
             </li>
             <li class="nav-item">
@@ -438,7 +422,7 @@
           <div class="col-lg-3">
             <p class="sobrelinea">SIGUE LEYENDO</p>
             <h2 id="titulo-relacionados">Más guías y consejos</h2>
-            <a class="btn boton-contorno" href="/UI/index.html#guias"
+            <a class="btn boton-contorno" href="/UI/Guias/guias.html"
               >Ver todas las guías</a
             >
           </div>
@@ -468,7 +452,9 @@
               <span class="blog-etiqueta">Consejo</span>
               <div>
                 <h3>Checklist esencial antes de acampar</h3>
-                <a href="#">Leer más <i class="bi bi-arrow-right"></i></a>
+                <a href="/UI/Blogs/blog03.html"
+                  >Leer más <i class="bi bi-arrow-right"></i
+                ></a>
               </div>
             </article>
           </div>
@@ -500,11 +486,117 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.getElementById("anioActual").textContent =
-        new Date().getFullYear();
-    </script>
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
+      <div class="offcanvas-header container">
+        <div>
+          <p class="sobrelinea mb-1">Catálogo Rutta</p>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
+      </div>
+      <div class="offcanvas-body container">
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
+        <div class="input-group input-group-lg">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-end carrito-panel"
+      tabindex="-1"
+      id="carritoPanel"
+      aria-labelledby="tituloCarrito"
+    >
+      <div class="offcanvas-header carrito-encabezado">
+        <div>
+          <p class="sobrelinea mb-1">Tu selección</p>
+          <h2 class="offcanvas-title" id="tituloCarrito">Carrito de compra</h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar carrito"
+        ></button>
+      </div>
+      <div class="offcanvas-body carrito-cuerpo">
+        <div class="carrito-vacio" id="carritoVacio">
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega alguno de nuestros productos para verlo aquí.</p>
+          <a
+            class="btn boton-secundario-claro"
+            href="/UI/Productos/productos.html"
+            >Explorar productos</a
+          >
+        </div>
+        <div class="lista-carrito" id="listaCarrito" aria-live="polite"></div>
+      </div>
+      <div class="carrito-resumen d-none" id="carritoResumen">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carritoTotal">MXN $0</strong>
+        </div>
+        <p>Impuestos incluidos. Envío calculado al finalizar.</p>
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
+          Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-body d-flex align-items-center gap-3">
+          <i class="bi bi-check-circle-fill"></i>
+          <span id="mensajeToast">Producto agregado al carrito.</span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/UI/script.js"></script>
   </body>
 </html>
