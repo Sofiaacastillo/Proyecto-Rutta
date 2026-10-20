@@ -301,7 +301,7 @@ h3 {
     min-height: min(49rem, calc(100vh - 5rem));
     align-items: center;
     overflow: hidden;
-    background-image: url("/img/hero-rutta.png");
+    background-image: url(/img/backgroundnew-herosection-home\ \(1\).png);
     background-position: center;
     background-size: cover;
 }
@@ -312,7 +312,7 @@ h3 {
     inset: 0;
     background:
         linear-gradient(90deg, rgba(225, 235, 239, 0.98) 0%, rgba(225, 235, 239, 0.88) 35%, rgba(225, 235, 239, 0.16) 67%),
-        linear-gradient(0deg, rgba(0, 66, 97, 0.18), transparent 55%);
+        linear-gradient(0deg, rgba(0, 66, 97, 0.18), transparent 80%);
 }
 
 /* Coloca el texto por encima de la capa de color. */
