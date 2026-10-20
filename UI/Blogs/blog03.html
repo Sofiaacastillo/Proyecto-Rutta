@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--todo EDITAR: descripción corta del artículo (SEO) -->
+    <meta
+      name="description"
+      content="Checklist esencial antes de acampar: refugio, cocina, iluminación y seguridad. Guía práctica de Rutta."
+    />
+    <!--todo EDITAR: título de la pestaña -->
+    <title>Checklist esencial antes de acampar | Blog Rutta</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../img/iconos-rutta/brujula.svg"
+    />
+
+    <!-- Fuentes de Rutta -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+
+  <!--todo EDITAR: fondo de pantalla de ESTE blog. Sobrescribe la variable --blog-fondo definida en blog.css -->
+  <body
+    class="rutta-identidad rutta-blog-pagina"
+    style="
+      --blog-fondo: url(&quot;/img/ImagenesBlog/background-guiashome.jpg&quot;);
+    "
+  >
+    <!--todo =============== CÓDIGO DE NAVBAR GENERAL (idéntico a aboutUs.html) ===============-->
+    <nav
+      class="navbar navbar-expand-lg rutta-identidad barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+      id="navbar-AU"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand marca-rutta"
+          href="/UI/index.html"
+          aria-label="Rutta, volver al inicio"
+        >
+          <span class="marca-logo-actual" aria-hidden="true"></span>
+        </a>
+
+        <div
+          class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
+        >
+          <button
+            class="boton-icono boton-aboutUs"
+            type="button"
+            data-accion="buscar"
+            aria-label="Buscar productos"
+          >
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+          <a
+            class="boton-icono boton-aboutUs"
+            href="/UI/Login/login.html"
+            aria-label="Iniciar sesión"
+          >
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <button
+            class="boton-icono boton-carrito boton-aboutUs"
+            type="button"
+            data-accion="carrito"
+            aria-label="Abrir carrito"
+          >
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#productos"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="todos"
+                  >
+                    Ver todo
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="mochilas"
+                  >
+                    Mochilas
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="ropa"
+                  >
+                    Ropa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-filtro="calzado"
+                  >
+                    Calzado
+                  </button>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/index.html#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/index.html#guias">Guías</a>
+            </li>
+            <!-- Enlace activo del blog -->
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/UI/Blogs/blog01.html"
+                aria-current="page"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+            </li>
+          </ul>
+
+          <div
+            class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
+          >
+            <button
+              class="boton-icono"
+              type="button"
+              data-accion="buscar"
+              aria-label="Buscar productos"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <a
+              class="boton-icono"
+              href="/UI/Login/login.html"
+              aria-label="Iniciar sesión"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <button
+              class="boton-icono boton-carrito"
+              type="button"
+              data-accion="carrito"
+              aria-label="Abrir carrito"
+            >
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--todo ======== FIN DE NAVBAR GENERAL ========-->
+
+    <!--todo ================================================================
+         BLOG 03 - Checklist esencial antes de acampar
+         Mismos módulos y mismo blog.css, en otro orden.
+         ================================================================ -->
+
+    <!--todo ============ MÓDULO 1: PORTADA ============ -->
+    <section
+      class="bloque bloque-portada fondo-foto"
+      id="portada"
+      aria-labelledby="blog-titulo"
+    >
+      <div class="container-xxl">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <p class="sobrelinea">CONSEJO</p>
+            <h1 id="blog-titulo">Checklist esencial antes de acampar</h1>
+            <p class="bloque-resumen">
+              Lo que no puede faltar en tu mochila para pasar la noche en la
+              naturaleza con comodidad.
+            </p>
+            <ul class="blog-meta list-unstyled d-flex flex-wrap gap-4 mb-0">
+              <li>
+                <i class="bi bi-person-circle" aria-hidden="true"></i> Equipo
+                Rutta
+              </li>
+              <li>
+                <i class="bi bi-calendar3" aria-hidden="true"></i>
+                <time datetime="2026-10-20">20 de octubre de 2026</time>
+              </li>
+              <li>
+                <i class="bi bi-clock" aria-hidden="true"></i> 4 min de lectura
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <figure class="bloque-imagen mb-0">
+              <img
+                src="/img/ImagenesBlog/checklist_guias.jpg"
+                alt="Equipo de acampada ordenado sobre una mesa de madera"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 2: INTRODUCCIÓN ============ -->
+    <section class="bloque bloque-intro fondo-a" id="introduccion">
+      <div class="container-xxl">
+        <div class="bloque-angosto">
+          <p>
+            Acampar es una de las mejores formas de conectar con la naturaleza,
+            pero olvidar un solo artículo puede cambiar la experiencia. Con una
+            lista clara, empacar es más fácil y disfrutas más tu salida.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 3: TEXTO + IMAGEN (imagen a la derecha) ============ -->
+    <section
+      class="bloque bloque-texto-imagen fondo-b"
+      id="lugar"
+      aria-labelledby="titulo-lugar"
+    >
+      <div class="container-xxl">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <p class="sobrelinea">ANTES DE EMPACAR</p>
+            <h2 id="titulo-lugar">Elige bien tu lugar y revisa el clima</h2>
+            <p>
+              Define cuántas noches estarás fuera y consulta el
+              <strong>pronóstico del clima</strong>. Escoge una zona permitida
+              para acampar y deja tu <strong>plan de ruta</strong> con alguien
+              de confianza antes de salir.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <figure class="bloque-imagen mb-0">
+              <img
+                src="/img/ImagenesBlog/mochilas_guia_senderismo.jpg"
+                alt="Mochila de senderismo frente a un paisaje de montaña"
+              />
+              <figcaption>El destino define lo que debes llevar.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 4: TARJETAS (el checklist) ============ -->
+    <section
+      class="bloque bloque-tarjetas fondo-a"
+      id="checklist"
+      aria-labelledby="titulo-checklist"
+    >
+      <div class="container-xxl">
+        <div class="bloque-angosto text-center mb-5">
+          <p class="sobrelinea">EL CHECKLIST</p>
+          <h2 id="titulo-checklist">Tres grupos que no pueden faltar</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="bloque-tarjeta">
+              <span class="bloque-numero">01</span>
+              <h3>Refugio</h3>
+              <p>
+                Tienda de campaña, bolsa de dormir y aislante para el suelo.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bloque-tarjeta">
+              <span class="bloque-numero">02</span>
+              <h3>Cocina</h3>
+              <p>Estufa, utensilios, comida suficiente y agua o filtro.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bloque-tarjeta">
+              <span class="bloque-numero">03</span>
+              <h3>Seguridad</h3>
+              <p>Linterna frontal, botiquín, mapa y ropa para el frío.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 5: CITA DESTACADA ============ -->
+    <section class="bloque bloque-cita fondo-foto" id="cita">
+      <div class="container-xxl">
+        <blockquote class="bloque-angosto text-center">
+          <i class="bi bi-quote" aria-hidden="true"></i>
+          <p>Una mochila bien empacada hace más ligero cada paso.</p>
+          <cite>Equipo Rutta</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 6: SUBTÍTULO + PÁRRAFO + GALERÍA ============ -->
+    <section
+      class="bloque bloque-galeria fondo-b"
+      id="empaca"
+      aria-labelledby="titulo-empaca"
+    >
+      <div class="container-xxl">
+        <div class="bloque-angosto text-center mb-5">
+          <p class="sobrelinea">EMPACA CON ORDEN</p>
+          <h2 id="titulo-empaca">Lo pesado cerca de la espalda</h2>
+          <p>
+            Coloca lo más pesado cerca de tu espalda, lo que usarás seguido a la
+            mano y la ropa de abrigo en un lugar accesible.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <figure class="bloque-imagen mb-0">
+              <img
+                src="/img/ImagenesBlog/mochilas_guia_senderismo3.jpg"
+                alt="Mochila y equipo de acampada organizados en el suelo"
+              />
+              <figcaption>Todo en su lugar</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4">
+            <figure class="bloque-imagen mb-0">
+              <img
+                src="/img/ImagenesBlog/botellamochila.jpg"
+                alt="Botella de agua en el costado de una mochila"
+              />
+              <figcaption>Agua a la mano</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4">
+            <figure class="bloque-imagen mb-0">
+              <img
+                src="/img/ImagenesBlog/relacionado-3.jpg"
+                alt="Ropa y accesorios de montaña ordenados"
+              />
+              <figcaption>Ropa de abrigo</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 7: CONSEJO ============ -->
+    <section class="bloque bloque-consejo fondo-a" id="consejo">
+      <div class="container-xxl">
+        <aside class="bloque-aviso bloque-angosto" role="note">
+          <i class="bi bi-lightbulb" aria-hidden="true"></i>
+          <div>
+            <h3>Consejo Rutta</h3>
+            <p class="mb-0">
+              Arma tu mochila unos días antes y revisa cada artículo: así
+              detectas lo que falta o no funciona.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 8: CONCLUSIÓN + AUTOR ============ -->
+    <section
+      class="bloque bloque-conclusion fondo-principal"
+      id="conclusion"
+      aria-labelledby="titulo-conclusion"
+    >
+      <div class="container-xxl">
+        <div class="bloque-angosto text-center">
+          <img
+            src="../../img/ruttablanco-isotipo.png"
+            alt="Isotipo Rutta"
+            width="80"
+            class="mb-4"
+          />
+          <h2 id="titulo-conclusion">Conclusión</h2>
+          <p>
+            Con una buena lista, acampar se vuelve más sencillo y seguro.
+            Prepárate con calma y deja que la naturaleza haga el resto.
+          </p>
+          <div
+            class="blog-etiquetas justify-content-center"
+            aria-label="Etiquetas del artículo"
+          >
+            <a href="#" class="etiqueta">#acampar</a>
+            <a href="#" class="etiqueta">#checklist</a>
+          </div>
+          <a href="/UI/Productos/productos.html" class="btn boton btn-lg mt-4"
+            >Ver equipamiento</a
+          >
+        </div>
+
+        <div class="bloque-autor bloque-angosto">
+          <img
+            src="/img/equipo/21.png"
+            alt="Foto de la autora"
+            class="bloque-autor-foto"
+          />
+          <div>
+            <p class="sobrelinea mb-1">ESCRITO POR</p>
+            <h3>Sofía Arévalo - Equipo Rutta</h3>
+            <p class="mb-0">
+              Guías y recomendaciones para dar tus primeros pasos en el trail.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 9: MÁS DEL BLOG ============ -->
+    <section
+      class="bloque bloque-relacionados fondo-foto"
+      id="mas-del-blog"
+      aria-labelledby="titulo-relacionados"
+    >
+      <div class="container-xxl">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-3">
+            <p class="sobrelinea">SIGUE LEYENDO</p>
+            <h2 id="titulo-relacionados">Más guías y consejos</h2>
+            <a class="btn boton-contorno" href="/UI/index.html#guias"
+              >Ver todas las guías</a
+            >
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <article
+              class="blog-card"
+              style="
+                --imagen-blog: url(&quot;/img/ImagenesBlog/mochilas_guia_senderismo2.jpg&quot;);
+              "
+            >
+              <span class="blog-etiqueta">Guía</span>
+              <div>
+                <h3>Cómo elegir tu primera mochila de senderismo</h3>
+                <a href="/UI/Blogs/blog01.html"
+                  >Leer más <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <article
+              class="blog-card"
+              style="
+                --imagen-blog: url(&quot;/img/ImagenesBlog/seguridad_guias.jpg&quot;);
+              "
+            >
+              <span class="blog-etiqueta">Seguridad</span>
+              <div>
+                <h3>Consejos para caminar con seguridad</h3>
+                <a href="/UI/Blogs/blog02.html"
+                  >Leer más <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ================ COPIA DE CÓDIGO DE FOOTER GENERAL ================-->
+    <footer class="pie-pagina">
+      <div class="container pie-contenido">
+        <div class="pie-marca rutta-identidad">
+          <a
+            class="marca-logo-actual marca-logo-pie"
+            href="#portada"
+            aria-label="Rutta, volver al inicio"
+          ></a>
+        </div>
+
+        <div class="credito-trail-coders">
+          <img
+            src="/img/trailcoders-logoblanco.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>Desarrollado por <strong>Trail Coders</strong></span>
+        </div>
+
+        <p class="mb-0">© <span id="anioActual"></span> Rutta.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("anioActual").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
