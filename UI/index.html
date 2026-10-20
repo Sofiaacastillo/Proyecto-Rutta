@@ -20,16 +20,15 @@
       href="/img/iconos-rutta/brujula.svg"
     />
 
-   
-<!-- Preconexión con Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconexión con Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<!-- Tipografía secundaria: Montserrat -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
+    <!-- Tipografía secundaria: Montserrat -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Carga Bootstrap 5.3.8 para utilizar su cuadrícula y componentes responsivos. -->
     <link
@@ -57,7 +56,7 @@
 
     <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
     <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
-      <nav
+    <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
       aria-label="Navegación principal"
     >
@@ -126,66 +125,50 @@
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <!-- Lista central de enlaces principales. -->
           <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
-            <!-- Menú desplegable para las categorías de equipamiento. -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#productos"
+                href="/UI/Productos/productos.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Equipamiento
               </a>
-              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
               <ul class="dropdown-menu">
                 <li>
-                  <a href="/UI/Productos/productos.html">
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      data-filtro="todos"
-                    >
-                      Ver todo
-                    </button>
-                  </a>
+                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                    >Ver todo</a
+                  >
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="mochilas"
+                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    >Mochilas</a
                   >
-                    Mochilas
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="ropa"
+                    href="/UI/Productos/productos.html?filtro=ropa"
+                    >Ropa</a
                   >
-                    Ropa
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="calzado"
+                    href="/UI/Productos/productos.html?filtro=calzado"
+                    >Calzado</a
                   >
-                    Calzado
-                  </button>
                 </li>
               </ul>
             </li>
-
-            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
             <li class="nav-item">
-              <a class="nav-link" href="#inicio">Inicio</a>
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./AboutUs/aboutUs.html"
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
                 >Sobre Nosotros</a
               >
             </li>
@@ -193,7 +176,9 @@
               <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+                >Sobre Rutta</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
@@ -235,13 +220,11 @@
       </div>
     </nav>
 
-   
     <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
     <main id="contenido-principal">
       <!-- ==================== PORTADA / HERO ==================== -->
       <!-- La portada combina una fotografía de montaña con información comercial. -->
       <header class="hero-rutta" id="inicio">
-
         <!-- Capa de color que mejora el contraste del texto sobre la fotografía. -->
         <div class="hero-capa"></div>
 
@@ -267,12 +250,18 @@
               <!-- Grupo de llamadas a la acción. -->
               <div class="d-flex flex-wrap gap-3 hero-botones">
                 <!-- Botón primario que desplaza al catálogo. -->
-                <a class="btn boton-primario" href="/UI/Productos/productos.html">
+                <a
+                  class="btn boton-primario"
+                  href="/UI/Productos/productos.html"
+                >
                   Explorar equipamiento
                 </a>
                 <!-- Botón secundario que desplaza a las guías. -->
-                <a class="btn boton-secundario-claro" href="/UI/Guias/guias.html">
-                  Ver guías 
+                <a
+                  class="btn boton-secundario-claro"
+                  href="/UI/Guias/guias.html"
+                >
+                  Ver guías
                 </a>
               </div>
             </div>
@@ -319,59 +308,60 @@
           </div>
         </div>
       </header>
-      
-<!-- ==================== BENEFICIOS DE RUTTA ==================== -->
-<section class="beneficios-rutta" aria-label="Beneficios y recursos de Rutta">
-  <div class="container">
-    <div class="row g-4 align-items-center">
 
-      <!-- Beneficio 1: Guías -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="beneficio-rutta">
-          <i class="bi bi-book" aria-hidden="true"></i>
-          <div>
-            <h3>Guías para explorar</h3>
-            <p>Consejos prácticos para preparar tu próxima aventura.</p>
+      <!-- ==================== BENEFICIOS DE RUTTA ==================== -->
+      <section
+        class="beneficios-rutta"
+        aria-label="Beneficios y recursos de Rutta"
+      >
+        <div class="container">
+          <div class="row g-4 align-items-center">
+            <!-- Beneficio 1: Guías -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="beneficio-rutta">
+                <i class="bi bi-book" aria-hidden="true"></i>
+                <div>
+                  <h3>Guías para explorar</h3>
+                  <p>Consejos prácticos para preparar tu próxima aventura.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 2: Herramientas digitales -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="beneficio-rutta">
+                <i class="bi bi-map" aria-hidden="true"></i>
+                <div>
+                  <h3>Herramientas digitales</h3>
+                  <p>Descubre apps para rutas, navegación y orientación.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 3: Envíos -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="beneficio-rutta">
+                <i class="bi bi-truck" aria-hidden="true"></i>
+                <div>
+                  <h3>Envíos a todo México</h3>
+                  <p>Recibe tu equipamiento donde estés.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 4: Naturaleza -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="beneficio-rutta">
+                <i class="bi bi-tree" aria-hidden="true"></i>
+                <div>
+                  <h3>Aventuras responsables</h3>
+                  <p>Explora y cuida la naturaleza.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Beneficio 2: Herramientas digitales -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="beneficio-rutta">
-          <i class="bi bi-map" aria-hidden="true"></i>
-          <div>
-            <h3>Herramientas digitales</h3>
-            <p>Descubre apps para rutas, navegación y orientación.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Beneficio 3: Envíos -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="beneficio-rutta">
-          <i class="bi bi-truck" aria-hidden="true"></i>
-          <div>
-            <h3>Envíos a todo México</h3>
-            <p>Recibe tu equipamiento donde estés.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Beneficio 4: Naturaleza -->
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="beneficio-rutta">
-          <i class="bi bi-tree" aria-hidden="true"></i>
-          <div>
-            <h3>Aventuras responsables</h3>
-            <p>Explora y cuida la naturaleza.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
       <!-- ==================== CATEGORÍAS ==================== -->
       <section class="seccion categorias" aria-labelledby="titulo-categorias">
         <div class="container">
@@ -564,7 +554,6 @@
           </div>
         </div>
       </section>
-
     </main>
 
     <!-- ==================== PIE DE PÁGINA ==================== -->

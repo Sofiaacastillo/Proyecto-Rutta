@@ -2,54 +2,79 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-
+    <!-- Adapta la página al ancho de celulares, tabletas y computadoras -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Descripción que muestran los buscadores -->
+    <meta
+      name="description"
+      content="Conoce a Trail Coders, el equipo de 10 desarrolladores detrás de Rutta."
+    />
 
-    <title>Sobre Nosotros | Trail Coders</title>
-    <!-- Preconexión con Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Título de la pestaña del navegador -->
+    <title>Sobre Nosotros | Rutta</title>
 
-<!-- Tipografía secundaria: Montserrat -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
-    <!-- Bootstrap -->
+    <!-- Ícono de la pestaña del navegador -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="icon"
+      type="image/svg+xml"
+      href="/img/iconos-rutta/brujula.svg"
+    />
+
+    <!-- Tipografías: Cormorant Garamond (títulos) y Montserrat (textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="aboutUs.css" />
+    <!-- Bootstrap 5.3.8: cuadrícula, navbar, desplegable y carrusel -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons: íconos de búsqueda, usuario y carrito de la navbar -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Estilos globales del proyecto: variables, tipografía, navbar, footer y botones -->
+    <link rel="stylesheet" href="/UI/Styles/styles.css" />
+    <!-- Estilos propios de la página Sobre Nosotros -->
+    <link rel="stylesheet" href="/UI/AboutUs/aboutUs.css" />
   </head>
 
-  <body>
+  <body class="rutta-identidad">
+    <!-- Enlace de accesibilidad: salta directo al contenido principal -->
+    <a class="salto-contenido" href="#contenido-principal"
+      >Saltar al contenido</a
+    >
 
-    
-    <!--todo =============== CÓDIGO DE NAVBAR GENERAL===============-->
-
- <nav
+    <!-- ================================================================
+         SECCIÓN: BARRA DE NAVEGACIÓN
+         ================================================================ -->
+    <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
       aria-label="Navegación principal"
     >
-      <!-- Container limita el ancho y centra los elementos de navegación. -->
       <div class="container">
-        <!-- El logotipo lleva al inicio de la misma página. -->
+        <!-- Logotipo: lleva a la página de inicio -->
         <a
           class="navbar-brand marca-rutta"
-          href="#inicio"
+          href="/UI/index.html"
           aria-label="Rutta, volver al inicio"
         >
-          <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
           <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
 
-        <!-- Contenedor de acciones visible en dispositivos móviles. -->
+        <!-- Acciones para móvil: buscar, iniciar sesión y carrito -->
         <div
           class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
         >
-          <!-- Botón que abre la búsqueda de productos. -->
           <button
             class="boton-icono"
             type="button"
@@ -59,17 +84,14 @@
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
 
-          <!-- INICIO CONEXIÓN LOGIN--->
           <a
             class="boton-icono"
-            href="./Login/login.html"
+            href="/UI/Login/login.html"
             aria-label="Iniciar sesión"
           >
             <i class="bi bi-person" aria-hidden="true"></i>
           </a>
-          <!-- FIN CONEXIÓN LOGIN. -->
 
-          <!-- Botón del carrito con contador dinámico. -->
           <button
             class="boton-icono boton-carrito"
             type="button"
@@ -81,7 +103,7 @@
           </button>
         </div>
 
-        <!-- Botón que despliega el menú en pantallas pequeñas. -->
+        <!-- Botón hamburguesa: abre y cierra el menú en pantallas pequeñas -->
         <button
           class="navbar-toggler"
           type="button"
@@ -94,22 +116,21 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú colapsable controlado por Bootstrap. -->
+        <!-- Menú colapsable -->
         <div class="collapse navbar-collapse" id="menuPrincipal">
-          <!-- Lista central de enlaces principales. -->
+          <!-- Enlaces principales -->
           <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
-            <!-- Menú desplegable para las categorías de equipamiento. -->
+            <!-- Desplegable de categorías de equipamiento -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#productos"
+                href="/UI/index.html#productos"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Equipamiento
               </a>
-              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
               <ul class="dropdown-menu">
                 <li>
                   <a href="/UI/Productos/productos.html">
@@ -152,29 +173,33 @@
               </ul>
             </li>
 
-            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
             <li class="nav-item">
-              <a class="nav-link" href="#inicio">Inicio</a>
+              <a class="nav-link" href="/UI/index.html#inicio">Inicio</a>
             </li>
+            <!-- Página actual (aria-current="page") -->
             <li class="nav-item">
-              <a class="nav-link" href="./AboutUs/aboutUs.html"
+              <a
+                class="nav-link"
+                href="/UI/AboutUs/aboutUs.html"
+                aria-current="page"
                 >Sobre Nosotros</a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
             </li>
-            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
+
             <li class="nav-item">
-              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+              <a class="nav-link" href="/UI/index.html#sobre-rutta"
+                >Sobre Rutta</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a>
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#sobre-rutta">Sobre Rutta</a></li>
           </ul>
 
-          <!-- Acciones de escritorio ubicadas al lado derecho. -->
+          <!-- Acciones para escritorio: buscar, iniciar sesión y carrito -->
           <div
             class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
           >
@@ -186,15 +211,13 @@
             >
               <i class="bi bi-search" aria-hidden="true"></i>
             </button>
-            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
             <a
               class="boton-icono"
-              href="./Login/login.html"
+              href="/UI/Login/login.html"
               aria-label="Iniciar sesión"
             >
               <i class="bi bi-person" aria-hidden="true"></i>
             </a>
-            <!--? FIN CONEXIÓN LOGIN. -->
             <button
               class="boton-icono boton-carrito"
               type="button"
@@ -208,395 +231,502 @@
         </div>
       </div>
     </nav>
+    <!-- ===== FIN SECCIÓN: BARRA DE NAVEGACIÓN ===== -->
 
+    <main id="contenido-principal">
+      <!-- ================================================================
+           SECCIÓN: PORTADA "CONOCE A NUESTRO EQUIPO"
+           Al pasar el cursor aparece la foto de fondo, el texto se vuelve
+           blanco y el logo cambia a su versión blanca.
+           ================================================================ -->
+      <header class="about-hero" id="meet-team">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- Columna de texto -->
+            <div class="col-lg-7 text-center text-lg-start">
+              <p
+                class="sobrelinea justify-content-center justify-content-lg-start"
+              >
+                Trail Coders
+              </p>
+              <h1>Conoce a nuestro equipo</h1>
+              <p class="about-lead">
+                Somos <strong>Trail Coders</strong>, un equipo de 10
+                desarrolladores apasionados por la tecnología, la aventura y la
+                creación de experiencias digitales.
+              </p>
+              <p>
+                Nuestro objetivo es combinar tecnología y naturaleza para crear
+                <strong>Rutta</strong>, una experiencia pensada para quienes
+                disfrutan explorar nuevos caminos.
+              </p>
+            </div>
 
-    <!--todo ======== FIN DE CÓDIGO DE NAVBAR GENERAL =====>
+            <!-- Columna del logo (cambia a blanco en hover) -->
+            <div class="col-lg-5 text-center">
+              <img
+                class="about-logo"
+                src="/img/trailcoders-logoazul.png"
+                alt="Logo de Trail Coders"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ===== FIN SECCIÓN: PORTADA ===== -->
 
-
-  
-    <!--todo ---------------- HERO -->
-    <header class="py-5" id="meet-team">
-      <div class="container py-5">
-        <div class="row align-items-center">
-          <div class="col-lg-6 text-center text-lg-start">
-            <span id="trail-coders"> TRAIL CODERS </span>
-
-            <h1 class="display-3 fw-bold">Conoce a nuestro equipo</h1>
-
-            <p class="lead mt-3">
-              Somos <strong>Trail Coders</strong>, un equipo de 10
-              desarrolladores apasionados por la tecnología, la aventura y la
-              creación de experiencias digitales.
-            </p>
-
+      <!-- ================================================================
+           SECCIÓN: ¿QUIÉNES SOMOS? (fondo amarillo de Rutta)
+           ================================================================ -->
+      <section
+        class="seccion about-quienes"
+        id="quienes-somos"
+        aria-labelledby="titulo-quienes"
+      >
+        <div class="container">
+          <!-- Encabezado de la sección -->
+          <div class="encabezado-seccion mx-auto text-center">
+            <p class="sobrelinea justify-content-center">Sobre nosotros</p>
+            <h2 id="titulo-quienes">¿Quiénes somos?</h2>
             <p>
-              Nuestro objetivo es combinar tecnología y naturaleza para crear
-              <strong>Rutta</strong>, una experiencia pensada para quienes
-              disfrutan explorar nuevos caminos.
+              Trail Coders es un equipo multidisciplinario formado por 10
+              integrantes que comparten el interés por la tecnología, el
+              desarrollo de software y las actividades al aire libre.
             </p>
           </div>
 
-          <div class="col-lg-6 text-center mt-4 mt-lg-0">
-            <img
-              src="/img/trailcoders-logoazul.png"
-              alt="Logo de Rutta"
-              class="img-fluid logo-hero"
-              style="max-width: 320px"
-            />
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!--todo ---------------- SOBRE TRAIL CODERS -->
-    <section id="quienes-somos">
-      <div class="container py-4">
-        <div class="text-center mb-5">
-          <span class="fw-bold"> SOBRE NOSOTROS </span>
-
-          <h2 class="display-6 fw-bold mt-2"><b>¿Quiénes somos?</b></h2>
-
-          <p class="text-muted mx-auto" style="max-width: 750px">
-            <b>
-            Trail Coders es un equipo multidisciplinario formado por 10
-            integrantes que comparten el interés por la tecnología, el
-            desarrollo de software y las actividades al aire libre.
-          </p></b>
-        </div>
-
-        <!--todo ----------------- CARDS DE VALORES -->
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 holographic-card">
-              <img
-                src="/img/iconos-rutta/Icono-rutta-brújula.png"
-                alt="Icono decorativo"
-                class="icono-fondo"
-              />
-              <div class="card-body text-center p-4">
-                <h5 class="fw-bold">Tecnología</h5>
-
+          <!-- Tarjetas de valores -->
+          <div class="row g-4">
+            <!-- Valor 1: Tecnología -->
+            <div class="col-md-4">
+              <article class="valor-card">
+                <img
+                  src="/img/iconos-rutta/Icono-rutta-brújula.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <h3>Tecnología</h3>
                 <p>
-                  <b>
-                    Utilizamos nuestras habilidades de desarrollo para
-                    transformar ideas en soluciones digitales.</b
-                  >
+                  Utilizamos nuestras habilidades de desarrollo para transformar
+                  ideas en soluciones digitales.
                 </p>
-              </div>
+              </article>
             </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 border-0 holographic-card">
-              <img
-                src="/img/iconos-rutta/Icono-rutta-aventura.png"
-                alt="Icono decorativo"
-                class="icono-fondo"
-              />
-              <div class="card-body text-center p-4">
-                <h5 class="fw-bold">Aventura</h5>
-
-                <p><b>
+            <!-- Valor 2: Aventura -->
+            <div class="col-md-4">
+              <article class="valor-card">
+                <img
+                  src="/img/iconos-rutta/Icono-rutta-aventura.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <h3>Aventura</h3>
+                <p>
                   Nos inspira la exploración, los senderos y la conexión con la
-                  naturaleza.</b>
+                  naturaleza.
                 </p>
-              </div>
+              </article>
             </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100 border-0 holographic-card">
-              <img
-                src="/img/iconos-rutta/icono-rutta-corazón.png"
-                alt="Icono decorativo"
-                class="icono-fondo"
-              />
-              <div class="card-body text-center p-4">
-                <h5 class="fw-bold">Trabajo en equipo</h5>
-<b>
-                <p><b>
+            <!-- Valor 3: Trabajo en equipo -->
+            <div class="col-md-4">
+              <article class="valor-card">
+                <img
+                  src="/img/iconos-rutta/icono-rutta-corazón.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+                <h3>Trabajo en equipo</h3>
+                <p>
                   Creemos que las mejores ideas surgen cuando diferentes
                   habilidades trabajan juntas.
-                </p></b>
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== FIN SECCIÓN: ¿QUIÉNES SOMOS? ===== -->
+
+      <!-- ================================================================
+           SECCIÓN: NUESTRO EQUIPO (carrusel de integrantes)
+           ================================================================ -->
+      <section
+        class="seccion about-equipo"
+        id="equipo"
+        aria-labelledby="titulo-equipo"
+      >
+        <div class="container">
+          <!-- Encabezado de la sección -->
+          <div class="encabezado-seccion mx-auto text-center">
+            <p class="sobrelinea justify-content-center">Nuestro equipo</p>
+            <h2 id="titulo-equipo">Los Trail Coders</h2>
+            <p>9 integrantes, una misma ruta.</p>
+          </div>
+
+          <!-- Carrusel de Bootstrap -->
+          <div
+            id="teamCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            aria-label="Integrantes del equipo"
+          >
+            <!-- Diapositivas: una por integrante -->
+            <div class="carousel-inner">
+              <!-- Integrante 1: Sofía Arevalo -->
+              <div class="carousel-item active">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/21.png"
+                        alt="Foto de Sofía Arevalo"
+                      />
+                      <h3>Sofía Arevalo</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 2: Fernanda Cabrera -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/16.png"
+                        alt="Foto de Fernanda Cabrera"
+                      />
+                      <h3>Fernanda Cabrera</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 3: Anahi Matamoros -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/14.png"
+                        alt="Foto de Anahi Matamoros"
+                      />
+                      <h3>Anahi Matamoros</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 5: Fernando Ruperto -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/17.png"
+                        alt="Foto de Fernando Ruperto"
+                      />
+                      <h3>Fernando Ruperto</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 6: Alexander Urvina -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/20.png"
+                        alt="Foto de Alexander Urvina"
+                      />
+                      <h3>Alexander Urvina</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 7: Ivan Bolaños -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/19.png"
+                        alt="Foto de Ivan Bolaños"
+                      />
+                      <h3>Ivan Bolaños</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 8: Christian Pinal -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/13.png"
+                        alt="Foto de Christian Pinal"
+                      />
+                      <h3>Christian Pinal</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 9: Alejandro Alanis -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/18.png"
+                        alt="Foto de Alejandro Alanis"
+                      />
+                      <h3>Alejandro Alanis</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Integrante 10: Aslan López -->
+              <div class="carousel-item">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8 col-lg-5">
+                    <article class="integrante-card">
+                      <img
+                        class="integrante-foto"
+                        src="/img/equipo/15.png"
+                        alt="Foto de Aslan López"
+                      />
+                      <h3>Aslan López</h3>
+                      <p>Desarrollador</p>
+                    </article>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- Controles: anterior y siguiente -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#teamCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#teamCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- ===== FIN SECCIÓN: NUESTRO EQUIPO ===== -->
 
-    <!--todo ------- EQUIPO ----------->
-    <section class="py-5 team">
-      <div class="container py-4">
-        <div class="text-center mb-5 our-team">
-          <span class="fw-bold"> NUESTRO EQUIPO </span>
-
-          <h2 class="display-6 fw-bold mt-2"><b>Los Trail Coders</b></h2>
-
-          <p class="our-team">10 integrantes, una misma ruta.</p>
+      <!-- ================================================================
+           SECCIÓN: CIERRE "UNA RUTA COMIENZA CON UNA IDEA"
+           ================================================================ -->
+      <section class="seccion about-cta" aria-labelledby="titulo-cta">
+        <div class="container text-center">
+          <!-- Isotipo decorativo -->
+          <img
+            class="about-cta-isotipo"
+            src="/img/ruttablanco-isotipo.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <p class="sobrelinea sobrelinea-clara justify-content-center">
+            Rutta
+          </p>
+          <h2 id="titulo-cta">Una ruta comienza con una idea</h2>
+          <p class="about-cta-texto">
+            Trail Coders creó Rutta con la idea de hacer que explorar, planear y
+            disfrutar nuevas rutas sea una experiencia más sencilla, accesible y
+            emocionante.
+          </p>
+          <!-- Botón: lleva a la página de inicio -->
+          <a class="boton-primario" href="/UI/AboutUs/explore-rutta.html"
+            >Explorar Rutta</a
+          >
         </div>
+      </section>
+      <!-- ===== FIN SECCIÓN: CIERRE ===== -->
+    </main>
 
-<div id="teamCarousel" class="carousel slide py-5" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    
-    <!-- SLIDE 1: Sofía Arevalo -->
-    <div class="carousel-item active">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/21.png"
-                alt="Sofía Arevalo"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Sofía Arevalo</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 2: Fernanda Cabrera -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/16.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Fernanda Cabrera</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 3: Anahi Matamoros -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/14.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Anahi Matamoros</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 4: Ximena López -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/30.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Ximena López</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 5: Fernando Ruperto -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/17.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Fernando Ruperto</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 6: Alexander Urvina -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/20.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Alexander Urvina</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 7: Ivan Bolaños -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/19.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Ivan Bolaños</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 8: Christian Pinal -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/13.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Christian Pinal</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 9: Alejandro Alanis -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/18.png"
-                alt="Foto de perfil"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Alejandro Alanis</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 10: Aslan López -->
-    <div class="carousel-item">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 py-4">
-          <div class="card border-0 shadow-sm text-center back-team-card p-2">
-            <div class="card-body team-card py-5">
-              <img
-                src="/img/equipo/15.png"
-                alt="Foto de perfil de Aslan López"
-                class="team-pic mb-4"
-              />
-              <h5 class="fw-bold fs-3 text-dark">Aslan López</h5>
-              <p class="text-muted mb-0 fs-5">Desarrollador</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Controles de navegación -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
-  </button>
-</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RUTTA -->
-    <section class="idea text-white py-5">
-      <div class="container py-5 text-center">
-        <img
-          src="../../img/ruttablanco-isotipo.png"
-          alt="Isotipo Rutta"
-          width="90"
-          class="mb-4"
-        />
-
-        <h2 class="display-6 fw-bold">Una ruta comienza con una idea</h2>
-
-        <p class="lead mx-auto mt-3" style="max-width: 700px">
-          Trail Coders creó Rutta con la idea de hacer que explorar, planear y
-          disfrutar nuevas rutas sea una experiencia más sencilla, accesible y
-          emocionante.
-        </p>
-
-        <a href="/UI/AboutUs/explore-rutta.html" class="boton btn btn-lg mt-3">
-          Explorar Rutta
-        </a>
-      </div>
-    </section>
-
-
-        <!-- ==================== PIE DE PÁGINA ==================== -->
+    <!-- ================================================================
+         SECCIÓN: PIE DE PÁGINA
+         ================================================================ -->
     <footer class="pie-pagina">
       <div class="container pie-contenido">
-        <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
-        <div class="pie-marca rutta-identidad">
-          <!-- ?El logotipo nuevo reemplaza la marca anterior sin cambiar el footer. -->
-          <a class="marca-logo-actual marca-logo-pie" href="#inicio" aria-label="Rutta, volver al inicio"></a>
+        <!-- Logo y lema de Rutta -->
+        <div class="pie-marca">
+          <img
+            class="logo-footer-rutta"
+            src="/img/marca/logo-rutta-footer.png"
+            alt="Rutta"
+          />
+          <p>Equipamiento y guías para explorar con seguridad.</p>
         </div>
 
-        <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
+        <!-- Crédito del equipo desarrollador -->
         <div class="credito-trail-coders">
-          <img src="/img/trailcoders-logoblanco.png" alt="" aria-hidden="true" />
+          <img src="/img/icono-trail-coders.png" alt="" aria-hidden="true" />
           <span>Desarrollado por <strong>Trail Coders</strong></span>
         </div>
 
-        <!-- El año se completa automáticamente con JavaScript. -->
-        <p class="mb-0">© <span id="anioActual"></span> Rutta. </p>
+        <!-- Derechos de autor (el año lo completa aboutUs.js) -->
+        <p class="mb-0">© <span id="anioActual"></span> Rutta.</p>
       </div>
     </footer>
+    <!-- ===== FIN SECCIÓN: PIE DE PÁGINA ===== -->
+    <!-- PANEL DE BÚSQUEDA -->
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
+      <div class="offcanvas-header container">
+        <div>
+          <p class="sobrelinea mb-1">Catálogo Rutta</p>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
+      </div>
+      <div class="offcanvas-body container">
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
+        <div class="input-group input-group-lg">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Conecta el documento con nuestra lógica personalizada. -->
-     
+    <!-- PANEL DEL CARRITO -->
+
+    <div
+      class="offcanvas offcanvas-end carrito-panel"
+      tabindex="-1"
+      id="carritoPanel"
+      aria-labelledby="tituloCarrito"
+    >
+      <div class="offcanvas-header carrito-encabezado">
+        <div>
+          <p class="sobrelinea mb-1">Tu selección</p>
+          <h2 class="offcanvas-title" id="tituloCarrito">Carrito de compra</h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar carrito"
+        ></button>
+      </div>
+      <div class="offcanvas-body carrito-cuerpo">
+        <div class="carrito-vacio" id="carritoVacio">
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega alguno de nuestros productos para verlo aquí.</p>
+          <a
+            class="btn boton-secundario-claro"
+            href="/UI/Productos/productos.html"
+            >Explorar productos</a
+          >
+        </div>
+        <div class="lista-carrito" id="listaCarrito" aria-live="polite"></div>
+      </div>
+      <div class="carrito-resumen d-none" id="carritoResumen">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carritoTotal">MXN $0</strong>
+        </div>
+        <p>Impuestos incluidos. Envío calculado al finalizar.</p>
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
+          Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-body d-flex align-items-center gap-3">
+          <i class="bi bi-check-circle-fill"></i>
+          <span id="mensajeToast">Producto agregado al carrito.</span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/UI/script.js"></script>
     <script src="/UI/AboutUs/aboutUs.js"></script>
-   <script>
-        document.getElementById('anioActual').textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>

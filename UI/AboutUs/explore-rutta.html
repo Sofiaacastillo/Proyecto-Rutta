@@ -1,101 +1,409 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explorar Rutta - Nuestra Historia y Comunidad</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Conoce la historia de Rutta y para quién está pensada."
+    />
+    <title>Explorar Rutta | Nuestra Historia y Comunidad</title>
 
-  <!-- Bootstrap y Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/img/iconos-rutta/brujula.svg"
+    />
 
-  <!-- CSS Dedicado -->
-  <link rel="stylesheet" href="/UI/AboutUs/explorer-rutta.css" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <main id="contenido-principal">
-    
-    <!-- SECCIÓN 1: SOBRE RUTTA E HISTORIA -->
-    <section class="seccion sobre-seccion" id="sobre-rutta">
-      <img
-        class="isotipo-decorativo"
-        src="/img/isotipo-rutta.png"
-        alt=""
-        aria-hidden="true"
-      />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
-      <div class="container py-4">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7">
-            <p class="sobrelinea">Nuestra Historia</p>
-            <h2 class="titulo-seccion">
-              La ruta no siempre es clara, pero siempre te transforma.
-            </h2>
-            <p class="mt-4">
-              Rutta nació de una verdad sencilla: el exterior impresiona, pero la preparación adecuada te da confianza. Comenzamos como un grupo de apasionados del senderismo que notaron lo intimidante que resultaba empezar a explorar la naturaleza sin el equipo ni la guía correcta.
-            </p>
-          </div>
+    <!-- Primero los estilos globales y después los propios de la página -->
+    <link rel="stylesheet" href="/UI/Styles/styles.css" />
+    <link rel="stylesheet" href="/UI/AboutUs/explorer-rutta.css" />
+  </head>
+  <body class="rutta-identidad">
+    <a class="salto-contenido" href="#contenido-principal"
+      >Saltar al contenido</a
+    >
 
-          <div class="col-lg-5">
-            <p>
-              Rutta reúne equipamiento confiable y orientación sencilla para que cada persona pueda explorar de acuerdo con su experiencia, destino y objetivos. Queremos simplificar la aventura para que solo te preocupes por disfrutar la ruta.
-            </p>
-            
-            <a class="boton btn btn-lg mt-3 d-inline-block" href="/UI/index.html">
-              Volver al inicio <i class="bi bi-arrow-up"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 2: NUESTRO TARGET / COMUNIDAD -->
-    <section class="target-seccion" id="nuestra-comunidad">
+    <nav
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+    >
       <div class="container">
-        <div class="text-center mb-5">
-          <p class="sobrelinea">¿Para quién es Rutta?</p>
-          <h2 class="titulo-seccion">Diseñado para cada tipo de explorador</h2>
+        <a
+          class="navbar-brand marca-rutta"
+          href="/UI/index.html"
+          aria-label="Rutta, volver al inicio"
+        >
+          <span class="marca-logo-actual" aria-hidden="true"></span>
+        </a>
+
+        <div
+          class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
+        >
+          <button
+            class="boton-icono"
+            type="button"
+            data-accion="buscar"
+            aria-label="Buscar productos"
+          >
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+          <a
+            class="boton-icono"
+            href="/UI/Login/login.html"
+            aria-label="Iniciar sesión"
+          >
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <button
+            class="boton-icono boton-carrito"
+            type="button"
+            data-accion="carrito"
+            aria-label="Abrir carrito"
+          >
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
         </div>
 
-        <div class="row g-4">
-          <!-- Perfil 1: El Principiante -->
-          <div class="col-md-4">
-            <div class="tarjeta-target">
-              <i class="bi bi-compass icono-target"></i>
-              <h3>El Explorador Curioso</h3>
-              <p>
-                Apenas estás comenzando a conectar con la naturaleza. Buscas equipamiento fácil de usar, recomendaciones claras y la seguridad de que estás dando el primer paso correcto.
-              </p>
-            </div>
-          </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <!-- Perfil 2: El Habitual -->
-          <div class="col-md-4">
-            <div class="tarjeta-target">
-              <i class="bi bi-map icono-target"></i>
-              <h3>El Senderista de Fin de Semana</h3>
-              <p>
-                Aprovechas cada descanso para escapar de la ciudad. Valoras la durabilidad, la ligereza de tus accesorios y herramientas funcionales que nunca te fallen en el camino.
-              </p>
-            </div>
-          </div>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/UI/Productos/productos.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                    >Ver todo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    >Mochilas</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/UI/Productos/productos.html?filtro=ropa"
+                    >Ropa</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/UI/Productos/productos.html?filtro=calzado"
+                    >Calzado</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/UI/AboutUs/explore-rutta.html"
+                aria-current="page"
+                >Sobre Rutta</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+            </li>
+          </ul>
 
-          <!-- Perfil 3: El Apasionado -->
-          <div class="col-md-4">
-            <div class="tarjeta-target">
-              <i class="bi bi-tree icono-target"></i>
-              <h3>El Amante de la Aventura</h3>
-              <p>
-                Buscas superar tus propios límites e ir más lejos. Necesitas equipo resistente de alto rendimiento que responda ante cualquier terreno o condición climática.
-              </p>
-            </div>
+          <div
+            class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
+          >
+            <button
+              class="boton-icono"
+              type="button"
+              data-accion="buscar"
+              aria-label="Buscar productos"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <a
+              class="boton-icono"
+              href="/UI/Login/login.html"
+              aria-label="Iniciar sesión"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <button
+              class="boton-icono boton-carrito"
+              type="button"
+              data-accion="carrito"
+              aria-label="Abrir carrito"
+            >
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
           </div>
         </div>
       </div>
-    </section>
+    </nav>
 
-  </main>
+    <main id="contenido-principal">
+      <!-- SECCIÓN 1: SOBRE RUTTA E HISTORIA -->
+      <section class="seccion sobre-seccion" id="sobre-rutta">
+        <img
+          class="isotipo-decorativo"
+          src="/img/isotipo-rutta.png"
+          alt=""
+          aria-hidden="true"
+        />
 
-</body>
+        <div class="container py-4">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <p class="sobrelinea">Nuestra Historia</p>
+              <h2 class="titulo-seccion">
+                La ruta no siempre es clara, pero siempre te transforma.
+              </h2>
+              <p class="mt-4">
+                Rutta nació de una verdad sencilla: el exterior impresiona, pero
+                la preparación adecuada te da confianza. Comenzamos como un
+                grupo de apasionados del senderismo que notaron lo intimidante
+                que resultaba empezar a explorar la naturaleza sin el equipo ni
+                la guía correcta.
+              </p>
+            </div>
+
+            <div class="col-lg-5">
+              <p>
+                Rutta reúne equipamiento confiable y orientación sencilla para
+                que cada persona pueda explorar de acuerdo con su experiencia,
+                destino y objetivos. Queremos simplificar la aventura para que
+                solo te preocupes por disfrutar la ruta.
+              </p>
+
+              <a
+                class="boton btn btn-lg mt-3 d-inline-block"
+                href="/UI/index.html"
+              >
+                Volver al inicio <i class="bi bi-arrow-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: NUESTRO TARGET / COMUNIDAD -->
+      <section class="target-seccion" id="nuestra-comunidad">
+        <div class="container">
+          <div class="text-center mb-5">
+            <p class="sobrelinea">¿Para quién es Rutta?</p>
+            <h2 class="titulo-seccion">
+              Diseñado para cada tipo de explorador
+            </h2>
+          </div>
+
+          <div class="row g-4">
+            <!-- Perfil 1: El Principiante -->
+            <div class="col-md-4">
+              <div class="tarjeta-target">
+                <i class="bi bi-compass icono-target"></i>
+                <h3>El Explorador Curioso</h3>
+                <p>
+                  Apenas estás comenzando a conectar con la naturaleza. Buscas
+                  equipamiento fácil de usar, recomendaciones claras y la
+                  seguridad de que estás dando el primer paso correcto.
+                </p>
+              </div>
+            </div>
+
+            <!-- Perfil 2: El Habitual -->
+            <div class="col-md-4">
+              <div class="tarjeta-target">
+                <i class="bi bi-map icono-target"></i>
+                <h3>El Senderista de Fin de Semana</h3>
+                <p>
+                  Aprovechas cada descanso para escapar de la ciudad. Valoras la
+                  durabilidad, la ligereza de tus accesorios y herramientas
+                  funcionales que nunca te fallen en el camino.
+                </p>
+              </div>
+            </div>
+
+            <!-- Perfil 3: El Apasionado -->
+            <div class="col-md-4">
+              <div class="tarjeta-target">
+                <i class="bi bi-tree icono-target"></i>
+                <h3>El Amante de la Aventura</h3>
+                <p>
+                  Buscas superar tus propios límites e ir más lejos. Necesitas
+                  equipo resistente de alto rendimiento que responda ante
+                  cualquier terreno o condición climática.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- PANEL DE BÚSQUEDA -->
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
+      <div class="offcanvas-header container">
+        <div>
+          <p class="sobrelinea mb-1">Catálogo Rutta</p>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
+      </div>
+      <div class="offcanvas-body container">
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
+        <div class="input-group input-group-lg">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL DEL CARRITO -->
+    <div
+      class="offcanvas offcanvas-end carrito-panel"
+      tabindex="-1"
+      id="carritoPanel"
+      aria-labelledby="tituloCarrito"
+    >
+      <div class="offcanvas-header carrito-encabezado">
+        <div>
+          <p class="sobrelinea mb-1">Tu selección</p>
+          <h2 class="offcanvas-title" id="tituloCarrito">Carrito de compra</h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar carrito"
+        ></button>
+      </div>
+      <div class="offcanvas-body carrito-cuerpo">
+        <div class="carrito-vacio" id="carritoVacio">
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega alguno de nuestros productos para verlo aquí.</p>
+          <a
+            class="btn boton-secundario-claro"
+            href="/UI/Productos/productos.html"
+            >Explorar productos</a
+          >
+        </div>
+        <div class="lista-carrito" id="listaCarrito" aria-live="polite"></div>
+      </div>
+      <div class="carrito-resumen d-none" id="carritoResumen">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carritoTotal">MXN $0</strong>
+        </div>
+        <p>Impuestos incluidos. Envío calculado al finalizar.</p>
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
+          Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-body d-flex align-items-center gap-3">
+          <i class="bi bi-check-circle-fill"></i>
+          <span id="mensajeToast">Producto agregado al carrito.</span>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/UI/script.js"></script>
+  </body>
 </html>

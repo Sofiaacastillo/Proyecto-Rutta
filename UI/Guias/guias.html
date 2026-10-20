@@ -1,46 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Guías y consejos para tu próxima ruta." />
     <title>Guías y consejos | Rutta</title>
-    <!-- Bootstrap -->
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="icon"
+      type="image/svg+xml"
+      href="/img/iconos-rutta/brujula.svg"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/UI/Styles/styles.css" />
-</head>
-<body>
-    <!-- Enlace accesible que permite saltar directamente al contenido principal. -->
-    <a class="salto-contenido" href="#contenido-principal"
-      >Saltar al contenido</a
-    >
 
-    <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
-        <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="/UI/Styles/styles.css" />
+  </head>
+  <body class="rutta-identidad">
+    <!-- ==================== BARRA DE NAVEGACIÓN HOMOLOGADA ==================== -->
     <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
       aria-label="Navegación principal"
     >
-      <!-- Container limita el ancho y centra los elementos de navegación. -->
       <div class="container">
-        <!-- El logotipo lleva al inicio de la misma página. -->
         <a
           class="navbar-brand marca-rutta"
-          href="#inicio"
+          href="/UI/index.html"
           aria-label="Rutta, volver al inicio"
         >
-          <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
           <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
 
-        <!-- Contenedor de acciones visible en dispositivos móviles. -->
         <div
           class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
         >
-          <!-- Botón que abre la búsqueda de productos. -->
           <button
             class="boton-icono"
             type="button"
@@ -49,18 +57,13 @@
           >
             <i class="bi bi-search" aria-hidden="true"></i>
           </button>
-
-          <!-- INICIO CONEXIÓN LOGIN--->
           <a
             class="boton-icono"
-            href="./Login/login.html"
+            href="/UI/Login/login.html"
             aria-label="Iniciar sesión"
           >
             <i class="bi bi-person" aria-hidden="true"></i>
           </a>
-          <!-- FIN CONEXIÓN LOGIN. -->
-
-          <!-- Botón del carrito con contador dinámico. -->
           <button
             class="boton-icono boton-carrito"
             type="button"
@@ -72,7 +75,6 @@
           </button>
         </div>
 
-        <!-- Botón que despliega el menú en pantallas pequeñas. -->
         <button
           class="navbar-toggler"
           type="button"
@@ -85,70 +87,52 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menú colapsable controlado por Bootstrap. -->
         <div class="collapse navbar-collapse" id="menuPrincipal">
-          <!-- Lista central de enlaces principales. -->
           <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
-            <!-- Menú desplegable para las categorías de equipamiento. -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#productos"
+                href="/UI/Productos/productos.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Equipamiento
               </a>
-              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
               <ul class="dropdown-menu">
                 <li>
-                  <a href="/UI/Productos/productos.html">
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      data-filtro="todos"
-                    >
-                      Ver todo
-                    </button>
-                  </a>
+                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                    >Ver todo</a
+                  >
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="mochilas"
+                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    >Mochilas</a
                   >
-                    Mochilas
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="ropa"
+                    href="/UI/Productos/productos.html?filtro=ropa"
+                    >Ropa</a
                   >
-                    Ropa
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="calzado"
+                    href="/UI/Productos/productos.html?filtro=calzado"
+                    >Calzado</a
                   >
-                    Calzado
-                  </button>
                 </li>
               </ul>
             </li>
-
-            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
             <li class="nav-item">
-              <a class="nav-link" href="#inicio">Inicio</a>
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./AboutUs/aboutUs.html"
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
                 >Sobre Nosotros</a
               >
             </li>
@@ -156,14 +140,15 @@
               <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
+              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+                >Sobre Rutta</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
             </li>
           </ul>
 
-          <!-- Acciones de escritorio ubicadas al lado derecho. -->
           <div
             class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
           >
@@ -175,15 +160,13 @@
             >
               <i class="bi bi-search" aria-hidden="true"></i>
             </button>
-            <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
             <a
               class="boton-icono"
-              href="./Login/login.html"
+              href="/UI/Login/login.html"
               aria-label="Iniciar sesión"
             >
               <i class="bi bi-person" aria-hidden="true"></i>
             </a>
-            <!--? FIN CONEXIÓN LOGIN. -->
             <button
               class="boton-icono boton-carrito"
               type="button"
@@ -198,407 +181,490 @@
       </div>
     </nav>
 
-   
     <main>
-<!-- Sección 1: Guías y consejos -->
-<section id="guias" class="guias">
-    <div class="guias-contenedor">
-        <!-- Encabezado de guías -->
-        <div class="guias-introduccion">
-            <span class="guias-etiqueta">
-                Aprende antes de salir
-            </span>
+      <!-- Sección 1: Guías y consejos -->
+      <section id="guias" class="guias">
+        <div class="guias-contenedor">
+          <!-- Encabezado de guías -->
+          <div class="guias-introduccion">
+            <span class="guias-etiqueta"> Aprende antes de salir </span>
             <h1>Guías y consejos para tu próxima ruta</h1>
             <p>
-                Explora recomendaciones prácticas para
-                preparar tu aventura y disfrutar de
-                cada recorrido con confianza.
+              Explora recomendaciones prácticas para preparar tu aventura y
+              disfrutar de cada recorrido con confianza.
             </p>
-        </div>
-        <!-- Cards de guías -->
-        <div class="guias-grid">
+          </div>
+          <!-- Cards de guías -->
+          <!-- Cards de guías -->
+          <div class="guias-grid">
             <!-- Guía 1: Mochila de senderismo -->
             <article class="card guia-card">
-                <img
-                    src="/img/guias/mochila_guias.jpg"
-                    alt="Mochila de senderismo en un paisaje montañoso"
-                    class="card-img guia-imagen"
-                    loading="lazy"
-                >
-                <div class="card-img-overlay guia-overlay">
-                    <span class="badge guia-categoria">
-                        Guía
-                    </span>
-                    <div class="card-body guia-contenido">
-                        <h2 class="card-title">
-                            Cómo elegir tu primera mochila de senderismo
-                        </h2>
-                        <a
-                            href="/guias/primera-mochila.html"
-                            class="card-link guia-enlace"
-                        >
-                            Leer más
-                        </a>
-                    </div>
+              <img
+                src="/img/guias/mochila_guias.jpg"
+                alt="Mochila de senderismo en un paisaje montañoso"
+                class="card-img guia-imagen"
+                loading="lazy"
+              />
+              <div class="card-img-overlay guia-overlay">
+                <span class="badge guia-categoria"> Guía </span>
+                <div class="card-body guia-contenido">
+                  <h2 class="card-title">
+                    Cómo elegir tu primera mochila de senderismo
+                  </h2>
+                  <a href="/UI/Blogs/blog01.html" class="card-link guia-enlace">
+                    Leer más
+                  </a>
                 </div>
+              </div>
             </article>
-            <!-- Guía 2: Seguridad -->
-<article class="card guia-card">
-    <img
-        src="/img/guias/seguridad_guias.jpg"
-        alt="Senderista caminando por un sendero de montaña"
-        class="card-img guia-imagen"
-        loading="lazy"
-    >
-    <div class="card-img-overlay guia-overlay">
-        <span class="badge guia-categoria">
-            Seguridad
-        </span>
-        <div class="card-body guia-contenido">
-                        <h2 class="card-title">
-                            Consejos para caminar con seguridad
-                        </h2>
 
-                        <a
-                            href="/guias/seguridad.html"
-                            class="card-link guia-enlace"
-                        >
-                            Leer más
-                        </a>
-                    </div>
+            <!-- Guía 2: Seguridad -->
+            <article class="card guia-card">
+              <img
+                src="/img/guias/seguridad_guias.jpg"
+                alt="Senderista caminando por un sendero de montaña"
+                class="card-img guia-imagen"
+                loading="lazy"
+              />
+              <div class="card-img-overlay guia-overlay">
+                <span class="badge guia-categoria"> Seguridad </span>
+                <div class="card-body guia-contenido">
+                  <h2 class="card-title">
+                    Consejos para caminar con seguridad
+                  </h2>
+                  <a href="/UI/Blogs/blog02.html" class="card-link guia-enlace">
+                    Leer más
+                  </a>
                 </div>
+              </div>
             </article>
+
             <!-- Guía 3: Acampada -->
             <article class="card guia-card">
-                <img
-                    src="/img/guias/checklist_guias.jpg"
-                    alt="Casa de campaña en un bosque de montaña"
-                    class="card-img guia-imagen"
-                    loading="lazy"
-                >
-                <div class="card-img-overlay guia-overlay">
-                    <span class="badge guia-categoria">
-                        Consejo
-                    </span>
-                    <div class="card-body guia-contenido">
-                        <h2 class="card-title">
-                            Checklist esencial antes de acampar
-                        </h2>
-                        <a
-                            href="/guias/checklist-acampar.html"
-                            class="card-link guia-enlace"
-                        >
-                            Leer más
-                        </a>
-                    </div>
+              <img
+                src="/img/guias/checklist_guias.jpg"
+                alt="Casa de campaña en un bosque de montaña"
+                class="card-img guia-imagen"
+                loading="lazy"
+              />
+              <div class="card-img-overlay guia-overlay">
+                <span class="badge guia-categoria"> Consejo </span>
+                <div class="card-body guia-contenido">
+                  <h2 class="card-title">
+                    Checklist esencial antes de acampar
+                  </h2>
+                  <a href="/UI/Blogs/blog03.html" class="card-link guia-enlace">
+                    Leer más
+                  </a>
                 </div>
+              </div>
             </article>
+          </div>
         </div>
-    </div>
-</section>
-        <!-- Sección 2: Aplicaciones para senderismo -->
-        <section id="aplicaciones" class="aplicaciones">
-            <!-- Portada -->
-            <header class="aplicaciones-hero">
-                <div class="aplicaciones-contenedor aplicaciones-hero-interior">
-                    <div class="aplicaciones-hero-content">
-                        <span class="aplicaciones-etiqueta">
-                            Herramientas para explorar
-                        </span>
-                        <h1>Aplicaciones que te llevan más lejos</h1>
-                        <p>
-                            Descubre aplicaciones para planificar rutas,
-                            navegar sin conexión y orientarte con
-                            seguridad en la montaña.
-                        </p>
+      </section>
+      <!-- Sección 2: Aplicaciones para senderismo -->
+      <section id="aplicaciones" class="aplicaciones">
+        <!-- Portada -->
+        <header class="aplicaciones-hero">
+          <div class="aplicaciones-contenedor aplicaciones-hero-interior">
+            <div class="aplicaciones-hero-content">
+              <span class="aplicaciones-etiqueta">
+                Herramientas para explorar
+              </span>
+              <h1>Aplicaciones que te llevan más lejos</h1>
+              <p>
+                Descubre aplicaciones para planificar rutas, navegar sin
+                conexión y orientarte con seguridad en la montaña.
+              </p>
+            </div>
+          </div>
+        </header>
+        <!-- Aplicaciones para planificar rutas -->
+        <section class="aplicaciones-rutas">
+          <div class="aplicaciones-contenedor">
+            <div class="aplicaciones-encabezado">
+              <span class="aplicaciones-etiqueta">
+                Planifica · Navega · Explora
+              </span>
+              <h2>Aplicaciones para buscar y planificar rutas</h2>
+              <p>
+                Estas aplicaciones combinan mapas, seguimiento GPS y
+                herramientas de orientación. Te ayudan a descubrir senderos y
+                preparar tu próxima aventura.
+              </p>
+            </div>
+            <div class="aplicaciones-grid">
+              <!-- Wikiloc -->
+              <article class="aplicacion-card aplicacion-card--wikiloc">
+                <div class="aplicacion-info">
+                  <div class="aplicacion-cabecera">
+                    <img
+                      src="/img/guias/icono-wikiloc.svg"
+                      alt="Logotipo de Wikiloc"
+                      class="aplicacion-icono"
+                    />
+                    <div>
+                      <h3>Wikiloc</h3>
+
+                      <p class="aplicacion-subtitulo">Rutas de la comunidad</p>
+                      <div class="aplicacion-plataformas">
+                        <span>Android · iOS</span>
+                      </div>
                     </div>
+                  </div>
+                  <p class="aplicacion-descripcion">
+                    Explora rutas de senderismo creadas por la comunidad,
+                    consulta recorridos y prepara tus aventuras.
+                  </p>
+                  <a
+                    href="https://es.wikiloc.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="aplicacion-enlace"
+                  >
+                    Conoce la aplicación
+                  </a>
                 </div>
-            </header>
-            <!-- Aplicaciones para planificar rutas -->
-            <section class="aplicaciones-rutas">
-                <div class="aplicaciones-contenedor">
-                    <div class="aplicaciones-encabezado">
-                        <span class="aplicaciones-etiqueta">
-                            Planifica · Navega · Explora
-                        </span>
-                        <h2>Aplicaciones para buscar y planificar rutas</h2>
-                        <p>
-                            Estas aplicaciones combinan mapas, seguimiento GPS
-                            y herramientas de orientación. Te ayudan a descubrir
-                            senderos y preparar tu próxima aventura.
-                        </p>
+                <img
+                  src="/img/guias/mockup-wikiloc.svg"
+                  alt="Vista de la aplicación Wikiloc"
+                  class="aplicacion-mockup"
+                  loading="lazy"
+                />
+              </article>
+              <!-- AllTrails -->
+              <article class="aplicacion-card aplicacion-card--alltrails">
+                <div class="aplicacion-info">
+                  <div class="aplicacion-cabecera">
+                    <img
+                      src="/img/guias/icono-alltrails.svg"
+                      alt="Logotipo de AllTrails"
+                      class="aplicacion-icono"
+                    />
+                    <div>
+                      <h3>AllTrails</h3>
+                      <p class="aplicacion-subtitulo">
+                        Descubre nuevos senderos
+                      </p>
+                      <div class="aplicacion-plataformas">
+                        <span>Android · iOS</span>
+                      </div>
                     </div>
-                    <div class="aplicaciones-grid">
-                        <!-- Wikiloc -->
-                        <article class="aplicacion-card aplicacion-card--wikiloc">
-
-                            <div class="aplicacion-info">
-
-                                <div class="aplicacion-cabecera">
-
-                                    <img
-                                        src="/img/guias/icono-wikiloc.svg"
-                                        alt="Logotipo de Wikiloc"
-                                        class="aplicacion-icono"
-                                    >
-                                    <div>
-                                        <h3>Wikiloc</h3>
-
-                                        <p class="aplicacion-subtitulo">
-                                            Rutas de la comunidad
-                                        </p>
-                                        <div class="aplicacion-plataformas">
-                                            <span>Android · iOS</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="aplicacion-descripcion">
-                                    Explora rutas de senderismo creadas por
-                                    la comunidad, consulta recorridos y
-                                    prepara tus aventuras.
-                                </p>
-                                <a
-                                    href="https://es.wikiloc.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="aplicacion-enlace"
-                                >
-                                    Conoce la aplicación
-                                </a>
-                            </div>
-                            <img
-                                src="/img/guias/mockup-wikiloc.svg"
-                                alt="Vista de la aplicación Wikiloc"
-                                class="aplicacion-mockup"
-                                loading="lazy"
-                            >
-                        </article>
-                        <!-- AllTrails -->
-                        <article class="aplicacion-card aplicacion-card--alltrails">
-                            <div class="aplicacion-info">
-                                <div class="aplicacion-cabecera">
-                                    <img
-                                        src="/img/guias/icono-alltrails.svg"
-                                        alt="Logotipo de AllTrails"
-                                        class="aplicacion-icono"
-                                    >
-                                    <div>
-                                        <h3>AllTrails</h3>
-                                        <p class="aplicacion-subtitulo">
-                                            Descubre nuevos senderos
-                                        </p>
-                                        <div class="aplicacion-plataformas">
-                                            <span>Android · iOS</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="aplicacion-descripcion">
-                                    Encuentra rutas según dificultad,
-                                    distancia y desnivel. Consulta reseñas
-                                    y fotografías de otros excursionistas.
-                                </p>
-                                <a
-                                    href="https://www.alltrails.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="aplicacion-enlace"
-                                >
-                                    Conoce la aplicación
-                                </a>
-                            </div>
-                            <img
-                                src="/img/guias/mockup-AllTrails.svg"
-                                alt="Vista de la aplicación AllTrails"
-                                class="aplicacion-mockup"
-                                loading="lazy"
-                            >
-                        </article>
-                        <!-- Gaia GPS -->
-                        <article class="aplicacion-card aplicacion-card--gaia">
-                            <div class="aplicacion-info">
-                                <div class="aplicacion-cabecera">
-                                    <img
-                                        src="/img/guias/icono-gaiagps.svg"
-                                        alt="Logotipo de Gaia GPS"
-                                        class="aplicacion-icono"
-                                    >
-
-                                    <div>
-                                        <h3>Gaia GPS</h3>
-
-                                        <p class="aplicacion-subtitulo">
-                                            Mapas topográficos
-                                        </p>
-
-                                        <div class="aplicacion-plataformas">
-                                            <span>Android · iOS</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <p class="aplicacion-descripcion">
-                                    Explora mapas topográficos y satelitales
-                                    para planificar recorridos en montaña
-                                    y zonas remotas.
-                                </p>
-
-                                <a
-                                    href="https://www.gaiagps.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="aplicacion-enlace"
-                                >
-                                    Conoce la aplicación
-                                </a>
-                            </div>
-                            <img
-                                src="/img/guias/mockup-gaiagps.svg"
-                                alt="Vista de la aplicación Gaia GPS"
-                                class="aplicacion-mockup"
-                                loading="lazy"
-                            >
-                        </article>
-                    </div>
+                  </div>
+                  <p class="aplicacion-descripcion">
+                    Encuentra rutas según dificultad, distancia y desnivel.
+                    Consulta reseñas y fotografías de otros excursionistas.
+                  </p>
+                  <a
+                    href="https://www.alltrails.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="aplicacion-enlace"
+                  >
+                    Conoce la aplicación
+                  </a>
                 </div>
-            </section>
-            <!-- Brújula y orientación -->
-            <section class="aplicaciones-orientacion">
-                <div class="aplicaciones-contenedor">
-                    <div class="aplicaciones-encabezado">
-                        <span class="aplicaciones-etiqueta">
-                            Orienta tu camino
-                        </span>
-                        <h2>Aplicaciones de brújula y orientación</h2>
-                        <p>
-                            Herramientas para consultar rumbos,
-                            coordenadas y datos de orientación
-                            durante tus recorridos.
-                        </p>
+                <img
+                  src="/img/guias/mockup-AllTrails.svg"
+                  alt="Vista de la aplicación AllTrails"
+                  class="aplicacion-mockup"
+                  loading="lazy"
+                />
+              </article>
+              <!-- Gaia GPS -->
+              <article class="aplicacion-card aplicacion-card--gaia">
+                <div class="aplicacion-info">
+                  <div class="aplicacion-cabecera">
+                    <img
+                      src="/img/guias/icono-gaiagps.svg"
+                      alt="Logotipo de Gaia GPS"
+                      class="aplicacion-icono"
+                    />
+
+                    <div>
+                      <h3>Gaia GPS</h3>
+
+                      <p class="aplicacion-subtitulo">Mapas topográficos</p>
+
+                      <div class="aplicacion-plataformas">
+                        <span>Android · iOS</span>
+                      </div>
                     </div>
-                    <div class="orientacion-layout">
-                        <div class="orientacion-grid">
-                            <!-- Brújula digital -->
-                            <article class="aplicacion-card aplicacion-card--brujula">
-                                <div class="aplicacion-info">
-                                    <div class="aplicacion-cabecera">
-                                        <img
-                                            src="/img/guias/icono-ktwbrujula.svg"
-                                            alt="Icono de brújula digital"
-                                            class="aplicacion-icono"
-                                        >
-                                        <div>
-                                            <h3>Brújula digital</h3>
-                                            <p class="aplicacion-subtitulo">
-                                                KTW Apps
-                                            </p>
-                                            <div class="aplicacion-plataformas">
-                                                <span>Android</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="aplicacion-descripcion">
-                                        Consulta rumbos magnéticos y datos
-                                        de orientación mediante los sensores
-                                        de tu teléfono.
-                                    </p>
-                                    <a
-                                        href="https://play.google.com/store/apps/details?id=com.ktwapps.digitalcompass"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="aplicacion-enlace"
-                                    >
-                                        Conoce la aplicación
-                                    </a>
-                                </div>
-                                <img
-                                    src="/img/guias/mockup-ktw.svg"
-                                    alt="Vista de la brújula digital"
-                                    class="aplicacion-mockup"
-                                    loading="lazy"
-                                >
-                            </article>
-                            <!-- Brújula nativa -->
-                            <article class="aplicacion-card aplicacion-card--brujula">
-                                <div class="aplicacion-info">
-                                    <div class="aplicacion-cabecera">
-                                        <img
-                                            src="/img/guias/icono-brujula.svg"
-                                            alt="Icono de brújula"
-                                            class="aplicacion-icono"
-                                        >
-                                        <div>
-                                            <h3>Brújula del teléfono</h3>
-                                            <p class="aplicacion-subtitulo">
-                                                iOS y algunos Android
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <p class="aplicacion-descripcion">
-                                        Algunos dispositivos incluyen una
-                                        brújula para consultar la dirección
-                                        y otros datos de orientación.
-                                    </p>
-                                    <p class="aplicacion-nota">
-                                        Revisa las herramientas disponibles
-                                        en tu dispositivo.
-                                    </p>
-                                </div>
-                                <img
-                                    src="/img/guias/mockup-brujulardefectoapp.svg"
-                                    alt="Ejemplo de brújula integrada en un teléfono"
-                                    class="aplicacion-mockup"
-                                    loading="lazy"
-                                >
-                            </article>
-                        </div>
-                        <!-- Consejo de seguridad -->
-                        <aside class="aplicaciones-seguridad">
-                            <div class="seguridad-content">
-                                <h3>Consejo de seguridad</h3>
-                                <p>
-                                    Antes de salir, descarga tus mapas,
-                                    revisa la batería y comprueba que las
-                                    herramientas funcionen sin conexión.
-                                </p>
-                                <p>
-                                    Para rutas largas o complicadas,
-                                    lleva un mapa físico y una brújula
-                                    tradicional como respaldo.
-                                </p>
-                            </div>
-                            <img
-                                src="/img/Rutilio/Rutilio-personaje-mapa.png"
-                                alt=""
-                                class="seguridad-imagen"
-                                loading="lazy"
-                            >
-                        </aside>
-                    </div>
+                  </div>
+
+                  <p class="aplicacion-descripcion">
+                    Explora mapas topográficos y satelitales para planificar
+                    recorridos en montaña y zonas remotas.
+                  </p>
+
+                  <a
+                    href="https://www.gaiagps.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="aplicacion-enlace"
+                  >
+                    Conoce la aplicación
+                  </a>
                 </div>
-            </section>
+                <img
+                  src="/img/guias/mockup-gaiagps.svg"
+                  alt="Vista de la aplicación Gaia GPS"
+                  class="aplicacion-mockup"
+                  loading="lazy"
+                />
+              </article>
+            </div>
+          </div>
         </section>
+        <!-- Brújula y orientación -->
+        <section class="aplicaciones-orientacion">
+          <div class="aplicaciones-contenedor">
+            <div class="aplicaciones-encabezado">
+              <span class="aplicaciones-etiqueta"> Orienta tu camino </span>
+              <h2>Aplicaciones de brújula y orientación</h2>
+              <p>
+                Herramientas para consultar rumbos, coordenadas y datos de
+                orientación durante tus recorridos.
+              </p>
+            </div>
+            <div class="orientacion-layout">
+              <div class="orientacion-grid">
+                <!-- Brújula digital -->
+                <article class="aplicacion-card aplicacion-card--brujula">
+                  <div class="aplicacion-info">
+                    <div class="aplicacion-cabecera">
+                      <img
+                        src="/img/guias/icono-ktwbrujula.svg"
+                        alt="Icono de brújula digital"
+                        class="aplicacion-icono"
+                      />
+                      <div>
+                        <h3>Brújula digital</h3>
+                        <p class="aplicacion-subtitulo">KTW Apps</p>
+                        <div class="aplicacion-plataformas">
+                          <span>Android</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p class="aplicacion-descripcion">
+                      Consulta rumbos magnéticos y datos de orientación mediante
+                      los sensores de tu teléfono.
+                    </p>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.ktwapps.digitalcompass"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="aplicacion-enlace"
+                    >
+                      Conoce la aplicación
+                    </a>
+                  </div>
+                  <img
+                    src="/img/guias/mockup-ktw.svg"
+                    alt="Vista de la brújula digital"
+                    class="aplicacion-mockup"
+                    loading="lazy"
+                  />
+                </article>
+                <!-- Brújula nativa -->
+                <article class="aplicacion-card aplicacion-card--brujula">
+                  <div class="aplicacion-info">
+                    <div class="aplicacion-cabecera">
+                      <img
+                        src="/img/guias/icono-brujula.svg"
+                        alt="Icono de brújula"
+                        class="aplicacion-icono"
+                      />
+                      <div>
+                        <h3>Brújula del teléfono</h3>
+                        <p class="aplicacion-subtitulo">
+                          iOS y algunos Android
+                        </p>
+                      </div>
+                    </div>
+                    <p class="aplicacion-descripcion">
+                      Algunos dispositivos incluyen una brújula para consultar
+                      la dirección y otros datos de orientación.
+                    </p>
+                    <p class="aplicacion-nota">
+                      Revisa las herramientas disponibles en tu dispositivo.
+                    </p>
+                  </div>
+                  <img
+                    src="/img/guias/mockup-brujulardefectoapp.svg"
+                    alt="Ejemplo de brújula integrada en un teléfono"
+                    class="aplicacion-mockup"
+                    loading="lazy"
+                  />
+                </article>
+              </div>
+              <!-- Consejo de seguridad -->
+              <aside class="aplicaciones-seguridad">
+                <div class="seguridad-content">
+                  <h3>Consejo de seguridad</h3>
+                  <p>
+                    Antes de salir, descarga tus mapas, revisa la batería y
+                    comprueba que las herramientas funcionen sin conexión.
+                  </p>
+                  <p>
+                    Para rutas largas o complicadas, lleva un mapa físico y una
+                    brújula tradicional como respaldo.
+                  </p>
+                </div>
+                <img
+                  src="/img/Rutilio/Rutilio-personaje-mapa.png"
+                  alt=""
+                  class="seguridad-imagen"
+                  loading="lazy"
+                />
+              </aside>
+            </div>
+          </div>
+        </section>
+      </section>
     </main>
+
+    <!-- PANEL DE BÚSQUEDA -->
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
+      <div class="offcanvas-header container">
+        <div>
+          <p class="sobrelinea mb-1">Catálogo Rutta</p>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
+      </div>
+      <div class="offcanvas-body container">
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
+        <div class="input-group input-group-lg">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL DEL CARRITO -->
+    <div
+      class="offcanvas offcanvas-end carrito-panel"
+      tabindex="-1"
+      id="carritoPanel"
+      aria-labelledby="tituloCarrito"
+    >
+      <div class="offcanvas-header carrito-encabezado">
+        <div>
+          <p class="sobrelinea mb-1">Tu selección</p>
+          <h2 class="offcanvas-title" id="tituloCarrito">Carrito de compra</h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar carrito"
+        ></button>
+      </div>
+      <div class="offcanvas-body carrito-cuerpo">
+        <div class="carrito-vacio" id="carritoVacio">
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega alguno de nuestros productos para verlo aquí.</p>
+          <a
+            class="btn boton-secundario-claro"
+            href="/UI/Productos/productos.html"
+            >Explorar productos</a
+          >
+        </div>
+        <div class="lista-carrito" id="listaCarrito" aria-live="polite"></div>
+      </div>
+      <div class="carrito-resumen d-none" id="carritoResumen">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carritoTotal">MXN $0</strong>
+        </div>
+        <p>Impuestos incluidos. Envío calculado al finalizar.</p>
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
+          Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-body d-flex align-items-center gap-3">
+          <i class="bi bi-check-circle-fill"></i>
+          <span id="mensajeToast">Producto agregado al carrito.</span>
+        </div>
+      </div>
+    </div>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/UI/script.js"></script>
     <!-- ==================== PIE DE PÁGINA ==================== -->
     <footer class="pie-pagina">
       <div class="container pie-contenido">
         <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
         <div class="pie-marca rutta-identidad">
           <!-- ?El logotipo nuevo reemplaza la marca anterior sin cambiar el footer. -->
-          <a class="logo-footer" href="#inicio" aria-label="Rutta, volver al inicio"></a>
+          <a
+            class="logo-footer"
+            href="#inicio"
+            aria-label="Rutta, volver al inicio"
+          ></a>
         </div>
 
         <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
         <div class="credito-trail-coders">
-          <img src="/img/trailcoders-logoblanco.png" alt="" aria-hidden="true" />
+          <img
+            src="/img/trailcoders-logoblanco.png"
+            alt=""
+            aria-hidden="true"
+          />
           <span>Desarrollado por <strong>Trail Coders</strong></span>
         </div>
 
         <!-- El año se completa automáticamente con JavaScript. -->
-        <p class="mb-0">© <span id="anioActual"></span> Rutta. </p>
+        <p class="mb-0">© <span id="anioActual"></span> Rutta.</p>
       </div>
     </footer>
-</body>
+  </body>
 </html>

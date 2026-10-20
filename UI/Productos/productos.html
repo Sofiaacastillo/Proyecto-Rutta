@@ -2,48 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Conoce la historia de Rutta y para quién está pensada."
+    />
+    <title>Explorar Rutta | Nuestra Historia y Comunidad</title>
 
-    <!-- Usa la brújula adjunta como ícono de la pestaña. -->
     <link
       rel="icon"
       type="image/svg+xml"
       href="/img/iconos-rutta/brujula.svg"
     />
 
-    <!-- Preconecta con Google Fonts para acelerar la carga de las tipografías. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Carga Cormorant Garamond para títulos y Montserrat para textos funcionales. -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Carga Bootstrap 5.3.8 para utilizar su cuadrícula y componentes responsivos. -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-
-    <!-- Carga los íconos utilizados en navegación, categorías y fichas de producto. -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
-    <!-- Conecta el documento HTML con nuestros estilos personalizados. -->
+    <!-- Primero los estilos globales y después los propios de la página -->
     <link rel="stylesheet" href="/UI/Styles/styles.css" />
+    <link rel="stylesheet" href="/UI/AboutUs/explorer-rutta.css" />
   </head>
   <body class="rutta-identidad">
-
-<!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
+    <!-- ==================== BARRA DE NAVEGACIÓN ==================== -->
     <!-- Navbar de Bootstrap fija en la parte superior y adaptable a pantallas pequeñas. -->
-      <nav
+    <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
       aria-label="Navegación principal"
     >
@@ -52,7 +49,7 @@
         <!-- El logotipo lleva al inicio de la misma página. -->
         <a
           class="navbar-brand marca-rutta"
-          href="#inicio"
+          href="/UI/index.html"
           aria-label="Rutta, volver al inicio"
         >
           <!--IDENTIDAD: el CSS encuadra el PNG original sin modificarlo. -->
@@ -76,7 +73,7 @@
           <!-- INICIO CONEXIÓN LOGIN--->
           <a
             class="boton-icono"
-            href="./Login/login.html"
+            href="/UI/Login/login.html"
             aria-label="Iniciar sesión"
           >
             <i class="bi bi-person" aria-hidden="true"></i>
@@ -112,81 +109,63 @@
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <!-- Lista central de enlaces principales. -->
           <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
-            <!-- Menú desplegable para las categorías de equipamiento. -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#productos"
+                href="/UI/Productos/productos.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Equipamiento
               </a>
-              <!-- Opciones que filtran el catálogo mediante JavaScript. -->
               <ul class="dropdown-menu">
                 <li>
-                  <a href="/UI/Productos/productos.html">
-                    <button
-                      class="dropdown-item"
-                      type="button"
-                      data-filtro="todos"
-                    >
-                      Ver todo
-                    </button>
-                  </a>
+                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                    >Ver todo</a
+                  >
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="mochilas"
+                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    >Mochilas</a
                   >
-                    Mochilas
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="ropa"
+                    href="/UI/Productos/productos.html?filtro=ropa"
+                    >Ropa</a
                   >
-                    Ropa
-                  </button>
                 </li>
                 <li>
-                  <button
+                  <a
                     class="dropdown-item"
-                    type="button"
-                    data-filtro="calzado"
+                    href="/UI/Productos/productos.html?filtro=calzado"
+                    >Calzado</a
                   >
-                    Calzado
-                  </button>
                 </li>
               </ul>
             </li>
-
-            <!-- Enlaces internos que llevan a las diferentes secciones de la página. -->
             <li class="nav-item">
-              <a class="nav-link" href="#inicio">Inicio</a>
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./AboutUs/aboutUs.html"
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
                 >Sobre Nosotros</a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
             </li>
-            <!-- <li class="nav-item"><a class="nav-link" href="#rutas">Rutas</a></li> -->
             <li class="nav-item">
-              <a class="nav-link" href="#consejos">Consejos</a>
+              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+                >Sobre Rutta</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sobre-rutta">Sobre Rutta</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Ayuda/ayuda.html">Ayuda</a>
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
             </li>
           </ul>
 
@@ -205,7 +184,7 @@
             <!--? INICIO CONEXIÓN LOGIN: sustituye el antiguo botón sin acción. -->
             <a
               class="boton-icono"
-              href="./Login/login.html"
+              href="/UI/Login/login.html"
               aria-label="Iniciar sesión"
             >
               <i class="bi bi-person" aria-hidden="true"></i>
@@ -225,185 +204,216 @@
       </div>
     </nav>
 
-   
-<!-- ==================== CARDS DE NIVELES ==================== -->
- <section class="seccion-niveles">
-<section class="niveles-senderismo py-5">
-  <div class="container">
-    <!-- justify-content-center centra la segunda fila (las 2 tarjetas restantes) -->
-    <div class="row g-4 justify-content-center">
-
-      <!-- NIVEL 1: PRINCIPIANTE -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card theme-inverse">
-          <img src="/img/cards-niveles/tarjeta niveles 1.jpg"
-               class="card-img"
-               alt="Equipo básico para senderismo principiante">
-          <div class="card-img-overlay">
-            <div class="nivel-cabecera">
-              <span class="nivel-numero">Nivel 1</span>
-              <ul class="nivel-dificultad" aria-label="Dificultad 1 de 5">
-                <li class="activo"></li><li></li><li></li><li></li><li></li>
-              </ul>
+    <!-- ==================== CARDS DE NIVELES ==================== -->
+    <section class="seccion-niveles">
+      <section class="niveles-senderismo py-5">
+        <div class="container">
+          <!-- justify-content-center centra la segunda fila (las 2 tarjetas restantes) -->
+          <div class="row g-4 justify-content-center">
+            <!-- NIVEL 1: PRINCIPIANTE -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card theme-inverse">
+                <img
+                  src="/img/cards-niveles/tarjeta niveles 1.jpg"
+                  class="card-img"
+                  alt="Equipo básico para senderismo principiante"
+                />
+                <div class="card-img-overlay">
+                  <div class="nivel-cabecera">
+                    <span class="nivel-numero">Nivel 1</span>
+                    <ul class="nivel-dificultad" aria-label="Dificultad 1 de 5">
+                      <li class="activo"></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <h3 class="card-title">Principiante</h3>
+                  <p class="nivel-descripcion">
+                    Ideal para quienes comienzan en el senderismo y recorren
+                    senderos sencillos o caminatas cortas.
+                  </p>
+                  <div class="nivel-equipo">
+                    <p class="nivel-equipo-titulo">Equipo recomendado</p>
+                    <ul class="nivel-chips">
+                      <li>Mochila 10–20 L</li>
+                      <li>Agua</li>
+                      <li>Snacks</li>
+                      <li>Ropa cómoda</li>
+                      <li>Calzado con buen agarre</li>
+                      <li>Protector solar</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
             </div>
-            <h3 class="card-title">Principiante</h3>
-            <p class="nivel-descripcion">
-              Ideal para quienes comienzan en el senderismo y recorren
-              senderos sencillos o caminatas cortas.
-            </p>
-            <div class="nivel-equipo">
-              <p class="nivel-equipo-titulo">Equipo recomendado</p>
-              <ul class="nivel-chips">
-                <li>Mochila 10–20 L</li>
-                <li>Agua</li>
-                <li>Snacks</li>
-                <li>Ropa cómoda</li>
-                <li>Calzado con buen agarre</li>
-                <li>Protector solar</li>
-              </ul>
+
+            <!-- NIVEL 2: BÁSICO PREPARADO -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card theme-inverse">
+                <img
+                  src="/img/cards-niveles/tarjeta niveles 2.jpg"
+                  class="card-img"
+                  alt="Equipo de senderismo para rutas de un día"
+                />
+                <div class="card-img-overlay">
+                  <div class="nivel-cabecera">
+                    <span class="nivel-numero">Nivel 2</span>
+                    <ul class="nivel-dificultad" aria-label="Dificultad 2 de 5">
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <h3 class="card-title">Básico preparado</h3>
+                  <p class="nivel-descripcion">
+                    Para caminatas de media jornada o de un día completo, con
+                    desniveles moderados y cambios de clima.
+                  </p>
+                  <div class="nivel-equipo">
+                    <p class="nivel-equipo-titulo">Equipo recomendado</p>
+                    <ul class="nivel-chips">
+                      <li>Mochila 20–30 L</li>
+                      <li>Calzado de senderismo</li>
+                      <li>Impermeable</li>
+                      <li>Linterna frontal</li>
+                      <li>Botiquín básico</li>
+                      <li>Agua suficiente</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- NIVEL 3: INTERMEDIO -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card theme-inverse">
+                <img
+                  src="/img/cards-niveles/tarjeta niveles 3.jpg"
+                  class="card-img"
+                  alt="Equipo técnico para senderismo de montaña"
+                />
+                <div class="card-img-overlay">
+                  <div class="nivel-cabecera">
+                    <span class="nivel-numero">Nivel 3</span>
+                    <ul class="nivel-dificultad" aria-label="Dificultad 3 de 5">
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <h3 class="card-title">Intermedio</h3>
+                  <p class="nivel-descripcion">
+                    Para senderistas con experiencia que enfrentan rutas largas,
+                    pendientes pronunciadas y terrenos exigentes.
+                  </p>
+                  <div class="nivel-equipo">
+                    <p class="nivel-equipo-titulo">Equipo recomendado</p>
+                    <ul class="nivel-chips">
+                      <li>Mochila 25–40 L</li>
+                      <li>Ropa por capas</li>
+                      <li>Bastones de trekking</li>
+                      <li>GPS o mapa</li>
+                      <li>Botiquín ampliado</li>
+                      <li>Manta de emergencia</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- NIVEL 4: AVANZADO -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card theme-inverse">
+                <img
+                  src="/img/cards-niveles/tarjeta niveles 4.jpg"
+                  class="card-img"
+                  alt="Equipo de campamento para travesías de varios días"
+                />
+                <div class="card-img-overlay">
+                  <div class="nivel-cabecera">
+                    <span class="nivel-numero">Nivel 4</span>
+                    <ul class="nivel-dificultad" aria-label="Dificultad 4 de 5">
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                  <h3 class="card-title">Avanzado</h3>
+                  <p class="nivel-descripcion">
+                    Pensado para travesías de varios días en las que necesitas
+                    transportar tu propio equipo y acampar.
+                  </p>
+                  <div class="nivel-equipo">
+                    <p class="nivel-equipo-titulo">Equipo recomendado</p>
+                    <ul class="nivel-chips">
+                      <li>Mochila 40–60 L</li>
+                      <li>Tienda de campaña</li>
+                      <li>Saco de dormir</li>
+                      <li>Aislante</li>
+                      <li>Cocina portátil</li>
+                      <li>Alimentos</li>
+                      <li>Tratamiento de agua</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- NIVEL 5: TÉCNICO -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <article class="card theme-inverse">
+                <img
+                  src="/img/cards-niveles/tarjeta niveles 5.jpg"
+                  class="card-img"
+                  alt="Equipo especializado para alta montaña"
+                />
+                <div class="card-img-overlay">
+                  <div class="nivel-cabecera">
+                    <span class="nivel-numero">Nivel 5</span>
+                    <ul class="nivel-dificultad" aria-label="Dificultad 5 de 5">
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                      <li class="activo"></li>
+                    </ul>
+                  </div>
+                  <h3 class="card-title">Técnico</h3>
+                  <p class="nivel-descripcion">
+                    Para alta montaña y terrenos especializados que pueden
+                    incluir nieve, hielo o pasos técnicos.
+                  </p>
+                  <div class="nivel-equipo">
+                    <p class="nivel-equipo-titulo">
+                      Equipo recomendado según la ruta
+                    </p>
+                    <ul class="nivel-chips">
+                      <li>Casco</li>
+                      <li>Crampones</li>
+                      <li>Piolet</li>
+                      <li>Arnés</li>
+                      <li>Cuerdas</li>
+                      <li>Protección térmica</li>
+                    </ul>
+                    <p class="nivel-nota">
+                      Requiere capacitación y experiencia adecuadas.
+                    </p>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
-        </article>
-      </div>
-
-      <!-- NIVEL 2: BÁSICO PREPARADO -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card theme-inverse">
-          <img src="/img/cards-niveles/tarjeta niveles 2.jpg"
-               class="card-img"
-               alt="Equipo de senderismo para rutas de un día">
-          <div class="card-img-overlay">
-            <div class="nivel-cabecera">
-              <span class="nivel-numero">Nivel 2</span>
-              <ul class="nivel-dificultad" aria-label="Dificultad 2 de 5">
-                <li class="activo"></li><li class="activo"></li><li></li><li></li><li></li>
-              </ul>
-            </div>
-            <h3 class="card-title">Básico preparado</h3>
-            <p class="nivel-descripcion">
-              Para caminatas de media jornada o de un día completo,
-              con desniveles moderados y cambios de clima.
-            </p>
-            <div class="nivel-equipo">
-              <p class="nivel-equipo-titulo">Equipo recomendado</p>
-              <ul class="nivel-chips">
-                <li>Mochila 20–30 L</li>
-                <li>Calzado de senderismo</li>
-                <li>Impermeable</li>
-                <li>Linterna frontal</li>
-                <li>Botiquín básico</li>
-                <li>Agua suficiente</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- NIVEL 3: INTERMEDIO -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card theme-inverse">
-          <img src="/img/cards-niveles/tarjeta niveles 3.jpg"
-               class="card-img"
-               alt="Equipo técnico para senderismo de montaña">
-          <div class="card-img-overlay">
-            <div class="nivel-cabecera">
-              <span class="nivel-numero">Nivel 3</span>
-              <ul class="nivel-dificultad" aria-label="Dificultad 3 de 5">
-                <li class="activo"></li><li class="activo"></li><li class="activo"></li><li></li><li></li>
-              </ul>
-            </div>
-            <h3 class="card-title">Intermedio</h3>
-            <p class="nivel-descripcion">
-              Para senderistas con experiencia que enfrentan rutas
-              largas, pendientes pronunciadas y terrenos exigentes.
-            </p>
-            <div class="nivel-equipo">
-              <p class="nivel-equipo-titulo">Equipo recomendado</p>
-              <ul class="nivel-chips">
-                <li>Mochila 25–40 L</li>
-                <li>Ropa por capas</li>
-                <li>Bastones de trekking</li>
-                <li>GPS o mapa</li>
-                <li>Botiquín ampliado</li>
-                <li>Manta de emergencia</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- NIVEL 4: AVANZADO -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card theme-inverse">
-          <img src="/img/cards-niveles/tarjeta niveles 4.jpg"
-               class="card-img"
-               alt="Equipo de campamento para travesías de varios días">
-          <div class="card-img-overlay">
-            <div class="nivel-cabecera">
-              <span class="nivel-numero">Nivel 4</span>
-              <ul class="nivel-dificultad" aria-label="Dificultad 4 de 5">
-                <li class="activo"></li><li class="activo"></li><li class="activo"></li><li class="activo"></li><li></li>
-              </ul>
-            </div>
-            <h3 class="card-title">Avanzado</h3>
-            <p class="nivel-descripcion">
-              Pensado para travesías de varios días en las que
-              necesitas transportar tu propio equipo y acampar.
-            </p>
-            <div class="nivel-equipo">
-              <p class="nivel-equipo-titulo">Equipo recomendado</p>
-              <ul class="nivel-chips">
-                <li>Mochila 40–60 L</li>
-                <li>Tienda de campaña</li>
-                <li>Saco de dormir</li>
-                <li>Aislante</li>
-                <li>Cocina portátil</li>
-                <li>Alimentos</li>
-                <li>Tratamiento de agua</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- NIVEL 5: TÉCNICO -->
-      <div class="col-12 col-md-6 col-lg-4">
-        <article class="card theme-inverse">
-          <img src="/img/cards-niveles/tarjeta niveles 5.jpg"
-               class="card-img"
-               alt="Equipo especializado para alta montaña">
-          <div class="card-img-overlay">
-            <div class="nivel-cabecera">
-              <span class="nivel-numero">Nivel 5</span>
-              <ul class="nivel-dificultad" aria-label="Dificultad 5 de 5">
-                <li class="activo"></li><li class="activo"></li><li class="activo"></li><li class="activo"></li><li class="activo"></li>
-              </ul>
-            </div>
-            <h3 class="card-title">Técnico</h3>
-            <p class="nivel-descripcion">
-              Para alta montaña y terrenos especializados que pueden
-              incluir nieve, hielo o pasos técnicos.
-            </p>
-            <div class="nivel-equipo">
-              <p class="nivel-equipo-titulo">Equipo recomendado según la ruta</p>
-              <ul class="nivel-chips">
-                <li>Casco</li>
-                <li>Crampones</li>
-                <li>Piolet</li>
-                <li>Arnés</li>
-                <li>Cuerdas</li>
-                <li>Protección térmica</li>
-              </ul>
-              <p class="nivel-nota">Requiere capacitación y experiencia adecuadas.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-
-    </div>
-  </div>
-</section>
-</section>
+        </div>
+      </section>
+    </section>
 
     <!-- ==================== PRODUCTOS ==================== -->
     <section
