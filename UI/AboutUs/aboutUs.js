@@ -39,13 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Si sessionStorage no está disponible, el contador se queda en 0.
   }
 
-  // ---------------- 3. BOTONES DE LA NAVBAR ----------------
-  // Los botones de buscar, carrito y los filtros de categoría
-  // (Mochilas, Ropa, Calzado) llevan al catálogo en la página de inicio.
-  const irAlCatalogo = () => window.location.assign("/UI/index.html#productos");
-  document
-    .querySelectorAll(
-      '[data-accion="buscar"], [data-accion="carrito"], [data-filtro]:not([data-filtro="todos"])',
-    )
-    .forEach((boton) => boton.addEventListener("click", irAlCatalogo));
-});
+// ---------------- 3. BOTONES DE LA NAVBAR ----------------
+const irAlCatalogo = () => window.location.assign("/UI/index.html#productos");
+document
+  .querySelectorAll('[data-filtro]:not([data-filtro="todos"])')
+  .forEach((boton) => boton.addEventListener("click", irAlCatalogo));
