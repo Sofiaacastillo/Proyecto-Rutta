@@ -158,4 +158,3 @@ rutilio.addEventListener('click', function () {
       window.location.href = destino;                     // Redirige a esa página
     });
   });
-});
