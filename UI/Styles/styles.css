@@ -2604,10 +2604,10 @@ h3 {
     position: absolute;
     z-index: 1;
 
-    right: 7px;
+    right: 5px;
     bottom: 12px;
 
-    width: 34%;
+    width: 40%;
     max-width: 175px;
     height: 84%;
 
@@ -3430,4 +3430,71 @@ h3 {
     background-position: center;
     background-repeat: no-repeat;
     padding: 40px 20px;
+}
+
+
+/** Beneficios rutta */
+
+.beneficios-rutta {
+  background-color: #f5fafc;
+  padding: 2rem 0;
+  border-bottom: 1px solid #dce8ee;
+}
+
+.beneficio-rutta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+/* Iconos */
+.beneficio-rutta > i {
+  font-size: 2rem;
+  color: #004261;
+  flex-shrink: 0;
+}
+
+/* Títulos */
+.beneficio-rutta h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #163b50;
+  margin-bottom: 0.3rem;
+}
+
+/* Descripciones */
+.beneficio-rutta p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #627984;
+  margin: 0;
+}
+
+/**Responsive */
+@media (min-width: 992px) {
+  .beneficio-rutta {
+    border-right: 1px solid #d1e0e7;
+  }
+
+  .beneficios-rutta .col-lg-3:last-child .beneficio-rutta {
+    border-right: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .beneficios-rutta {
+    padding: 1.5rem 0;
+  }
+
+  .beneficio-rutta {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .beneficio-rutta > i {
+    font-size: 1.7rem;
+  }
 }
