@@ -3433,7 +3433,6 @@ h3 {
 }
 
 
-<<<<<<< HEAD
 /** Beneficios rutta */
 
 .beneficios-rutta {
@@ -3497,7 +3496,6 @@ h3 {
 
   .beneficio-rutta > i {
     font-size: 1.7rem;
-=======
 /* SECCIÓN DE CATEGORÍAS */
 .categorias {
   padding: 55px 5%;
@@ -3665,6 +3663,4 @@ h3 {
 
   .card-categoria > img {
     height: 220px;
->>>>>>> 1686d493eb027b9822ab4bff7676b5b76c7c7e68
   }
-}
