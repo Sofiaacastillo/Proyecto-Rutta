@@ -1,3 +1,7 @@
+html {
+    overflow-y: scroll;
+}
+
 /* ================================================================
    1. VARIABLES DE IDENTIDAD VISUAL
    Las variables permiten reutilizar colores, fuentes y medidas.
@@ -1682,11 +1686,7 @@ h3 {
     flex-direction: column; 
     background: white; 
 }
-.rutta-login-pagina .barra-navegacion {
-    background: white; 
-    border-bottom: 0; 
-    padding-block: 1rem; 
-}
+
 .rutta-login-contenedor {
     width: min(1320px, calc(100% - 4rem)); 
     margin: 1rem auto 0; 
@@ -1904,7 +1904,7 @@ h3 {
    ================================================================ */
 /* 1. TIPOGRAFÍA DEL SISTEMA*/
 .rutta-ayuda-pagina {
-    --fuente-funcional: var(--bs-font-sans-serif, system-ui, sans-serif);
+ 
     --fuente-editorial: var(--fuente-funcional);
     display: flex;
     flex-direction: column;
@@ -1918,21 +1918,12 @@ h3 {
 /* 2. CONSERVA LOS LOGOS DEL PROYECTO Y EL FONDO BLANCO DE LA REFERENCIA. */
 .rutta-ayuda-pagina .barra-navegacion { 
     min-height: auto;
-    padding-top: 4px;
+
     padding-bottom: 4px;
     background: #fff; 
     border-bottom: 0; }
-.rutta-ayuda-pagina .barra-navegacion .marca-logo-actual {
-    width: clamp(9rem, 22vw, 14rem);
-    width: 160px;
-    height: auto;
-    aspect-ratio: 2.65;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-.rutta-ayuda-pagina .nav-link { 
-    text-transform: uppercase; 
-    font-weight: 500; }
+
+
 .rutta-ayuda-pagina .nav-link[aria-current="page"] { 
     color: #1d5278; }
 .rutta-ayuda-icono { 

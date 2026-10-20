@@ -6,50 +6,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Acceso a tu cuenta de Rutta." />
     <title>Iniciar sesión | Rutta</title>
-    <link rel="icon" type="image/svg+xml" href="../../img/iconos-rutta/brujula.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../img/iconos-rutta/brujula.svg"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Conserva la misma versión de Bootstrap que la página principal. -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../Styles/styles.css" />
   </head>
   <!-- rutta-identidad activa los logos; rutta-login-pagina aísla este diseño. -->
   <body class="rutta-identidad rutta-login-pagina">
     <a class="salto-contenido" href="#login-contenido">Saltar al formulario</a>
 
-    <!-- INICIO NAVEGACIÓN LOGIN: los enlaces regresan a secciones existentes. -->
-    <nav class="navbar navbar-expand-lg barra-navegacion" aria-label="Navegación principal">
+    <!-- INICIO NAVEGACIÓN LOGIN -->
+    <nav
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+    >
       <div class="container">
-        <a class="navbar-brand marca-rutta" href="../index.html" aria-label="Rutta, volver al inicio">
+        <a
+          class="navbar-brand marca-rutta"
+          href="/UI/index.html"
+          aria-label="Rutta, volver al inicio"
+        >
           <span class="marca-logo-actual" aria-hidden="true"></span>
         </a>
-        <!-- Acciones de móvil: se mantienen fuera del menú colapsable. -->
-        <div class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none">
-          <a class="boton-icono" href="../index.html#buscar" aria-label="Buscar productos"><i class="bi bi-search" aria-hidden="true"></i></a>
-          <a class="boton-icono" href="#login-contenido" aria-label="Iniciar sesión" aria-current="page"><i class="bi bi-person" aria-hidden="true"></i></a>
-          <a class="boton-icono boton-carrito" href="../index.html#carrito" aria-label="Abrir carrito"><i class="bi bi-cart3" aria-hidden="true"></i><span class="contador-carrito" data-contador-carrito>0</span></a>
+
+        <div
+          class="acciones-movil d-flex align-items-center gap-1 ms-auto me-2 d-lg-none"
+        >
+          <button
+            class="boton-icono"
+            type="button"
+            data-accion="buscar"
+            aria-label="Buscar productos"
+          >
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+          <a
+            class="boton-icono"
+            href="/UI/Login/login.html"
+            aria-label="Iniciar sesión"
+            aria-current="page"
+          >
+            <i class="bi bi-person" aria-hidden="true"></i>
+          </a>
+          <button
+            class="boton-icono boton-carrito"
+            type="button"
+            data-accion="carrito"
+            aria-label="Abrir carrito"
+          >
+            <i class="bi bi-cart3" aria-hidden="true"></i>
+            <span class="contador-carrito" data-contador-carrito>0</span>
+          </button>
         </div>
-        <!-- Bootstrap abre y cierra el menú al pulsar este botón. -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuLogin" aria-controls="menuLogin" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="menuLogin">
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="../index.html#productos">Equipamiento</a></li>
-            <li class="nav-item"><a class="nav-link" href="../index.html#guias">Guías</a></li>
-            <li class="nav-item"><a class="nav-link" href="../Ayuda/ayuda.html">Ayuda</a></li>
-            <li class="nav-item"><a class="nav-link" href="../AboutUs/aboutUs.html">Sobre Rutta</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/UI/Productos/productos.html"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Equipamiento
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                    >Ver todo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    >Mochilas</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/UI/Productos/productos.html?filtro=ropa"
+                    >Ropa</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="/UI/Productos/productos.html?filtro=calzado"
+                    >Calzado</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+                >Sobre Rutta</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+            </li>
           </ul>
-          <div class="acciones-escritorio d-none d-lg-flex align-items-center gap-1">
-            <a class="boton-icono" href="../index.html#buscar" aria-label="Buscar productos"><i class="bi bi-search" aria-hidden="true"></i></a>
-            <a class="boton-icono" href="#login-contenido" aria-label="Iniciar sesión" aria-current="page"><i class="bi bi-person" aria-hidden="true"></i></a>
-            <a class="boton-icono boton-carrito" href="../index.html#carrito" aria-label="Abrir carrito"><i class="bi bi-cart3" aria-hidden="true"></i><span class="contador-carrito" data-contador-carrito>0</span></a>
+
+          <div
+            class="acciones-escritorio d-none d-lg-flex align-items-center gap-1"
+          >
+            <button
+              class="boton-icono"
+              type="button"
+              data-accion="buscar"
+              aria-label="Buscar productos"
+            >
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+            <a
+              class="boton-icono"
+              href="/UI/Login/login.html"
+              aria-label="Iniciar sesión"
+              aria-current="page"
+            >
+              <i class="bi bi-person" aria-hidden="true"></i>
+            </a>
+            <button
+              class="boton-icono boton-carrito"
+              type="button"
+              data-accion="carrito"
+              aria-label="Abrir carrito"
+            >
+              <i class="bi bi-cart3" aria-hidden="true"></i>
+              <span class="contador-carrito" data-contador-carrito>0</span>
+            </button>
           </div>
         </div>
       </div>
     </nav>
+    <!-- FIN NAVEGACIÓN LOGIN. -->
     <!-- FIN NAVEGACIÓN LOGIN. -->
 
     <!-- INICIO CONTENIDO LOGIN: foto de montaña y panel azul a la derecha. -->
@@ -58,29 +193,70 @@
       <section class="rutta-login-escena" aria-labelledby="login-titulo">
         <div class="rutta-login-panel">
           <!-- Usa el mismo icono de usuario adjunto que aparece en la barra. -->
-          <span class="rutta-login-avatar" aria-hidden="true"><i class="bi bi-person"></i></span>
+          <span class="rutta-login-avatar" aria-hidden="true"
+            ><i class="bi bi-person"></i
+          ></span>
           <h1 id="login-titulo">Iniciar sesión</h1>
-          <p class="rutta-login-registro">¿Aún no tienes una cuenta? <button type="button" class="rutta-login-enlace" data-login-aviso="registro">Regístrate</button></p>
+          <p class="rutta-login-registro">
+            ¿Aún no tienes una cuenta?
+            <button
+              type="button"
+              class="rutta-login-enlace"
+              data-login-aviso="registro"
+            >
+              Regístrate
+            </button>
+          </p>
 
           <!-- El formulario acepta cualquier texto y solo abre la página principal. -->
-          <form id="formularioLogin" class="rutta-login-formulario" autocomplete="off" novalidate>
+          <form
+            id="formularioLogin"
+            class="rutta-login-formulario"
+            autocomplete="off"
+            novalidate
+          >
             <div class="rutta-login-campo">
               <!-- for e id conectan la etiqueta con el campo correspondiente. -->
               <label for="login-correo">Usuario o correo</label>
               <!-- type=text permite escribir cualquier palabra; name identifica el campo. -->
-              <input id="login-correo" name="email" type="text" autocomplete="off" disabled />
+              <input
+                id="login-correo"
+                name="email"
+                type="text"
+                autocomplete="off"
+                disabled
+              />
             </div>
             <div class="rutta-login-campo">
               <label for="login-contrasena">Contraseña</label>
               <!-- Nunca se escribe la contraseña en almacenamiento ni en la consola. -->
-              <input id="login-contrasena" name="password" type="password" autocomplete="off" disabled />
+              <input
+                id="login-contrasena"
+                name="password"
+                type="password"
+                autocomplete="off"
+                disabled
+              />
             </div>
             <!-- Abre una ventana con información relacionada con el acceso. -->
-            <button class="rutta-login-enlace rutta-login-recuperar" type="button" data-login-aviso="recuperar">¿Olvidaste tu contraseña?</button>
+            <button
+              class="rutta-login-enlace rutta-login-recuperar"
+              type="button"
+              data-login-aviso="recuperar"
+            >
+              ¿Olvidaste tu contraseña?
+            </button>
             <!-- Empieza deshabilitado; el script activa el formulario de forma segura. -->
-            <button class="rutta-login-enviar" type="submit" disabled>Iniciar sesión</button>
+            <button class="rutta-login-enviar" type="submit" disabled>
+              Iniciar sesión
+            </button>
           </form>
-          <noscript><p class="rutta-login-ayuda">Activa JavaScript para continuar o <a href="../index.html">visita la tienda</a>.</p></noscript>
+          <noscript
+            ><p class="rutta-login-ayuda">
+              Activa JavaScript para continuar o
+              <a href="../index.html">visita la tienda</a>.
+            </p></noscript
+          >
         </div>
       </section>
     </main>
@@ -89,25 +265,156 @@
     <!-- INICIO PIE LOGIN: abre ventanas con información de navegación y ayuda. -->
     <footer class="rutta-login-pie" id="login-ayuda">
       <nav aria-label="Ayuda y políticas">
-        <button type="button" data-login-aviso="condiciones">Condiciones de Uso</button>
-        <button type="button" data-login-aviso="privacidad">Política de Privacidad</button>
-        <button type="button" data-login-aviso="cookies">Política de Cookies</button>
-        <button type="button" data-login-aviso="preguntas">Preguntas Frecuentes</button>
+        <button type="button" data-login-aviso="condiciones">
+          Condiciones de Uso
+        </button>
+        <button type="button" data-login-aviso="privacidad">
+          Política de Privacidad
+        </button>
+        <button type="button" data-login-aviso="cookies">
+          Política de Cookies
+        </button>
+        <button type="button" data-login-aviso="preguntas">
+          Preguntas Frecuentes
+        </button>
         <button type="button" data-login-aviso="contacto">Contacto</button>
-        <button type="button" data-login-aviso="configuracion">Configuración de cookies</button>
+        <button type="button" data-login-aviso="configuracion">
+          Configuración de cookies
+        </button>
       </nav>
     </footer>
     <!-- Dialog nativo: se cierra con Escape o con su botón y mantiene el foco. -->
-    <dialog class="rutta-login-dialogo" id="login-dialogo" aria-labelledby="login-dialogo-titulo" aria-describedby="login-dialogo-texto">
+    <dialog
+      class="rutta-login-dialogo"
+      id="login-dialogo"
+      aria-labelledby="login-dialogo-titulo"
+      aria-describedby="login-dialogo-texto"
+    >
       <i class="bi bi-chat-dots" aria-hidden="true"></i>
       <h2 id="login-dialogo-titulo">Información</h2>
       <p id="login-dialogo-texto"></p>
-      <form method="dialog"><button class="rutta-login-enviar" type="submit">Entendido</button></form>
+      <form method="dialog">
+        <button class="rutta-login-enviar" type="submit">Entendido</button>
+      </form>
     </dialog>
     <!-- FIN PIE LOGIN. -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-   
+    <!-- PANEL DE BÚSQUEDA -->
+    <div
+      class="offcanvas offcanvas-top buscador-panel"
+      tabindex="-1"
+      id="buscadorPanel"
+      aria-labelledby="tituloBuscador"
+    >
+      <div class="offcanvas-header container">
+        <div>
+          <p class="sobrelinea mb-1">Catálogo Rutta</p>
+          <h2 class="offcanvas-title" id="tituloBuscador">
+            ¿Qué necesitas para tu ruta?
+          </h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar búsqueda"
+        ></button>
+      </div>
+      <div class="offcanvas-body container">
+        <label class="visually-hidden" for="campoBusqueda"
+          >Buscar productos</label
+        >
+        <div class="input-group input-group-lg">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            id="campoBusqueda"
+            class="form-control"
+            type="search"
+            placeholder="Ejemplo: mochila, lluvia o senderismo"
+          />
+          <button class="btn boton-primario" id="botonBuscar" type="button">
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL DEL CARRITO -->
+    <div
+      class="offcanvas offcanvas-end carrito-panel"
+      tabindex="-1"
+      id="carritoPanel"
+      aria-labelledby="tituloCarrito"
+    >
+      <div class="offcanvas-header carrito-encabezado">
+        <div>
+          <p class="sobrelinea mb-1">Tu selección</p>
+          <h2 class="offcanvas-title" id="tituloCarrito">Carrito de compra</h2>
+        </div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Cerrar carrito"
+        ></button>
+      </div>
+      <div class="offcanvas-body carrito-cuerpo">
+        <div class="carrito-vacio" id="carritoVacio">
+          <span class="carrito-vacio-icono"
+            ><i class="bi bi-cart3" aria-hidden="true"></i
+          ></span>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega alguno de nuestros productos para verlo aquí.</p>
+          <a
+            class="btn boton-secundario-claro"
+            href="/UI/Productos/productos.html"
+            >Explorar productos</a
+          >
+        </div>
+        <div class="lista-carrito" id="listaCarrito" aria-live="polite"></div>
+      </div>
+      <div class="carrito-resumen d-none" id="carritoResumen">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carritoTotal">MXN $0</strong>
+        </div>
+        <p>Impuestos incluidos. Envío calculado al finalizar.</p>
+        <button
+          class="btn boton-primario w-100"
+          id="botonFinalizarCompra"
+          type="button"
+        >
+          Finalizar compra <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="boton-vaciar" id="botonVaciarCarrito" type="button">
+          Vaciar carrito
+        </button>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        class="toast toast-rutta"
+        id="toastCarrito"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <div class="toast-body d-flex align-items-center gap-3">
+          <i class="bi bi-check-circle-fill"></i>
+          <span id="mensajeToast">Producto agregado al carrito.</span>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/UI/script.js"></script>
+
     <script src="./login.js"></script>
   </body>
 </html>

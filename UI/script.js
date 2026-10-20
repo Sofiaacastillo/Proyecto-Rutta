@@ -29,7 +29,8 @@ const productos = [
     precio: 1799,
 
     // Descripción breve visible en la tarjeta.
-    resumen: "Mochila técnica y cómoda con gran capacidad de organización para tus aventuras.",
+    resumen:
+      "Mochila técnica y cómoda con gran capacidad de organización para tus aventuras.",
 
     // Nivel de experiencia recomendado.
     nivel: "Principiante / Intermedio",
@@ -63,7 +64,8 @@ const productos = [
     imagen: "/img/productos/chamarra-trail-shell.svg",
     nombre: "Chamarra Trail Shell",
     precio: 1499,
-    resumen: "Capa ligera e impermeable que te protege del viento y la lluvia sin limitar tu movimiento.",
+    resumen:
+      "Capa ligera e impermeable que te protege del viento y la lluvia sin limitar tu movimiento.",
     nivel: "Principiante",
     actividad: "Rutas frescas o con viento",
     terreno: "Clima cambiante / montañoso",
@@ -85,7 +87,8 @@ const productos = [
     imagen: "/img/productos/botas-sendero-pro.svg",
     nombre: "Botas Sendero Pro",
     precio: 2199,
-    resumen: "Botas de senderismo resistentes y cómodas para terrenos exigentes y largas caminatas.",
+    resumen:
+      "Botas de senderismo resistentes y cómodas para terrenos exigentes y largas caminatas.",
     nivel: "Intermedio",
     actividad: "Rutas rocosas o largas",
     terreno: "Terreno mixto / rocoso",
@@ -118,8 +121,12 @@ const botonBuscar = document.querySelector("#botonBuscar");
 
 // Elementos del modal que reciben la información del producto seleccionado.
 const modalProductoTitulo = document.querySelector("#modalProductoTitulo");
-const modalProductoCategoria = document.querySelector("#modalProductoCategoria");
-const modalProductoContenido = document.querySelector("#modalProductoContenido");
+const modalProductoCategoria = document.querySelector(
+  "#modalProductoCategoria",
+);
+const modalProductoContenido = document.querySelector(
+  "#modalProductoContenido",
+);
 
 // Elemento que contiene el mensaje temporal del carrito.
 const mensajeToast = document.querySelector("#mensajeToast");
@@ -144,19 +151,28 @@ const botonVaciarCarrito = document.querySelector("#botonVaciarCarrito");
 const botonFinalizarCompra = document.querySelector("#botonFinalizarCompra");
 
 // Crea las instancias de componentes interactivos proporcionadas por Bootstrap.
-const modalProducto = new bootstrap.Modal(document.querySelector("#modalProducto"));
-const buscadorPanel = new bootstrap.Offcanvas(document.querySelector("#buscadorPanel"));
-const carritoPanel = new bootstrap.Offcanvas(carritoPanelElemento);
-const toastCarrito = new bootstrap.Toast(document.querySelector("#toastCarrito"), {
-  // Indica que la notificación se ocultará automáticamente.
-  autohide: true,
+const modalProductoElemento = document.querySelector("#modalProducto");
+const modalProducto = modalProductoElemento
+  ? new bootstrap.Modal(modalProductoElemento)
+  : null;
 
-  // Tiempo en milisegundos durante el que permanecerá visible.
-  delay: 2600,
-});
+const buscadorPanel = new bootstrap.Offcanvas(
+  document.querySelector("#buscadorPanel"),
+);
+const carritoPanel = new bootstrap.Offcanvas(carritoPanelElemento);
+const toastCarrito = new bootstrap.Toast(
+  document.querySelector("#toastCarrito"),
+  {
+    // Indica que la notificación se ocultará automáticamente.
+    autohide: true,
+
+    // Tiempo en milisegundos durante el que permanecerá visible.
+    delay: 2600,
+  },
+);
 
 // Guarda los productos elegidos y la cantidad de cada uno durante la sesión.
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("rutta-carrito") || "[]");
 
 // Recuerda el filtro de categoría actualmente seleccionado.
 let filtroActual = "todos";
@@ -309,10 +325,12 @@ function mostrarProductos(categoria = "todos", busqueda = "") {
   // filter crea un nuevo arreglo únicamente con los productos que cumplen ambas reglas.
   const productosFiltrados = productos.filter((producto) => {
     // La categoría coincide cuando se seleccionó “todos” o la categoría exacta.
-    const coincideCategoria = categoria === "todos" || producto.categoria === categoria;
+    const coincideCategoria =
+      categoria === "todos" || producto.categoria === categoria;
 
     // Combina campos importantes para permitir una búsqueda más útil.
-    const textoProducto = `${producto.nombre} ${producto.resumen} ${producto.actividad} ${producto.terreno}`.toLowerCase();
+    const textoProducto =
+      `${producto.nombre} ${producto.resumen} ${producto.actividad} ${producto.terreno}`.toLowerCase();
 
     // includes comprueba si el texto del producto contiene la búsqueda.
     const coincideBusqueda = textoProducto.includes(textoBuscado);
@@ -322,7 +340,9 @@ function mostrarProductos(categoria = "todos", busqueda = "") {
   });
 
   // Convierte cada producto filtrado en tarjeta y coloca el resultado en el DOM.
-  listaProductos.innerHTML = productosFiltrados.map(crearTarjetaProducto).join("");
+  listaProductos.innerHTML = productosFiltrados
+    .map(crearTarjetaProducto)
+    .join("");
 
   // Muestra u oculta el mensaje vacío dependiendo del número de resultados.
   estadoVacio.classList.toggle("d-none", productosFiltrados.length !== 0);
@@ -475,6 +495,7 @@ function crearFilaCarrito(elemento) {
  * Actualiza filas, contador, estado vacío y total cada vez que cambia el carrito.
  */
 function actualizarCarrito() {
+  localStorage.setItem("rutta-carrito", JSON.stringify(carrito));
   // Genera una fila por cada producto diferente almacenado.
   listaCarrito.innerHTML = carrito.map(crearFilaCarrito).join("");
 
@@ -600,34 +621,38 @@ function alternarFavorito(boton) {
 // ================================================================
 
 // Escucha clics dentro del catálogo usando delegación de eventos.
-listaProductos.addEventListener("click", (evento) => {
-  // closest localiza el botón de detalle más cercano al lugar del clic.
-  const botonVer = evento.target.closest("[data-ver-producto]");
+if (listaProductos)
+  listaProductos.addEventListener("click", (evento) => {
+    // closest localiza el botón de detalle más cercano al lugar del clic.
+    const botonVer = evento.target.closest("[data-ver-producto]");
 
-  // Localiza el botón rápido del carrito.
-  const botonAgregar = evento.target.closest("[data-agregar-carrito]");
+    // Localiza el botón rápido del carrito.
+    const botonAgregar = evento.target.closest("[data-agregar-carrito]");
 
-  // Localiza el botón de favorito.
-  const botonFavorito = evento.target.closest("[data-favorito]");
+    // Localiza el botón de favorito.
+    const botonFavorito = evento.target.closest("[data-favorito]");
 
-  // Si se presionó “Ver producto”, abre el modal correspondiente.
-  if (botonVer) abrirProducto(Number(botonVer.dataset.verProducto));
+    // Si se presionó “Ver producto”, abre el modal correspondiente.
+    if (botonVer) abrirProducto(Number(botonVer.dataset.verProducto));
 
-  // Si se presionó el carrito, agrega el producto correspondiente.
-  if (botonAgregar) agregarAlCarrito(Number(botonAgregar.dataset.agregarCarrito));
+    // Si se presionó el carrito, agrega el producto correspondiente.
+    if (botonAgregar)
+      agregarAlCarrito(Number(botonAgregar.dataset.agregarCarrito));
 
-  // Si se presionó el corazón, cambia su estado.
-  if (botonFavorito) alternarFavorito(botonFavorito);
-});
+    // Si se presionó el corazón, cambia su estado.
+    if (botonFavorito) alternarFavorito(botonFavorito);
+  });
 
 // Escucha el botón de carrito que se crea dentro del modal.
-modalProductoContenido.addEventListener("click", (evento) => {
-  // Localiza el botón mediante su atributo data personalizado.
-  const botonAgregarModal = evento.target.closest("[data-agregar-modal]");
+if (modalProductoContenido)
+  modalProductoContenido.addEventListener("click", (evento) => {
+    // Localiza el botón mediante su atributo data personalizado.
+    const botonAgregarModal = evento.target.closest("[data-agregar-modal]");
 
-  // Agrega el producto solamente cuando el botón existe.
-  if (botonAgregarModal) agregarAlCarrito(Number(botonAgregarModal.dataset.agregarModal));
-});
+    // Agrega el producto solamente cuando el botón existe.
+    if (botonAgregarModal)
+      agregarAlCarrito(Number(botonAgregarModal.dataset.agregarModal));
+  });
 
 // Recorre todos los botones que contienen un filtro de categoría.
 document.querySelectorAll("[data-filtro]").forEach((boton) => {
@@ -665,13 +690,16 @@ listaCarrito.addEventListener("click", (evento) => {
   const botonEliminar = evento.target.closest("[data-eliminar-carrito]");
 
   // Incrementa una unidad utilizando el identificador guardado en data.
-  if (botonSumar) cambiarCantidadCarrito(Number(botonSumar.dataset.sumarCarrito), 1);
+  if (botonSumar)
+    cambiarCantidadCarrito(Number(botonSumar.dataset.sumarCarrito), 1);
 
   // Reduce una unidad y elimina el producto automáticamente si llega a cero.
-  if (botonRestar) cambiarCantidadCarrito(Number(botonRestar.dataset.restarCarrito), -1);
+  if (botonRestar)
+    cambiarCantidadCarrito(Number(botonRestar.dataset.restarCarrito), -1);
 
   // Elimina toda la fila sin importar cuántas unidades contenga.
-  if (botonEliminar) eliminarDelCarrito(Number(botonEliminar.dataset.eliminarCarrito));
+  if (botonEliminar)
+    eliminarDelCarrito(Number(botonEliminar.dataset.eliminarCarrito));
 });
 
 // Vacía todas las posiciones del arreglo cuando se presiona “Vaciar carrito”.
@@ -698,22 +726,27 @@ botonFinalizarCompra.addEventListener("click", () => {
 /**
  * Ejecuta la búsqueda escrita en el panel y desplaza al catálogo.
  */
+/**
+ * Ejecuta la búsqueda escrita en el panel y desplaza al catálogo.
+ */
 function ejecutarBusqueda() {
-  // Cambia el filtro a “todos” para buscar en las tres categorías.
+  // Fuera del catálogo: manda la búsqueda a la página de productos.
+  if (!listaProductos) {
+    window.location.href =
+      "/UI/Productos/productos.html?buscar=" +
+      encodeURIComponent(campoBusqueda.value);
+    return;
+  }
+
   filtroActual = "todos";
 
-  // Actualiza la apariencia de las píldoras de filtro.
   document.querySelectorAll(".filtro").forEach((boton) => {
     boton.classList.toggle("activo", boton.dataset.filtro === "todos");
   });
 
-  // Filtra los productos utilizando el valor actual del campo.
   mostrarProductos("todos", campoBusqueda.value);
-
-  // Cierra el panel de búsqueda para revelar los resultados.
   buscadorPanel.hide();
 
-  // Espera a que termine el cierre antes de desplazar la pantalla.
   window.setTimeout(() => {
     document.querySelector("#productos").scrollIntoView({ behavior: "smooth" });
   }, 260);
@@ -733,11 +766,12 @@ campoBusqueda.addEventListener("keydown", (evento) => {
 // Estas instrucciones se ejecutan cuando termina de cargar el archivo.
 // ================================================================
 
-// Inserta automáticamente el año actual en el pie de página.
-document.querySelector("#anioActual").textContent = new Date().getFullYear();
+// Inserta el año actual en el pie de página, si la página tiene ese elemento.
+const anio = document.querySelector("#anioActual");
+if (anio) anio.textContent = new Date().getFullYear();
 
-// Genera por primera vez las tres tarjetas sin aplicar ningún filtro.
-mostrarProductos(filtroActual);
+// Genera las tarjetas solo en páginas que tienen catálogo.
+if (listaProductos) mostrarProductos(filtroActual);
 
-// Dibuja el estado vacío inicial y coloca los contadores en cero.
+// Dibuja el estado inicial del carrito y coloca los contadores.
 actualizarCarrito();
