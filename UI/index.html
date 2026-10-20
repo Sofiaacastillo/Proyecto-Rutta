@@ -273,12 +273,11 @@
                 <!-- Botón primario que desplaza al catálogo. -->
                 <a class="btn boton-primario" href="#productos">
                   Explorar equipamiento
-                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
                 </a>
 
                 <!-- Botón secundario que desplaza a las guías. -->
                 <a class="btn boton-secundario-claro" href="#guias">
-                  Ver guías <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                  Ver guías 
                 </a>
               </div>
             </div>
@@ -326,135 +325,69 @@
         </div>
       </header>
 
-      <!-- ==================== CATEGORÍAS ==================== -->
-      <section class="seccion categorias" aria-labelledby="titulo-categorias">
-        <div class="container">
-          <!-- Encabezado sencillo de la sección. -->
-          <div class="encabezado-seccion compacto">
-            <p class="sobrelinea">Categorías</p>
-            <h2 id="titulo-categorias">Encuentra lo que necesitas</h2>
-          </div>
-
-          <!-- Grid de Bootstrap con cinco accesos de categoría. -->
-          <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
-            <!-- Cada botón filtra el catálogo sin recargar la página. -->
-            <div class="col">
-              <button
-                class="categoria-card"
-                type="button"
-                data-filtro="mochilas"
-              >
-                <!-- Mochila: representa el equipo que se lleva durante una ruta. -->
-                <i class="bi bi-backpack4" aria-hidden="true"></i>
-                <strong>Mochilas</strong>
-                <span
-                  >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
-                ></span>
-              </button>
-            </div>
-            <div class="col">
-              <button
-                class="categoria-card"
-                type="button"
-                data-filtro="calzado"
-              >
-                <!-- Muestra la bota adjunta en esta categoría. -->
-                <i class="bi bi-person-walking" aria-hidden="true"></i>
-                <strong>Calzado</strong>
-                <span
-                  >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
-                ></span>
-              </button>
-            </div>
-            <div class="col">
-              <button class="categoria-card" type="button" data-filtro="ropa">
-                <!-- Muestra la chamarra adjunta sin cambiar el filtro existente. -->
-                <i class="bi bi-person-standing-dress" aria-hidden="true"></i>
-                <strong>Ropa</strong>
-                <span
-                  >Ver todo <i class="bi bi-arrow-right" aria-hidden="true"></i
-                ></span>
-              </button>
-            </div>
-            <div class="col">
-              <button class="categoria-card" type="button" data-filtro="todos">
-                <!-- El CSS sustituye el triángulo por la tienda de campaña adjunta. -->
-                <i class="bi bi-triangle-fill" aria-hidden="true"></i>
-                <strong>Camping</strong>
-                <span
-                  >Próximamente
-                  <i class="bi bi-arrow-right" aria-hidden="true"></i
-                ></span>
-              </button>
-            </div>
-            <div class="col">
-              <button class="categoria-card" type="button" data-filtro="todos">
-                <!-- Brújula: representa los accesorios de orientación y exploración. -->
-                <i class="bi bi-compass" aria-hidden="true"></i>
-                <strong>Accesorios</strong>
-                <span
-                  >Próximamente
-                  <i class="bi bi-arrow-right" aria-hidden="true"></i
-                ></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- ==================== PRODUCTOS ==================== -->
-      <section
-        class="seccion productos-seccion"
-        id="productos"
-        aria-labelledby="titulo-productos"
-      >
-        <div class="container">
-          <!-- Encabezado acompañado de filtros del catálogo. -->
-          <div class="encabezado-productos">
-            <div class="encabezado-seccion">
-              <p class="sobrelinea">Equipamiento seleccionado</p>
-              <h2 id="titulo-productos">Productos para tu próxima ruta</h2>
-              <p>
-                Compara el nivel recomendado, el terreno y las características
-                de cada producto.
-              </p>
-            </div>
+       
+<section class="categorias">
+  <div class="categorias-header">
+    <h2>Encuentra lo que necesitas</h2>
+    <p>
+      Explora nuestras categorías y elige
+      el equipo ideal para tu próxima aventura.
+    </p>
+    <a href="/UI/Productos/productos.html" class="btn-todos">
+      VER TODOS LOS PRODUCTOS
+    </a>
+  </div>
 
-            <!-- Botones de filtro controlados desde JavaScript. -->
-            <div
-              class="filtros-productos"
-              role="group"
-              aria-label="Filtrar productos"
-            >
-              <button class="filtro activo" type="button" data-filtro="todos">
-                Todos
-              </button>
-              <button class="filtro" type="button" data-filtro="mochilas">
-                Mochilas
-              </button>
-              <button class="filtro" type="button" data-filtro="ropa">
-                Ropa
-              </button>
-              <button class="filtro" type="button" data-filtro="calzado">
-                Calzado
-              </button>
-              <button class="filtro" type="button" data-filtro="equipo">
-                Equipos
-              </button>
-            </div>
-          </div>
+  <div class="cards-container">
 
-          <!-- JavaScript inserta aquí las tres tarjetas definidas en el arreglo productos. -->
-          <div class="row g-4" id="listaProductos" aria-live="polite"></div>
+    <a href="/UI/Productos/productos.html?categoria=mochilas" class="card-categoria">
+      <img src="/img/productos/mochila-trek-45l.svg" alt="Mochilas">
+      <div class="icono-card">🎒</div>
+      <div class="card-contenido">
+        <h3>Mochilas</h3>
+        <p>Lleva todo lo que necesitas
+          con comodidad y seguridad.</p>
+        <span class="flecha">→</span>
+      </div>
+    </a>
 
-          <!-- Mensaje oculto que aparece cuando una búsqueda no encuentra resultados. -->
-          <div class="estado-vacio d-none" id="estadoVacio">
-            <i class="bi bi-search"></i>
-            <h3>No encontramos ese producto</h3>
-            <p>Prueba con mochila, chamarra o botas.</p>
-          </div>
-        </div>
-      </section>
+    <a href="/UI/Productos/productos.html?categoria=calzado" class="card-categoria">
+      <img src="/img/productos/botas-sendero-pro.svg" alt="Calzado de montaña">
+      <div class="icono-card">🥾</div>
+      <div class="card-contenido">
+        <h3>Calzado</h3>
+        <p>Estabilidad y tracción
+          en cada terreno.</p>
+        <span class="flecha">→</span>
+      </div>
+    </a>
+
+    <a href="/UI/Productos/productos.html?categoria=ropa" class="card-categoria">
+      <img src="/img/productos/chamarra-trail-shell.svg" alt="Ropa de aventura">
+      <div class="icono-card">🧥</div>
+      <div class="card-contenido">
+        <h3>Ropa</h3>
+        <p>Protección y comodidad
+          en cualquier clima.</p>
+        <span class="flecha">→</span>
+      </div>
+    </a>
+
+    <a href="/UI/Productos/productos.html?categoria=equipamiento" class="card-categoria">
+      <img src="/img/productos/decathlon-casacampana-azul.jpg" alt="Equipo de camping">
+      <div class="icono-card">⛺</div>
+      <div class="card-contenido">
+        <h3>Equipamiento</h3>
+        <p>Accesorios y camping
+          para una experiencia completa.</p>
+        <span class="flecha">→</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 
       <!-- ==================== GUÍAS Y CONSEJOS ==================== -->
       <section
@@ -474,7 +407,7 @@
                 <p>
                   Explora recomendaciones prácticas para preparar tu aventura.
                 </p>
-                <a class="btn boton-contorno-claro" href="#consejos"
+                <a class="btn boton-contorno-claro" href="/UI/Guias/guias.html"
                   >Ver guías</a
                 >
               </div>
@@ -487,8 +420,7 @@
                 <div>
                   <h3>Cómo elegir tu primera mochila de senderismo</h3>
                   <a href="#productos"
-                    >Leer más <i class="bi bi-arrow-right"></i
-                  ></a>
+                    >Leer más </a>
                 </div>
               </article>
             </div>
@@ -500,8 +432,7 @@
                 <div>
                   <h3>Consejos para caminar con seguridad</h3>
                   <a href="#sobre-rutta"
-                    >Leer más <i class="bi bi-arrow-right"></i
-                  ></a>
+                    >Leer más </a>
                 </div>
               </article>
             </div>
@@ -513,8 +444,7 @@
                 <div>
                   <h3>Checklist esencial antes de acampar</h3>
                   <a href="#productos"
-                    >Leer más <i class="bi bi-arrow-right"></i
-                  ></a>
+                    >Leer más </a>
                 </div>
               </article>
             </div>
