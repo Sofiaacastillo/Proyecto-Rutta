@@ -9,7 +9,7 @@
   padding: 0; border: 0 !important;
   border-radius: 50% !important;     /* círculo */
   overflow: hidden;                  /* recorta lo que sobre del SVG */
-  background: transparent !important;
+  
   box-shadow: 0 4px 16px rgba(0,0,0,.3);
   cursor: pointer; transition: transform .2s;
 }
