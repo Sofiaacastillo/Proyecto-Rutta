@@ -1,23 +1,27 @@
 <!doctype html>
-<!-- Página independiente: se abre desde el icono de usuario de UI/index.html. -->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Acceso a tu cuenta de Rutta." />
-    <title>Iniciar sesión | Rutta</title>
+    <meta
+      name="description"
+      content="Conoce la historia de Rutta y para quién está pensada."
+    />
+    <title>Explorar Rutta | Nuestra Historia y Comunidad</title>
+
     <link
       rel="icon"
       type="image/svg+xml"
-      href="../../img/iconos-rutta/brujula.svg"
+      href="/assets/img/iconos-rutta/brujula.svg"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Conserva la misma versión de Bootstrap que la página principal. -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,16 +29,19 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="../Styles/styles.css" />
-  </head>
-  <!-- rutta-identidad activa los logos; rutta-login-pagina aísla este diseño. -->
-  <body class="rutta-identidad rutta-login-pagina">
-    <a class="salto-contenido" href="#login-contenido">Saltar al formulario</a>
 
-    <!-- INICIO NAVEGACIÓN LOGIN -->
+    <!-- Primero los estilos globales y después los propios de la página -->
+    <link rel="stylesheet" href="/pages/Styles/styles.css" />
+    <link rel="stylesheet" href="/pages/AboutUs/explorer-rutta.css" />
+  </head>
+  <body class="rutta-identidad">
+    <a class="salto-contenido" href="#contenido-principal"
+      >Saltar al contenido</a
+    >
+
     <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
       aria-label="Navegación principal"
@@ -42,7 +49,7 @@
       <div class="container">
         <a
           class="navbar-brand marca-rutta"
-          href="/UI/index.html"
+          href="/index.html"
           aria-label="Rutta, volver al inicio"
         >
           <span class="marca-logo-actual" aria-hidden="true"></span>
@@ -61,9 +68,8 @@
           </button>
           <a
             class="boton-icono"
-            href="/UI/Login/login.html"
+            href="/pages/Login/login.html"
             aria-label="Iniciar sesión"
-            aria-current="page"
           >
             <i class="bi bi-person" aria-hidden="true"></i>
           </a>
@@ -95,7 +101,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="/UI/Productos/productos.html"
+                href="/pages/Productos/productos.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -104,51 +110,54 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                  <a class="dropdown-item" href="/pages/Productos/productos.html"
                     >Ver todo</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    href="/pages/Productos/productos.html?filtro=mochilas"
                     >Mochilas</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="/UI/Productos/productos.html?filtro=ropa"
+                    href="/pages/Productos/productos.html?filtro=ropa"
                     >Ropa</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="/UI/Productos/productos.html?filtro=calzado"
+                    href="/pages/Productos/productos.html?filtro=calzado"
                     >Calzado</a
                   >
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/index.html">Inicio</a>
+              <a class="nav-link" href="/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
+              <a class="nav-link" href="/pages/AboutUs/aboutUs.html"
                 >Sobre Nosotros</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
+              <a class="nav-link" href="/pages/Guias/guias.html">Guías</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+              <a
+                class="nav-link"
+                href="/pages/AboutUs/explore-rutta.html"
+                aria-current="page"
                 >Sobre Rutta</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+              <a class="nav-link" href="/pages/Ayuda/ayuda.html">Ayuda</a>
             </li>
           </ul>
 
@@ -165,9 +174,8 @@
             </button>
             <a
               class="boton-icono"
-              href="/UI/Login/login.html"
+              href="/pages/Login/login.html"
               aria-label="Iniciar sesión"
-              aria-current="page"
             >
               <i class="bi bi-person" aria-hidden="true"></i>
             </a>
@@ -184,121 +192,105 @@
         </div>
       </div>
     </nav>
-    <!-- FIN NAVEGACIÓN LOGIN. -->
-    <!-- FIN NAVEGACIÓN LOGIN. -->
 
-    <!-- INICIO CONTENIDO LOGIN: foto de montaña y panel azul a la derecha. -->
-    <main class="rutta-login-contenedor" id="login-contenido">
-      <!-- El fondo se cambia en --login-fondo, al final de Styles/styles.css. -->
-      <section class="rutta-login-escena" aria-labelledby="login-titulo">
-        <div class="rutta-login-panel">
-          <!-- Usa el mismo icono de usuario adjunto que aparece en la barra. -->
-          <span class="rutta-login-avatar" aria-hidden="true"
-            ><i class="bi bi-person"></i
-          ></span>
-          <h1 id="login-titulo">Iniciar sesión</h1>
-          <p class="rutta-login-registro">
-            ¿Aún no tienes una cuenta?
-            <button
-              type="button"
-              class="rutta-login-enlace"
-              data-login-aviso="registro"
-            >
-              Regístrate
-            </button>
-          </p>
+    <main id="contenido-principal">
+      <!-- SECCIÓN 1: SOBRE RUTTA E HISTORIA -->
+      <section class="seccion sobre-seccion" id="sobre-rutta">
+        <img
+          class="isotipo-decorativo"
+          src="/assets/img/isotipo-rutta.png"
+          alt=""
+          aria-hidden="true"
+        />
 
-          <!-- El formulario acepta cualquier texto y solo abre la página principal. -->
-          <form
-            id="formularioLogin"
-            class="rutta-login-formulario"
-            autocomplete="off"
-            novalidate
-          >
-            <div class="rutta-login-campo">
-              <!-- for e id conectan la etiqueta con el campo correspondiente. -->
-              <label for="login-correo">Usuario o correo</label>
-              <!-- type=text permite escribir cualquier palabra; name identifica el campo. -->
-              <input
-                id="login-correo"
-                name="email"
-                type="text"
-                autocomplete="off"
-                disabled
-              />
+        <div class="container py-4">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <p class="sobrelinea">Nuestra Historia</p>
+              <h2 class="titulo-seccion">
+                La ruta no siempre es clara, pero siempre te transforma.
+              </h2>
+              <p class="mt-4">
+                Rutta nació de una verdad sencilla: el exterior impresiona, pero
+                la preparación adecuada te da confianza. Comenzamos como un
+                grupo de apasionados del senderismo que notaron lo intimidante
+                que resultaba empezar a explorar la naturaleza sin el equipo ni
+                la guía correcta.
+              </p>
             </div>
-            <div class="rutta-login-campo">
-              <label for="login-contrasena">Contraseña</label>
-              <!-- Nunca se escribe la contraseña en almacenamiento ni en la consola. -->
-              <input
-                id="login-contrasena"
-                name="password"
-                type="password"
-                autocomplete="off"
-                disabled
-              />
+
+            <div class="col-lg-5">
+              <p>
+                Rutta reúne equipamiento confiable y orientación sencilla para
+                que cada persona pueda explorar de acuerdo con su experiencia,
+                destino y objetivos. Queremos simplificar la aventura para que
+                solo te preocupes por disfrutar la ruta.
+              </p>
+
+              <a
+                class="boton btn btn-lg mt-3 d-inline-block"
+                href="/index.html"
+              >
+                Volver al inicio
+              </a>
             </div>
-            <!-- Abre una ventana con información relacionada con el acceso. -->
-            <button
-              class="rutta-login-enlace rutta-login-recuperar"
-              type="button"
-              data-login-aviso="recuperar"
-            >
-              ¿Olvidaste tu contraseña?
-            </button>
-            <!-- Empieza deshabilitado; el script activa el formulario de forma segura. -->
-            <button class="rutta-login-enviar" type="submit" disabled>
-              Iniciar sesión
-            </button>
-          </form>
-          <noscript
-            ><p class="rutta-login-ayuda">
-              Activa JavaScript para continuar o
-              <a href="../index.html">visita la tienda</a>.
-            </p></noscript
-          >
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: NUESTRO TARGET / COMUNIDAD -->
+      <section class="target-seccion" id="nuestra-comunidad">
+        <div class="container">
+          <div class="text-center mb-5">
+            <p class="sobrelinea">¿Para quién es Rutta?</p>
+            <h2 class="titulo-seccion">
+              Diseñado para cada tipo de explorador
+            </h2>
+          </div>
+
+          <div class="row g-4">
+            <!-- Perfil 1: El Principiante -->
+            <div class="col-md-4">
+              <div class="tarjeta-target">
+                <i class="bi bi-compass icono-target"></i>
+                <h3>El Explorador Curioso</h3>
+                <p>
+                  Apenas estás comenzando a conectar con la naturaleza. Buscas
+                  equipamiento fácil de usar, recomendaciones claras y la
+                  seguridad de que estás dando el primer paso correcto.
+                </p>
+              </div>
+            </div>
+
+            <!-- Perfil 2: El Habitual -->
+            <div class="col-md-4">
+              <div class="tarjeta-target">
+                <i class="bi bi-map icono-target"></i>
+                <h3>El Senderista de Fin de Semana</h3>
+                <p>
+                  Aprovechas cada descanso para escapar de la ciudad. Valoras la
+                  durabilidad, la ligereza de tus accesorios y herramientas
+                  funcionales que nunca te fallen en el camino.
+                </p>
+              </div>
+            </div>
+
+            <!-- Perfil 3: El Apasionado -->
+            <div class="col-md-4">
+              <div class="tarjeta-target">
+                <i class="bi bi-tree icono-target"></i>
+                <h3>El Amante de la Aventura</h3>
+                <p>
+                  Buscas superar tus propios límites e ir más lejos. Necesitas
+                  equipo resistente de alto rendimiento que responda ante
+                  cualquier terreno o condición climática.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-    <!-- FIN CONTENIDO LOGIN. -->
-
-    <!-- INICIO PIE LOGIN: abre ventanas con información de navegación y ayuda. -->
-    <footer class="rutta-login-pie" id="login-ayuda">
-      <nav aria-label="Ayuda y políticas">
-        <button type="button" data-login-aviso="condiciones">
-          Condiciones de Uso
-        </button>
-        <button type="button" data-login-aviso="privacidad">
-          Política de Privacidad
-        </button>
-        <button type="button" data-login-aviso="cookies">
-          Política de Cookies
-        </button>
-        <button type="button" data-login-aviso="preguntas">
-          Preguntas Frecuentes
-        </button>
-        <button type="button" data-login-aviso="contacto">Contacto</button>
-        <button type="button" data-login-aviso="configuracion">
-          Configuración de cookies
-        </button>
-      </nav>
-    </footer>
-    <!-- Dialog nativo: se cierra con Escape o con su botón y mantiene el foco. -->
-    <dialog
-      class="rutta-login-dialogo"
-      id="login-dialogo"
-      aria-labelledby="login-dialogo-titulo"
-      aria-describedby="login-dialogo-texto"
-    >
-      <i class="bi bi-chat-dots" aria-hidden="true"></i>
-      <h2 id="login-dialogo-titulo">Información</h2>
-      <p id="login-dialogo-texto"></p>
-      <form method="dialog">
-        <button class="rutta-login-enviar" type="submit">Entendido</button>
-      </form>
-    </dialog>
-    <!-- FIN PIE LOGIN. -->
-
     <!-- PANEL DE BÚSQUEDA -->
     <div
       class="offcanvas offcanvas-top buscador-panel"
@@ -367,7 +359,7 @@
           <p>Agrega alguno de nuestros productos para verlo aquí.</p>
           <a
             class="btn boton-secundario-claro"
-            href="/UI/Productos/productos.html"
+            href="/pages/Productos/productos.html"
             >Explorar productos</a
           >
         </div>
@@ -407,15 +399,12 @@
         </div>
       </div>
     </div>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="/UI/script.js"></script>
-
-    <script src="./login.js"></script>
-    <script src="/UI/chatbot/chatbot.js"></script>
+    <script src="/pages/script.js"></script>
+    <script src="/pages/chatbot/chatbot.js"></script>
   </body>
 </html>

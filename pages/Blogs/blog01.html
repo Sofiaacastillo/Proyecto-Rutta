@@ -11,7 +11,7 @@
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/img/iconos-rutta/brujula.svg"
+      href="/assets/img/iconos-rutta/brujula.svg"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,17 +32,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
-    <link rel="stylesheet" href="/UI/Styles/styles.css" />
-    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="/pages/Styles/styles.css" />
+    <link rel="stylesheet" href="/pages/Blogs/blog.css" />
   </head>
 
-  <!--todo EDITAR: fondo de pantalla de ESTE blog. Sobrescribe la variable --blog-fondo definida en blog.css -->
-  <body
-    class="rutta-identidad rutta-blog-pagina"
-    style="
-      --blog-fondo: url(&quot;/img/ImagenesBlog/background-guiashome.jpg&quot;);
-    "
-  >
+  <body class="rutta-identidad rutta-blog-pagina">
     <!--todo =============== CÓDIGO DE NAVBAR GENERAL (idéntico a aboutUs.html) ===============-->
     <nav
       class="navbar navbar-expand-lg barra-navegacion sticky-top"
@@ -51,7 +45,7 @@
       <div class="container">
         <a
           class="navbar-brand marca-rutta"
-          href="/UI/index.html"
+          href="/index.html"
           aria-label="Rutta, volver al inicio"
         >
           <span class="marca-logo-actual" aria-hidden="true"></span>
@@ -70,7 +64,7 @@
           </button>
           <a
             class="boton-icono"
-            href="/UI/Login/login.html"
+            href="/pages/Login/login.html"
             aria-label="Iniciar sesión"
           >
             <i class="bi bi-person" aria-hidden="true"></i>
@@ -103,7 +97,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="/UI/Productos/productos.html"
+                href="/pages/Productos/productos.html"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -112,51 +106,51 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="/UI/Productos/productos.html"
+                  <a class="dropdown-item" href="/pages/Productos/productos.html"
                     >Ver todo</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="/UI/Productos/productos.html?filtro=mochilas"
+                    href="/pages/Productos/productos.html?filtro=mochilas"
                     >Mochilas</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="/UI/Productos/productos.html?filtro=ropa"
+                    href="/pages/Productos/productos.html?filtro=ropa"
                     >Ropa</a
                   >
                 </li>
                 <li>
                   <a
                     class="dropdown-item"
-                    href="/UI/Productos/productos.html?filtro=calzado"
+                    href="/pages/Productos/productos.html?filtro=calzado"
                     >Calzado</a
                   >
                 </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/index.html">Inicio</a>
+              <a class="nav-link" href="/index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/AboutUs/aboutUs.html"
+              <a class="nav-link" href="/pages/AboutUs/aboutUs.html"
                 >Sobre Nosotros</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
+              <a class="nav-link" href="/pages/Guias/guias.html">Guías</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html"
+              <a class="nav-link" href="/pages/AboutUs/explore-rutta.html"
                 >Sobre Rutta</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+              <a class="nav-link" href="/pages/Ayuda/ayuda.html">Ayuda</a>
             </li>
           </ul>
 
@@ -173,7 +167,7 @@
             </button>
             <a
               class="boton-icono"
-              href="/UI/Login/login.html"
+              href="/pages/Login/login.html"
               aria-label="Iniciar sesión"
             >
               <i class="bi bi-person" aria-hidden="true"></i>
@@ -194,11 +188,15 @@
     <!--todo ======== FIN DE NAVBAR GENERAL ========-->
 
     <!--todo ================================================================
-         BLOG 03 - Checklist esencial antes de acampar
-         Mismos módulos y mismo blog.css, en otro orden.
+         PLANTILLA DE BLOG POR MÓDULOS (BLOQUES)
+         Cada <section class="bloque ..."> es un módulo independiente.
+         Para armar un blog nuevo: copia, pega, reordena o elimina módulos
+         y edita solo lo marcado con "EDITAR".
+         Fondos disponibles (clase en cada section):
+           fondo-foto = foto de montaña con capa azul | fondo-a = azul profundo | fondo-b = azul más claro
          ================================================================ -->
 
-    <!--todo ============ MÓDULO 1: PORTADA ============ -->
+    <!--todo ============ MÓDULO 1: PORTADA (título y presentación) ============ -->
     <section
       class="bloque bloque-portada fondo-foto"
       id="portada"
@@ -207,11 +205,12 @@
       <div class="container-xxl">
         <div class="row g-5 align-items-center">
           <div class="col-lg-6">
-            <p class="sobrelinea">CONSEJO</p>
-            <h1 id="blog-titulo">Checklist esencial antes de acampar</h1>
+            <!--todo EDITAR: categoría, título, resumen y datos -->
+            <p class="sobrelinea">EQUIPAMIENTO</p>
+            <h1 id="blog-titulo">Cómo elegir tu primera mochila de trail</h1>
             <p class="bloque-resumen">
-              Lo que no puede faltar en tu mochila para pasar la noche en la
-              naturaleza con comodidad.
+              Capacidad, ajuste y peso: tres decisiones sencillas para disfrutar
+              de cada recorrido con confianza.
             </p>
             <ul class="blog-meta list-unstyled d-flex flex-wrap gap-4 mb-0">
               <li>
@@ -220,18 +219,19 @@
               </li>
               <li>
                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                <time datetime="2026-10-20">20 de octubre de 2026</time>
+                <time datetime="2026-10-19">19 de octubre de 2026</time>
               </li>
               <li>
-                <i class="bi bi-clock" aria-hidden="true"></i> 4 min de lectura
+                <i class="bi bi-clock" aria-hidden="true"></i> 6 min de lectura
               </li>
             </ul>
           </div>
           <div class="col-lg-6">
+            <!--todo EDITAR: imagen de portada -->
             <figure class="bloque-imagen mb-0">
               <img
-                src="/img/ImagenesBlog/checklist_guias.jpg"
-                alt="Equipo de acampada ordenado sobre una mesa de madera"
+                src="/assets/img/ImagenesBlog/mochilas_guia_senderismo2.jpg"
+                alt="Senderista con mochila en un sendero de montaña"
               />
             </figure>
           </div>
@@ -239,84 +239,106 @@
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 2: INTRODUCCIÓN ============ -->
+    <!--todo ============ MÓDULO 2: INTRODUCCIÓN (solo texto centrado) ============ -->
     <section class="bloque bloque-intro fondo-a" id="introduccion">
       <div class="container-xxl">
         <div class="bloque-angosto">
+          <!--todo EDITAR: párrafo de introducción -->
           <p>
-            Acampar es una de las mejores formas de conectar con la naturaleza,
-            pero olvidar un solo artículo puede cambiar la experiencia. Con una
-            lista clara, empacar es más fácil y disfrutas más tu salida.
+            Elegir tu primera mochila de senderismo es uno de los pasos más
+            importantes para comenzar a explorar la naturaleza. No se trata
+            únicamente de encontrar un diseño atractivo, sino de seleccionar una
+            mochila que se adapte a tu cuerpo, al tipo de recorrido y a la
+            cantidad de equipo que necesitas transportar. Una elección adecuada
+            puede marcar la diferencia entre disfrutar de una caminata o
+            terminar con molestias en la espalda y los hombros.
           </p>
         </div>
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 3: TEXTO + IMAGEN (imagen a la derecha) ============ -->
+    <!--todo ============ MÓDULO 3: TEXTO + IMAGEN LATERAL (imagen a la derecha) ============ -->
     <section
       class="bloque bloque-texto-imagen fondo-b"
-      id="lugar"
-      aria-labelledby="titulo-lugar"
+      id="seccion-1"
+      aria-labelledby="titulo-seccion-1"
     >
       <div class="container-xxl">
         <div class="row g-5 align-items-center">
           <div class="col-lg-6">
-            <p class="sobrelinea">ANTES DE EMPACAR</p>
-            <h2 id="titulo-lugar">Elige bien tu lugar y revisa el clima</h2>
+            <!--todo EDITAR: etiqueta, título y párrafos -->
+            <p class="sobrelinea">PASO 1</p>
+            <h2 id="titulo-seccion-1">Define la capacidad que necesitas</h2>
             <p>
-              Define cuántas noches estarás fuera y consulta el
-              <strong>pronóstico del clima</strong>. Escoge una zona permitida
-              para acampar y deja tu <strong>plan de ruta</strong> con alguien
-              de confianza antes de salir.
+              Elegir tu primera mochila de senderismo es uno de los pasos más
+              importantes para comenzar a
+              <strong>explorar la naturaleza.</strong> No se trata únicamente de
+              encontrar un diseño atractivo, sino de seleccionar mochila que se
+              adapte a tu cuerpo, al tipo de recorrido y a la cantidad de equipo
+              que necesitas transportar.
+              <strong>Una elección adecuada puede marcar la diferencia</strong>
+              entre disfrutar de una caminata o terminar con molestias en la
+              espalda y los hombros.
+            </p>
+            <p>
+              Hasta 15 L para trail running, de 15 a 30 L para senderismo de un
+              día y más de 30 L para travesías.
             </p>
           </div>
           <div class="col-lg-6">
+            <!--todo EDITAR: imagen lateral -->
             <figure class="bloque-imagen mb-0">
               <img
-                src="/img/ImagenesBlog/mochilas_guia_senderismo.jpg"
-                alt="Mochila de senderismo frente a un paisaje de montaña"
+                src="/assets/img/ImagenesBlog/mochilas_guia_senderismo3.jpg"
+                alt="Mochilas de distintos tamaños sobre una mesa"
               />
-              <figcaption>El destino define lo que debes llevar.</figcaption>
+              <figcaption>
+                Cada litro cuenta: elige según la duración de tu ruta.
+              </figcaption>
             </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 4: TARJETAS (el checklist) ============ -->
+    <!--todo ============ MÓDULO 4: TEXTO + IMAGEN LATERAL INVERTIDO (imagen a la izquierda) ============
+         Es el mismo módulo 3 con la clase extra "flex-lg-row-reverse" en el row. -->
     <section
-      class="bloque bloque-tarjetas fondo-a"
-      id="checklist"
-      aria-labelledby="titulo-checklist"
+      class="bloque bloque-texto-imagen fondo-a"
+      id="seccion-2"
+      aria-labelledby="titulo-seccion-2"
     >
       <div class="container-xxl">
-        <div class="bloque-angosto text-center mb-5">
-          <p class="sobrelinea">EL CHECKLIST</p>
-          <h2 id="titulo-checklist">Tres grupos que no pueden faltar</h2>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="bloque-tarjeta">
-              <span class="bloque-numero">01</span>
-              <h3>Refugio</h3>
-              <p>
-                Tienda de campaña, bolsa de dormir y aislante para el suelo.
-              </p>
-            </div>
+        <div class="row g-5 align-items-center flex-lg-row-reverse">
+          <div class="col-lg-6">
+            <!--todo EDITAR -->
+            <p class="sobrelinea">PASO 2</p>
+            <h2 id="titulo-seccion-2">Revisa el ajuste y la comodidad</h2>
+            <p>
+              <strong>La comodidad también es fundamental.</strong> Busca una
+              mochila con correas ajustables, respaldo acolchado y materiales
+              resistentes. Si vas a transportar mayor peso, contar con un
+              cinturón lumbar y una correa de pecho puede ayudarte a distribuir
+              mejor la carga. Antes de comprar, procura probar la mochila con
+              algo de peso para comprobar que se ajuste correctamente a tu
+              espalda y permita moverte con
+              <strong>libertad.</strong>
+            </p>
+            <p>
+              Los tirantes no deben presionar el pecho y el cinturón tiene que
+              apoyarse sobre las caderas, no sobre la cintura.
+            </p>
           </div>
-          <div class="col-md-4">
-            <div class="bloque-tarjeta">
-              <span class="bloque-numero">02</span>
-              <h3>Cocina</h3>
-              <p>Estufa, utensilios, comida suficiente y agua o filtro.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="bloque-tarjeta">
-              <span class="bloque-numero">03</span>
-              <h3>Seguridad</h3>
-              <p>Linterna frontal, botiquín, mapa y ropa para el frío.</p>
-            </div>
+          <div class="col-lg-6">
+            <figure class="bloque-imagen mb-0">
+              <img
+                src="/assets/img/ImagenesBlog/imagen-2.jpg"
+                alt="Senderista ajustando los tirantes de su mochila"
+              />
+              <figcaption>
+                Un buen ajuste evita molestias en tramos largos.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -325,78 +347,127 @@
     <!--todo ============ MÓDULO 5: CITA DESTACADA ============ -->
     <section class="bloque bloque-cita fondo-foto" id="cita">
       <div class="container-xxl">
+        <!--todo EDITAR: cita y autor -->
         <blockquote class="bloque-angosto text-center">
           <i class="bi bi-quote" aria-hidden="true"></i>
-          <p>Una mochila bien empacada hace más ligero cada paso.</p>
+          <p>La mejor mochila es la que olvidas que llevas puesta.</p>
           <cite>Equipo Rutta</cite>
         </blockquote>
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 6: SUBTÍTULO + PÁRRAFO + GALERÍA ============ -->
+    <!--todo ============ MÓDULO 6: SUBTÍTULO + PÁRRAFO + GALERÍA DE IMÁGENES ============ -->
     <section
       class="bloque bloque-galeria fondo-b"
-      id="empaca"
-      aria-labelledby="titulo-empaca"
+      id="seccion-3"
+      aria-labelledby="titulo-seccion-3"
     >
       <div class="container-xxl">
         <div class="bloque-angosto text-center mb-5">
-          <p class="sobrelinea">EMPACA CON ORDEN</p>
-          <h2 id="titulo-empaca">Lo pesado cerca de la espalda</h2>
+          <!--todo EDITAR: subtítulo y párrafo -->
+          <p class="sobrelinea">PASO 3</p>
+          <h2 id="titulo-seccion-3">Prioriza peso y materiales</h2>
           <p>
-            Coloca lo más pesado cerca de tu espalda, lo que usarás seguido a la
-            mano y la ropa de abrigo en un lugar accesible.
+            Finalmente, recuerda que la mejor mochila no siempre es la más
+            grande ni la más costosa, sino la que responde a tus necesidades.
+            Considera la duración de tus recorridos, el clima y tu nivel de
+            experiencia antes de decidir. En Rutta queremos ayudarte a encontrar
+            equipamiento que te permita comenzar tus aventuras con comodidad,
+            confianza y preparación.
           </p>
         </div>
+
         <div class="row g-4">
+          <!--todo EDITAR: imágenes de la galería (duplica o elimina columnas) -->
           <div class="col-md-4">
             <figure class="bloque-imagen mb-0">
               <img
-                src="/img/ImagenesBlog/mochilas_guia_senderismo3.jpg"
-                alt="Mochila y equipo de acampada organizados en el suelo"
+                src="/assets/img/ImagenesBlog/galeria-1.jpg"
+                alt="Tela impermeable de una mochila"
               />
-              <figcaption>Todo en su lugar</figcaption>
+              <figcaption>Tela impermeable</figcaption>
             </figure>
           </div>
           <div class="col-md-4">
             <figure class="bloque-imagen mb-0">
               <img
-                src="/img/ImagenesBlog/botellamochila.jpg"
-                alt="Botella de agua en el costado de una mochila"
+                src="/assets/img/ImagenesBlog/galeria-2.jpg"
+                alt="Costuras reforzadas"
               />
-              <figcaption>Agua a la mano</figcaption>
+              <figcaption>Costuras reforzadas</figcaption>
             </figure>
           </div>
           <div class="col-md-4">
             <figure class="bloque-imagen mb-0">
               <img
-                src="/img/ImagenesBlog/relacionado-3.jpg"
-                alt="Ropa y accesorios de montaña ordenados"
+                src="/assets/img/ImagenesBlog/galeria-3.jpg"
+                alt="Bolsillos de acceso rápido"
               />
-              <figcaption>Ropa de abrigo</figcaption>
+              <figcaption>Bolsillos accesibles</figcaption>
             </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 7: CONSEJO ============ -->
-    <section class="bloque bloque-consejo fondo-a" id="consejo">
+    <!--todo ============ MÓDULO 7: LISTA EN TARJETAS (puntos clave) ============ -->
+    <section
+      class="bloque bloque-tarjetas fondo-a"
+      id="puntos-clave"
+      aria-labelledby="titulo-puntos"
+    >
       <div class="container-xxl">
+        <div class="bloque-angosto text-center mb-5">
+          <!--todo EDITAR -->
+          <p class="sobrelinea">RESUMEN RÁPIDO</p>
+          <h2 id="titulo-puntos">Antes de comprar, recuerda</h2>
+        </div>
+
+        <div class="row g-4">
+          <!--todo EDITAR: tarjetas (duplica o elimina columnas) -->
+          <div class="col-md-4">
+            <div class="bloque-tarjeta">
+              <span class="bloque-numero">01</span>
+              <h3>Litros</h3>
+              <p>Elige la capacidad según los días de tu ruta.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bloque-tarjeta">
+              <span class="bloque-numero">02</span>
+              <h3>Ajuste</h3>
+              <p>Pruébala con carga y revisa caderas y hombros.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="bloque-tarjeta">
+              <span class="bloque-numero">03</span>
+              <h3>Materiales</h3>
+              <p>Prefiere telas ligeras, impermeables y costuras firmes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--todo ============ MÓDULO 8: CONSEJO (recuadro destacado) ============ -->
+    <section class="bloque bloque-consejo fondo-b" id="consejo">
+      <div class="container-xxl">
+        <!--todo EDITAR -->
         <aside class="bloque-aviso bloque-angosto" role="note">
           <i class="bi bi-lightbulb" aria-hidden="true"></i>
           <div>
             <h3>Consejo Rutta</h3>
             <p class="mb-0">
-              Arma tu mochila unos días antes y revisa cada artículo: así
-              detectas lo que falta o no funciona.
+              Haz una prueba en casa: llena la mochila con lo que llevarías y
+              camina 10 minutos.
             </p>
           </div>
         </aside>
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 8: CONCLUSIÓN + AUTOR ============ -->
+    <!--todo ============ MÓDULO 9: CONCLUSIÓN + ETIQUETAS + AUTOR + CTA ============ -->
     <section
       class="bloque bloque-conclusion fondo-principal"
       id="conclusion"
@@ -405,31 +476,37 @@
       <div class="container-xxl">
         <div class="bloque-angosto text-center">
           <img
-            src="../../img/ruttablanco-isotipo.png"
+            src="/assets/img/ruttablanco-isotipo.png"
             alt="Isotipo Rutta"
             width="80"
             class="mb-4"
           />
+          <!--todo EDITAR: título y texto de la conclusión -->
           <h2 id="titulo-conclusion">Conclusión</h2>
           <p>
-            Con una buena lista, acampar se vuelve más sencillo y seguro.
-            Prepárate con calma y deja que la naturaleza haga el resto.
+            No existe la mochila perfecta para todos, pero sí la ideal para tu
+            próxima salida. Define tu ruta, prueba el ajuste y elige con calma.
           </p>
+
+          <!--todo EDITAR: etiquetas -->
           <div
             class="blog-etiquetas justify-content-center"
             aria-label="Etiquetas del artículo"
           >
-            <a href="#" class="etiqueta">#acampar</a>
-            <a href="#" class="etiqueta">#checklist</a>
+            <a href="#" class="etiqueta">#mochilas</a>
+            <a href="#" class="etiqueta">#trail</a>
+            <a href="#" class="etiqueta">#principiantes</a>
           </div>
-          <a href="/UI/Productos/productos.html" class="btn boton btn-lg mt-4"
-            >Ver equipamiento</a
+
+          <a href="/pages/Productos/productos.html" class="btn boton btn-lg mt-4"
+            >Ver mochilas</a
           >
         </div>
 
+        <!--todo EDITAR: autor del artículo -->
         <div class="bloque-autor bloque-angosto">
           <img
-            src="/img/equipo/21.png"
+            src="/assets/img/equipo/21.png"
             alt="Foto de la autora"
             class="bloque-autor-foto"
           />
@@ -437,14 +514,15 @@
             <p class="sobrelinea mb-1">ESCRITO POR</p>
             <h3>Sofía Arévalo - Equipo Rutta</h3>
             <p class="mb-0">
-              Guías y recomendaciones para dar tus primeros pasos en el trail.
+              Compartimos guías y recomendaciones para que dar tus primeros
+              pasos en el trail sea más sencillo.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!--todo ============ MÓDULO 9: MÁS DEL BLOG ============ -->
+    <!--todo ============ MÓDULO 10: MÁS DEL BLOG (tarjetas con foto) ============ -->
     <section
       class="bloque bloque-relacionados fondo-foto"
       id="mas-del-blog"
@@ -455,23 +533,28 @@
           <div class="col-lg-3">
             <p class="sobrelinea">SIGUE LEYENDO</p>
             <h2 id="titulo-relacionados">Más guías y consejos</h2>
-            <a class="btn boton-contorno" href="/UI/Guias/guias.html"
-              >Ver todas las guías</a
+            <p class="bloque-resumen">
+              Explora otros artículos para preparar tu próxima aventura.
+            </p>
+            <a class="btn boton-contorno" href="/pages/Guias/guias.html"
+              >Ver todo el blog</a
             >
           </div>
+
+          <!--todo EDITAR: tarjetas (etiqueta, título, enlace y foto en --imagen-blog) -->
           <div class="col-md-4 col-lg-3">
             <article
               class="blog-card"
               style="
-                --imagen-blog: url(&quot;/img/ImagenesBlog/mochilas_guia_senderismo2.jpg&quot;);
+                --imagen-blog: url(&quot;/assets/img/ImagenesBlog/seguridad_guias.jpg&quot;);
               "
             >
-              <span class="blog-etiqueta">Guía</span>
+              <span class="blog-etiqueta">Seguridad</span>
               <div>
-                <h3>Cómo elegir tu primera mochila de senderismo</h3>
-                <a href="/UI/Blogs/blog01.html"
-                  >Leer más <i class="bi bi-arrow-right"></i
-                ></a>
+                <h3>Consejos para caminar con seguridad</h3>
+                <a href="/pages/Blogs/blog02.html"
+                  >Leer más 
+                </a>
               </div>
             </article>
           </div>
@@ -479,15 +562,15 @@
             <article
               class="blog-card"
               style="
-                --imagen-blog: url(&quot;/img/ImagenesBlog/seguridad_guias.jpg&quot;);
+                --imagen-blog: url(&quot;/assets/img/ImagenesBlog/checklist_guias.jpg&quot;);
               "
             >
-              <span class="blog-etiqueta">Seguridad</span>
+              <span class="blog-etiqueta">Consejo</span>
               <div>
-                <h3>Consejos para caminar con seguridad</h3>
-                <a href="/UI/Blogs/blog02.html"
-                  >Leer más <i class="bi bi-arrow-right"></i
-                ></a>
+                <h3>Checklist esencial antes de acampar</h3>
+                <a href="/pages/Blogs/blog03.html"
+                  >Leer más 
+                </a>
               </div>
             </article>
           </div>
@@ -501,14 +584,14 @@
         <div class="pie-marca rutta-identidad">
           <a
             class="marca-logo-actual marca-logo-pie"
-            href="#portada"
+            href="#blog-inicio"
             aria-label="Rutta, volver al inicio"
           ></a>
         </div>
 
         <div class="credito-trail-coders">
           <img
-            src="/img/trailcoders-logoblanco.png"
+            src="/assets/img/trailcoders-logoblanco.png"
             alt=""
             aria-hidden="true"
           />
@@ -585,7 +668,7 @@
           <p>Agrega alguno de nuestros productos para verlo aquí.</p>
           <a
             class="btn boton-secundario-claro"
-            href="/UI/Productos/productos.html"
+            href="/pages/Productos/productos.html"
             >Explorar productos</a
           >
         </div>
@@ -630,7 +713,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="/UI/script.js"></script>
-    <script src="/UI/chatbot/chatbot.js"></script>
+    <script src="/pages/script.js"></script>
+    <script src="/pages/chatbot/chatbot.js"></script>
   </body>
 </html>

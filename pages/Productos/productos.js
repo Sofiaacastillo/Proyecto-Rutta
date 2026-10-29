@@ -2,56 +2,24 @@
 // 1. INFORMACIÓN DE LOS PRODUCTOS
 // Este arreglo funciona como una pequeña base de datos local.
 // ================================================================
-
-// “const” crea una referencia que no será reemplazada durante la ejecución.
 const productos = [
   // Primer objeto: representa la mochila mostrada en la referencia.
   {
-    // Identificador único utilizado por botones y búsquedas.
     id: 1,
-
-    // Categoría empleada por los filtros y por el recorte de la imagen.
     categoria: "mochilas",
-
-    // Texto legible que aparece en la etiqueta superior.
     categoriaNombre: "Mochilas",
-
-    // Ícono de Bootstrap Icons asociado con la categoría.
     iconoCategoria: "bi-backpack4",
-
-    // Ruta de la imagen que se mostrará en la tarjeta y en el modal.
-    imagen: "/img/productos/mochila-trek-45l.svg",
-
-    // Nombre comercial del producto.
+    imagen: "/assets/img/productos/mochila-trek-45l.svg",
     nombre: "Mochila Trek 45L",
-
-    // Precio numérico para poder formatearlo correctamente.
     precio: 1799,
-
-    // Descripción breve visible en la tarjeta.
-    resumen:
-      "Mochila técnica y cómoda con gran capacidad de organización para tus aventuras.",
-
-    // Nivel de experiencia recomendado.
-    nivel: "Principiante / Intermedio",
-
-    // Tipo de actividad para la que fue diseñado el producto.
-    actividad: "Senderismo de 1 a 3 días",
-
-    // Entorno o clima recomendado.
+    nivel: "Básico",
+    actividad: "Senderismo 1 a 3 días",
     terreno: "Clima templado / senderos",
-
-    // Perfil de persona que obtendría mayor beneficio.
     ideal: "Capacidad y organización",
-
-    // Lista de atributos técnicos presentados debajo de la tabla.
     caracteristicas: [
-      "45 L de capacidad con múltiples compartimentos",
       "Tejido resistente al agua y a la abrasión",
       "Espalda acolchada y transpirable",
     ],
-
-    // Marca esta tarjeta como recomendación principal.
     recomendado: true,
   },
 
@@ -61,15 +29,14 @@ const productos = [
     categoria: "ropa",
     categoriaNombre: "Ropa",
     iconoCategoria: "bi-person-standing-dress",
-    imagen: "/img/productos/chamarra-trail-shell.svg",
+    imagen: "/assets/img/productos/chamarra-trail-shell.svg",
     nombre: "Chamarra Trail Shell",
     precio: 1499,
-    resumen:
-      "Capa ligera e impermeable que te protege del viento y la lluvia sin limitar tu movimiento.",
     nivel: "Principiante",
-    actividad: "Rutas frescas o con viento",
+    actividad: "Rutas frescas o viento",
     terreno: "Clima cambiante / montañoso",
     ideal: "Protección ligera e impermeable",
+    tallas: ["CH", "M", "G", "XG"],
     caracteristicas: [
       "Impermeable y corta-viento",
       "Ligera, compacta y fácil de empacar",
@@ -84,15 +51,14 @@ const productos = [
     categoria: "calzado",
     categoriaNombre: "Calzado",
     iconoCategoria: "bi-boot",
-    imagen: "/img/productos/botas-sendero-pro.svg",
+    imagen: "/assets/img/productos/botas-sendero-pro.svg",
     nombre: "Botas Sendero Pro",
     precio: 2199,
-    resumen:
-      "Botas de senderismo resistentes y cómodas para terrenos exigentes y largas caminatas.",
     nivel: "Intermedio",
     actividad: "Rutas rocosas o largas",
     terreno: "Terreno mixto / rocoso",
     ideal: "Agarre y estabilidad",
+    tallas: [22, 23, 24, 25, 26, 27],
     caracteristicas: [
       "Suela Vibram® con excelente agarre",
       "Puntera y talón reforzados",
@@ -100,8 +66,444 @@ const productos = [
     ],
     recomendado: false,
   },
-];
 
+  // Cuarto objeto: representa Tenis Pegasus Trail ACG
+  {
+    id: 4,
+    categoria: "calzado",
+    categoriaNombre: "Calzado",
+    iconoCategoria: "bi-boot",
+    imagen: "/assets/img/productos/pegasus-acg-negro.jpg",
+    nombre: "Tenis Pegasus Trail ACG de Nike",
+    precio: 3099,
+    nivel: "Básico",
+    actividad: "Senderismo ligero/trail running",
+    terreno: "Senderos medianamente planos",
+    ideal: "Comodidad y durabilidad",
+    tallas: [22, 23, 24, 25, 26, 27],
+    colores: ["negro", "verde"],
+    caracteristicas: [
+      "Agarre y comodidad en cualquier terreno.",
+      "Hechos para arrasar en cualquier superficie.",
+    ],
+    recomendado: true,
+  },
+
+  // Quinto objeto: representa Playera Kalenji
+  {
+    id: 5,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/playera-kalenji-negro.jpg",
+    nombre: "Playera Kalenji de Decathlon",
+    precio: 149,
+    nivel: "Principiante",
+    actividad: "Senderismo / trail running",
+    terreno: "Senderos / clima cálido",
+    ideal: "Transpirabilidad y comodidad",
+    tallas: ["S", "M", "L", "XL"],
+    colores: ["negro", "blanco"],
+    caracteristicas: [
+      "Tejido fabricado con poliéster.",
+      "Absorbe y evacua el sudor para reducir la sensación de humedad.",
+    ],
+    recomendado: false,
+  },
+
+  // Sexto objeto: representa Chaleco de Trail Running
+  {
+    id: 6,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/chaleco-trail-terrex.jpg",
+    nombre: "Chaleco de Trail Running de Adidas",
+    precio: 1699,
+    nivel: "Intermedio",
+    actividad: "Senderismo / trail running",
+    terreno: "Senderos planos a rocosos",
+    ideal: "Transpirabilidad, comodidad y almacenamiento",
+    tallas: ["S", "M", "L", "XL"],
+    colores: ["negro"],
+    caracteristicas: [
+      "Chaleco de trail transpirable con ajuste personalizable.",
+      "Organización interna para un fácil acceso.",
+    ],
+    recomendado: true,
+  },
+
+  // Séptimo objeto: representa Chamarra Impermeable Venture 2
+  {
+    id: 7,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/chamarra-venture2.jpg",
+    nombre: "Chamarra Impermeable Venture 2 de The North Face",
+    precio: 2999,
+    nivel: "Intermedio",
+    actividad: "Senderismo / trail running",
+    terreno: "Senderos / clima frío-lluvioso",
+    ideal: "Transpirabilidad, comodidad y almacenamiento",
+    tallas: ["S", "M", "L", "XL"],
+    colores: ["negro"],
+    caracteristicas: [
+      "Prenda ligera de 2.5 capas, también transpirable.",
+      "Diseñada para mantener tu ruta intacta bajo tormentas y vientos fuertes.",
+    ],
+    recomendado: true,
+  },
+
+  // Octavo objeto: representa Outherpath Utility
+  {
+    id: 8,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/utility-salomon-negro.jpg",
+    nombre: "Outherpath Utility de Salomon",
+    precio: 2999,
+    nivel: "Básico",
+    actividad: "Senderismo ligero",
+    terreno: "Senderos planos a rocosos",
+    ideal: "Transpirabilidad, comodidad y durabilidad",
+    tallas: ["S", "M", "L", "XL"],
+    colores: ["negro", "verde"],
+    caracteristicas: [
+      "Diseñada para el confort, la comodidad y la libertad.",
+      "La gama Outerpath se adapta a tus aventuras.",
+    ],
+    recomendado: true,
+  },
+
+  // Noveno objeto: representa Quest Element Gore-Tex
+  {
+    id: 9,
+    categoria: "calzado",
+    categoriaNombre: "Calzado",
+    iconoCategoria: "bi-boot",
+    imagen: "/assets/img/productos/salomon-quest-azul.jpg",
+    nombre: "Quest Element Gore-Tex de Salomon",
+    precio: 4299,
+    nivel: "Avanzado",
+    actividad: "Senderismo de montaña",
+    terreno: "Rocoso / clima frío-lluvioso",
+    ideal: "Transpirabilidad, agarre e impermeabilidad",
+    tallas: [22, 23, 24, 25, 26, 26.5],
+    colores: ["azul", "negro"],
+    caracteristicas: [
+      "Suela Contagrip con tacos profundos para pisada firme en terrenos mojados.",
+      "Caña alta para mayor estabilidad en los tobillos.",
+      "Membrana Gore-Tex que mantiene los pies secos.",
+    ],
+    recomendado: true,
+  },
+
+  // Décimo objeto: representa Tenis de Senderismo Terrex Anylander Rain.RDY
+  {
+    id: 10,
+    categoria: "calzado",
+    categoriaNombre: "Calzado",
+    iconoCategoria: "bi-boot",
+    imagen: "/assets/img/productos/adidas-anylander-negro.jpg",
+    nombre: "Tenis de Senderismo Terrex Anylander Rain.RDY de Adidas",
+    precio: 2599,
+    nivel: "Principiante-Intermedio",
+    actividad: "Senderismo de montaña / trail",
+    terreno: "Terracería / caminos mixtos",
+    ideal: "Transpirabilidad, comodidad e impermeabilidad",
+    tallas: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+    colores: ["negro", "café"],
+    caracteristicas: [
+      "Corte medio con soporte en el tobillo y mediasuela acolchada de confort duradero.",
+      "Tecnología Rain.RDY con lengüeta reforzada para pies secos en condiciones húmedas.",
+    ],
+    recomendado: true,
+  },
+
+  // Onceavo objeto: representa Mochila de Senderismo Arpenaz 100
+  {
+    id: 11,
+    categoria: "mochilas",
+    categoriaNombre: "Mochilas",
+    iconoCategoria: "bi-backpack4",
+    imagen: "/assets/img/productos/decathlon-arpenaz-verde.jpg",
+    nombre: "Mochila de Senderismo Arpenaz 100 20L de Decathlon",
+    precio: 399,
+    nivel: "Principiante",
+    actividad: "Senderismo / excursiones cortas",
+    terreno: "Senderos naturales / urbano",
+    ideal: "Almacenamiento",
+    colores: ["verde", "amarillo", "rojo", "beige"],
+    caracteristicas: [
+      "Multi-compartimentos, incluido uno para laptop.",
+      "Tirantes y espalda acolchada.",
+      "Materiales resistentes a la abrasión.",
+    ],
+    recomendado: true,
+  },
+
+  // Doceavo objeto: representa Mochila Borealis Trail
+  {
+    id: 12,
+    categoria: "mochilas",
+    categoriaNombre: "Mochilas",
+    iconoCategoria: "bi-backpack4",
+    imagen: "/assets/img/productos/northf-borealis-gris.jpg",
+    nombre: "Mochila Borealis Trail 26L de The North Face",
+    precio: 2990,
+    nivel: "Intermedio",
+    actividad: "Senderismo / trail",
+    terreno: "Senderos accidentados / urbano",
+    ideal: "Almacenamiento",
+    colores: ["gris", "negro", "azul", "vino", "verde"],
+    caracteristicas: [
+      "Sistema de suspensión FlexVent™ con correas de hombro articuladas.",
+      "Panel trasero redondeado y costuras cómodas.",
+      "Compartimento principal con funda para laptop o bolsa de hidratación.",
+    ],
+    recomendado: true,
+  },
+
+  // Treceavo objeto: representa Mochila ACG DAYMAX
+  {
+    id: 13,
+    categoria: "mochilas",
+    categoriaNombre: "Mochilas",
+    iconoCategoria: "bi-backpack4",
+    imagen: "/assets/img/productos/acg-daymax-gris.jpg",
+    nombre: "Mochila ACG DAYMAX 25L de Nike",
+    precio: 2949,
+    nivel: "Intermedio",
+    actividad: "Senderismo / caminatas cortas",
+    terreno: "Senderos naturales / cotidiano",
+    ideal: "Almacenamiento",
+    colores: ["gris", "negro", "verde"],
+    caracteristicas: [
+      "Bolsillos delanteros y laterales de fácil acceso.",
+      "Red lateral ajustable y correa delantera para equipo extra.",
+    ],
+    recomendado: true,
+  },
+
+  // Catorceavo objeto: representa Tenis Terrex Skychaser AX5 GORE-TEX
+  {
+    id: 14,
+    categoria: "calzado",
+    categoriaNombre: "Calzado",
+    iconoCategoria: "bi-boot",
+    imagen: "/assets/img/productos/adidas-skychaser-cafe.jpg",
+    nombre: "Tenis Terrex Skychaser AX5 GORE-TEX de Adidas",
+    precio: 3099,
+    nivel: "Intermedio",
+    actividad: "Senderismo de montaña",
+    terreno: "Senderos / clima húmedo-lluvioso",
+    ideal: "Comodidad y seguridad",
+    tallas: [24, 25, 26, 27, 28, 29, 30],
+    colores: ["café", "negro", "beige"],
+    caracteristicas: [
+      "Membrana GORE-TEX impermeable y transpirable.",
+      "Bloquea lluvia y humedad sin dejar de respirar.",
+    ],
+    recomendado: false,
+  },
+
+  // Quinceavo objeto: representa UA Charged Bandit Trail 4 Waterproof
+  {
+    id: 15,
+    categoria: "calzado",
+    categoriaNombre: "Calzado",
+    iconoCategoria: "bi-boot",
+    imagen: "/assets/img/productos/under-bandit4-naranja.jpg",
+    nombre: "UA Charged Bandit Trail 4 Waterproof de Under Armour",
+    precio: 2499,
+    nivel: "Intermedio",
+    actividad: "Senderismo / trail running",
+    terreno: "Senderos / clima húmedo-lluvioso",
+    ideal: "Comodidad y seguridad",
+    tallas: [25, 26, 27, 28, 29, 30],
+    colores: ["naranja", "negro"],
+    caracteristicas: [
+      "Membrana impermeable que evita la entrada de agua.",
+      "Tacos de alta tracción para cualquier superficie.",
+    ],
+    recomendado: false,
+  },
+
+  // Dieciseisavo objeto: representa Tenis Motion Access Mid
+  {
+    id: 16,
+    categoria: "calzado",
+    categoriaNombre: "Calzado",
+    iconoCategoria: "bi-boot",
+    imagen: "/assets/img/productos/timberland-motion.jpg",
+    nombre: "Tenis Motion Access Mid de Timberland",
+    precio: 3399,
+    nivel: "Intermedio",
+    actividad: "Senderismo ligero",
+    terreno: "Senderos planos a mixtos",
+    ideal: "Comodidad y seguridad",
+    tallas: [25.5, 26, 27, 28, 29],
+    colores: ["negro"],
+    caracteristicas: [
+      "Suela con tacos TimberGrip™ para tracción confiable.",
+      "Sistema TimberCush™ que amortigua cada paso.",
+    ],
+    recomendado: false,
+  },
+
+  // Diecisieteavo objeto: representa Playera Dri-FIT ACG Wildsee
+  {
+    id: 17,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/nike-wildsee-blanco.jpg",
+    nombre: "Playera Dri-FIT ACG Wildsee de Nike",
+    precio: 769,
+    nivel: "Básico",
+    actividad: "Trail running / senderismo",
+    terreno: "Senderos / clima seco-caluroso",
+    ideal: "Comodidad y transpirabilidad",
+    tallas: ["XS", "S", "M", "L", "XL"],
+    colores: ["blanco", "carmesí"],
+    caracteristicas: [
+      "Secado rápido, ayuda a mantener la comodidad durante el recorrido.",
+    ],
+    recomendado: false,
+  },
+
+  // Dieciochoavo objeto: representa Silver Ridge 2.0 Short Sleeve Shirt
+  {
+    id: 18,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/columbia-ridge-negro.jpg",
+    nombre: "Silver Ridge 2.0 Short Sleeve Shirt de Columbia",
+    precio: 1195,
+    nivel: "Básico",
+    actividad: "Senderismo",
+    terreno: "Senderos mixtos / rocosos",
+    ideal: "Protección y comodidad",
+    tallas: ["S", "M", "L", "XL"],
+    colores: ["negro", "beige", "blanco"],
+    caracteristicas: [
+      "Protección solar integrada.",
+      "Ventilación estratégica para climas cálidos.",
+    ],
+    recomendado: false,
+  },
+
+  // Diecinueveavo objeto: representa Chamarra Impermeable Antora Rain
+  {
+    id: 19,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/northf-antora-azul.jpg",
+    nombre: "Chamarra Impermeable Antora Rain de The North Face",
+    precio: 3190,
+    nivel: "Intermedio",
+    actividad: "Senderismo / camping",
+    terreno: "Senderos / clima frío-lluvioso",
+    ideal: "Protección y comodidad",
+    tallas: ["S", "M", "L", "XL"],
+    colores: ["azul", "café", "negro"],
+    caracteristicas: [
+      "Diseñada para proteger contra la lluvia durante actividades de senderismo.",
+    ],
+    recomendado: false,
+  },
+
+  // Veinteavo objeto: representa Pantalón para Senderismo Basin
+  {
+    id: 20,
+    categoria: "ropa",
+    categoriaNombre: "Ropa",
+    iconoCategoria: "bi-person-standing-dress",
+    imagen: "/assets/img/productos/northf-basin-negro.jpg",
+    nombre: "Pantalón para Senderismo Basin de The North Face",
+    precio: 2490,
+    nivel: "Intermedio",
+    actividad: "Senderismo / caminata ligera",
+    terreno: "Senderos mixtos",
+    ideal: "Caminatas largas y terrenos variables",
+    tallas: [30, 32, 34, 36, 38],
+    colores: ["negro", "beige", "verde"],
+    caracteristicas: [
+      "Libertad de movimiento durante los recorridos.",
+      "Protección adecuada para terrenos variables.",
+    ],
+    recomendado: false,
+  },
+
+  // Veintiunavo objeto: representa Bastón de senderismo MT100
+  {
+    id: 21,
+    categoria: "equipo",
+    categoriaNombre: "Equipo",
+    iconoCategoria: "bi-tools",
+    imagen: "/assets/img/productos/baston-forclaz.jpg",
+    nombre: "Bastón de Senderismo MT100 Ajustable 105-130 cm de Forclaz (Decathlon)",
+    precio: 349,
+    nivel: "Principiante",
+    actividad: "Senderismo de montaña",
+    terreno: "Caminatas regulares por montaña",
+    ideal: "Apoyo y estabilidad",
+    colores: ["gris"],
+    caracteristicas: [
+      "Empuñadura de espuma cómoda para travesías prolongadas.",
+      "Sistema de ajuste push-pin sencillo y seguro.",
+    ],
+    recomendado: false,
+  },
+
+  // Veintidosavo objeto: representa Mochila Talon 22 Extended Fit
+  {
+    id: 22,
+    categoria: "mochilas",
+    categoriaNombre: "Mochilas",
+    iconoCategoria: "bi-backpack4",
+    imagen: "/assets/img/productos/mochila-osprey-negro.jpg",
+    nombre: "Mochila Talon 22L Extended Fit de Osprey",
+    precio: 3299,
+    nivel: "Avanzado",
+    actividad: "Senderismo de montaña",
+    terreno: "Todo tipo de sendero",
+    ideal: "Comodidad y organización avanzada",
+    colores: ["negro", "gris"],
+    caracteristicas: [
+      "Panel trasero transpirable AirScape.",
+      "Sujeción para bastones en marcha (Stow-on-the-Go).",
+      "Compartimento para depósito de hidratación.",
+    ],
+    recomendado: true,
+  },
+
+  // Veintitresavo objeto: representa Casa de Campaña MH100
+  {
+    id: 23,
+    categoria: "equipo",
+    categoriaNombre: "Equipo",
+    iconoCategoria: "bi-tools",
+    imagen: "/assets/img/productos/decathlon-casacampana-gris.jpg",
+    nombre: "Casa de Campaña 2 Personas MH100 de Quechua",
+    precio: 899,
+    nivel: "Principiante",
+    actividad: "Camping / senderismo",
+    terreno: "Terrenos planos de camping",
+    ideal: "Facilidad de montaje y protección básica",
+    colores: ["gris", "azul"],
+    caracteristicas: [
+      "Diseño domo autosostenible, fácil de montar y trasladar.",
+      "Tecnología que reduce el calor interior bajo el sol.",
+      "Protección contra lluvias moderadas.",
+    ],
+    recomendado: false,
+  },
+]; //Cierre de lista objetos - Array de objetos
 // ================================================================
 // 2. REFERENCIAS A ELEMENTOS DEL DOCUMENTO
 // querySelector permite encontrar elementos usando selectores de CSS.
@@ -151,11 +553,9 @@ const botonVaciarCarrito = document.querySelector("#botonVaciarCarrito");
 const botonFinalizarCompra = document.querySelector("#botonFinalizarCompra");
 
 // Crea las instancias de componentes interactivos proporcionadas por Bootstrap.
-const modalProductoElemento = document.querySelector("#modalProducto");
-const modalProducto = modalProductoElemento
-  ? new bootstrap.Modal(modalProductoElemento)
-  : null;
-
+const modalProducto = new bootstrap.Modal(
+  document.querySelector("#modalProducto"),
+);
 const buscadorPanel = new bootstrap.Offcanvas(
   document.querySelector("#buscadorPanel"),
 );
@@ -172,7 +572,7 @@ const toastCarrito = new bootstrap.Toast(
 );
 
 // Guarda los productos elegidos y la cantidad de cada uno durante la sesión.
-const carrito = JSON.parse(localStorage.getItem("rutta-carrito") || "[]");
+const carrito = [];
 
 // Recuerda el filtro de categoría actualmente seleccionado.
 let filtroActual = "todos";
@@ -237,6 +637,36 @@ function crearCaracteristicas(caracteristicas) {
  * @param {object} producto - Información que se colocará en la tarjeta.
  * @returns {string} Columna Bootstrap con la tarjeta en formato HTML.
  */
+//Función para datos características/datos variables de los productos
+function crearDatosVariables(producto) {
+  let datos = "";
+  if (producto.tallas) {
+    datos += `
+            <div class="dato-perfil">
+                <strong>Tallas</strong>
+                <span>${producto.tallas.join(", ")}</span>
+            </div>
+        `;
+  }
+  if (producto.capacidad) {
+    datos += `
+            <div class="dato-perfil">
+                <strong>Capacidad</strong>
+                <span>${producto.capacidad}</span>
+            </div>
+        `;
+  }
+  if (producto.colores) {
+    datos += `
+            <div class="dato-perfil">
+                <strong>Colores</strong>
+                <span>${producto.colores.join(", ")}</span>
+            </div>
+        `;
+  }
+  return datos;
+}
+
 function crearTarjetaProducto(producto) {
   // La plantilla permite combinar HTML con valores de JavaScript usando ${ }.
   return `
@@ -264,7 +694,7 @@ function crearTarjetaProducto(producto) {
 
         <div class="producto-cuerpo">
           <h3>${producto.nombre}</h3>
-          <p class="producto-resumen">${producto.resumen}</p>
+        
           <p class="producto-precio">${formatearPrecio(producto.precio)}</p>
 
           <div class="producto-perfil">
@@ -289,6 +719,8 @@ function crearTarjetaProducto(producto) {
               <strong><i class="bi bi-stars"></i> Lo mejor para</strong>
               <span>${producto.ideal}</span>
             </div>
+
+            ${crearDatosVariables(producto)}    
           </div>
 
           <ul class="producto-caracteristicas">
@@ -330,7 +762,7 @@ function mostrarProductos(categoria = "todos", busqueda = "") {
 
     // Combina campos importantes para permitir una búsqueda más útil.
     const textoProducto =
-      `${producto.nombre} ${producto.resumen} ${producto.actividad} ${producto.terreno}`.toLowerCase();
+      `${producto.nombre} ${producto.actividad} ${producto.terreno}`.toLowerCase();
 
     // includes comprueba si el texto del producto contiene la búsqueda.
     const coincideBusqueda = textoProducto.includes(textoBuscado);
@@ -380,6 +812,66 @@ function aplicarFiltro(categoria) {
  * Completa y muestra el modal del producto seleccionado.
  * @param {number} id - Identificador del producto que se quiere consultar.
  */
+function crearOpcionesProducto(producto) {
+  let opciones = "";
+  // Si el producto tiene tallas, crea un select de tallas.
+  if (producto.tallas) {
+    opciones += `
+      <div class="mb-3">
+        <label for="tallaProducto" class="form-label">
+          <strong>Selecciona una talla</strong>
+        </label>
+        <select id="tallaProducto" class="form-select">
+          <option value="">Selecciona una opción</option>
+          ${producto.tallas
+            .map(
+              (talla) => `
+                <option value="${talla}">
+                  ${talla}
+                </option>
+              `,
+            )
+            .join("")}
+        </select>
+      </div>
+    `;
+  }
+  // Si el producto tiene colores, crea un select de colores.
+  if (producto.colores) {
+    opciones += `
+      <div class="mb-3">
+        <label for="colorProducto" class="form-label">
+          <strong>Selecciona un color</strong>
+        </label>
+        <select id="colorProducto" class="form-select">
+          <option value="">Selecciona una opción</option>
+
+          ${producto.colores
+            .map(
+              (color) => `
+                <option value="${color}">
+                  ${color}
+                </option>
+              `,
+            )
+            .join("")}
+
+        </select>
+      </div>
+    `;
+  }
+  // Capacidad actual: solamente informativa.
+  if (producto.capacidad) {
+    opciones += `
+      <p>
+        <strong>Capacidad:</strong>
+        ${producto.capacidad}
+      </p>
+    `;
+  }
+  return opciones;
+}
+//Función para cuando se apertura el producto una vez seleccionado
 function abrirProducto(id) {
   // Obtiene el objeto relacionado con el botón presionado.
   const producto = obtenerProducto(id);
@@ -402,12 +894,11 @@ function abrirProducto(id) {
       </div>
 
       <div>
-        <p>${producto.resumen}</p>
         <p class="detalle-precio">${formatearPrecio(producto.precio)}</p>
         <p><strong>Nivel:</strong> ${producto.nivel}</p>
         <p><strong>Actividad:</strong> ${producto.actividad}</p>
         <p><strong>Clima o terreno:</strong> ${producto.terreno}</p>
-
+        ${crearOpcionesProducto(producto)}
         <ul class="detalle-lista">
           ${crearCaracteristicas(producto.caracteristicas)}
         </ul>
@@ -495,7 +986,6 @@ function crearFilaCarrito(elemento) {
  * Actualiza filas, contador, estado vacío y total cada vez que cambia el carrito.
  */
 function actualizarCarrito() {
-  localStorage.setItem("rutta-carrito", JSON.stringify(carrito));
   // Genera una fila por cada producto diferente almacenado.
   listaCarrito.innerHTML = carrito.map(crearFilaCarrito).join("");
 
@@ -621,38 +1111,36 @@ function alternarFavorito(boton) {
 // ================================================================
 
 // Escucha clics dentro del catálogo usando delegación de eventos.
-if (listaProductos)
-  listaProductos.addEventListener("click", (evento) => {
-    // closest localiza el botón de detalle más cercano al lugar del clic.
-    const botonVer = evento.target.closest("[data-ver-producto]");
+listaProductos.addEventListener("click", (evento) => {
+  // closest localiza el botón de detalle más cercano al lugar del clic.
+  const botonVer = evento.target.closest("[data-ver-producto]");
 
-    // Localiza el botón rápido del carrito.
-    const botonAgregar = evento.target.closest("[data-agregar-carrito]");
+  // Localiza el botón rápido del carrito.
+  const botonAgregar = evento.target.closest("[data-agregar-carrito]");
 
-    // Localiza el botón de favorito.
-    const botonFavorito = evento.target.closest("[data-favorito]");
+  // Localiza el botón de favorito.
+  const botonFavorito = evento.target.closest("[data-favorito]");
 
-    // Si se presionó “Ver producto”, abre el modal correspondiente.
-    if (botonVer) abrirProducto(Number(botonVer.dataset.verProducto));
+  // Si se presionó “Ver producto”, abre el modal correspondiente.
+  if (botonVer) abrirProducto(Number(botonVer.dataset.verProducto));
 
-    // Si se presionó el carrito, agrega el producto correspondiente.
-    if (botonAgregar)
-      agregarAlCarrito(Number(botonAgregar.dataset.agregarCarrito));
+  // Si se presionó el carrito, agrega el producto correspondiente.
+  if (botonAgregar)
+    agregarAlCarrito(Number(botonAgregar.dataset.agregarCarrito));
 
-    // Si se presionó el corazón, cambia su estado.
-    if (botonFavorito) alternarFavorito(botonFavorito);
-  });
+  // Si se presionó el corazón, cambia su estado.
+  if (botonFavorito) alternarFavorito(botonFavorito);
+});
 
 // Escucha el botón de carrito que se crea dentro del modal.
-if (modalProductoContenido)
-  modalProductoContenido.addEventListener("click", (evento) => {
-    // Localiza el botón mediante su atributo data personalizado.
-    const botonAgregarModal = evento.target.closest("[data-agregar-modal]");
+modalProductoContenido.addEventListener("click", (evento) => {
+  // Localiza el botón mediante su atributo data personalizado.
+  const botonAgregarModal = evento.target.closest("[data-agregar-modal]");
 
-    // Agrega el producto solamente cuando el botón existe.
-    if (botonAgregarModal)
-      agregarAlCarrito(Number(botonAgregarModal.dataset.agregarModal));
-  });
+  // Agrega el producto solamente cuando el botón existe.
+  if (botonAgregarModal)
+    agregarAlCarrito(Number(botonAgregarModal.dataset.agregarModal));
+});
 
 // Recorre todos los botones que contienen un filtro de categoría.
 document.querySelectorAll("[data-filtro]").forEach((boton) => {
@@ -726,27 +1214,22 @@ botonFinalizarCompra.addEventListener("click", () => {
 /**
  * Ejecuta la búsqueda escrita en el panel y desplaza al catálogo.
  */
-/**
- * Ejecuta la búsqueda escrita en el panel y desplaza al catálogo.
- */
 function ejecutarBusqueda() {
-  // Fuera del catálogo: manda la búsqueda a la página de productos.
-  if (!listaProductos) {
-    window.location.href =
-      "/UI/Productos/productos.html?buscar=" +
-      encodeURIComponent(campoBusqueda.value);
-    return;
-  }
-
+  // Cambia el filtro a “todos” para buscar en las tres categorías.
   filtroActual = "todos";
 
+  // Actualiza la apariencia de las píldoras de filtro.
   document.querySelectorAll(".filtro").forEach((boton) => {
     boton.classList.toggle("activo", boton.dataset.filtro === "todos");
   });
 
+  // Filtra los productos utilizando el valor actual del campo.
   mostrarProductos("todos", campoBusqueda.value);
+
+  // Cierra el panel de búsqueda para revelar los resultados.
   buscadorPanel.hide();
 
+  // Espera a que termine el cierre antes de desplazar la pantalla.
   window.setTimeout(() => {
     document.querySelector("#productos").scrollIntoView({ behavior: "smooth" });
   }, 260);
@@ -766,12 +1249,11 @@ campoBusqueda.addEventListener("keydown", (evento) => {
 // Estas instrucciones se ejecutan cuando termina de cargar el archivo.
 // ================================================================
 
-// Inserta el año actual en el pie de página, si la página tiene ese elemento.
-const anio = document.querySelector("#anioActual");
-if (anio) anio.textContent = new Date().getFullYear();
+// Inserta automáticamente el año actual en el pie de página.
+document.querySelector("#anioActual").textContent = new Date().getFullYear();
 
-// Genera las tarjetas solo en páginas que tienen catálogo.
-if (listaProductos) mostrarProductos(filtroActual);
+// Genera por primera vez las tres tarjetas sin aplicar ningún filtro.
+mostrarProductos(filtroActual);
 
-// Dibuja el estado inicial del carrito y coloca los contadores.
+// Dibuja el estado vacío inicial y coloca los contadores en cero.
 actualizarCarrito();

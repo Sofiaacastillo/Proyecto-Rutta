@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Productos | Rutta</title>
+    <link rel="icon" type="image/svg+xml" href="/img/iconos-rutta/brujula.svg" />
+
+    <!-- Tipografías de Rutta: Cormorant Garamond y Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS e Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Estilos globales de Rutta -->
+    <link rel="stylesheet" href="/UI/Styles/styles.css" />
+
+    <style>
+      .rutta-admin-header {
+        background: linear-gradient(135deg, #004261 0%, #0d5c82 100%);
+        color: #ffffff;
+        border-radius: 1.15rem;
+        padding: 2rem 2.25rem;
+        box-shadow: 0 18px 45px rgba(0, 66, 97, 0.12);
+      }
+      .rutta-admin-header .sobrelinea {
+        color: #f2a43a;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+      .rutta-admin-header h1 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 700;
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+        color: #ffffff;
+        margin: 0;
+      }
+      .rutta-card {
+        background: #f8fbfc;
+        border: 1px solid rgba(0, 66, 97, 0.14);
+        border-radius: 1.15rem;
+        box-shadow: 0 18px 45px rgba(0, 66, 97, 0.08);
+      }
+      .rutta-card .form-label {
+        color: #004261;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .rutta-card .form-control,
+      .rutta-card .form-select {
+        border-color: rgba(0, 66, 97, 0.22);
+        border-radius: 0.65rem;
+      }
+      .rutta-card .form-control:focus,
+      .rutta-card .form-select:focus {
+        border-color: #28a8e0;
+        box-shadow: 0 0 0 0.2rem rgba(40, 168, 224, 0.2);
+      }
+      /* Botones tipo píldora para selección múltiple de colores y tallas */
+      .btn-check:checked + .btn-rutta-chip {
+        background-color: #004261;
+        color: #ffffff;
+        border-color: #004261;
+      }
+      .btn-rutta-chip {
+        border: 1px solid rgba(0, 66, 97, 0.28);
+        color: #004261;
+        background-color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 999px;
+        padding: 0.35rem 0.9rem;
+        transition: all 0.15s ease;
+      }
+      .btn-rutta-chip:hover {
+        border-color: #004261;
+        background-color: rgba(0, 66, 97, 0.06);
+        color: #004261;
+      }
+      .btn-rutta-guardar {
+        background-color: #004261;
+        color: #ffffff;
+        font-weight: 600;
+        border-radius: 0.65rem;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        transition: background-color 0.2s ease, transform 0.15s ease;
+      }
+      .btn-rutta-guardar:hover {
+        background-color: #f2a43a;
+        color: #004261;
+      }
+      .tabla-rutta {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 14px 35px rgba(0, 66, 97, 0.08);
+      }
+      .tabla-rutta thead th {
+        background-color: #004261;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        border: none;
+        padding: 0.95rem 0.85rem;
+      }
+      .tabla-rutta tbody td {
+        padding: 0.85rem;
+        color: #2b2b2b;
+        border-color: rgba(0, 66, 97, 0.08);
+      }
+      .badge-nivel {
+        background-color: rgba(0, 66, 97, 0.1);
+        color: #004261;
+        font-weight: 600;
+        padding: 0.35em 0.75em;
+        border-radius: 999px;
+      }
+      .badge-chip {
+        background-color: #e1ebef;
+        color: #004261;
+        font-weight: 600;
+        font-size: 0.75rem;
+        padding: 0.25em 0.6em;
+        border-radius: 0.4rem;
+        display: inline-block;
+        margin: 0.1rem;
+      }
+      .btn-accion-editar {
+        color: #004261;
+        border-color: rgba(0, 66, 97, 0.3);
+      }
+      .btn-accion-editar:hover {
+        background-color: #004261;
+        color: #ffffff;
+      }
+      .btn-accion-eliminar {
+        color: #b42318;
+        border-color: rgba(180, 35, 24, 0.3);
+      }
+      .btn-accion-eliminar:hover {
+        background-color: #b42318;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body class="rutta-identidad">
+    <!-- ==================== BARRA DE NAVEGACIÓN RUTTA ==================== -->
+    <nav
+      class="navbar navbar-expand-lg barra-navegacion sticky-top"
+      aria-label="Navegación principal"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand marca-rutta"
+          href="/UI/index.html"
+          aria-label="Rutta, volver al inicio"
+        >
+          <span class="marca-logo-actual" aria-hidden="true"></span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Mostrar u ocultar navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Productos/productos.html">Equipamiento</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/aboutUs.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Guias/guias.html">Guías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/AboutUs/explore-rutta.html">Sobre Rutta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/UI/Ayuda/ayuda.html">Ayuda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <main class="container py-4">
+      <div class="rutta-admin-header mb-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          <p class="sobrelinea mb-1">Panel de inventario · Rutta</p>
+          <h1 id="tituloFormulario">Añadir Nuevo Producto</h1>
+        </div>
+        <a href="/UI/Productos/productos.html" class="btn btn-outline-light btn-sm px-3">
+          <i class="bi bi-bag me-1"></i> Ver catálogo
+        </a>
+      </div>
+
+      <div id="alertaProducto" class="d-none" role="alert"></div>
+
+      <div class="card rutta-card mb-5">
+        <div class="card-body p-4">
+          <form id="formProducto" novalidate>
+            <div class="row g-3">
+              <!-- NOMBRE (productName) -->
+              <div class="col-md-6">
+                <label for="productName" class="form-label">Nombre del producto *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="productName"
+                  name="productName"
+                  maxlength="200"
+                  placeholder="Ej: Chamarra Trail Shell"
+                  required
+                />
+              </div>
+
+              <!-- PRECIO (price) -->
+              <div class="col-md-6">
+                <label for="price" class="form-label">Precio (MXN $) *</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  min="0"
+                  step="0.01"
+                  placeholder="Ej: 1899.90"
+                  required
+                />
+              </div>
+
+              <!-- NIVEL (level) -->
+              <div class="col-md-4">
+                <label for="level" class="form-label">Nivel *</label>
+                <select class="form-select" id="level" name="level" required>
+                  <option value="">Selecciona...</option>
+                  <option value="Principiante">Principiante</option>
+                  <option value="Intermedio">Intermedio</option>
+                  <option value="Avanzado">Avanzado</option>
+                </select>
+              </div>
+
+              <!-- ACTIVIDAD (activity) -->
+              <div class="col-md-4">
+                <label for="activity" class="form-label">Actividad *</label>
+                <select class="form-select" id="activity" name="activity" required>
+                  <option value="">Selecciona...</option>
+                  <option value="Montañismo">Montañismo</option>
+                  <option value="Rutas frescas o con viento">Rutas frescas o con viento</option>
+                  <option value="Hikking">Hikking</option>
+                  <option value="Trail">Trail</option>
+                  <option value="Trekking">Trekking</option>
+                </select>
+              </div>
+
+              <!-- CATEGORÍA (categoryId) -->
+              <div class="col-md-4">
+                <label for="categoryId" class="form-label">
+                  Categoría <span class="text-muted fw-normal">(Opcional)</span>
+                </label>
+                <select class="form-select" id="categoryId" name="categoryId">
+                  <option value="">Selecciona una categoría...</option>
+                </select>
+              </div>
+
+              <!-- COLORES: Selección múltiple opcional (se guarda en /api/color) -->
+              <div class="col-md-6">
+                <label class="form-label d-block">
+                  Colores <span class="text-muted fw-normal">(Opcional · puedes elegir varios)</span>
+                </label>
+                <div class="d-flex flex-wrap gap-2" id="grupoColores">
+                  <input type="checkbox" class="btn-check" name="colors" id="colorNegro" value="Negro" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="colorNegro">Negro</label>
+
+                  <input type="checkbox" class="btn-check" name="colors" id="colorBlanco" value="Blanco" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="colorBlanco">Blanco</label>
+
+                  <input type="checkbox" class="btn-check" name="colors" id="colorCafe" value="Cafe" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="colorCafe">Café</label>
+
+                  <input type="checkbox" class="btn-check" name="colors" id="colorAzul" value="Azul" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="colorAzul">Azul</label>
+
+                  <input type="checkbox" class="btn-check" name="colors" id="colorGris" value="Gris" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="colorGris">Gris</label>
+
+                  <input type="checkbox" class="btn-check" name="colors" id="colorVerde" value="Verde" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="colorVerde">Verde</label>
+                </div>
+              </div>
+
+              <!-- TALLAS: Selección múltiple opcional (se guarda en /api/size) -->
+              <div class="col-md-6">
+                <label class="form-label d-block">
+                  Tallas <span class="text-muted fw-normal">(Opcional · puedes elegir varias)</span>
+                </label>
+                <div class="d-flex flex-wrap gap-2" id="grupoTallas">
+                  <input type="checkbox" class="btn-check" name="sizes" id="tallaXS" value="XS" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="tallaXS">XS</label>
+
+                  <input type="checkbox" class="btn-check" name="sizes" id="tallaS" value="S" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="tallaS">S</label>
+
+                  <input type="checkbox" class="btn-check" name="sizes" id="tallaM" value="M" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="tallaM">M</label>
+
+                  <input type="checkbox" class="btn-check" name="sizes" id="tallaL" value="L" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="tallaL">L</label>
+
+                  <input type="checkbox" class="btn-check" name="sizes" id="tallaXL" value="XL" autocomplete="off" />
+                  <label class="btn btn-rutta-chip" for="tallaXL">XL</label>
+                </div>
+              </div>
+
+              <!-- DESCRIPCION (descriptionText) -->
+              <div class="col-12">
+                <label for="descriptionText" class="form-label">
+                  Descripción <span class="text-muted fw-normal">(Opcional · 2 a 200 caracteres)</span>
+                </label>
+                <textarea
+                  class="form-control"
+                  id="descriptionText"
+                  name="descriptionText"
+                  rows="2"
+                  minlength="2"
+                  maxlength="200"
+                  placeholder="Impermeable y corta-viento, ligera y compacta"
+                ></textarea>
+              </div>
+
+              <!-- BOTONES -->
+              <div class="col-12 text-end mt-4">
+                <button
+                  type="button"
+                  id="btnCancelarEdicion"
+                  class="btn btn-outline-secondary px-4 me-2 d-none"
+                >
+                  <i class="bi bi-x-lg me-1"></i> Cancelar edición
+                </button>
+                <button type="submit" id="btnSubmit" class="btn btn-rutta-guardar">
+                  <i class="bi bi-check2-circle me-1"></i> Guardar producto
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- TABLA DE PRODUCTOS -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h3 mb-0" style="font-family: 'Cormorant Garamond', Georgia, serif; color: #004261; font-weight: 700;">
+          Productos Guardados
+        </h2>
+      </div>
+
+      <div class="table-responsive tabla-rutta bg-white mb-5">
+        <table class="table table-striped table-hover align-middle mb-0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Categoría</th>
+              <th>Nivel</th>
+              <th>Actividad</th>
+              <th>Colores</th>
+              <th>Tallas</th>
+              <th>Descripción</th>
+              <th class="text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="listaProductos"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="form.js"></script>
+  </body>
+</html>

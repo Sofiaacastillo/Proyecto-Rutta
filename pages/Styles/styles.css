@@ -305,7 +305,7 @@ h3 {
     min-height: min(49rem, calc(100vh - 5rem));
     align-items: center;
     overflow: hidden;
-    background-image: url(/img/backgroundnew-herosection-home\ \(1\).png);
+    background-image: url(/assets/img/backgroundnew-herosection-home\ \(1\).png);
     background-position: center;
     background-size: cover;
 }
@@ -858,7 +858,7 @@ h3 {
    ================================================================ */
 .guias-seccion {
     color: white;
-    background-image: url(/img/background-guiahome-montaña.png);
+    background-image: url(/assets/img/background-guiahome-montaña.png);
     background-size: cover;
 }
 
@@ -918,17 +918,17 @@ h3 {
 
 /* Fotografía exclusiva de la tarjeta "Guía". Cambia únicamente esta URL para reemplazarla. */
 .guia-mochila {
-    --imagen-guia: url("/img/guias/mochila_guias.jpg");
+    --imagen-guia: url("/assets/img/guias/mochila_guias.jpg");
 }
 
 /* Fotografía exclusiva de la tarjeta "Ruta". Cambia únicamente esta URL para reemplazarla. */
 .guia-rutas {
-    --imagen-guia: url("/img/guias/seguridad_guias.jpg");
+    --imagen-guia: url("/assets/img/guias/seguridad_guias.jpg");
 }
 
 /* Fotografía exclusiva de la tarjeta "Consejo". Cambia únicamente esta URL para reemplazarla. */
 .guia-checklist {
-    --imagen-guia: url("/img/guias/checklist_guias.jpg");
+    --imagen-guia: url("/assets/img/guias/checklist_guias.jpg");
 }
 
 /* Eleva la guía en hover. */
@@ -1580,7 +1580,7 @@ h3 {
     flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
     width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
     aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
-    background-image: url("../../img/marca/logo-rutta.png"); /* Tu nuevo logo. */
+    background-image: url("/assets/img/marca/logo-rutta.png"); /* Tu nuevo logo. */
     background-repeat: no-repeat; /* Evita repetir la marca. */
     background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
     background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
@@ -1596,7 +1596,7 @@ h3 {
     flex-shrink: 0; /* Evita que los botones compriman el logotipo. */
     width: clamp(8rem, 12vw, 10.8rem); /* Mantiene el tamaño del logo anterior. */
     aspect-ratio: 2.65; /* Reserva una franja horizontal para logo y lema. */
-    background-image: url("/img/marca/Logotipo_Rutta.png"); /* Tu nuevo logo. */
+    background-image: url("/assets/img/marca/Logotipo_Rutta.png"); /* Tu nuevo logo. */
     background-repeat: no-repeat; /* Evita repetir la marca. */
     background-size: 133.333% auto; /* Quita visualmente los márgenes vacíos. */
     background-position: center 52%; /* Encuadra el nombre y el lema, sin deformar. */
@@ -1605,23 +1605,23 @@ h3 {
 }
 
 /* 12. ICONOS SVG */
-.rutta-identidad .bi-search { --rutta-icono: url("../../img/iconos-rutta/buscar.svg"); }
-.rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("../../img/iconos-rutta/usuario.svg"); }
-.rutta-identidad :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito.svg"); }
-.rutta-identidad :disabled :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("../../img/iconos-rutta/carrito-alternativo.svg"); }
-.rutta-identidad .bi-heart { --rutta-icono: url("../../img/iconos-rutta/favoritos.jpg"); }
-.rutta-identidad .bi-heart-fill { --rutta-icono: url("../../img/iconos-rutta/favoritos-activo.svg"); }
-.rutta-identidad .bi-backpack4 { --rutta-icono: url("../../img/iconos-rutta/mochilas.svg"); }
-.rutta-identidad .bi-boot { --rutta-icono: url("../../img/iconos-rutta/calzado.svg"); }
-.rutta-identidad .bi-person-standing-dress { --rutta-icono: url("../../img/iconos-rutta/ropa.svg"); }
-.rutta-identidad .bi-triangle-fill { --rutta-icono: url("../../img/iconos-rutta/camping.svg"); }
-.rutta-identidad .bi-compass { --rutta-icono: url("../../img/iconos-rutta/brujula.svg"); }
-.rutta-identidad :is(.bi-signpost-split, .bi-person-walking) { --rutta-icono: url("../../img/iconos-rutta/rutas.svg"); }
-.rutta-identidad .bi-chat-dots { --rutta-icono: url("../../img/iconos-rutta/mensaje.svg"); }
-.rutta-identidad .bi-sliders { --rutta-icono: url("../../img/iconos-rutta/filtros.svg"); }
+.rutta-identidad .bi-search { --rutta-icono: url("/assets/img/iconos-rutta/buscar.svg"); }
+.rutta-identidad :is(.bi-person, .bi-person-check) { --rutta-icono: url("/assets/img/iconos-rutta/usuario.svg"); }
+.rutta-identidad :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("/assets/img/iconos-rutta/carrito.svg"); }
+.rutta-identidad :disabled :is(.bi-cart3, .bi-cart-plus) { --rutta-icono: url("/assets/img/iconos-rutta/carrito-alternativo.svg"); }
+.rutta-identidad .bi-heart { --rutta-icono: url("/assets/img/iconos-rutta/favoritos.jpg"); }
+.rutta-identidad .bi-heart-fill { --rutta-icono: url("/assets/img/iconos-rutta/favoritos-activo.svg"); }
+.rutta-identidad .bi-backpack4 { --rutta-icono: url("/assets/img/iconos-rutta/mochilas.svg"); }
+.rutta-identidad .bi-boot { --rutta-icono: url("/assets/img/iconos-rutta/calzado.svg"); }
+.rutta-identidad .bi-person-standing-dress { --rutta-icono: url("/assets/img/iconos-rutta/ropa.svg"); }
+.rutta-identidad .bi-triangle-fill { --rutta-icono: url("/assets/img/iconos-rutta/camping.svg"); }
+.rutta-identidad .bi-compass { --rutta-icono: url("/assets/img/iconos-rutta/brujula.svg"); }
+.rutta-identidad :is(.bi-signpost-split, .bi-person-walking) { --rutta-icono: url("/assets/img/iconos-rutta/rutas.svg"); }
+.rutta-identidad .bi-chat-dots { --rutta-icono: url("/assets/img/iconos-rutta/mensaje.svg"); }
+.rutta-identidad .bi-sliders { --rutta-icono: url("/assets/img/iconos-rutta/filtros.svg"); }
 /* Excepciones: bota en Calzado y brújula de categoría en Accesorios. */
-.rutta-identidad .categoria-card[data-filtro="calzado"] > i { --rutta-icono: url("../../img/iconos-rutta/calzado.svg"); }
-.rutta-identidad .categoria-card > .bi-compass { --rutta-icono: url("../../img/iconos-rutta/accesorios.svg"); }
+.rutta-identidad .categoria-card[data-filtro="calzado"] > i { --rutta-icono: url("/assets/img/iconos-rutta/calzado.svg"); }
+.rutta-identidad .categoria-card > .bi-compass { --rutta-icono: url("/assets/img/iconos-rutta/accesorios.svg"); }
 
 /* Cambia la representación del icono */
 .rutta-identidad .bi:is(.bi-search, .bi-person, .bi-person-check, .bi-cart3, .bi-cart-plus, .bi-heart, .bi-heart-fill, .bi-backpack4, .bi-boot, .bi-person-standing-dress, .bi-triangle-fill, .bi-compass, .bi-signpost-split, .bi-person-walking, .bi-chat-dots, .bi-sliders)::before {
@@ -1671,7 +1671,7 @@ h3 {
 }
 /* Cambia el icono del botón de menú para que sea un SVG vectorial. */
 .rutta-identidad .navbar-toggler-icon {
-    background-image: url("../../img/iconos-rutta/menu.svg"); 
+    background-image: url("/assets/img/iconos-rutta/menu.svg"); 
     background-size: contain; 
     background-position: center; 
     border-radius: 0.2rem; 
@@ -1679,7 +1679,7 @@ h3 {
 
 /* 13. LOGIN — ninguna regla de esta parte redefine la portada o el catálogo. */
 .rutta-login-pagina {
-    --login-fondo: url("../../img/hero-rutta.png"); /* CAMBIA LA FOTO DEL LOGIN. */
+    --login-fondo: url("/assets/img/hero-rutta.png"); /* CAMBIA LA FOTO DEL LOGIN. */
     --login-reflejo: -1; 
     min-height: 100vh; 
     display: flex; 
@@ -2325,7 +2325,7 @@ h3 {
             rgba(0, 42, 70, 0.10) 42%,
             transparent 70%
         ),
-        url('/img/guias/background-aplicaciones.svg');
+        url('/assets/img/guias/background-aplicaciones.svg');
 
     background-size: cover;
     background-position: center;
@@ -2759,7 +2759,7 @@ h3 {
                 rgba(0, 42, 70, 0.94),
                 rgba(0, 42, 70, 0.60)
             ),
-            url('/img/guias/background-aplicaciones.svg');
+            url('/assets/img/guias/background-aplicaciones.svg');
     }
 
     .aplicaciones-hero-interior {
@@ -2879,7 +2879,7 @@ h3 {
     padding: 75px 0 85px;
 
     background-color: #003E5C;
-    background-image: url('/img/guias/background-guias.svg');
+    background-image: url('/assets/img/guias/background-guias.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3416,7 +3416,7 @@ h3 {
 }
 
 .seccion-niveles {
-    background-image: url("/img/cards-niveles/tarjeta\ niveles.jpg");
+    background-image: url("/assets/img/cards-niveles/tarjeta\ niveles.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
