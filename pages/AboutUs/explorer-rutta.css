@@ -142,6 +142,7 @@ img {
 
 .boton:hover {
   filter: brightness(1.08);
+  background-color: #004261;
   box-shadow: var(--sombra);
   transform: translateY(-2px);
 }
