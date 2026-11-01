@@ -25,6 +25,45 @@ const btnCancelarEdicion = document.querySelector("#btnCancelarEdicion");
 const tituloFormulario = document.querySelector("#tituloFormulario");
 const selectCategory = document.querySelector("#categoryId");
 
+const grupoTallas = document.querySelector("#grupoTallas");
+
+const TALLAS_POR_CATEGORIA = {
+  ropa: ["XS", "S", "M", "L", "XL", "XXL"],
+  calzado: ["22", "22.5", "23", "23.5", "24", "24.5", "25", "25.5", "26", "26.5", "27", "27.5", "28", "29", "30"]
+};
+
+const actualizarTallas = () => {
+  const categoriaSeleccionada = categoriasCache.find(
+    categoria => String(categoria.id) === selectCategory.value
+  );
+
+  const nombreCategoria = categoriaSeleccionada?.categoryName?.toLowerCase();
+  const tallas = TALLAS_POR_CATEGORIA[nombreCategoria] || [];
+
+  grupoTallas.innerHTML = "";
+
+  tallas.forEach((talla, index) => {
+    const id = `talla${index}`;
+
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.className = "btn-check";
+    input.name = "sizes";
+    input.id = id;
+    input.value = talla;
+    input.autocomplete = "off";
+
+    const label = document.createElement("label");
+    label.className = "btn btn-rutta-chip";
+    label.htmlFor = id;
+    label.textContent = talla;
+
+    grupoTallas.append(input, label);
+  });
+};
+
+selectCategory.addEventListener("change", actualizarTallas);
+
 // Categorías base predefinidas en el frontend (se aseguran en la BDD al iniciar)
 const CATEGORIAS_BASE = ["Mochilas", "Equipo", "Ropa", "Calzado"];
 
@@ -96,8 +135,10 @@ const cargarCategorias = async () => {
 
 // Sale del modo edición y limpia el formulario
 const salirModoEdicion = () => {
+  
   productoEnEdicion = null;
   formProduct.reset();
+  actualizarTallas();
   marcarSeleccionMultiple("colors", []);
   marcarSeleccionMultiple("sizes", []);
   tituloFormulario.textContent = "Añadir Nuevo Producto";
@@ -207,6 +248,7 @@ lista.addEventListener("click", async (e) => {
     formProduct.elements.level.value = producto.level ?? "";
     formProduct.elements.activity.value = producto.activity ?? "";
     formProduct.elements.categoryId.value = producto.category?.id ?? "";
+    actualizarTallas();
     formProduct.elements.descriptionText.value =
       producto.description?.descriptionText ?? "";
 
@@ -246,6 +288,8 @@ formProduct.addEventListener("submit", async (e) => {
   const coloresSeleccionados = obtenerSeleccionMultiple("colors");
   const tallasSeleccionadas = obtenerSeleccionMultiple("sizes");
   const textoDescripcion = product.descriptionText?.trim() || "";
+  const textoIdeal = product.idealFor?.trim() || "";
+
 
   // Validaciones de los campos principales (Categoría, Colores, Tallas y Descripción son opcionales)
   if (
@@ -370,16 +414,19 @@ formProduct.addEventListener("submit", async (e) => {
     "success",
   );
 
+  
   formProduct.reset();
+  actualizarTallas();
   marcarSeleccionMultiple("colors", []);
   marcarSeleccionMultiple("sizes", []);
   btnSubmit.disabled = false;
-  await pintarProductos();
 });
 
 // Al abrir la página primero aseguramos/cargamos las categorías en la BDD y luego pintamos los productos
+
 const inicializar = async () => {
   await cargarCategorias();
+  actualizarTallas();
   await pintarProductos();
 };
 

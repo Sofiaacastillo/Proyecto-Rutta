@@ -576,6 +576,7 @@ const carrito = [];
 
 // Recuerda el filtro de categoría actualmente seleccionado.
 let filtroActual = "todos";
+let nivelActual = "todos";
 
 // ================================================================
 // 3. FUNCIONES DE APOYO
@@ -767,9 +768,20 @@ function mostrarProductos(categoria = "todos", busqueda = "") {
     // includes comprueba si el texto del producto contiene la búsqueda.
     const coincideBusqueda = textoProducto.includes(textoBuscado);
 
+    const nivelesProducto = producto.nivel
+      .split(/\s*[-/]\s*/)
+      .map(nivel => nivel.trim().toLowerCase());
+
+    const coincideNivel =
+      nivelActual === "todos" ||
+      nivelesProducto.includes(nivelActual.toLowerCase());
+    
     // El producto se conserva solamente si cumple categoría y búsqueda.
-    return coincideCategoria && coincideBusqueda;
+    return coincideCategoria && coincideBusqueda && coincideNivel;
   });
+  
+  
+
 
   // Convierte cada producto filtrado en tarjeta y coloca el resultado en el DOM.
   listaProductos.innerHTML = productosFiltrados
@@ -1147,6 +1159,15 @@ document.querySelectorAll("[data-filtro]").forEach((boton) => {
   // Ejecuta aplicarFiltro utilizando el valor almacenado en data-filtro.
   boton.addEventListener("click", () => aplicarFiltro(boton.dataset.filtro));
 });
+
+const filtroNivel = document.querySelector("#filtroNivel");
+
+if (filtroNivel) {
+  filtroNivel.addEventListener("change", () => {
+    nivelActual = filtroNivel.value;
+    mostrarProductos(filtroActual, campoBusqueda.value);
+  });
+}
 
 // Recorre los botones de búsqueda ubicados en móvil y escritorio.
 document.querySelectorAll('[data-accion="buscar"]').forEach((boton) => {

@@ -320,26 +320,27 @@
               </div>
 
               <!-- TALLAS: Selección múltiple opcional (se guarda en /api/size) -->
+
               <div class="col-md-6">
                 <label class="form-label d-block">
                   Tallas <span class="text-muted fw-normal">(Opcional · puedes elegir varias)</span>
                 </label>
-                <div class="d-flex flex-wrap gap-2" id="grupoTallas">
-                  <input type="checkbox" class="btn-check" name="sizes" id="tallaXS" value="XS" autocomplete="off" />
-                  <label class="btn btn-rutta-chip" for="tallaXS">XS</label>
+                <div class="d-flex flex-wrap gap-2" id="grupoTallas"></div>
+              </div>
 
-                  <input type="checkbox" class="btn-check" name="sizes" id="tallaS" value="S" autocomplete="off" />
-                  <label class="btn btn-rutta-chip" for="tallaS">S</label>
-
-                  <input type="checkbox" class="btn-check" name="sizes" id="tallaM" value="M" autocomplete="off" />
-                  <label class="btn btn-rutta-chip" for="tallaM">M</label>
-
-                  <input type="checkbox" class="btn-check" name="sizes" id="tallaL" value="L" autocomplete="off" />
-                  <label class="btn btn-rutta-chip" for="tallaL">L</label>
-
-                  <input type="checkbox" class="btn-check" name="sizes" id="tallaXL" value="XL" autocomplete="off" />
-                  <label class="btn btn-rutta-chip" for="tallaXL">XL</label>
-                </div>
+              <!-- LO MEJOR PARA: Pregunta abierta -->
+              <div class="col-12">
+                <label for="idealFor" class="form-label">
+                  Lo mejor para <span class="text-muted fw-normal">(Opcional)</span>
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="idealFor"
+                  name="idealFor"
+                  maxlength="150"
+                  placeholder="Ej: Protección ligera e impermeable"
+                />
               </div>
 
               <!-- DESCRIPCION (descriptionText) -->
@@ -354,7 +355,7 @@
                   rows="2"
                   minlength="2"
                   maxlength="200"
-                  placeholder="Impermeable y corta-viento, ligera y compacta"
+                  placeholder="Tejido resistente al agua y a la abrasión"
                 ></textarea>
               </div>
 

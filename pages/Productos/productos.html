@@ -35,6 +35,7 @@
 
     <!-- Primero los estilos globales y después los propios de la página -->
     <link rel="stylesheet" href="/pages/Styles/styles.css" />
+    <link rel="stylesheet" href="/pages/Productos/productos.css" />
     <link rel="stylesheet" href="/pages/AboutUs/explorer-rutta.css" />
   </head>
   <body class="rutta-identidad">
@@ -149,7 +150,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/pages/index.html">Inicio</a>
+              <a class="nav-link" href="/index.html">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/pages/AboutUs/aboutUs.html"
@@ -434,26 +435,25 @@
           </div>
 
           <!-- Botones de filtro controlados desde JavaScript. -->
-          <div
-            class="filtros-productos"
-            role="group"
-            aria-label="Filtrar productos"
-          >
-            <button class="filtro activo" type="button" data-filtro="todos">
-              Todos
-            </button>
-            <button class="filtro" type="button" data-filtro="mochilas">
-              Mochilas
-            </button>
-            <button class="filtro" type="button" data-filtro="ropa">
-              Ropa
-            </button>
-            <button class="filtro" type="button" data-filtro="calzado">
-              Calzado
-            </button>
-            <button class="filtro" type="button" data-filtro="equipo">
-              Equipo
-            </button>
+          
+          <div class="barra-filtros-catalogo">
+            <div class="filtros-productos" role="group" aria-label="Filtrar por categoría">
+              <button class="filtro activo" type="button" data-filtro="todos">Todos</button>
+              <button class="filtro" type="button" data-filtro="mochilas">Mochilas</button>
+              <button class="filtro" type="button" data-filtro="ropa">Ropa</button>
+              <button class="filtro" type="button" data-filtro="calzado">Calzado</button>
+              <button class="filtro" type="button" data-filtro="equipo">Equipo</button>
+            </div>
+            <div class="filtro-nivel">
+              <label for="filtroNivel">Nivel</label>
+              <select id="filtroNivel" aria-label="Filtrar por nivel">
+                <option value="todos">Todos los niveles</option>
+                <option value="Principiante">Principiante</option>
+                <option value="Básico">Básico</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -624,7 +624,28 @@
         </div>
       </div>
     </div>
+        <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer class="pie-pagina">
+      <div class="container pie-contenido">
+        <!-- Identidad breve de Rutta acompañada por su nuevo isotipo. -->
+        <div class="pie-marca">
+          <img
+            class="logo-footer-rutta"
+            src="/assets/img/marca/logo-rutta-footer.png"
+            alt="Rutta"
+          />
+          <p>Equipamiento y guías para explorar con seguridad.</p>
+        </div>
+        <!-- Crédito visual del equipo con el ícono solicitado de Trail Coders. -->
+        <div class="credito-trail-coders">
+          <img src="/assets/img/icono-trail-coders.png" alt="" aria-hidden="true" />
+          <span>Desarrollado por <strong>Trail Coders</strong></span>
+        </div>
 
+        <!-- El año se completa automáticamente con JavaScript. -->
+        <p class="mb-0">© <span id="anioActual"></span> Rutta.</p>
+      </div>
+    </footer>
     <!-- Carga el JavaScript de Bootstrap, necesario para navbar, modal, toast y offcanvas. -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

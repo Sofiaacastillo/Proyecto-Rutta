@@ -496,11 +496,36 @@ h3 {
 }
 
 /* Fondo marfil para la zona de categorías. */
+
 .categorias {
-    padding-top: 4rem;
-    padding-bottom: 4.5rem;
-    background: var(--marfil);
+    display: flex;
+    align-items: center;
+    min-height: 430px;
+    padding: 5rem 0;
+    background-image: url("/assets/img/background-products.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+.categorias .encabezado-seccion {
+    max-width: 620px;
+    margin-bottom: 0;
+}
+
+.categorias .encabezado-seccion h2 {
+    margin-bottom: 1.2rem;
+    font-size: clamp(2.8rem, 5vw, 4.8rem);
+    line-height: 1.05;
+}
+
+.categorias .encabezado-seccion > p:last-of-type {
+    max-width: 440px;
+    margin-bottom: 1.8rem;
+    color: var(--carbon);
+    font-size: 0.95rem;
+}
+
 
 /* Tarjeta completa convertida en botón accesible. */
 .categoria-card {
@@ -567,6 +592,7 @@ h3 {
    ================================================================ */
 .productos-seccion {
     /* Crea líneas suaves similares a un mapa topográfico. */
+
     background:
         radial-gradient(circle at 8% 18%, transparent 0 4rem, rgba(0, 66, 97, 0.045) 4.05rem 4.12rem, transparent 4.17rem 7rem, rgba(0, 66, 97, 0.035) 7.05rem 7.12rem, transparent 7.17rem),
         radial-gradient(circle at 94% 65%, transparent 0 5rem, rgba(0, 66, 97, 0.045) 5.05rem 5.12rem, transparent 5.17rem 8rem, rgba(0, 66, 97, 0.035) 8.05rem 8.12rem, transparent 8.17rem),
@@ -586,6 +612,7 @@ h3 {
 .encabezado-productos .encabezado-seccion {
     margin-bottom: 0;
 }
+
 
 /* Organiza los filtros en una cápsula clara. */
 .filtros-productos {
@@ -3655,3 +3682,4 @@ h3 {
   .card-categoria > img {
     height: 220px;
   }
+  

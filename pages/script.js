@@ -176,7 +176,7 @@ const carrito = JSON.parse(localStorage.getItem("rutta-carrito") || "[]");
 
 // Recuerda el filtro de categoría actualmente seleccionado.
 let filtroActual = "todos";
-
+let nivelActual = "todos";
 // ================================================================
 // 3. FUNCIONES DE APOYO
 // Una función agrupa instrucciones que pueden reutilizarse.
