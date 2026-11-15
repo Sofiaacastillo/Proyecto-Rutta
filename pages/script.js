@@ -775,3 +775,30 @@ if (listaProductos) mostrarProductos(filtroActual);
 
 // Dibuja el estado inicial del carrito y coloca los contadores.
 actualizarCarrito();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mostrarBienvenida = sessionStorage.getItem(
+    "rutta-mostrar-bienvenida"
+  );
+
+  if (mostrarBienvenida !== "true") return;
+
+  sessionStorage.removeItem("rutta-mostrar-bienvenida");
+
+  const nombre = sessionStorage.getItem("rutta-nombre");
+  const mensaje = document.getElementById("mensajeBienvenida");
+  const toastElemento = document.getElementById("toastBienvenida");
+
+  if (!mensaje || !toastElemento || !window.bootstrap?.Toast) return;
+
+  mensaje.textContent = nombre
+    ? `¡Bienvenida a tu nueva aventura, ${nombre}! Tu próxima ruta comienza aquí.`
+    : "¡Bienvenida a tu nueva aventura! Tu próxima ruta comienza aquí.";
+
+  const toast = new bootstrap.Toast(toastElemento, {
+    autohide: true,
+    delay: 5000,
+  });
+
+  toast.show();
+});

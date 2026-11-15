@@ -13,10 +13,13 @@
 
   // Intercepta el envío antes de habilitar los campos: evita mandarlos en la URL.
   formulario.addEventListener("submit", (evento) => {
-    evento.preventDefault(); // Impide el envío y la recarga predeterminados.
-    formulario.reset(); // Limpia los campos sin comprobar usuarios ni contraseñas.
-    window.location.assign("../index.html"); // Abre la portada sin enviar datos en la URL.
-  });
+  evento.preventDefault();
+
+  sessionStorage.setItem("rutta-mostrar-bienvenida", "true");
+
+  formulario.reset();
+  window.location.assign("/index.html");
+});
 
   // Habilita los campos después de controlar el envío para no exponerlos en la URL.
   formulario.querySelectorAll("input, button[type='submit']").forEach((campo) => {
@@ -233,11 +236,9 @@
             return;
           }
 
+          sessionStorage.setItem("rutta-nombre", usuario.nombre);
           // Convierte el objeto validado en texto con formato JSON.
-          const usuarioJSON = JSON.stringify(usuario);
-
-
-          console.log(usuario);
+          
 
           //Confirma el registro y resetea el formulario 
           mostrarAlerta(

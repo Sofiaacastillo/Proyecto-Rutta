@@ -49,6 +49,32 @@
   </head>
 
   <body class="rutta-identidad">
+    <!-- Notificación de bienvenida -->
+<div
+  id="bienvenidaRutta"
+  class="toast-container position-fixed top-0 end-0 p-3"
+  style="z-index: 1100; margin-top: 85px;"
+>
+  <div
+    id="toastBienvenida"
+    class="toast border-0 shadow"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <div class="toast-header">
+      <strong class="me-auto">🏔️ ¡Bienvenida a Rutta!</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="toast"
+        aria-label="Cerrar"
+      ></button>
+    </div>
+
+    <div class="toast-body" id="mensajeBienvenida"></div>
+  </div>
+</div>
     <!-- Enlace accesible que permite saltar directamente al contenido principal. -->
     <a class="salto-contenido" href="#contenido-principal"
       >Saltar al contenido</a
@@ -371,18 +397,41 @@
       </section>
   
       <!-- ==================== CATEGORÍAS ==================== -->
-      <section class="seccion categorias" aria-labelledby="titulo-categorias">
-        <div class="container">
-          <div class="encabezado-seccion compacto">
-            <p class="sobrelinea">Explora nuestra colección</p>
-            <h2 id="titulo-categorias">Equipamiento listo para tu próxima ruta</h2>
-            <p>Encuentra ropa, calzado, mochilas y equipo para cada aventura.</p>
-            <a class="btn boton-primario" href="/pages/Productos/productos.html">
-              Explorar productos
-            </a>
-          </div>
-        </div>
-      </section>
+<section class="banner-equipamiento" aria-labelledby="titulo-categorias">
+  <div class="container">
+    <div class="banner-equipamiento-contenido">
+
+      <div class="banner-equipamiento-texto">
+        <h2 id="titulo-categorias">
+          Equipamiento listo para tu próxima ruta
+        </h2>
+
+        <p>
+          Encuentra ropa, calzado, mochilas y equipo para cada aventura.
+        </p>
+
+        <a class="btn banner-boton" href="/pages/Productos/productos.html">
+          Explorar productos
+        </a>
+      </div>
+
+      <div class="banner-equipamiento-imagenes">
+        <img
+          src="/assets/img/imagen-productdestacado.png"
+          alt="Senderista explorando la montaña"
+          loading="lazy"
+        />
+
+        <img
+          src="/assets/img/imagen-productdestacado2.png"
+          alt="Grupo de senderistas preparado para una aventura"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <!-- ==================== PRODUCTOS ==================== -->
       <section
@@ -452,7 +501,7 @@
                 <p class="sobrelinea sobrelinea-clara">
                   Aprende antes de salir
                 </p>
-                <h2 id="titulo-guias">Guías y consejos para tu próxima ruta</h2>
+                <h2 id="titulo-guias">Guías para tu próxima ruta</h2>
                 <p>
                   Explora recomendaciones prácticas para preparar tu aventura.
                 </p>
@@ -503,6 +552,8 @@
           </div>
         </div>
       </section>
+
+
     </main>
 
     <!-- ==================== PIE DE PÁGINA ==================== -->
