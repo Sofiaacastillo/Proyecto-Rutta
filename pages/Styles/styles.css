@@ -65,6 +65,7 @@ html {
     scroll-padding-top: 5.5rem;
 }
 
+
 body {
     /* Elimina el margen predeterminado del navegador. */
     margin: 0;
@@ -468,7 +469,278 @@ h3 {
     font-size: 0.68rem;
     line-height: 1.45;
 }
+/** BANNERS DE EQUIPAMIENTO Y CONSEJOS */
 
+/* Distribución de columnas */
+
+.banner-equipamiento-contenido,
+.banner-consejos-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Títulos */
+
+.banner-equipamiento-texto h2,
+.banner-consejos-texto h2 {
+  color: #ffffff;
+  font-family: var(--fuente-editorial);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Descripción */
+
+.banner-equipamiento-texto p {
+  color: #e1ebef;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 2rem;
+}
+
+/* Botones */
+
+.banner-equipamiento .banner-boton,
+.banner-consejos .banner-boton {
+  display: inline-block;
+  width: auto;
+  background-color: #ffa506;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+/* Efecto hover */
+.banner-equipamiento .banner-boton:hover,
+.banner-consejos .banner-boton:hover {
+  background-color: #e89400;
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.banner-equipamiento,
+.banner-consejos {
+  background-color: #15466b;
+  background-image: url("/assets/img/background-productdestacados.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+/** BANNER DE EQUIPAMIENTO */
+
+.banner-equipamiento-texto {
+  min-width: 0;
+}
+
+.banner-equipamiento-imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.banner-equipamiento-imagenes img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.banner-equipamiento-imagenes img:nth-child(2) {
+  transform: translateY(25px);
+}
+
+/** BANNER DE CONSEJOS */
+
+.banner-consejos-contenido {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+}
+
+.banner-consejos-imagenes {
+  position: relative;
+  height: 480px;
+  min-width: 0;
+}
+
+.consejo-imagen {
+  position: absolute;
+  display: block;
+  width: 47%;
+  height: 75%;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.consejo-imagen-1 {
+  left: 0;
+  top: 20%;
+  z-index: 3;
+}
+
+.consejo-imagen-2 {
+  left: 25%;
+  top: 0;
+  z-index: 2;
+}
+
+.consejo-imagen-3 {
+  right: 0;
+  top: 12%;
+  z-index: 4;
+}
+
+.banner-consejos-texto {
+  min-width: 0;
+  text-align: center;
+}
+
+.banner-consejos-texto h2 {
+  margin-bottom: 2.5rem;
+}
+
+/** RESPONSIVE - TABLETAS */
+
+@media (max-width: 991.98px) {
+
+  .banner-equipamiento,
+  .banner-consejos {
+    padding: 4rem 0;
+  }
+
+  .banner-equipamiento-contenido,
+  .banner-consejos-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3rem;
+  }
+
+  .banner-equipamiento-imagenes img {
+    height: 350px;
+  }
+
+  .banner-consejos-imagenes {
+    height: 380px;
+  }
+
+}
+
+/** RESPONSIVE - CELULARES */
+
+@media (max-width: 575.98px) {
+
+  .banner-equipamiento,
+  .banner-consejos {
+    padding: 3.5rem 0;
+  }
+
+  .banner-equipamiento-contenido,
+  .banner-consejos-contenido {
+    gap: 2.5rem;
+  }
+
+  .banner-equipamiento-texto h2,
+  .banner-consejos-texto h2 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .banner-equipamiento-texto p {
+    font-size: 1rem;
+  }
+
+  .banner-equipamiento-imagenes {
+    gap: 0.75rem;
+  }
+
+  .banner-equipamiento-imagenes img {
+    height: 240px;
+  }
+
+  .banner-equipamiento-imagenes img:nth-child(2) {
+    transform: translateY(15px);
+  }
+
+  .banner-consejos-imagenes {
+    height: 260px;
+  }
+
+  .banner-equipamiento .banner-boton,
+.banner-consejos .banner-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 6px;
+    line-height: 1.3;
+}
+
+}
+/* Sombras y animación de fotografías */
+
+.banner-equipamiento-imagenes img,
+.banner-consejos-imagenes img {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+/* Primera fotografía */
+
+.banner-equipamiento-imagenes img:first-child:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Segunda fotografía: conserva su desplazamiento */
+
+.banner-equipamiento-imagenes img:nth-child(2):hover {
+  transform: translateY(25px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Fotografías del banner de consejos */
+
+.banner-consejos-imagenes img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+}
+
+@media (max-width: 575.98px) {
+  .banner-equipamiento-imagenes img:nth-child(2):hover {
+    transform: translateY(15px) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-equipamiento-imagenes img,
+  .banner-consejos-imagenes img {
+    transition: none;
+  }
+}
 /* ================================================================
    5. ENCABEZADOS Y CATEGORÍAS
    ================================================================ */
@@ -496,7 +768,31 @@ h3 {
 }
 
 /* Fondo marfil para la zona de categorías. */
+/* Notificación de bienvenida */
 
+#toastBienvenida {
+  background-color: #e1ebef;
+  border-left: 5px solid #ffa506 !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#toastBienvenida .toast-header {
+  background-color: #004261;
+  color: #ffffff;
+  border-bottom: none;
+}
+
+#toastBienvenida .toast-header .btn-close {
+  filter: invert(1);
+}
+
+#toastBienvenida .toast-body {
+  color: #004261;
+  font-family: var(--fuente-funcional);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 .categorias {
     display: flex;
     align-items: center;
@@ -897,14 +1193,14 @@ h3 {
 /* Título y descripción de introducción. */
 .guias-intro h2 {
     color: white;
-    font-size: clamp(2.4rem, 4vw, 3.5rem);
-    line-height: 0.95;
+    font-size: clamp(2.8rem, 4vw, 3.5rem);
+    line-height: 1;
 }
 
 .guias-intro p:not(.sobrelinea) {
     margin: 1.2rem 0 1.8rem;
     color: rgba(255, 255, 255, 0.72);
-    font-size: 0.9rem;
+    font-size: 1.3rem;
 }
 
 /* Botón contorneado para fondos oscuros. */
@@ -3682,4 +3978,6 @@ h3 {
   .card-categoria > img {
     height: 220px;
   }
+}
   
+ 
